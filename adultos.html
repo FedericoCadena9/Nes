@@ -12,11 +12,11 @@
 <body class="bg-background font-body">
 
     <!-- Header -->
-    <div class="fixed z-50 w-screen">
+    <div class="fixed z-50 min-w-full">
         <div class="relative bg-white">
-            <div class="px-6 mx-auto max-w-7xl lg:px-8">
+            <div class="px-6 mx-auto  lg:px-8">
                 <div
-                    class="flex items-center justify-between py-5 border-gray-100 md:py-3 md:justify-start md:space-x-10">
+                    class="flex items-center justify-between py-5 border-gray-100 md:py-3 lg:justify-start lg:space-x-10">
 
                     <!-- Nes Logo -->
                     <div class="justify-start hidden lg:flex">
@@ -37,6 +37,13 @@
                                     d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
+                    </div>
+
+                    <!-- Nes Logo Responsive -->
+                    <div class="justify-start flex lg:hidden">
+                        <a href="/">
+                            <img class="w-auto h-7" src="./svg/NesLogoResponsive.svg" alt="Nes Logo Responsive">
+                        </a>
                     </div>
 
                     <!-- Navbar -->
@@ -71,7 +78,7 @@
 
 
 
-                    <div class="items-center justify-end md:flex md:flex-1 lg:w-0">
+                    <div class="items-center justify-end md:flex lg:flex-1 lg:w-0">
                         <!-- Header Widgets -->
                         <div class="hidden mr-5 md:flex">
                             <!-- Like -->
