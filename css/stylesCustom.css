@@ -1,4 +1,34 @@
-.btnCrear{
-    width: 4em;
-    height: 4em;
+/* Boton Crear sombra */
+.btnCrear
+{
+    -webkit-box-shadow: 0px 1px 17px -2px #E02944; 
+    box-shadow: 0px 1px 17px -2px #E02944;
+}
+
+/* Boton Crear animación */
+.btnCrear:active {
+    animation: press 0.2s 1 linear;
+  }
+
+/* Función Alpine.js para evitar que abra los menus ocultos */
+[x-cloak] { display: none  !important}
+
+/* Animación Boton Crear */
+@keyframes press {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.70);
+    }
+    to {
+      transform: scale(1);
+    }
+  } 
+
+/* Cambio de tamaño al input de imagen */
+.filepond--root,
+.filepond--root .filepond--drop-label 
+{
+    height: 200px;
 }
