@@ -1,6 +1,18 @@
 
+function edit() {
+  document.getElementById("title").innerText = "Editar Evento";
+  document.getElementById("subText").classList.add("hidden");
+  document.getElementById("person").classList.remove("hidden");
+}
 
-body.innerHTML = x;
+document.querySelector('.btnCrear').addEventListener('click', () => {
+  document.getElementById("title").innerText = "Crear Evento";
+  document.getElementById("subText").classList.remove("hidden");
+  document.getElementById("person").classList.add("hidden");
+})
+  
+
+
 
 // Plugin de input de imagen (Filepond)
 FilePond.registerPlugin(
