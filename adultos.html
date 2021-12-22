@@ -434,18 +434,6 @@
     </div>
 </div>
 
-    <!-- Boton Crear Evento -->
-    <div class="fixed right-0 z-10 p-8 bottom-14 md:bottom-0">
-        <div class="">
-            <button @click="sidemenu = !sidemenu"
-                class="flex items-center justify-center w-16 h-16 transition duration-200 ease-in-out rounded-full cursor-pointer hover:bg-primary-600 focus:bg-primary-600 btnCrear xl:h-20 xl:w-20 bg-primary-500">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                </svg>
-            </button>
-        </div>
-    </div>
 
     <!-- Header Widgets Responsive-->
     <div class="fixed bottom-0 z-30 w-screen px-4 bg-white sm:hidden md:px-8">
@@ -509,7 +497,7 @@
                 </div>
 
                 <div x-show.transition="openNot" @click.away="openNot = false"
-                                class="absolute -right-5 bottom-16 mt-2 overflow-hidden bg-white rounded-md shadow-lg w-80"
+                                class="absolute mt-2 overflow-hidden bg-white rounded-md shadow-lg -right-5 bottom-16 w-80"
                                 x-transition:enter="duration-200 ease-out"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
@@ -884,16 +872,6 @@
                                                 data-value="2021-03-14T12:00Z"
                                                 x-data="{date: new Date($el.dataset.value)}"
                                                 :value="date.toLocaleTimeString('sv-en')">
-
-                                            <div class="absolute top-0 right-0 px-3 py-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="w-6 h-6 text-gray-400 -ml-14" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1013,16 +991,6 @@
                                                 data-value="2021-03-14T12:00Z"
                                                 x-data="{date: new Date($el.dataset.value)}"
                                                 :value="date.toLocaleTimeString('sv-en')">
-
-                                            <div class="absolute top-0 right-0 px-3 py-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="w-6 h-6 text-gray-400 -ml-14" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1115,14 +1083,6 @@
                 <input type="text" value="San Lucas, Mazatlán Sinaloa"
                     class="w-56 px-3 text-3xl font-semibold cursor-pointer md:inline-block md:w-96 md:text-4xl text-primary-500">
 
-            </div>
-            <div class="md:inline-block">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500" viewBox="0 0 512 512">
-                    <path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" fill="none"
-                        stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="32" d="M352 216l-96 96-96-96" />
-                </svg>
             </div>
         </div>
 
@@ -1382,7 +1342,23 @@
 
     </div>
 
-    <!-- Seccion donde se mostrarán los Eventos -->
+    <div class="relative">
+        <!-- Boton Crear Evento -->
+        <div class="sticky 2xl:top-85 xl:top-75 lg:top-95 top-full">
+            <div class="absolute right-0 m-8 -my-40 xl:my-10 2xl:-my-4">
+                <div class="">
+                    <button @click="sidemenu = !sidemenu"
+                        class="flex items-center justify-center w-16 h-16 transition duration-200 ease-in-out rounded-full cursor-pointer md:w-24 md:h-24 hover:bg-primary-600 focus:bg-primary-600 btnCrear 2xl:h-28 2xl:w-28 xl:h-20 xl:w-20 bg-primary-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seccion donde se mostrarán los Eventos -->
     <div class="m-6 md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 body">
 
         <!-- Componente para copiar -->
@@ -1429,19 +1405,29 @@
                         </div>
                     </div>
                     <div class="col-span-2">
-                        <p class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            <span class="px-3 text-secondary-400">30</span>
-                        </p>
+                        <div class="inline-block">
+                            <p class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                  </svg>
+                                <span class="inline-block px-3 text-secondary-400">30</span>
+                            </p>
+                        </div>
+                        <div class="inline-block">
+                            <p class="flex items-center ml-14">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                  </svg>
+                                <span class="inline-block px-3 text-secondary-400">Presencial</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </a>
     </div>
+    </div>
+    
 
     <!-- Footer -->
     <footer class="relative z-20 px-4 pt-16 bg-gray-200 sm:max-w-xl md:max-w-full md:px-24 lg:px-8">

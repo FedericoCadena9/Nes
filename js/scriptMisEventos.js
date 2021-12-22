@@ -11,7 +11,13 @@ document.querySelector('.btnCrear').addEventListener('click', () => {
   document.getElementById("person").classList.add("hidden");
 })
   
+// Funcion Más Eventos
 
+let btnClone1 = document.getElementById('clone1');
+
+btnClone1.addEventListener('click', () => {
+  document.getElementById('hiddenCard1').classList.remove('hidden');
+})
 
 
 // Plugin de input de imagen (Filepond)
