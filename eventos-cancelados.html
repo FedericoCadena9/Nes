@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos - Adultos</title>
+    <title>Eventos cancelados</title>
     <link rel="stylesheet" href="./css/output.css"> 
     <link rel="stylesheet" href="./css/styles.css">
     <!-- Estilos de Datepicker -->
@@ -18,19 +18,21 @@
     <!-- Navbar -->
     <nes-navbar></nes-navbar>
     
-    <!-- Hero -->
-    <nes-hero></nes-hero>
-    
-    <!-- Categorias y Filtros -->
-    <nes-filtros></nes-filtros>
-    
-    <div id="cardBody" class="m-6">
+    <div id="cardBody" class="pt-20">
         <!-- Crear Eventos -->
         <crear-eventos></crear-eventos>
         
-        <!-- Todos los eventos -->
-        <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9 body">
-            <event-card type=""></event-card>
+        <!-- Todos los eventos pendientes de publicar -->
+        <div class="p-6">
+            <button onclick="history.back()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-600 duration-200 ease-in-out transition hover:text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                </svg>
+            </button>
+            <h2 class="text-3xl font-semibold text-gray-600 md:text-4xl">Eventos cancelados</h2>
+            <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9 body">
+                <event-card type="4"></event-card>
+            </div>
         </div>
     </div>
 
@@ -45,8 +47,6 @@
 
     <!-- Componentes -->
     <script src="./views/components/Navbar.js"></script>
-    <script src="./views/components/Hero.js"></script>
-    <script src="./views/components/Filtros.js"></script>
     <script src="./views/components/CrearEventos.js"></script>
     <script src="./views/components/Card.js"></script>
     <script src="./views/components/Footer.js"></script>

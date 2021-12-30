@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Eventos</title>
+    <link rel="stylesheet" href="./css/output.css"> 
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Estilos de Datepicker -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/lightpick@latest/css/lightpick.css">
+    
+    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
+</head>
+<body class=" bg-background font-body">
+    <!-- Navbar -->
+    <nes-navbar></nes-navbar>
+    
+    <!-- Hero -->
+    <nes-hero></nes-hero>
+    
+    <!-- Categorias y Filtros -->
+    <nes-filtros></nes-filtros>
+    
+    <div id="cardBody">
+        <!-- Crear Eventos -->
+        <crear-eventos></crear-eventos>
+
+        <div class="p-6">
+
+            <!-- Mis Eventos -->
+            <h2 class="text-3xl font-semibold text-gray-600 md:text-4xl">Mis Eventos</h2>
+            <div>
+                <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9">
+                    <event-card type="1"></event-card>
+                    <event-card type="2"></event-card>
+                    <event-card type="2"></event-card>
+                </div>
+                <div class="flex items-center justify-end col-span-2 my-5 col-start-2 pt-3 pb-10 cursor-pointer text-primary-500 md:pt-0">
+                    <a href="./tus-eventos.html" class="font-medium">Más Eventos</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+
+
+            <!--Eventos pendientes de publicar -->
+            <h2 class="text-3xl font-semibold text-gray-600 md:text-4xl">Eventos pendientes de publicar</h2>
+            <div>
+                <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9">
+                    <div><event-card type="3"></event-card></div>
+                    <div><event-card type="3"></event-card></div>
+                    <div><event-card type="3"></event-card></div>
+                </div>
+                <div class="flex items-center justify-end col-span-2 my-5 col-start-2 pt-3 pb-10 cursor-pointer text-primary-500 md:pt-0">
+                    <a href="./eventos-pendientes.html" class="font-medium">Más Eventos</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+
+
+            <!-- Eventos cancelados -->
+            <h2 class="text-3xl font-semibold text-gray-600 md:text-4xl">Eventos cancelados</h2>
+            <div>
+                <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9">
+                    <div><event-card type="4"></event-card></div>
+                    <div><event-card type="4"></event-card></div>
+                    <div><event-card type="4"></event-card></div>
+                </div>
+                <div class="flex items-center justify-end col-span-2 my-5 col-start-2 pt-3 pb-10 cursor-pointer text-primary-500 md:pt-0">
+                    <a href="./eventos-cancelados.html" class="font-medium">Más Eventos</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <nes-footer></nes-footer>
+
+    
+    <!-- Atomic Componentes (Ligados a Componentes) -->
+    <script src="./views/atomicComponents/NavLinks.js"></script>
+    <script src="./views/atomicComponents/CircleLinks.js"></script>
+
+    <!-- Componentes -->
+    <script src="./views/components/Navbar.js"></script>
+    <script src="./views/components/Hero.js"></script>
+    <script src="./views/components/Filtros.js"></script>
+    <script src="./views/components/CrearEventos.js"></script>
+    <script src="./views/components/Card.js"></script>
+    <script src="./views/components/Footer.js"></script>
+
+    <!-- Scripts de terceros -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://unpkg.com/lightpick@latest/lightpick.js"></script>
+    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+
+    <!-- Mis Scripts -->
+    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
+
+    
+</body>
+</body>
+</html>
