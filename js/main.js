@@ -1,24 +1,13 @@
+// Datepicker Filtros Cuando
+$(function() {
+  $('input[name="datetimes"]').daterangepicker({
+    singleDatePicker: true,
+    showDropdowns: true,
+    minYear: 1901,
+    maxYear: parseInt(moment().format('YYYY'),10)
+  });
+});
 
-//Función para agregar Boton de Crear Evento
-window.addEventListener('scroll', () => {
-  let anima = document.getElementById('cardBody');
-  // let animaBottom = document.getElementById('cardFooter');
-  let btnCrear = document.getElementById('btnCrear');
-  let position = anima.getBoundingClientRect().top;
-  // let positionBottom = anima.getBoundingClientRect().top;
-  let sizeScreen = window.innerHeight / 3.5;
-
-  if(position < sizeScreen)
-  {
-    btnCrear.classList.remove('hidden');
-    btnCrear.classList.remove('scale-in-center-reverse');
-    btnCrear.classList.add('scale-in-center');
-  }
-  else
-  {
-    btnCrear.classList.add('scale-in-center-reverse');
-  }
-})
 
 // Función para cortar la imagen de Crear Evento
 let resize = $('#uploadImg').croppie({
@@ -66,7 +55,37 @@ let resize = $('#uploadImg').croppie({
       //     $("#preview-crop-image").html(html);
       //   }
       // });
-      html = '<img id="imagePreview" class="w-full h-96 rounded-lg p-5 object-contain" src="' + img + '" />';
+      html = '<img id="imagePreview" class="w-full md:h-96 h-60 rounded-lg p-5 object-contain" src="' + img + '" />';
+          $("#preview-crop-image").html(html);
+    });
+
+    
+    document.getElementById('divHid').classList.add('hidden');
+    document.getElementById('divContainer').classList.remove('hidden');
+    document.getElementById('btnCrop').classList.add('hidden');
+    document.getElementById('divContainer').classList.add('hidden');
+    document.getElementById('image').classList.add('hidden');
+    document.getElementById('btnBorrar').classList.remove('hidden');
+  });
+
+  // Escoger imagen desde carrusel - 1
+  $('#imgCarrusel1').on('click', function (ev) {
+    resize.croppie('result', {
+      type: 'canvas',
+      size: 'original',
+      quality: 1
+    }).then(function (img) {
+      // $.ajax({
+      //   url: "image-crop.php",
+      //   type: "POST",
+      //   data: {"image":img},
+      //   success: function (data) {
+      //     html = '<img src="' + img + '" />';
+      //     $("#preview-crop-image").html(html);
+      //   }
+      // });
+      let url = document.getElementById('imgCarrusel1').src;
+      html = '<img id="imagePreview" class="w-full md:h-96 h-60 rounded-lg p-5 object-contain" src="' + url + '" />';
           $("#preview-crop-image").html(html);
     });
 
@@ -77,6 +96,65 @@ let resize = $('#uploadImg').croppie({
     document.getElementById('image').classList.add('hidden');
     document.getElementById('btnBorrar').classList.remove('hidden');
   });
+
+  // Escoger imagen desde carrusel - 2
+  $('#imgCarrusel2').on('click', function (ev) {
+    resize.croppie('result', {
+      type: 'canvas',
+      size: 'original',
+      quality: 1
+    }).then(function (img) {
+      // $.ajax({
+      //   url: "image-crop.php",
+      //   type: "POST",
+      //   data: {"image":img},
+      //   success: function (data) {
+      //     html = '<img src="' + img + '" />';
+      //     $("#preview-crop-image").html(html);
+      //   }
+      // });
+      let url = document.getElementById('imgCarrusel2').src;
+      html = '<img id="imagePreview" class="w-full md:h-96 h-60 rounded-lg p-5 object-contain" src="' + url + '" />';
+          $("#preview-crop-image").html(html);
+    });
+
+    
+    document.getElementById('divHid').classList.add('hidden');
+    document.getElementById('btnCrop').classList.add('hidden');
+    document.getElementById('divContainer').classList.add('hidden');
+    document.getElementById('image').classList.add('hidden');
+    document.getElementById('btnBorrar').classList.remove('hidden');
+  });
+
+  // Escoger imagen desde carrusel - 3
+  $('#imgCarrusel3').on('click', function (ev) {
+    resize.croppie('result', {
+      type: 'canvas',
+      size: 'original',
+      quality: 1
+    }).then(function (img) {
+      // $.ajax({
+      //   url: "image-crop.php",
+      //   type: "POST",
+      //   data: {"image":img},
+      //   success: function (data) {
+      //     html = '<img src="' + img + '" />';
+      //     $("#preview-crop-image").html(html);
+      //   }
+      // });
+      let url = document.getElementById('imgCarrusel3').src;
+      html = '<img id="imagePreview" class="w-full md:h-96 h-60 rounded-lg p-5 object-contain" src="' + url + '" />';
+          $("#preview-crop-image").html(html);
+    });
+
+    
+    document.getElementById('divHid').classList.add('hidden');
+    document.getElementById('btnCrop').classList.add('hidden');
+    document.getElementById('divContainer').classList.add('hidden');
+    document.getElementById('image').classList.add('hidden');
+    document.getElementById('btnBorrar').classList.remove('hidden');
+  });
+
 
   // Boton de Borrar
   $('#btnDelete').on('click', function (ev) {
@@ -90,5 +168,4 @@ let resize = $('#uploadImg').croppie({
     });
 
 // Final de Subir imagen en Crear Eventos
-
 

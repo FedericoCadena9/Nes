@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Evento</title>
+    <title>Crear Evento</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
     <!-- Estilos de Datepicker -->
@@ -20,10 +20,10 @@
 
     <!-- Navbar -->
     <nes-navbar></nes-navbar>
-
+    
     <div class="flex justify-center pt-20">
         <div class="flex flex-col w-full p-8 mx-8 mt-8 bg-white rounded-lg md:grid md:grid-cols-2">
-            <div class="px-6 ">
+            <div>
                 <!-- Botón Atras -->
                 <div>
                     <button onclick="history.back()"
@@ -37,38 +37,10 @@
                     </button>
                 </div>
 
-                <div class="py-3">
-                    <p class="text-4xl font-semibold text-secondary-500">Editar Evento</p>
-                </div>
-
-                <div class="pb-6">
-                    <p class="text-sm text-gray-600 md:text-base"><span
-                    class="font-bold text-gray-800">30</span> personas asistirán al evento:</p>
-                    <div class="my-2 md:flex md:items-center ">
-                        <div class="flex items-center mt-2 cursor-pointer md:mt-0 md:mx-4">
-                            <img class="inline-block object-cover object-center w-8 h-8 text-white border-2 border-white rounded-full md:w-10 md:h-10"
-                                src="https://images.unsplash.com/photo-1510520434124-5bc7e642b61d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                                alt="">
-                            <img class="inline-block object-cover object-center w-8 h-8 -ml-2 text-white border-2 border-white rounded-full md:-ml-4 md:w-10 md:h-10"
-                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                                alt="">
-                            <img class="inline-block object-cover object-center w-8 h-8 -ml-2 text-white border-2 border-white rounded-full md:-ml-4 md:w-10 md:h-10"
-                                src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                                alt="">
-                            <img class="inline-block object-cover object-center w-8 h-8 -ml-2 text-white border-2 border-white rounded-full md:-ml-4 md:w-10 md:h-10"
-                                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-                                alt="">
-                            <img class="inline-block object-cover object-center w-8 h-8 -ml-2 text-white border-2 border-white rounded-full md:-ml-4 md:w-10 md:h-10"
-                                src="https://images.unsplash.com/photo-1510520434124-5bc7e642b61d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                                alt="">
-                            <img class="inline-block object-cover object-center w-8 h-8 -ml-2 text-white border-2 border-white rounded-full md:-ml-4 md:w-10 md:h-10"
-                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                                alt="">
-                            <div
-                                class="flex items-center justify-center object-cover object-center w-8 h-8 -ml-2 text-white bg-gray-700 border-2 border-white rounded-full md:-ml-4 md:w-10 md:h-10">
-                                <span class="text-xxs">+24</span></div>
-                        </div>
-                    </div>
+                <div class="px-6 py-3 ">
+                    <p class="text-4xl font-semibold text-secondary-500">Crear Evento</p>
+                    <p class="text-gray-500">En pocos pasos podrás crear tu evento y conocer un montón de nuevos amigos.
+                    </p>
                 </div>
 
                 <div class="flex-1 space-y-3 md:overflow-y-auto md:px-6 md:min-h-full">
@@ -163,17 +135,12 @@
             <!-- Input para subir foto de portada -->
             <div class="pt-5 md:pt-0">
                 <p class="text-2xl font-semibold text-gray-700">Subir nueva foto de portada</p>
-                <p class="text-gray-600">Elige una nueva imagen desde tu ordenador dando click en tu portada actual.</p>
 
                 <div class="grid my-5 place-items-center">
                     <div
                         class="relative flex items-center justify-center w-full bg-white border-2 border-gray-200 border-dashed rounded-lg h-60 md:w-96 md:h-96">
-                        <div id="preview-crop-image" class="absolute w-full h-auto">
-                            <!-- Imagen que aparecerá cuando tienes un evento -->
-                            <img src="https://source.unsplash.com/300x300/?random" alt=""
-                            class="z-50 object-cover object-center w-full rounded-lg h-60 md:h-full">
-                        </div>
-                        <div class="absolute hidden" id="divContainer">
+                        <div id="preview-crop-image" class="absolute w-full h-auto"></div>
+                        <div class="absolute" id="divContainer">
                             <div class="flex flex-col items-center ">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -287,9 +254,11 @@
 
     <!-- Botones -->
     <div class="px-8 mx-8 mb-10 space-y-5 bg-white py-7 md:flex md:space-x-4 md:space-y-0 ">
-        <button type="button" onclick="history.back()"
-            class="border btn border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white">Cancelar</button>
-        <button type="button" class="text-gray-100 btn bg-primary-500 hover:bg-primary-600">Guardar</button>
+        <button type="button"
+            class="border btn border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white">Guardar</button>
+        <button type="button"
+            class="text-gray-100 btn bg-primary-500 hover:bg-primary-600">Crear
+            Evento</button>
     </div>
 
 
@@ -315,6 +284,7 @@
 
     <!-- Mis Scripts -->
     <script src="js/main.js"></script>
+
     <script>
         $(function() {
           $('input[name="datetimes"]').daterangepicker({
@@ -326,13 +296,7 @@
             }
           });
         });
-    </script>
-    <script>
-        document.getElementById('title').value = 'Encuentro relajante';
-        document.getElementById('place').value = 'Madrid, España';
-        document.getElementById('users').value = '10';
-        document.getElementById('description').value = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, eos.';
-    </script>
+        </script>
 </body>
 
 </html>

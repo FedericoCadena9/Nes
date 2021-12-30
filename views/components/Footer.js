@@ -51,7 +51,7 @@ class Footer extends HTMLElement {
 
                 <!-- Nes Logo -->
                 <div class="flex justify-start">
-                    <a href="#">
+                    <a href="/index.html">
                         <img class="w-auto h-10" src="./img/NesLogo.svg" alt="Nes Logo">
                     </a>
                 </div>

@@ -31,23 +31,12 @@ class Filtros extends HTMLElement {
         </a>
     `;
 
-    // Restablecer Filtros
-    // let btnRestablecer = document.getElementById('btnRestablecer');
-
-    // btnRestablecer.addEventListener('click', () => {
-    //     document.getElementById('inpDonde').innerHTML = "";
-    //     document.getElementById('inpCuando').innerHTML = "";
-    //     document.getElementById('selClasificacion').innerHTML = "";
-    //     document.getElementById('selTipo').innerHTML = "";
-    // });
-
-
     this.innerHTML = `
       <!-- Descubrir ubicacion -->
-      <div class="px-6 pt-20 bg-white border-b border-gray-200 lg:pt-0 lg:px-8">
+      <div class="px-6 pt-20 bg-white border-b border-gray-200 lg:pt-0 lg:px-8 md:w-full">
           <p class="text-base font-medium text-secondary-500 md:text-4xl md:font-semibold md:inline-block">Descubre
               eventos en |</p>
-          <div class="flex items-center justify-between max-w-lg cursor-pointer md:inline-block">
+          <div class="flex items-center justify-between cursor-pointer md:inline-block">
               <div class="md:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -58,11 +47,12 @@ class Filtros extends HTMLElement {
                   </svg>
               </div>
   
-              <div class="inline-block ">
-                  <!-- Parrafo donde poner ubicación -->
-                  <input type="text" value="San Lucas, Mazatlán Sinaloa"
-                      class="w-56 px-3 text-3xl font-semibold cursor-pointer md:inline-block md:w-96 md:text-4xl text-primary-500">
-              </div>
+                <div class="inline-block w-full">
+                    <!-- Parrafo donde poner ubicación -->
+                    <p class="p-4 max-w-md whitespace-nowrap overflow-x-auto md:overflow-visible break-words ml-3 md:ml-0 md:mr-0 md:p-0 md:px-2 mr-6 text-3xl font-semibold cursor-pointer md:inline-block md:max-w-full md:text-4xl text-primary-500">San Juan de Puerto Rico, Puerto Rico</p>
+
+
+                </div>
         </div>
         
         <!-- Categorias -->
@@ -153,7 +143,7 @@ class Filtros extends HTMLElement {
                                             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <input type="text" placeholder="03/03/21" id="demo-1" class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0"/>
+                                <input type="text" name="datetimes" placeholder="03/03/21" class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0"/>
                             </div>
                         </div>
 
@@ -240,10 +230,10 @@ class Filtros extends HTMLElement {
         // Boton Activo
         const eventLink = document.querySelectorAll(".category-button");
         for (let i = 0; i < eventLink.length; i++) {
-        if (eventLink[i].href === location.href) {
-            eventLink[i].classList.add("text-primary-500");
-            eventLink[i].classList.add("bg-primary-100");
-        }
+            if (eventLink[i].href === location.href) {
+                eventLink[i].classList.add("text-primary-500");
+                eventLink[i].classList.add("bg-primary-100");
+            }
         }
   }
 }

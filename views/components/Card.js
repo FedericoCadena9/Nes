@@ -130,7 +130,7 @@ class Card extends HTMLElement {
                             x-transition:leave-start="opacity-100 scale-100"
                             x-transition:leave-end="opacity-0 scale-95">
 
-                            <a href="./editar-evento.html" class="flex items-center px-4 py-2 text-sm cursor-pointer">
+                            <a href="./editar-evento-pendiente.html" class="flex items-center px-4 py-2 text-sm cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="w-8 h-8 p-2 text-white rounded-full bg-secondary-500" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -258,13 +258,13 @@ class Card extends HTMLElement {
         `;
 
         // Funcion para repetir card de Eventos (Unicamente para rellenar el sitio)
-    let body = document.querySelector(".body");
-    let card = document.getElementById('card');
-    for (let i = 0; i < 11; i++) {
-    // Componente de Card de Evento
-    let divClone = card.cloneNode(true);
-    body.appendChild(divClone);
-    }
+        let body = document.querySelector(".body");
+        let card = document.getElementById('card');
+        for (let i = 0; i < 11; i++) {
+        // Componente de Card de Evento
+        let divClone = card.cloneNode(true);
+        body.appendChild(divClone);
+        }
   }
 }
 window.customElements.define("event-card", Card);
