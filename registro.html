@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nes+ | Registro</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body class="bg-background font-body">
+
+    <section class="flex flex-col h-auto md:flex-row">
+
+        <div
+            class="flex justify-center w-full top-0 p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 lg:px-16 xl:px-12">
+
+            <div class="w-full">
+
+                <!-- Nes Logo -->
+                <div class="flex justify-center py-10 mx-4 lg:mx-0">
+                    <a href="index.html">
+                        <img class="w-auto md:h-10 h-8" src="./img/NesLogo.svg" alt="Nes Logo">
+                    </a>
+                </div>
+
+                <h1 class="text-2xl font-semibold text-secondary-500 leading-tight md:text-4xl">¡Hola! <br> Registrate
+                    para comenzar</h1>
+
+                <p class="mt-4 text-sm font-medium">¿Ya tienes una cuenta? <a href="./index.html"
+                        class="text-primary-500 hover:text-primary-600 underline">Inicia sesión</a></p>
+
+                <form class="mt-8" action="#" method="POST">
+                    <h2 class="text-secondary-400 font-medium text-lg pb-6">Datos de Acceso</h2>
+                    <div>
+                        <label class="block text-sm text-gray-600">Correo Electrónico</label>
+                        <input type="email" name="" id="" placeholder="Correo Electrónico" class="input" autofocus
+                            autocomplete required>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Contraseña</label>
+                        <input type="password" name="" id="" placeholder="Contraseña" minlength="6" class="input"
+                            required>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Repetir Contraseña</label>
+                        <input type="password" name="" id="" placeholder="Contraseña" minlength="6" class="input"
+                            required>
+                    </div>
+
+                    <div class="flex flex-col items-start justify-between sm:items-center sm:flex-row py-5">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="text-primary-500 rounded" />
+                        </label>
+                        <p class="block ml-2 text-xtin font-medium text-gray-400">Para continuar debes aceptar los <a href="" class="text-primary-500 underline">términos de uso</a> y la <a href="" class="text-primary-500 underline">política
+                            de privacidad</a> de nes+.  Además el usuario/a declara que es
+                            mayor de edad al momento de registrarse en función a la ley
+                            aplicable.
+                        </p>
+                    </div>
+
+                    <!-- <button type="submit"
+                        class="btn-login">Registrarse</button> -->
+
+                    <!-- Tag a solo para fines demostrativos -->
+                    <a href="./registro-personal.html"
+                        class="btn-login">Registrarse</a>
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="hidden w-full md:block md:w-1/2 ">
+            <img src="https://vihnoestamossolos.net/background-2.jpg" alt="Nes Background Sign Up"
+                class="object-cover w-full min-h-full">
+        </div>
+
+
+    </section>
+
+    <login-footer></login-footer>
+
+    <!-- Scripts de terceros -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- Componentes -->
+    <script src="./views/components/Accesos/Footer.js"></script>
+
+</body>
+
+</html>

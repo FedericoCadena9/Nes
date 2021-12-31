@@ -123,7 +123,7 @@ class Navbar extends HTMLElement {
                               </a>
 
                               <!--Cerrar sesión -->
-                              <a href="#" class="block px-4 py-2 text-sm text-gray-700">
+                              <a href="index.html" class="block px-4 py-2 text-sm text-gray-700">
                                   <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
                                       viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

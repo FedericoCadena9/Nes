@@ -5,65 +5,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
+    <title>Nes+ | Iniciar Sesión</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- Estilos de Datepicker -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <!-- Estilos de Carrusel -->
-    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
-    <!-- Estilos para cortar la imagen -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css'>
 </head>
 
 <body class="bg-background font-body">
 
-    <!-- Navbar -->
-    <nes-navbar></nes-navbar>
+    <section class="flex flex-col h-auto md:flex-row">
 
-    <!-- Hero -->
-    <nes-hero></nes-hero>
-
-    <!-- Categorias y Filtros -->
-    <nes-filtros></nes-filtros>
-
-    <div id="cardBody" class="m-6">
-        <!-- Crear Eventos -->
-        <crear-eventos></crear-eventos>
-
-        <!-- Todos los eventos -->
-        <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9 body">
-            <event-card type=""></event-card>
+        <div class="hidden w-full md:block md:w-1/2 xl:w-2/3">
+            <img src="https://vihnoestamossolos.net/background-3.jpg" alt="Nes Login" class="object-cover w-full min-h-full">
         </div>
-    </div>
 
+        <div
+            class="flex justify-center w-full top-0 p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
 
-    <!-- Footer -->
-    <nes-footer></nes-footer>
+            <div class="w-full">
 
+                <!-- Nes Logo -->
+                <div class="flex justify-center py-10 mx-4 lg:mx-0">
+                    <a href="index.html">
+                        <img class="w-auto md:h-10 h-8" src="./img/NesLogo.svg" alt="Nes Logo">
+                    </a>
+                </div>
 
-    <!-- Atomic Componentes (Ligados a Componentes) -->
-    <script src="./views/atomicComponents/NavLinks.js"></script>
-    <script src="./views/atomicComponents/CircleLinks.js"></script>
+                <h1 class="text-2xl font-bold leading-tight md:text-4xl text-secondary-500">Iniciar Sesión</h1>
+                <p class="text-secondary-400">Que bueno volverte a ver otra vez.</p>
 
-    <!-- Componentes -->
-    <script src="./views/components/Navbar.js"></script>
-    <script src="./views/components/Hero.js"></script>
-    <script src="./views/components/Filtros.js"></script>
-    <script src="./views/components/CrearEventos.js"></script>
-    <script src="./views/components/Card.js"></script>
-    <script src="./views/components/Footer.js"></script>
+                <div class="py-5 space-y-5">
+                    <button type="button"
+                        class="flex flex-row items-center justify-center w-full gap-2 p-2 text-gray-900 duration-100 ease-in-out bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:bg-gray-100">
+                        <div class="flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                class="w-6 h-6" viewBox="0 0 48 48">
+                                <defs>
+                                    <path id="a"
+                                        d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z" />
+                                </defs>
+                                <clipPath id="b">
+                                    <use xlink:href="#a" overflow="visible" />
+                                </clipPath>
+                                <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z" />
+                                <path clip-path="url(#b)" fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z" />
+                                <path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z" />
+                                <path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z" />
+                            </svg>
+                            <span class="ml-4">Ingresa con Google</span>
+                        </div>
+                    </button>
+
+                    <button type="button"
+                        class="flex flex-row items-center justify-center w-full gap-2 p-2 text-white duration-100 ease-in-out bg-blue-600 rounded-md hover:bg-blue-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="w-6 h-6 text-white fill-current">
+                            <path
+                                d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z">
+                            </path>
+                        </svg>
+                        Ingresa con Facebook
+                    </button>
+                </div>
+
+                <div class="py-5">
+                    <div class="text-center border-b border-gray-400" style="line-height: 0px">
+                        <span class="p-2 text-sm tracking-wide text-gray-400 bg-white" style="line-height: 0px">O
+                            ingresa con tu correo</span>
+                    </div>
+                </div>
+
+                <form class="mt-6" action="#" method="POST">
+                    <div>
+                        <label class="block text-sm text-gray-600">Correo Electrónico</label>
+                        <input type="email" name="" id="" placeholder="Correo Electrónico"
+                            class="input"
+                            autofocus autocomplete required>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Contraseña</label>
+                        <input type="password" name="" id="" placeholder="Contraseña" minlength="6"
+                            class="input"
+                            required>
+                    </div>
+
+                    <div class="mt-2 text-right">
+                        <a href="#"
+                            class="text-sm underline text-primary-500 hover:text-primary-600 focus:text-primary-600">Olvidé
+                            mi contraseña</a>
+                    </div>
+
+                    <!-- <button type="submit"
+                        class="btn-login">Iniciar
+                        Sesión</button> -->
+
+                    <!-- Tag a solo para fines demostrativos -->
+                    <a href="./eventos.html"
+                        class="btn-login">Iniciar
+                        Sesión</a>
+                </form>
+
+                <p class="mt-8 text-sm font-medium">¿Aún no te registras? <a href="./registro.html"
+                        class="text-primary-500 hover:text-primary-600 underline">Crea una cuenta</a></p>
+            </div>
+        </div>
+    </section>
+
+    <login-footer></login-footer>
 
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js'></script>
 
-    <!-- Mis Scripts -->
-    <script src="js/main.js"></script>
+    <!-- Componentes -->
+    <script src="./views/components/Accesos/Footer.js"></script>
 
 </body>
 

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nes+ | Registro</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Estilos de Datepicker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- Estilos para cortar la imagen -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css'>
+</head>
+
+<body class="bg-background font-body">
+
+    <section class="flex flex-col h-auto md:flex-row">
+
+        <div
+            class="flex justify-center w-full top-0 p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 lg:px-16 xl:px-12">
+
+            <div class="w-full">
+
+                <!-- Botón Atras -->
+                <div>
+                    <button onclick="history.back()"
+                        class="flex items-center text-gray-700 transition duration-200 ease-in-out hover:text-gray-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Nes Logo -->
+                <div class="flex justify-center py-10 mx-4 lg:mx-0">
+                    <a href="index.html">
+                        <img class="w-auto md:h-10 h-8" src="./img/NesLogo.svg" alt="Nes Logo">
+                    </a>
+                </div>
+
+                <h1 class="text-2xl font-semibold text-secondary-500 leading-tight md:text-4xl">Sólo unos datos más y
+                    terminamos...</h1>
+
+                <form class="mt-8" action="#" method="POST">
+
+                    <div class="my-6">
+                        <p class=" font-medium text-secondary-400 text-center">Añadir una foto de peril</p>
+
+                        <div class="grid my-5 place-items-center">
+                            <div
+                                class="relative flex items-center justify-center w-40 bg-gray-100 border-2 border-gray-300 rounded-full h-40">
+                                <div class="w-10 h-10 bg-primary-500 rounded-full absolute z-30 bottom-0 right-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div id="preview-crop-image" class="absolute w-full h-full rounded-full"></div>
+                                <div class="absolute" id="divContainer">
+                                    <div class="flex flex-col items-center ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input type="file" id="image" accept="image/png, image/jpeg"
+                                    class="w-full h-full opacity-0 hover:cursor-pointer" name="">
+                            </div>
+
+                            <div class="flex items-center justify-center">
+                                <div class="hidden pb-3 mt-3 text-center" id="btnCrop">
+                                    <button id="btnUpload"
+                                        class="text-white btn bg-secondary-500 hover:bg-secondary-400">Recortar
+                                        imagen</button>
+                                </div>
+                                <div class="hidden pb-3 mt-3 text-center" id="btnBorrar">
+                                    <button id="btnDelete"
+                                        class="text-white btn bg-primary-500 hover:bg-primary-600">Borrar</button>
+                                </div>
+                            </div>
+
+                            <div class="hidden" id="divHid">
+                                <div class="relative flex items-center justify-center">
+                                    <div class="w-full">
+                                        <div class="p-3">
+                                            <div>
+                                                <div id="uploadImg"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-secondary-400 font-medium text-lg pb-1">Datos personales</h2>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Nombre de usuario/a</label>
+                        <input type="text" name="" id="" placeholder="Tu nombre" class="input" autofocus autocomplete
+                            required>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Género</label>
+                        <select id="" class="input">
+                            <option disabled selected value> -- Elige un género -- </option>
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                            <option value="3">Transexual</option>
+                            <option value="4">No binario</option>
+                            <option value="5">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Orientación Sexual</label>
+                        <select id="" class="input">
+                            <option disabled selected value> -- Elige tu orientación -- </option>
+                            <option value="1">Heterosexual</option>
+                            <option value="2">Lesbiana</option>
+                            <option value="3">Gay</option>
+                            <option value="4">Bisexual</option>
+                            <option value="5">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Estado Civil</label>
+                        <select id="" class="input">
+                            <option disabled selected value> -- Elige tu estado civil -- </option>
+                            <option value="1">Soltero</option>
+                            <option value="2">En relación</option>
+                            <option value="3">Casado</option>
+                            <option value="4">Viudo</option>
+                            <option value="5">Es complicado</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-sm text-gray-600">Fecha de nacimiento</label>
+                        <input type="text" name="datetimes" placeholder="03/03/21" class="input" />
+                    </div>
+
+                    <div class="md:flex md:space-x-5">
+                        <div class="mt-4">
+                            <label class="block text-sm text-gray-600">Pais</label>
+                            <input type="text" name="" id="" placeholder="Pais" class="input" autofocus autocomplete
+                                required>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm text-gray-600">Estado/provincia</label>
+                            <input type="text" name="" id="" placeholder="Estado" class="input" autofocus autocomplete
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="md:flex md:space-x-5">
+                        <div class="mt-4">
+                            <label class="block text-sm text-gray-600">Ciudad</label>
+                            <input type="text" name="" id="" placeholder="Ciudad" class="input" autofocus autocomplete
+                                required>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block text-sm text-gray-600">Continente</label>
+                            <input type="text" name="" id="" placeholder="Continente" class="input" autofocus
+                                autocomplete required>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <button type="submit"
+                        class="btn-login">Crear cuenta</button> -->
+
+                    <!-- Tag a solo para fines demostrativos -->
+                    <a href="./index.html" class="btn-login mt-10 mb-5">Crear cuenta</a>
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="hidden w-full md:block md:w-1/2 ">
+            <img src="https://vihnoestamossolos.net/background-2.jpg" alt="Nes Background Sign Up"
+                class="object-cover w-full min-h-full">
+        </div>
+
+
+    </section>
+
+    <login-footer></login-footer>
+
+    <!-- Scripts de terceros -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js'></script>
+
+    <!-- Componentes -->
+    <script src="./views/components/Accesos/Footer.js"></script>
+
+    <!-- Mis scripts -->
+    <script>
+        // Función para cortar la imagen de Crear Evento
+        let resize = $('#uploadImg').croppie({
+            enableExif: true,
+            enableOrientation: true,
+            viewport: {
+                width: 200,
+                height: 200,
+                type: 'circle'
+            },
+            boundary: {
+                width: 300,
+                height: 300
+            }
+        });
+
+        // Inicio de Subir imagen en Crear Eventos
+
+        // Función de cambio para renderizar la imagen
+        $('#image').on('change', function () {
+            document.getElementById('divHid').classList.remove('hidden');
+            document.getElementById('btnCrop').classList.remove('hidden');
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                resize.croppie('bind', {
+                    url: e.target.result
+                }).then(function () {
+                });
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+
+        // Boton para subir la imagen
+        $('#btnUpload').on('click', function (ev) {
+            resize.croppie('result', {
+                type: 'canvas',
+                size: 'original',
+                quality: 1
+            }).then(function (img) {
+                // $.ajax({
+                //   url: "image-crop.php",
+                //   type: "POST",
+                //   data: {"image":img},
+                //   success: function (data) {
+                //     html = '<img src="' + img + '" />';
+                //     $("#preview-crop-image").html(html);
+                //   }
+                // });
+                html = '<img id="imagePreview" class="w-40 h-40 rounded-full" src="' + img + '" />';
+                $("#preview-crop-image").html(html);
+            });
+
+
+            document.getElementById('divHid').classList.add('hidden');
+            document.getElementById('divContainer').classList.remove('hidden');
+            document.getElementById('btnCrop').classList.add('hidden');
+            document.getElementById('divContainer').classList.add('hidden');
+            document.getElementById('image').classList.add('hidden');
+            document.getElementById('btnBorrar').classList.remove('hidden');
+        });
+
+        // Boton de Borrar
+        $('#btnDelete').on('click', function (ev) {
+            let image = document.getElementById('imagePreview');
+            image.parentNode.removeChild(image);
+            document.getElementById('divContainer').classList.remove('hidden');
+            document.getElementById('btnCrop').classList.add('hidden');
+            document.getElementById('btnBorrar').classList.add('hidden');
+            document.getElementById('divHid').classList.add('hidden');
+            document.getElementById('image').classList.remove('hidden');
+            });
+
+
+        // Final de Subir imagen en Crear Eventos
+
+        // Función para iniciar DatePicker
+        $(function () {
+            $('input[name="datetimes"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minYear: 1901,
+                maxYear: parseInt(moment().format('YYYY'), 10)
+            });
+        });
+    </script>
+
+</body>
+
+</html>
