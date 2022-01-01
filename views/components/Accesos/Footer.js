@@ -32,7 +32,7 @@ class Footer extends HTMLElement {
             <ul class="self-center space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-6 lg:flex-1 lg:justify-start">
                 ${legales}
             </ul>
-            <div class="flex items-center mt-4 space-x-4 sm:mt-0 justify-center pt-5 sm:pt-0">
+            <div class="flex items-center pt-5 space-x-4  justify-center sm:pt-8 xl:pt-0">
                 <a href="#" class="transition-colors duration-300 text-white hover:text-gray-200">
                     <svg viewBox="0 0 24 24" fill="currentColor" class="h-4">
                         <path

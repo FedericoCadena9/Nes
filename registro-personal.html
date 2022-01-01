@@ -16,10 +16,10 @@
 
 <body class="bg-background font-body">
 
-    <section class="flex flex-col h-auto md:flex-row">
+    <section class="flex flex-col h-auto md:min-h-screen md:flex-row">
 
         <div
-            class="flex justify-center w-full top-0 p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 lg:px-16 xl:px-12">
+            class="top-0 flex justify-center w-full p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 lg:px-16 xl:px-12">
 
             <div class="w-full">
 
@@ -38,23 +38,23 @@
                 <!-- Nes Logo -->
                 <div class="flex justify-center py-10 mx-4 lg:mx-0">
                     <a href="index.html">
-                        <img class="w-auto md:h-10 h-8" src="./img/NesLogo.svg" alt="Nes Logo">
+                        <img class="w-auto h-8 md:h-10" src="./img/NesLogo.svg" alt="Nes Logo">
                     </a>
                 </div>
 
-                <h1 class="text-2xl font-semibold text-secondary-500 leading-tight md:text-4xl">Sólo unos datos más y
+                <h1 class="text-2xl font-semibold leading-tight text-secondary-500 md:text-4xl">Sólo unos datos más y
                     terminamos...</h1>
 
                 <form class="mt-8" action="#" method="POST">
 
                     <div class="my-6">
-                        <p class=" font-medium text-secondary-400 text-center">Añadir una foto de peril</p>
+                        <p class="font-medium text-center  text-secondary-400">Añadir una foto de peril</p>
 
                         <div class="grid my-5 place-items-center">
                             <div
-                                class="relative flex items-center justify-center w-40 bg-gray-100 border-2 border-gray-300 rounded-full h-40">
-                                <div class="w-10 h-10 bg-primary-500 rounded-full absolute z-30 bottom-0 right-0 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                class="relative flex items-center justify-center w-40 h-40 bg-gray-100 border-2 border-gray-300 rounded-full">
+                                <div class="absolute bottom-0 right-0 z-30 flex items-center justify-center w-10 h-10 rounded-full bg-primary-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
 
-                    <h2 class="text-secondary-400 font-medium text-lg pb-1">Datos personales</h2>
+                    <h2 class="pb-1 text-lg font-medium text-secondary-400">Datos personales</h2>
 
                     <div class="mt-4">
                         <label class="block text-sm text-gray-600">Nombre de usuario/a</label>
@@ -180,7 +180,7 @@
                         class="btn-login">Crear cuenta</button> -->
 
                     <!-- Tag a solo para fines demostrativos -->
-                    <a href="./index.html" class="btn-login mt-10 mb-5">Crear cuenta</a>
+                    <a href="./index.html" class="mt-10 mb-5 btn-login">Crear cuenta</a>
                 </form>
 
 

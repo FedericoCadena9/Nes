@@ -12,21 +12,21 @@
 
 <body class="bg-background font-body">
 
-    <section class="flex flex-col h-auto md:flex-row">
+    <section class="flex flex-col h-auto md:min-h-screen md:flex-row">
 
         <div class="hidden w-full md:block md:w-1/2 xl:w-2/3">
             <img src="https://vihnoestamossolos.net/background-3.jpg" alt="Nes Login" class="object-cover w-full min-h-full">
         </div>
 
         <div
-            class="flex justify-center w-full top-0 p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
+            class="top-0 flex justify-center w-full p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
 
             <div class="w-full">
 
                 <!-- Nes Logo -->
                 <div class="flex justify-center py-10 mx-4 lg:mx-0">
                     <a href="index.html">
-                        <img class="w-auto md:h-10 h-8" src="./img/NesLogo.svg" alt="Nes Logo">
+                        <img class="w-auto h-8 md:h-10" src="./img/NesLogo.svg" alt="Nes Logo">
                     </a>
                 </div>
 
@@ -77,7 +77,7 @@
                 <form class="mt-6" action="#" method="POST">
                     <div>
                         <label class="block text-sm text-gray-600">Correo Electrónico</label>
-                        <input type="email" name="" id="" placeholder="Correo Electrónico"
+                        <input type="email" name="email" id="" placeholder="Correo Electrónico"
                             class="input"
                             autofocus autocomplete required>
                     </div>
@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="mt-2 text-right">
-                        <a href="#"
+                        <a href="./olvide-mi-contrasena.html"
                             class="text-sm underline text-primary-500 hover:text-primary-600 focus:text-primary-600">Olvidé
                             mi contraseña</a>
                     </div>
@@ -106,7 +106,7 @@
                 </form>
 
                 <p class="mt-8 text-sm font-medium">¿Aún no te registras? <a href="./registro.html"
-                        class="text-primary-500 hover:text-primary-600 underline">Crea una cuenta</a></p>
+                        class="underline text-primary-500 hover:text-primary-600">Crea una cuenta</a></p>
             </div>
         </div>
     </section>

@@ -12,31 +12,31 @@
 
 <body class="bg-background font-body">
 
-    <section class="flex flex-col h-auto md:flex-row">
+    <section class="flex flex-col h-auto md:min-h-screen md:flex-row">
 
         <div
-            class="flex justify-center w-full top-0 p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 lg:px-16 xl:px-12">
+            class="top-0 flex justify-center w-full p-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 lg:px-16 xl:px-12">
 
             <div class="w-full">
 
                 <!-- Nes Logo -->
                 <div class="flex justify-center py-10 mx-4 lg:mx-0">
                     <a href="index.html">
-                        <img class="w-auto md:h-10 h-8" src="./img/NesLogo.svg" alt="Nes Logo">
+                        <img class="w-auto h-8 md:h-10" src="./img/NesLogo.svg" alt="Nes Logo">
                     </a>
                 </div>
 
-                <h1 class="text-2xl font-semibold text-secondary-500 leading-tight md:text-4xl">¡Hola! <br> Registrate
+                <h1 class="text-2xl font-semibold leading-tight text-secondary-500 md:text-4xl">¡Hola! <br> Registrate
                     para comenzar</h1>
 
                 <p class="mt-4 text-sm font-medium">¿Ya tienes una cuenta? <a href="./index.html"
-                        class="text-primary-500 hover:text-primary-600 underline">Inicia sesión</a></p>
+                        class="underline text-primary-500 hover:text-primary-600">Inicia sesión</a></p>
 
                 <form class="mt-8" action="#" method="POST">
-                    <h2 class="text-secondary-400 font-medium text-lg pb-6">Datos de Acceso</h2>
+                    <h2 class="pb-6 text-lg font-medium text-secondary-400">Datos de Acceso</h2>
                     <div>
                         <label class="block text-sm text-gray-600">Correo Electrónico</label>
-                        <input type="email" name="" id="" placeholder="Correo Electrónico" class="input" autofocus
+                        <input type="email" name="email" id="" placeholder="Correo Electrónico" class="input" autofocus
                             autocomplete required>
                     </div>
 
@@ -52,11 +52,11 @@
                             required>
                     </div>
 
-                    <div class="flex flex-col items-start justify-between sm:items-center sm:flex-row py-5">
+                    <div class="flex flex-col items-start justify-between py-5 sm:items-center sm:flex-row">
                         <label class="flex items-center">
-                            <input type="checkbox" class="text-primary-500 rounded" />
+                            <input type="checkbox" class="rounded text-primary-500" />
                         </label>
-                        <p class="block ml-2 text-xtin font-medium text-gray-400">Para continuar debes aceptar los <a href="" class="text-primary-500 underline">términos de uso</a> y la <a href="" class="text-primary-500 underline">política
+                        <p class="block ml-2 font-medium text-gray-400 text-xtin">Para continuar debes aceptar los <a href="" class="underline text-primary-500">términos de uso</a> y la <a href="" class="underline text-primary-500">política
                             de privacidad</a> de nes+.  Además el usuario/a declara que es
                             mayor de edad al momento de registrarse en función a la ley
                             aplicable.
