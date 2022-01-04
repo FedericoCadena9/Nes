@@ -58,4 +58,24 @@ function chat() {
 			},
 		]
     };
-}
+};
+
+let userList = document.getElementById('userList');
+let chatMsg = document.getElementById('chatMsg');
+let chatPerfil = document.getElementById('chatPerfil');
+
+
+document.querySelector('.chatBtn').addEventListener('click', ()=> {
+	chatMsg.classList.remove('hidden');
+	userList.classList.add('hidden');
+})
+
+document.getElementById('btnRegresar').addEventListener('click', ()=> {
+	chatMsg.classList.add('hidden');
+	userList.classList.remove('hidden');
+})
+
+document.getElementById('btnPerfil').addEventListener('click', ()=> {
+	chatMsg.classList.add('hidden');
+	chatPerfil.classList.remove('hidden');
+})
