@@ -2,6 +2,11 @@
   display: none !important;
 }
 
+input[type="checkbox"]:checked{
+  background-color: #F92E4B;
+  color: #F92E4B;
+}
+
 /* Animación Nes Pro */
 .jello-horizontal:hover {
   -webkit-animation: jello-horizontal 0.9s both;
