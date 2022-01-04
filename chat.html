@@ -496,7 +496,7 @@
     </div>
 
     <!-- Lista de Uusarios div -->
-    <div class="flex-col w-full max-h-screen pt-20 md:flex md:w-64" id="userList">
+    <div class="flex-col w-full max-h-screen pt-20 pb-20 overflow-y-auto md:pb-0 md:flex md:w-64" id="userList">
         <!-- Titulo -->
         <div class="flex items-center px-6 space-x-3 MD:py-3">
             <h1 class="text-4xl font-semibold md:text-3xl text-secondary-500">Chats</h1>
@@ -534,7 +534,7 @@
         </div>
 
         <!-- Lista de Usuarios -->
-        <div class="pt-4 overflow-y-auto chatBtn">
+        <div class="pt-4 md:overflow-y-auto chatBtn">
             <template x-for="(user, index) in users" :key="index">
                 <div class="flex items-center px-6 py-5 border-b border-gray-300 cursor-pointer hover:bg-gray-100 ">
                     <div class="relative">
@@ -563,12 +563,15 @@
     <div class="flex flex-1 hidden max-h-screen pt-20 text-gray-800 md:pb-0 md:flex-col md:flex bg-background-2" id="chatMsg">
         <div class="flex flex-col flex-1">
             <div class="fixed flex items-center w-full p-3 -mt-3 bg-white border-b md:block">
+                <!-- Boton regresar -->
                 <div class="cursor-pointer md:hidden" id="btnRegresar">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                 </div>
-                <div class="flex items-center py-1 mx-4">
+
+                <!-- Nombre usuario -->
+                <div class="flex items-center py-1 mx-4 grow">
                     <div class="relative w-10 h-10">
                         <div>
                             <img src="https://i.pravatar.cc/300?img=51" class="object-cover w-full h-full rounded-full">
@@ -579,7 +582,9 @@
                     </div>
                     <h1 class="pl-4 mb-1 text-xl font-bold md:text-2xl text-secondary-500"> Zack Webster</h1>
                 </div>
-                <div class="cursor-pointer md:hidden" id="btnPerfil">
+
+                <!-- Boton perfil -->
+                <div class="mx-2 cursor-pointer md:hidden" id="btnPerfil">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -657,6 +662,13 @@
 
     <!-- Perfil div -->
     <div class="flex-col hidden w-full max-h-screen p-6 pt-20 pb-20 overflow-y-auto md:pb-8 md:flex md:w-72" id="chatPerfil">
+        <!-- Boton regresar -->
+        <div class="cursor-pointer md:hidden" id="btnRegresar1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+        </div>
+        
         <!-- Perfil img -->
         <div class="flex items-center justify-center my-4">
             <div class="relative w-3/4 h-3/4">

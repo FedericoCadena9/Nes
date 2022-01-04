@@ -79,3 +79,8 @@ document.getElementById('btnPerfil').addEventListener('click', ()=> {
 	chatMsg.classList.add('hidden');
 	chatPerfil.classList.remove('hidden');
 })
+
+document.getElementById('btnRegresar1').addEventListener('click', ()=> {
+	chatMsg.classList.remove('hidden');
+	chatPerfil.classList.add('hidden');
+})
