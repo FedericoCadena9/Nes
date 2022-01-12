@@ -703,21 +703,21 @@
             </div>
         </div>
 
-        <div class="px-6 pt-10">
+        <div class="px-6">
             <!-- Perfil img -->
             <div class="flex items-center justify-center">
                 <div class="relative h-3/4">
-                    <div>
-                        <img src="https://i.pravatar.cc/300?img=51" class="object-cover w-full h-full rounded-lg">
-                    </div>
+                    <a class="mx-5" href="">
+                        <img src="https://i.pravatar.cc/300?img=51" class="object-cover w-full h-full duration-200 ease-out rounded-lg hover:ring-4 hover:ring-red-200">
+                    </a>
                 </div>
             </div>
 
             <!-- Perfil header -->
-            <div class="py-3 text-center">
-                <div class="flex justify-center text-lg font-semibold text-secondary-500">
-                    <p>Zack Webster</p>
-                </div>
+            <div class="pb-3 text-center">
+                <a href="" class="flex justify-center text-lg font-semibold text-secondary-500 hover:underline">
+                    <span>Zack Webster</span>
+                </a>
                 <div class="relative flex items-center justify-center text-xs text-gray-500">
                     <div class="w-3.5 h-3.5 mr-1 bg-green-500 border-2 border-gray-100 rounded-full"></div>
                     <p>Activo(a)</p>
@@ -755,22 +755,33 @@
             </div>
 
             <!-- Botones -->
-            <div class="py-8 space-y-4">
-                <button
-                    class="flex items-center justify-center text-sm text-red-600 border border-red-200 btn hover:text-white hover:bg-red-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                      </svg>
-                    <span>Bloquear</span>
-                </button>
-                <button
-                    class="flex items-center justify-center border border-stone-200 btn text-secondary-500 hover:text-white hover:bg-secondary-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                      </svg>
-                      <span>Denunciar</span>
-                </button>
-            </div> 
+            <div class="pt-8">
+                <div class="pb-3">
+                    <button
+                        class="flex items-center justify-center px-1 text-xs text-white btn bg-primary-500 hover:bg-primary-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                        </svg>
+                        <span>Añadir amigo</span>
+                    </button>
+                </div>
+                <div class="flex space-x-3">
+                    <button x-cloak x-data="{isHover: false}" @mouseover="isHover = !isHover" @mouseout="isHover = !isHover"
+                        class="flex items-center justify-center px-1 text-xs text-red-600 border border-red-200 btn hover:text-white hover:bg-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                          </svg>
+                        <span class="duration-200 ease-in-out md:inline-block" :class="isHover ? 'inline-block' : 'hidden'">Bloquear</span>
+                    </button>
+                    <button x-cloak x-data="{isHover: false}" @mouseover="isHover = !isHover" @mouseout="isHover = !isHover"
+                        class="flex items-center justify-center px-1 text-xs border border-stone-200 btn text-secondary-500 hover:text-white hover:bg-secondary-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                          </svg>
+                          <span class="duration-200 ease-in-out md:inline-block" :class="isHover ? 'inline-block' : 'hidden'">Denunciar</span>
+                    </button>
+                </div> 
+            </div>
         </div>
     </div>
 
