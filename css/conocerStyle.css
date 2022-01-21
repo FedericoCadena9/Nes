@@ -1,0 +1,222 @@
+/* Background del Range Distancia */
+#distancia {
+  background: linear-gradient(
+    to right,
+    #f92e4b 0%,
+    #f92e4b 10%,
+    #f3f4f6 10%,
+    #f3f4f6 100%
+  );
+}
+
+/* Estilos generales input Rango Edad */
+.input-range input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  margin: 0;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+/* Estilos Chrome */
+input[type="range"]::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #f92e4b;
+  pointer-events: auto;
+  -webkit-appearance: none;
+}
+
+/* Estilos Firefox */
+
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #f92e4b;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  border: none;
+}
+
+/* Estilos IE */
+
+input[type="range"]::-ms-thumb {
+  border: 0 none;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #f92e4b;
+  pointer-events: auto;
+  -webkit-appearance: none;
+}
+
+/* Estilo de la barra interna del Rango Edad*/
+.slider > .range {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  right: 25%;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: #f92e4b;
+}
+
+
+/* Animación Me Gusta */
+.heartbeat:hover {
+  -webkit-animation: heartbeat 1.5s ease-in-out both;
+  animation: heartbeat 1.5s ease-in-out both;
+}
+
+/* Keyframes Animación Me gusta */
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+/* Animación Hover Bloqueado - 1 */
+.group:hover .group-hover\:rotate-scale-up {
+	-webkit-animation: rotate-scale-up 0.65s linear both;
+	animation: rotate-scale-up 0.65s linear both;
+}
+
+/* Keyframes Animación Hover Bloqueado - 1 */
+ @-webkit-keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+@keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+/* Animación Hover Bloqueado - 2 */
+.rotate-scale-up .flip-2-hor-top-1:hover {
+	-webkit-animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+/* Keyframes Animación Hover Bloqueado - 2 */
+ @-webkit-keyframes flip-2-hor-top-1 {
+  0% {
+    -webkit-transform: translateY(0) rotateX(0);
+            transform: translateY(0) rotateX(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  100% {
+    -webkit-transform: translateY(-100%) rotateX(-180deg);
+            transform: translateY(-100%) rotateX(-180deg);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+}
+@keyframes flip-2-hor-top-1 {
+  0% {
+    -webkit-transform: translateY(0) rotateX(0);
+            transform: translateY(0) rotateX(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  100% {
+    -webkit-transform: translateY(-100%) rotateX(-180deg);
+            transform: translateY(-100%) rotateX(-180deg);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+}
+
+

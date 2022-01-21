@@ -5,15 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Evento</title>
+    <title>Conocer</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- Estilos de Datepicker -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <!-- Estilos de Carrusel -->
-    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
-    <!-- Estilos para cortar la imagen -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css'>
+    <link rel="stylesheet" href="./css/conocerStyle.css">
 </head>
 
 <body class="bg-background font-body">
@@ -508,247 +503,325 @@
         </div>
     </div>
 
-    <div class="flex justify-center pt-20">
-        <div class="flex flex-col w-full p-8 mx-8 mt-8 bg-white rounded-lg md:grid md:grid-cols-2">
-            <div>
-                <!-- Botón Atras -->
-                <div>
-                    <button onclick="history.back()"
-                        class="flex items-center text-gray-500 transition duration-200 ease-in-out hover:text-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
-                        </svg>
-                        <span class="px-2">Atrás</span>
-                    </button>
-                </div>
+    <!-- Content Perfil -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 px-4 md:px-6 py-24 gap-6">
+        <div class="bg-white md:px-6 px-4 py-6 lg:col-span-12 rounded-xl order-1">
 
-                <div class="px-6 py-3 ">
-                    <p class="text-4xl font-semibold text-secondary-500">Crear Evento</p>
-                    <p class="text-gray-500">En pocos pasos podrás crear tu evento y conocer un montón de nuevos amigos.
-                    </p>
-                </div>
-
-                <div class="flex-1 space-y-3 md:overflow-y-auto md:px-6 md:min-h-full">
-                    <!-- Titulo -->
-                    <div class="flex flex-col w-full">
-                        <p class="py-2 text-xl font-semibold text-gray-700">Titulo del Evento</p>
-                        <input type="text" name="Titulo" placeholder="Titulo del evento" id="title"
-                            class="px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400" />
-                    </div>
-
-                    <!-- Tipo Evento -->
-                    <div class="flex flex-col">
-                        <p class="block py-2 mb-1 text-xl font-semibold text-gray-700">Tipo de evento</p>
-                        <div class="relative">
-                            <div class="relative">
-                                <div class="w-full mb-3">
-                                    <select id="type"
-                                        class="w-full px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-transparent border-gray-300 rounded-md appearance-none focus:outline-none focus:ring-primary-400 form-select focus:border-gray-500 focus:bg-white focus:ring-2">
-                                        <option disabled selected value> -- Selecciona una opción -- </option>
-                                        <option value="1">Presencial</option>
-                                        <option value="2">En linea</option>
-                                        <option value="3">Sin especificar</option>
-                                    </select>
-                                </div>
-                            </div>
+            <!-- Imagen de Portada -->
+            <div class="inline w-full h-20 md:h-40">
+                <div class="relative">
+                    <img class="object-cover w-full rounded-lg md:h-60 h-32"
+                        src="https://images.unsplash.com/photo-1642616761188-999cda84e89a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                        alt="Foto de Portada Perfil">
+                    <div class="absolute top-0 w-full p-4 md:p-6">
+                        <div class="flex justify-between">
+                            <button onclick="history.back()"
+                                class="flex items-center justify-center w-8 h-8 bg-white rounded-full md:w-10 md:h-10 hover:bg-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-secondary-500 md:h-4 md:w-4"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Clasificación Evento -->
-
-                    <div class="flex flex-col">
-                        <p class="block py-2 mb-1 text-xl font-semibold text-gray-700">Clasificación del evento</p>
-                        <div class="relative">
-                            <div class="relative">
-                                <div class="w-full mb-3">
-                                    <select id="clasification"
-                                        class="w-full px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-transparent border-gray-300 rounded-md appearance-none focus:outline-none focus:ring-primary-400 form-select focus:border-gray-500 focus:bg-white focus:ring-2">
-                                        <option disabled selected value> -- Selecciona una opción -- </option>
-                                        <option value="1">Vida urbana</option>
-                                        <option value="2">Cultural</option>
-                                        <option value="3">Deportes</option>
-                                        <option value="4">Social</option>
-                                        <option value="5">Música</option>
-                                        <option value="6">Cumpleaños</option>
-                                        <option value="7">Otros</option>
-                                        <option value="8">Adultos</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fechas y Horas -->
-                    <div class="flex flex-col">
-                        <p class="py-2 text-xl font-semibold text-gray-700">Fecha y Hora</p>
-                        <input
-                            class="min-w-full px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400"
-                            type="text" name="datetimes" />
-                    </div>
-
-                    <!-- Lugar del evento -->
-                    <div class="flex flex-col">
-                        <p class="py-2 text-xl font-semibold text-gray-700">Lugar del evento </p>
-                        <input type="text" name="Lugar" placeholder="Lugar del evento" id="place"
-                            class="px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400" />
-                    </div>
-
-                    <!-- Usuarios -->
+            <div class="relative flex justify-center">
+                <div class="absolute lg:-top-16 -top-11">
+                    <!-- Imagen de Perfil -->
+                    <img class="sm:w-32 mx-auto sm:h-32 h-20 w-20 rounded-full border-4 border-white"
+                        src="https://i.pravatar.cc/400?img=24" alt="Foto de Perfil">
                     <div>
-                        <div class="">
-                            <div class="inline-block w-full ">
-                                <label class="block py-2 mb-1 text-xl font-semibold text-gray-700">Usuarios</label>
-                                <div class="relative w-full">
-                                    <input id="users"
-                                        class="w-full px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400"
-                                        name="Usuarios" type="number" placeholder="30">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Descripcion del evento -->
-                    <div class="flex flex-col">
-                        <p class="py-2 text-xl font-semibold text-gray-700">Describe tu Evento</p>
-                        <textarea name="Descripcion" type="text" id="description"
-                            placeholder="Añade información importante de tu evento..."
-                            class="px-4 py-2 font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400"
-                            cols="30" rows="5"></textarea>
-
+                        <!-- Nombre y Edad -->
+                        <h1 class="text-secondary-500 font-bold text-xl sm:text-3xl text-center"><span>Jennifer Medina</span>, <span>27</span>
+                        </h1>
+                        <p class="font-medium text-gray-400 text-xs text-center"><span>Paris</span>,
+                            <span>Francia</span>
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Input para subir foto de portada -->
-            <div class="pt-5 md:pt-0">
-                <p class="text-2xl font-semibold text-gray-700">Subir nueva foto de portada</p>
+            <div>
+                <div>
+                    <div class="flex my-5 space-x-2 lg:justify-end pt-20 sm:pt-32 md:pt-36 lg:pt-0">
+                        <!-- Botón Agregar amigo -->
+                        <button
+                            class="rounded-lg flex items-center justify-center btn bg-primary-500 text-white hover:bg-primary-600 lg:w-52">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                            </svg>
+                            <span>Agregar</span>
+                        </button>
 
-                <div class="grid my-5 place-items-center">
-                    <div
-                        class="relative flex items-center justify-center w-full bg-white border-2 border-gray-200 border-dashed rounded-lg h-60 md:w-96 md:h-96">
-                        <div id="preview-crop-image" class="absolute w-full h-auto"></div>
-                        <div class="absolute" id="divContainer">
-                            <div class="flex flex-col items-center ">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-400" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                        <!-- Botón Chat -->
+                        <button
+                            class="bg-gray-200 rounded-lg text-gray-600 py-2.5 md:py-3 w-16 lg:w-12 hover:bg-gray-300 hover:text-gray-700 duration-200 ease-out">
+                            <span class="flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <!-- Botón Opciones -->
+                        <button
+                            class="bg-gray-200 rounded-lg text-gray-600 py-2.5 md:py-3 w-16 lg:w-12 hover:bg-gray-300 hover:text-gray-700 duration-200 ease-out">
+                            <span class="flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                                 </svg>
-                                <span class="block font-normal text-gray-400">Adjunta tu imagen aquí</span> <span
-                                    class="block font-normal text-gray-400">o</span> <span
-                                    class="block font-normal text-blue-500 cursor-pointer">Busca en tus archivos</span>
-                            </div>
-                        </div>
-                        <input type="file" id="image" accept="image/png, image/jpeg"
-                            class="w-full h-full opacity-0 hover:cursor-pointer" name="">
+                            </span>
+                        </button>
                     </div>
+                    <div class="flex space-x-2 lg:justify-end">
 
-                    <div class="flex items-center justify-center">
-                        <div class="hidden pb-3 mt-3 text-center" id="btnCrop">
-                            <button id="btnUpload"
-                                class="text-white btn bg-secondary-500 hover:bg-secondary-400">Recortar imagen</button>
-                        </div>
-                        <div class="hidden pb-3 mt-3 text-center" id="btnBorrar">
-                            <button id="btnDelete"
-                                class="text-white btn bg-primary-500 hover:bg-primary-600">Borrar</button>
-                        </div>
-                    </div>
+                        <!-- Botón Me gusta -->
+                        <button
+                            class="bg-gray-100 text-xs w-full lg:w-auto text-gray-600 hover:bg-gray-200 hover:text-gray-700 duration-200 ease-out font-semibold px-3 py-2 sm:py-4 lg:py-2 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span>Me gusta</span>
+                        </button>
 
-                    <div class="hidden" id="divHid">
-                        <div class="relative flex items-center justify-center">
-                            <div class="w-full">
-                                <div class="p-3">
-                                    <div>
-                                        <div id="uploadImg"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Botón Favorito -->
+                        <button
+                            class="bg-gray-100 text-xs w-full lg:w-auto opacity-50 text-gray-600 hover:bg-gray-200 hover:text-gray-700 duration-200 ease-out font-semibold px-3 py-2 sm:py-4 lg:py-2 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                            <span>Favoritos</span>
+                        </button>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Imagenes carrusel -->
-                <div class="px-8">
-                    <p class="text-lg font-semibold text-gray-700">O elige una de las que tenemos para ti</p>
-                    <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-                            loop: true,
-                            slidesPerView: 2,
-                            spaceBetween: 0,
-                            
-                            })" class="relative flex flex-row ">
-                        <div class="absolute inset-y-0 left-0 z-10 flex items-center">
-                            <button @click="swiper.slidePrev()"
-                                class="flex items-center justify-center w-10 h-10 -ml-2 bg-white rounded-full shadow lg:-ml-4 focus:outline-none">
-                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 chevron-left">
-                                    <path fill-rule="evenodd"
-                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                        </div>
+        <div class="lg:col-span-8 order-3 lg:order-2">
 
-                        <div class="swiper-container" x-ref="container">
-                            <div class="swiper-wrapper">
-
-                                <div class="p-4 cursor-pointer swiper-slide">
-                                    <div class="flex flex-col overflow-hidden rounded shadow">
-                                        <div class="flex-shrink-0">
-                                            <img class="object-cover w-full h-48" id="imgCarrusel1"
-                                                src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-                                                alt="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="p-4 cursor-pointer swiper-slide">
-                                    <div class="flex flex-col overflow-hidden rounded shadow">
-                                        <div class="flex-shrink-0">
-                                            <img class="object-cover w-full h-48" id="imgCarrusel2"
-                                                src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                                                alt="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="p-4 cursor-pointer swiper-slide">
-                                    <div class="flex flex-col overflow-hidden rounded shadow">
-                                        <div class="flex-shrink-0">
-                                            <img class="object-cover w-full h-48" id="imgCarrusel3"
-                                                src="https://images.unsplash.com/photo-1598946423291-ce029c687a42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                                                alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="absolute inset-y-0 right-0 z-10 flex items-center">
-                            <button @click="swiper.slideNext()"
-                                class="flex items-center justify-center w-10 h-10 -mr-2 bg-white rounded-full shadow lg:-mr-4 focus:outline-none">
-                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 chevron-right">
-                                    <path fill-rule="evenodd"
-                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                        </div>
+            <!-- Links Internos Perfil -->
+            <div class="bg-white rounded-xl">
+                <div class="flex items-center h-14 lg:h-auto">
+                    <div class="flex justify-between items-center h-14 lg:h-auto w-full mx-4 md:mx-10 overflow-x-auto break-words max-w-full whitespace-nowrap">
+                        <button
+                            class="h-10 px-2 py-2  text-center text-primary-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
+                            <span class="mx-1 text-sm font-semibold "> Momentos </span>
+                            <div class="h-1 w-full bg-primary-500 rounded-t-lg lg:mt-1 mt-3"></div>
+                        </button>
+                        <button
+                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
+                            <span class="mx-1 text-sm font-semibold "> Amigos </span>
+                        </button>
+                        <button
+                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
+                            <span class="mx-1 text-sm font-semibold "> Fotos </span>
+                        </button>
+                        <button
+                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
+                            <span class="mx-1 text-sm font-semibold "> Eventos </span>
+                        </button>
+                        <button
+                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
+                            <span class="mx-1 text-sm font-semibold "> Viajes </span>
+                        </button>
                     </div>
                 </div>
             </div>
 
+            <!-- Contenido -->
+            <div class="mt-10 space-y-10">
+
+                <!-- Post Momentos -->
+                <div class="flex flex-col p-6 space-y-4 overflow-hidden bg-white rounded-xl  shadow-md text-gray-800">
+                    <div class="flex justify-between">
+                        <div class="flex space-x-4">
+                            <img alt="" src="https://i.pravatar.cc/400?img=24"
+                                class="object-cover w-12 h-12 rounded-full shadow bg-gray-500">
+                            <div class="flex flex-col">
+
+                                <!-- Nombre y link al perfil -->
+                                <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer Medina</a>
+
+                                <!-- Tiempo -->
+                                <div class="flex text-gray-600 items-center justify-center">
+                                    <span class="text-xs">Hace 1 semana</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opciones -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div>
+
+                        <!-- Texto post -->
+                        <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                            necessitatibus?</p>
+
+                        <!-- Imagen post -->
+                        <img src="https://picsum.photos/536/354" alt=""
+                            class="object-cover rounded-xl w-full my-4 h-72 bg-gray-500">
+                    </div>
+
+                    <div class="flex flex-wrap justify-between">
+
+                        <!-- Botón Comentar -->
+                        <button class="p-2 flex justify-center items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Comentar</span>
+                        </button>
+
+                        <!-- Botón Compartir -->
+                        <button class="p-2 flex justify-center items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                            </svg>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post Momentos -->
+                <div class="flex flex-col p-6 space-y-4 overflow-hidden bg-white rounded-xl  shadow-md text-gray-800">
+                    <div class="flex justify-between">
+                        <div class="flex space-x-4">
+                            <img alt="" src="https://i.pravatar.cc/400?img=24"
+                                class="object-cover w-12 h-12 rounded-full shadow bg-gray-500">
+                            <div class="flex flex-col">
+
+                                <!-- Nombre y link al perfil -->
+                                <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer Medina</a>
+
+                                <!-- Tiempo -->
+                                <div class="flex text-gray-600 items-center justify-center">
+                                    <span class="text-xs">Hace 1 semana</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opciones -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div>
+
+                        <!-- Texto post -->
+                        <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                            necessitatibus?</p>
+
+                        <!-- Imagen post -->
+                        <img src="https://picsum.photos/536/354" alt=""
+                            class="object-cover rounded-xl w-full my-4 h-72 bg-gray-500">
+                    </div>
+
+                    <div class="flex flex-wrap justify-between">
+
+                        <!-- Botón Comentar -->
+                        <button class="p-2 flex justify-center items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Comentar</span>
+                        </button>
+
+                        <!-- Botón Compartir -->
+                        <button class="p-2 flex justify-center items-center text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                            </svg>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-4 order-2 lg:order-3">
+            <div class="bg-white rounded-xl pt-1 pb-4">
+
+                <!-- Acerca de Información -->
+                <div class="h-10 py-2 text-gray-600 px-6">
+                    <h2 class="mx-1 md:text-sm text-lg font-semibold "> Acerca de </h2>
+                </div>
+                <div class="space-y-5 mt-6 px-6">
+                    <div>
+                        <h3 class="font-semibold text-secondary-400">Género</h3>
+                        <p class="text-sm font-medium text-gray-500">Transexual</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-secondary-400">Orientación Sexual</h3>
+                        <p class="text-sm font-medium text-gray-500">Lesbiana</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-secondary-400">Estado Sentimental</h3>
+                        <p class="text-sm font-medium text-gray-500">Viduo</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-secondary-400">Cumpleaños</h3>
+                        <p class="text-sm font-medium text-gray-500">24, Jun, 1961</p>
+                    </div>
+                </div>
+
+                <!-- Ver más -->
+                <div class="px-6 pt-14">
+                    <p class="text-gray-500 text-xs text-center font-medium">Para ver toda la información de esta
+                        persona, primero tienen que ser amigos.</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Botones -->
-    <div class="px-8 mx-8 mb-10 space-y-5 bg-white py-7 md:flex md:space-x-4 md:space-y-0 ">
-        <button type="button"
-            class="border btn border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white">Guardar</button>
-        <button type="button" class="text-gray-100 btn bg-primary-500 hover:bg-primary-600">Crear
-            Evento</button>
     </div>
-
 
     <!-- Footer -->
     <footer class="relative z-20 px-6 pt-10 sm:max-w-xl md:max-w-full md:px-20 bg-slate-100">
@@ -847,50 +920,9 @@
 
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js'></script>
 
     <!-- Mis Scripts -->
-    <script src="js/cropImage.js"></script>
     <script src="js/notification.js"></script>
-
-    <script>
-        $(function () {
-            $('input[name="datetimes"]').daterangepicker({
-                timePicker: true,
-                startDate: moment().startOf('hour'),
-                endDate: moment().startOf('hour').add(32, 'hour'),
-                locale: {
-                    format: 'M/DD hh:mm A'
-                }
-            });
-        });
-    </script>
-
-<!-- <script>
-    $(function() {
-      $('input[name="datetimes"]').daterangepicker({
-        timePicker: true,
-        startDate: moment().startOf('hour'),
-        endDate: moment().startOf('hour').add(32, 'hour'),
-        locale: {
-          format: 'YYYY-MM-DD hh:mm A'
-        }
-      });
-    });
-
-    $('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
-    console.log(picker.startDate.format('YYYY-MM-DD'));
-    console.log(picker.endDate.format('YYYY-MM-DD'));
-    console.log(picker.startDate.format('hh:mm A'));
-    console.log(picker.endDate.format('hh:mm A'));
-    });
-
-
-    </script> -->
 </body>
 
 </html>
