@@ -503,380 +503,383 @@
         </div>
     </div>
 
-    <!-- Hero -->
-    <div class="px-6 pt-24 lg:px-8">
-        <div class="flex justify-center">
-            <h1
-                class="text-base font-medium leading-none text-center text-secondary-500 md:text-4xl md:font-semibold md:inline-block">
-                ¿Buscas una conexión auténtica? Encuentra a tu <br>
-                <span class="text-primary-500 md:text-2xl md:font-medium">alma gemela cerca de ti.</span>
-            </h1>
-        </div>
+    <div x-data="{ openFilter: false }" x-cloak>
+        <!-- Hero -->
+        <div class="px-6 pt-24 md:pt-20 lg:px-8">
+            <div class="flex flex-col items-end justify-between pb-4 lg:flex-row md:pb-6 lg:items-center">
+                <h1
+                    class="text-base font-semibold leading-none text-center text-secondary-500 md:text-2xl md:inline-block">
+                    ¿Buscas una conexión auténtica? Encuentra a tu
+                    <span class="text-primary-500">alma gemela cerca de ti.</span>
+                </h1>
 
-        <!-- Filtros -->
-        <div class="pb-5 pt-7" x-data="{ openFilter: false }" x-cloak>
-            <div class="flex justify-end">
-                <div class="">
-                    <!-- Boton Filtro -->
-                    <button @click="openFilter = !openFilter"
-                        class="p-2 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-300 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-secondary-500"
-                            viewBox="0 0 54.064 49.121">
-                            <g id="Filter" transform="translate(-240 -452.491)">
-                                <path id="Trazado_6730" data-name="Trazado 6730" class="cls-1"
-                                    d="M584.812,189.727H565.346a2.317,2.317,0,1,1,0-4.634h19.466a2.317,2.317,0,1,1,0,4.634Z"
-                                    transform="translate(-322.939 304.758)" />
-                                <path id="Trazado_6731" data-name="Trazado 6731" class="cls-1"
-                                    d="M593.921,180.034H574.458a2.317,2.317,0,0,1,0-4.634h19.463a2.317,2.317,0,0,1,0,4.634Z"
-                                    transform="translate(-303.901 284.506)" />
-                                <path id="Trazado_6732" data-name="Trazado 6732" class="cls-1"
-                                    d="M572.617,177.634a4.931,4.931,0,1,0,4.983,4.934A4.964,4.964,0,0,0,572.617,177.634Zm0,14.5a9.565,9.565,0,1,1,9.617-9.562A9.6,9.6,0,0,1,572.617,192.129Z"
-                                    transform="translate(-323 279.491)" />
-                                <path id="Trazado_6733" data-name="Trazado 6733" class="cls-1"
-                                    d="M583.894,187.342a4.931,4.931,0,1,0,4.98,4.931A4.964,4.964,0,0,0,583.894,187.342Zm0,14.5a9.565,9.565,0,1,1,9.614-9.565A9.6,9.6,0,0,1,583.894,201.837Z"
-                                    transform="translate(-299.445 299.775)" />
-                            </g>
-                        </svg>
-                    </button>
+                <!-- Filtros -->
+                <div class="pt-2 sm:pt-0">
+                    <div class="flex justify-end">
+                        <div class="">
+                            <!-- Boton Filtro -->
+                            <button @click="openFilter = !openFilter"
+                                class="p-2 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-300 ">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-6 h-6 fill-current md:w-8 d:h-8 text-secondary-500"
+                                    viewBox="0 0 54.064 49.121">
+                                    <g id="Filter" transform="translate(-240 -452.491)">
+                                        <path id="Trazado_6730" data-name="Trazado 6730" class="cls-1"
+                                            d="M584.812,189.727H565.346a2.317,2.317,0,1,1,0-4.634h19.466a2.317,2.317,0,1,1,0,4.634Z"
+                                            transform="translate(-322.939 304.758)" />
+                                        <path id="Trazado_6731" data-name="Trazado 6731" class="cls-1"
+                                            d="M593.921,180.034H574.458a2.317,2.317,0,0,1,0-4.634h19.463a2.317,2.317,0,0,1,0,4.634Z"
+                                            transform="translate(-303.901 284.506)" />
+                                        <path id="Trazado_6732" data-name="Trazado 6732" class="cls-1"
+                                            d="M572.617,177.634a4.931,4.931,0,1,0,4.983,4.934A4.964,4.964,0,0,0,572.617,177.634Zm0,14.5a9.565,9.565,0,1,1,9.617-9.562A9.6,9.6,0,0,1,572.617,192.129Z"
+                                            transform="translate(-323 279.491)" />
+                                        <path id="Trazado_6733" data-name="Trazado 6733" class="cls-1"
+                                            d="M583.894,187.342a4.931,4.931,0,1,0,4.98,4.931A4.964,4.964,0,0,0,583.894,187.342Zm0,14.5a9.565,9.565,0,1,1,9.614-9.565A9.6,9.6,0,0,1,583.894,201.837Z"
+                                            transform="translate(-299.445 299.775)" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
+        </div>
 
-            <!-- Todos los filtros -->
-            <div class="px-5 pt-5 my-5 bg-white rounded-md" :class="{'' : openFilter, 'hidden' : !openFilter}">
-                <div class="flex items-center justify-between">
-                    <!-- Boton Cerrar -->
-                    <div @click="openFilter = !openFilter" class="cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="ml-2 text-xl font-semibold">Filtros</p>
-                    </div>
-                    <div>
-                        <p class="text-xs font-medium text-gray-400">Limpiar</p>
-                    </div>
-                </div>
+        <div class="flex flex-col sm:flex-row">
+            <!-- Conocer Cards -->
+            <div class="grid gap-5 mx-6 mb-6 "
+                :class="openFilter ? 'lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 xs:grid-cols-2'">
+                <template x-for="(user, index) in users" :key="index">
+                    <div class="transition duration-200 ease-in-out transform bg-white shadow-md rounded-xl hover:shadow-xl hover:scale-95"
+                        :class="user.mensaje ? 'border-4 border-primary-400' : ''">
 
-                <div>
-                    <div class="grid gap-4 mt-4 md:grid-cols-4">
+                        <div class="relative">
+                            <!--Bloqueado -->
+                            <div class="absolute z-10 w-full h-full" x-show="user.bloqueado">
+                                <div class="flex flex-col items-center justify-center w-auto h-5/6 group">
+                                    <div
+                                        class="group-hover:bg-white group-hover:text-primary-500 duration-300 ease-in-out group-hover:rotate-scale-up p-3.5 text-white rounded-full shadow-md bg-primary-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 group-hover:hidden"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
 
-                        <!-- Input Ubicación -->
-                        <div>
-                            <div class="opacity-50">
-                                <div class="flex items-center py-3">
-                                    <p class="font-medium text-secondary-500">Ubicación</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="w-5 h-5 mx-2 fill-current text-primary-500" width="12.371"
-                                        height="24.743" viewBox="0 0 12.371 24.743">
-                                        <path id="path" class="cls-1"
-                                            d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
-                                            transform="translate(-80.9 -592.6)" />
-                                    </svg>
-                                </div>
-                                <div class="relative w-full">
-                                    <div class="absolute flex items-center h-full ml-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary-500"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="hidden w-7 h-7 group-hover:inline-block" width="12.371"
+                                            height="24.743" fill="currentColor" viewBox="0 0 12.371 24.743">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                                transform="translate(-80.9 -592.6)" />
                                         </svg>
                                     </div>
 
-                                    <input id="inpDonde" disabled type="text" placeholder="Mi ubicación actual"
-                                        class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0">
+                                    <div>
+                                        <p
+                                            class="p-5 font-semibold text-center text-white duration-300 opacity-0 group-hover:opacity-100">
+                                            Hazte <span class="font-bold uppercase text-primary-500">Nes +
+                                                Pro</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="py-3">
-                                <p class="text-xs text-gray-800">Cambia a <a href="#"
-                                        class="font-semibold text-primary-500">NES+ PRO</a> para buscar a más gente en
-                                    una ciudad específica.
-                                </p>
-                            </div>
-                        </div>
 
-                        <!-- Range Distancia -->
-                        <div>
+                            <!-- Badge Nuevo -->
+                            <div class="absolute z-10 m-4" :class="user.bloqueado ? 'hidden' : ''" x-show="user.nuevo">
+                                <div class="px-2 py-1 font-semibold text-white rounded-md bg-primary-500">
+                                    <div class="flex items-center justify-center">
+                                        <span class="uppercase text-xxs">Nuevo</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Favorito -->
+                            <div class="absolute right-0 z-10 m-4" :class="user.bloqueado ? 'hidden' : ''"
+                                x-show="user.favorito">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-amber-400"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            </div>
+
+
+
                             <div>
-                                <div class="flex items-center justify-between py-3">
-                                    <p class="font-medium text-secondary-500">Distancia</p>
-                                    <div class="text-sm font-medium text-gray-500">
-                                        <span class="textDistancia">20</span> km
+                                <div class="relative ">
+
+                                    <!-- Boton Me gusta -->
+                                    <div class="absolute bottom-0 right-0 z-10 m-5" x-data="{like: false}" x-cloak
+                                        :class="user.bloqueado ? 'hidden' : ''">
+                                        <svg @click="like = !like" xmlns="http://www.w3.org/2000/svg"
+                                            class="cursor-pointer h-10 rounded-full shadow-md w-10 p-1.5 duration-200 ease-in-out"
+                                            :class="like ? 'bg-primary-500 text-white hover:text-white' : 'text-secondary-500 hover:text-primary-500  bg-white heartbeat'"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <a href="./perfil.html">
+
+                                        <!-- Sin Imagen -->
+                                        <div x-show="user.noImagen" :class="user.bloqueado ? 'backdrop-filter blur-sm brightness-50 bg-slate-700' : ''"
+                                            class="flex items-center justify-center w-full rounded-lg md:h-72 h-96 xs:h-52">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-32 text-slate-400"
+                                                viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+
+                                        <!-- Imagen -->
+                                        <div :class="{'hidden' : user.noImagen, 'backdrop-filter blur-sm brightness-50' : user.bloqueado}">
+                                            <img x-bind:src="user.img" alt="User image avatar"
+                                                class="object-cover object-center w-full rounded-lg md:h-72 h-96 xs:h-52">
+                                        </div>
+                                </div>
+                                <div class="p-2" :class="user.bloqueado ? 'backdrop-filter blur' : ''">
+
+                                    <div class="flex items-center">
+
+                                        <!-- Online / Offline -->
+                                        <div class="w-4 h-4 mr-3 border-2 border-gray-100 rounded-full"
+                                            :class="user.offline ? 'bg-gray-400' : 'bg-green-500'"></div>
+
+                                        <!-- Nombre y Edad -->
+                                        <div>
+                                            <p
+                                                class="block text-2xl font-semibold xs:text-xl sm:text-2xl text-secondary-500">
+                                                <span x-text="user.nombre"></span>, <span x-text="user.edad"></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="my-3 space-y-1">
+
+                                        <!-- Ciudad y pais -->
+                                        <div class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                            <p
+                                                class="px-3 text-sm font-medium xs:text-xs sm:text-sm text-secondary-400">
+                                                <span x-text="user.ciudad"></span>, <span x-text="user.pais"></span>
+                                            </p>
+                                        </div>
+
+                                        <!-- Distancia -->
+                                        <div class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="inline-block w-4 h-4 rotate-45 text-primary-500" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                            </svg>
+                                            <p
+                                                class="px-3 text-sm font-medium xs:text-xs sm:text-sm text-secondary-400">
+                                                A <span x-text="user.km"></span>km de
+                                                distancia
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="relative w-full">
-                                    <input id="distancia" type="range" min="1" max="200" value="20"
-                                        class="w-full h-1 bg-gray-100 rounded-full appearance-none">
-                                </div>
+                                </a>
+                                </di>
                             </div>
                         </div>
+                </template>
+            </div>
 
-                        <!-- Select Género -->
-                        <div>
-                            <div class="flex items-center py-3">
-                                <p class="font-medium text-secondary-500">Género</p>
-                            </div>
-                            <div class="relative">
-                                <div class="relative">
-                                    <div class="w-full mb-3">
-                                        <select id="selClasificacion"
-                                            class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md appearance-none form-select focus:border-gray-500 focus:bg-white focus:ring-2 ring-blue-600"
-                                            aria-label="Default select example">
-                                            <option disabled selected value> -- Selecciona una opción -- </option>
-                                            <option value="1">Hombres</option>
-                                            <option value="2">Mujeres</option>
-                                            <option value="3">Transexuales</option>
-                                            <option value="4">No binarios</option>
-                                            <option value="5">Todos</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Todos los filtros -->
+            <div class="order-first px-4 pb-6 sm:order-none sm:pb-0 sm:pr-6 sm:px-0"
+                :class="openFilter ? 'lg:w-2/6 md:w-96 w-full' : 'hidden' ">
+                <div class="px-5 pt-5 bg-white rounded-md">
+                    <div class="flex items-center justify-between">
+                        <!-- Boton Cerrar -->
+                        <div @click="openFilter = !openFilter" class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
                         </div>
-
-                        <!-- Select Orientación Sexual -->
                         <div>
-                            <div class="flex items-center py-3">
-                                <p class="font-medium text-secondary-500">Orientación Sexual</p>
-                            </div>
-                            <div class="relative">
-                                <div class="relative">
-                                    <div class="w-full mb-3">
-                                        <select id="selTipo"
-                                            class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md appearance-none form-select focus:border-gray-500 focus:bg-white focus:ring-2 ring-blue-600"
-                                            aria-label="Default select example">
-                                            <option disabled selected value> -- Selecciona una opción -- </option>
-                                            <option value="1">Heterosexual</option>
-                                            <option value="2">Lesbiana</option>
-                                            <option value="3">Gay</option>
-                                            <option value="4">Bisexual</option>
-                                            <option value="5">Todos</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="ml-2 text-xl font-semibold">Filtros</p>
                         </div>
-
-                        <!-- Range Edad -->
                         <div>
+                            <p class="text-xs font-medium text-gray-400">Limpiar</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+
+                            <!-- Input Ubicación -->
                             <div>
-                                <div class="flex items-center justify-between py-3 mb-3">
-                                    <p class="font-medium text-secondary-500">Edad</p>
-                                    <div class="text-sm font-medium text-gray-500">
-                                        <span class="textMinEdad"></span>
-                                        <span class="textMaxEdad"></span>
+                                <div class="opacity-50">
+                                    <div class="flex items-center py-3">
+                                        <p class="font-medium text-secondary-500">Ubicación</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="w-5 h-5 mx-2 fill-current text-primary-500" width="12.371"
+                                            height="24.743" viewBox="0 0 12.371 24.743">
+                                            <path id="path" class="cls-1"
+                                                d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                                transform="translate(-80.9 -592.6)" />
+                                        </svg>
+                                    </div>
+                                    <div class="relative w-full">
+                                        <div class="absolute flex items-center h-full ml-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary-500"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </div>
+
+                                        <input id="inpDonde" disabled type="text" placeholder="Mi ubicación actual"
+                                            class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md focus:border-gray-500 focus:bg-white focus:ring-0">
                                     </div>
                                 </div>
+                                <div class="py-3">
+                                    <p class="text-xs text-gray-800">Cambia a <a href="#"
+                                            class="font-semibold text-primary-500">NES+ PRO</a> para buscar a más
+                                        gente en
+                                        una ciudad específica.
+                                    </p>
+                                </div>
+                            </div>
 
-                                <!-- Range Slider -->
-                                <div class="relative w-full my-6">
-                                    <div class="input-range">
-                                        <input type="range" id="minEdad" min="18" step="0" max="98" value="18">
-                                        <input type="range" id="maxEdad" min="19" step="0" max="99" value="35">
+                            <!-- Range Distancia -->
+                            <div>
+                                <div>
+                                    <div class="flex items-center justify-between py-3">
+                                        <p class="font-medium text-secondary-500">Distancia</p>
+                                        <div class="text-sm font-medium text-gray-500">
+                                            <span class="textDistancia">20</span> km
+                                        </div>
+                                    </div>
+                                    <div class="relative w-full">
+                                        <input id="distancia" type="range" min="1" max="200" value="20"
+                                            class="w-full h-1 bg-gray-100 rounded-full appearance-none">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Select Género -->
+                            <div>
+                                <div class="flex items-center py-3">
+                                    <p class="font-medium text-secondary-500">Género</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="relative">
+                                        <div class="w-full mb-3">
+                                            <select id="selClasificacion"
+                                                class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md appearance-none form-select focus:border-gray-500 focus:bg-white focus:ring-2 ring-blue-600"
+                                                aria-label="Default select example">
+                                                <option disabled selected value> -- Selecciona una opción --
+                                                </option>
+                                                <option value="1">Hombres</option>
+                                                <option value="2">Mujeres</option>
+                                                <option value="3">Transexuales</option>
+                                                <option value="4">No binarios</option>
+                                                <option value="5">Todos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Select Orientación Sexual -->
+                            <div>
+                                <div class="flex items-center py-3">
+                                    <p class="font-medium text-secondary-500">Orientación Sexual</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="relative">
+                                        <div class="w-full mb-3">
+                                            <select id="selTipo"
+                                                class="w-full px-8 py-3 text-sm bg-gray-100 border-transparent rounded-md appearance-none form-select focus:border-gray-500 focus:bg-white focus:ring-2 ring-blue-600"
+                                                aria-label="Default select example">
+                                                <option disabled selected value> -- Selecciona una opción --
+                                                </option>
+                                                <option value="1">Heterosexual</option>
+                                                <option value="2">Lesbiana</option>
+                                                <option value="3">Gay</option>
+                                                <option value="4">Bisexual</option>
+                                                <option value="5">Todos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Range Edad -->
+                            <div>
+                                <div>
+                                    <div class="flex items-center justify-between py-3 mb-3">
+                                        <p class="font-medium text-secondary-500">Edad</p>
+                                        <div class="text-sm font-medium text-gray-500">
+                                            <span class="textMinEdad"></span>
+                                            <span class="textMaxEdad"></span>
+                                        </div>
                                     </div>
 
-                                    <div class="w-full h-1 bg-gray-100 rounded-full appearance-none slider">
-                                        <div class="track"></div>
-                                        <div class="range"></div>
+                                    <!-- Range Slider -->
+                                    <div class="relative w-full my-6">
+                                        <div class="input-range">
+                                            <input type="range" id="minEdad" min="18" step="0" max="98" value="18">
+                                            <input type="range" id="maxEdad" min="19" step="0" max="99" value="35">
+                                        </div>
+
+                                        <div class="w-full h-1 bg-gray-100 rounded-full appearance-none slider">
+                                            <div class="track"></div>
+                                            <div class="range"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Botones -->
-                <div class="items-center justify-end py-5 mt-2 space-y-5 md:flex md:space-x-5 md:space-y-0">
-                    <button id="btnAplicar" @click="openFilter = !openFilter"
-                        class="w-full px-4 py-2 text-sm font-medium text-white rounded-md md:w-auto bg-primary-500 hover:bg-primary-600">
-                        Aplicar
-                    </button>
+                    <!-- Botones -->
+                    <div class="items-center justify-end py-5 mt-2 space-y-5 md:flex md:space-x-5 md:space-y-0">
+                        <button id="btnAplicar" @click="openFilter = !openFilter"
+                            class="w-full px-4 py-2 text-sm font-medium text-white rounded-md md:w-auto bg-primary-500 hover:bg-primary-600">
+                            Aplicar
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Conocer Cards -->
-    <div class="grid gap-5 mx-6 mb-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 body">
-        <template x-for="(user, index) in users" :key="index">
-            <div class="transition duration-200 ease-in-out bg-white shadow-md rounded-xl hover:shadow-xl htransform hover:scale-95"
-                :class="user.mensaje ? 'border-4 border-primary-400' : ''">
-
-                <div class="relative">
-                    <!--Bloqueado -->
-                    <div class="absolute z-10 w-full h-full" x-show="user.bloqueado">
-                        <div class="flex flex-col items-center justify-center w-auto h-3/4 group">
-                            <div>
-                                <p
-                                    class="p-5 text-sm font-semibold text-center text-white duration-300 opacity-0 group-hover:opacity-100">
-                                    ¿No te pica la curiosidad de saber quien hay detrás?</p>
-                            </div>
-                            <div
-                                class="group-hover:bg-white group-hover:text-primary-500 duration-300 ease-in-out group-hover:rotate-scale-up p-3.5 text-white rounded-full shadow-md bg-primary-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 group-hover:hidden"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" class="hidden w-7 h-7 group-hover:inline-block" width="12.371" height="24.743" fill="currentColor"
-                                    viewBox="0 0 12.371 24.743">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
-                                        transform="translate(-80.9 -592.6)" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <p
-                                    class="p-5 font-semibold text-center text-white duration-300 opacity-0 group-hover:opacity-100">
-                                    Conviertete en <span class="font-bold uppercase text-primary-500">Nes + Pro</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Badge Nuevo -->
-                    <div class="absolute z-10 m-4" :class="user.bloqueado ? 'hidden' : ''" x-show="user.nuevo">
-                        <div class="px-2 py-1 font-semibold text-white rounded-md bg-primary-500">
-                            <div class="flex items-center justify-center">
-                                <span class="uppercase text-xxs">Nuevo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Favorito -->
-                    <div class="absolute right-0 z-10 m-4" :class="user.bloqueado ? 'hidden' : ''" x-show="user.favorito">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-amber-400" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                    </div>
-
-                    <!-- Badge Mensajes -->
-                    <div class="absolute z-10 m-4 bottom-28 mb-7" :class="user.bloqueado ? 'hidden' : ''" x-show="user.mensaje">
-                        <div class="relative mx-auto circle-link">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 fill-current"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </span>
-                            <div class="absolute border-gray-100 rounded-full -top-1 -right-1 bg-primary-500 ">
-                                <div class="flex items-center justify-center">
-                                    <span class="p-px px-1 text-xs font-semibold text-white">2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Boton Me gusta -->
-                    <div class="absolute right-0 z-10 m-5 bottom-28 mb-7" x-data="{like: false}" x-cloak
-                        :class="user.bloqueado ? 'hidden' : ''">
-                        <svg @click="like = !like" xmlns="http://www.w3.org/2000/svg"
-                            class="cursor-pointer h-10 rounded-full shadow-md w-10 p-1.5 duration-200 ease-in-out"
-                            :class="like ? 'bg-primary-500 text-white hover:text-white' : 'text-secondary-500 hover:text-primary-500  bg-white heartbeat'"
-                            viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-
-                    <a href="./perfil.html" :class="user.bloqueado ? 'blur brightness-50' : ''">
-
-                        <div class="relative">
-
-                            <!-- Sin Imagen -->
-                            <div x-show="user.noImagen" class="flex items-center justify-center w-full rounded-lg md:h-72 h-96">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-32 text-slate-400"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-
-                            <!-- Imagen -->
-                            <div :class="user.noImagen ? 'hidden' : '' ">
-                                <img x-bind:src="user.img" alt="User image avatar"
-                                    class="object-cover object-center w-full rounded-lg md:h-72 h-96">
-                            </div>
-                        </div>
-                        <div class="p-2">
-
-                            <div class="flex items-center">
-
-                                <!-- Online / Offline -->
-                                <div class="w-4 h-4 mr-3 border-2 border-gray-100 rounded-full"
-                                    :class="user.offline ? 'bg-gray-400' : 'bg-green-500'"></div>
-
-                                <!-- Nombre y Edad -->
-                                <div>
-                                    <p class="block text-2xl font-semibold text-secondary-500"><span
-                                            x-text="user.nombre"></span>, <span x-text="user.edad"></span></p>
-                                </div>
-                            </div>
-                            <div class="my-3 space-y-1">
-
-                                <!-- Ciudad y pais -->
-                                <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="inline-block w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    <p class="px-3 text-sm font-medium text-secondary-400">
-                                        <span x-text="user.ciudad"></span>, <span x-text="user.pais"></span>
-                                    </p>
-                                </div>
-
-                                <!-- Distancia -->
-                                <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="inline-block w-4 h-4 rotate-45 text-primary-500" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                                    </svg>
-                                    <p class="px-3 text-sm font-medium text-secondary-400">
-                                        A <span x-text="user.km"></span>km de
-                                        distancia
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </template>
-
     </div>
 
     <!-- Barra NES+ PRO -->
     <div
-        class="flex flex-col items-stretch justify-between w-full px-6 py-20 my-10 text-secondary-500 bg-slate-200 lg:flex-row sm:items-center">
+        class="flex flex-col items-stretch justify-between w-full px-10 py-10 my-10 lg:px-20 text-secondary-500 bg-slate-200 lg:flex-row sm:items-center">
         <div>
             <h2
                 class="mb-1 text-xl font-semibold text-center sm:text-2xl xl:text-3xl sm:text-center lg:text-left xl:w-3/4">
-                Descubre a más personas cerca de tu ciudad con <span class="font-bold text-primary-500">NES+
-                    PRO</span>
+                ¿Quieres descubrir más personas en tu ciudad?
+                <!-- <span class="font-bold text-primary-500">NES+ PRO</span> -->
             </h2>
             <p
                 class="mt-2 mb-6 font-normal text-center text-gray-600 sm:mt-0 sm:text-lg lg:mb-0 sm:text-center lg:text-left xl:w-3/4">
-                Conoce a gente que está cerca de tu ciudad, que las limitaciones ya no sean un problema para ti.</p>
+                <!-- Conoce a gente que está cerca de tu ciudad, que las limitaciones ya no sean un problema para ti. -->
+                Hazte <x></x>
+                <span class="font-bold text-primary-500">NES+ PRO</span>
+            </p>
         </div>
         <div class="flex flex-col items-center mb-2 space-y-8">
             <div>
@@ -889,8 +892,7 @@
                     </svg>
                 </span>
             </div>
-            <a href="#" class="py-4 text-white btn bg-primary-500 hover:bg-primary-600">Pruébalo gratis durante 1
-                mes</a>
+            <a href="#" class="py-4 text-white btn bg-primary-500 hover:bg-primary-600">Pruébalo ahora</a>
         </div>
     </div>
 
@@ -996,6 +998,7 @@
     <script src="js/notification.js"></script>
     <script src="js/range.js"></script>
     <script src="js/conocerCards.js"></script>
+    <script src="js/navbarLink.js"></script>
 </body>
 
 </html>

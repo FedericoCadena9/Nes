@@ -70,6 +70,21 @@ input[type="range"]::-ms-thumb {
   background: #f92e4b;
 }
 
+.blur1 {
+  background-color: rgba(255,255,255,.2);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
+/* Blur Chrome */
+@supports (backdrop-filter: blur(15px)) {
+  .blur1 {
+    backdrop-filter: blur(15px);
+  }
+}
 
 /* Animación Me Gusta */
 .heartbeat:hover {

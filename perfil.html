@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conocer</title>
+    <title>Perfil</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/conocerStyle.css">
 </head>
 
-<body class="bg-background font-body">
+<body class="bg-background font-body" x-data="conocer()">
 
     <!-- Navbar -->
     <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
@@ -504,13 +504,13 @@
     </div>
 
     <!-- Content Perfil -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 px-4 md:px-6 py-24 gap-6">
-        <div class="bg-white md:px-6 px-4 py-6 lg:col-span-12 rounded-xl order-1">
+    <div class="grid grid-cols-1 gap-6 px-4 py-24 lg:grid-cols-12 md:px-6" x-data="{isAmigo: false}" x-cloak>
+        <div class="order-1 px-4 py-6 bg-white md:px-6 lg:col-span-12 rounded-xl">
 
             <!-- Imagen de Portada -->
             <div class="inline w-full h-20 md:h-40">
                 <div class="relative">
-                    <img class="object-cover w-full rounded-lg md:h-60 h-32"
+                    <img class="object-cover w-full h-32 rounded-lg md:h-60"
                         src="https://images.unsplash.com/photo-1642616761188-999cda84e89a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
                         alt="Foto de Portada Perfil">
                     <div class="absolute top-0 w-full p-4 md:p-6">
@@ -532,13 +532,14 @@
             <div class="relative flex justify-center">
                 <div class="absolute lg:-top-16 -top-11">
                     <!-- Imagen de Perfil -->
-                    <img class="sm:w-32 mx-auto sm:h-32 h-20 w-20 rounded-full border-4 border-white"
+                    <img class="w-20 h-20 mx-auto border-4 border-white rounded-full sm:w-32 sm:h-32"
                         src="https://i.pravatar.cc/400?img=24" alt="Foto de Perfil">
                     <div>
                         <!-- Nombre y Edad -->
-                        <h1 class="text-secondary-500 font-bold text-xl sm:text-3xl text-center"><span>Jennifer Medina</span>, <span>27</span>
+                        <h1 class="text-xl font-bold text-center text-secondary-500 sm:text-3xl"><span>Jennifer
+                                Medina</span>, <span>27</span>
                         </h1>
-                        <p class="font-medium text-gray-400 text-xs text-center"><span>Paris</span>,
+                        <p class="text-xs font-medium text-center text-gray-400"><span>Paris</span>,
                             <span>Francia</span>
                         </p>
                     </div>
@@ -547,36 +548,46 @@
 
             <div>
                 <div>
-                    <div class="flex my-5 space-x-2 lg:justify-end pt-20 sm:pt-32 md:pt-36 lg:pt-0">
+                    <div class="flex pt-20 my-5 space-x-2 lg:justify-end sm:pt-32 md:pt-36 lg:pt-0">
                         <!-- Botón Agregar amigo -->
-                        <button
-                            class="rounded-lg flex items-center justify-center btn bg-primary-500 text-white hover:bg-primary-600 lg:w-52">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <button @click="isAmigo = !isAmigo"
+                            class="flex items-center justify-center text-white rounded-lg btn bg-primary-500 hover:bg-primary-600 lg:w-52">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3"
+                                :class="isAmigo ? 'hidden' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                             </svg>
-                            <span>Agregar</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3"
+                                :class="isAmigo ? '' : 'hidden'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span x-text="isAmigo ? 'Son amigos' : 'Agregar'"></span>
                         </button>
 
                         <!-- Botón Chat -->
                         <button
-                            class="bg-gray-200 rounded-lg text-gray-600 py-2.5 md:py-3 w-16 lg:w-12 hover:bg-gray-300 hover:text-gray-700 duration-200 ease-out">
+                            class="relative bg-gray-200 rounded-lg text-gray-600 py-2.5 md:py-3 w-16 lg:w-12 hover:bg-gray-300 hover:text-gray-700 duration-200 ease-out">
                             <span class="flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
                                         d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
                                         clip-rule="evenodd" />
                                 </svg>
                             </span>
+                            <div class="absolute w-5 h-5 border-gray-100 rounded-full -top-1 -right-1 bg-primary-500">
+                                <div class="flex items-center justify-center">
+                                    <span class="p-px px-1 text-xs font-semibold text-white">2</span>
+                                </div>
+                            </div>
                         </button>
 
                         <!-- Botón Opciones -->
                         <button
                             class="bg-gray-200 rounded-lg text-gray-600 py-2.5 md:py-3 w-16 lg:w-12 hover:bg-gray-300 hover:text-gray-700 duration-200 ease-out">
                             <span class="flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -587,21 +598,27 @@
                     <div class="flex space-x-2 lg:justify-end">
 
                         <!-- Botón Me gusta -->
-                        <button
-                            class="bg-gray-100 text-xs w-full lg:w-auto text-gray-600 hover:bg-gray-200 hover:text-gray-700 duration-200 ease-out font-semibold px-3 py-2 sm:py-4 lg:py-2 rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                        <button x-data="{like: false}" x-cloak @click="like = !like"
+                            class="flex items-center justify-center w-full px-3 py-2 text-xs font-semibold duration-200 ease-out rounded-lg group lg:w-auto sm:py-4 lg:py-2"
+                            :class="like ? 'text-white bg-primary-500 shadow-md' : 'hover:text-primary-500 heartbeat bg-gray-100 text-gray-600 hover:bg-gray-200 ' ">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-5 h-5 mr-1 lg:mr-0 group-hover:fill-current"
+                                :class="like ? 'fill-current' : '' " fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
-                            <span>Me gusta</span>
+                            <span class="lg:hidden">Me gusta</span>
                         </button>
 
                         <!-- Botón Favorito -->
-                        <button
-                            class="bg-gray-100 text-xs w-full lg:w-auto opacity-50 text-gray-600 hover:bg-gray-200 hover:text-gray-700 duration-200 ease-out font-semibold px-3 py-2 sm:py-4 lg:py-2 rounded-lg flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <button x-bind:disabled="!isAmigo" x-data="{isFavorito: false}" x-cloak
+                            @click="isFavorito = !isFavorito"
+                            class="flex items-center justify-center w-full px-3 py-2 text-xs font-semibold text-gray-600 duration-200 ease-out bg-gray-100 rounded-lg disabled:bg-slate-100 disabled:opacity-50 lg:w-auto hover:bg-amber-100 hover:text-amber-600 disabled:text-slate-500 sm:py-4 lg:py-2"
+                            :class="isFavorito ? 'text-amber-500' : ''">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1"
+                                :class="isFavorito ? 'text-amber-500 fill-current' : '' " fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
@@ -612,215 +629,1046 @@
             </div>
         </div>
 
-        <div class="lg:col-span-8 order-3 lg:order-2">
+        <div class="order-3 lg:col-span-8 lg:order-2" x-data="tab()">
 
             <!-- Links Internos Perfil -->
             <div class="bg-white rounded-xl">
                 <div class="flex items-center h-14 lg:h-auto">
-                    <div class="flex justify-between items-center h-14 lg:h-auto w-full mx-4 md:mx-10 overflow-x-auto break-words max-w-full whitespace-nowrap">
-                        <button
-                            class="h-10 px-2 py-2  text-center text-primary-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
-                            <span class="mx-1 text-sm font-semibold "> Momentos </span>
-                            <div class="h-1 w-full bg-primary-500 rounded-t-lg lg:mt-1 mt-3"></div>
+                    <div
+                        class="flex items-center justify-between w-full max-w-full mx-4 overflow-x-auto break-words h-14 lg:h-auto md:mx-10 whitespace-nowrap">
+                        <template x-for="(tab, index) in tabs" :key="index">
+                            <div class="h-10 px-2 py-2 text-center text-gray-500 bg-transparent cursor-pointer sm:px-4 -px-1 whitespace-nowrap focus:outline-none"
+                                :class="{'text-primary-500' : active===index , 'text-gray-300 cursor-not-allowed' : tab.disabled}" @click="active = index">
+                                <span class="mx-1 text-sm font-semibold" x-text="tab.text"></span>
+                                <div class="w-full h-1 mt-3 transition duration-150 ease-in rounded-t-lg lg:mt-1"
+                                    :class="active===index ? 'bg-primary-500' : ''"></div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Momentos -->
+            <div class="mt-10 space-y-10" x-show="active===0">
+
+                <!-- Post Momentos -->
+                <div class="flex flex-col p-6 space-y-4 overflow-hidden text-gray-800 bg-white shadow-md rounded-xl">
+                    <div class="flex justify-between">
+                        <div class="flex space-x-4">
+                            <img alt="" src="https://i.pravatar.cc/400?img=24"
+                                class="object-cover w-12 h-12 bg-gray-500 rounded-full shadow">
+                            <div class="flex flex-col">
+
+                                <!-- Nombre y link al perfil -->
+                                <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer Medina</a>
+
+                                <!-- Tiempo -->
+                                <div class="flex items-center justify-center text-gray-600">
+                                    <span class="text-xs">Hace 1 semana</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opciones -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                            </svg>
                         </button>
-                        <button
-                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
-                            <span class="mx-1 text-sm font-semibold "> Amigos </span>
+                    </div>
+                    <div>
+
+                        <!-- Texto post -->
+                        <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                            necessitatibus?</p>
+
+                        <!-- Imagen post -->
+                        <img src="https://picsum.photos/536/354" alt=""
+                            class="object-cover w-full my-4 bg-gray-500 rounded-xl h-72">
+                    </div>
+
+                    <div class="flex flex-wrap justify-between">
+
+                        <!-- Botón Comentar -->
+                        <button class="flex items-center justify-center p-2 text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Comentar</span>
                         </button>
-                        <button
-                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
-                            <span class="mx-1 text-sm font-semibold "> Fotos </span>
+
+                        <!-- Botón Compartir -->
+                        <button class="flex items-center justify-center p-2 text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                            </svg>
+                            <span>Compartir</span>
                         </button>
-                        <button
-                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
-                            <span class="mx-1 text-sm font-semibold "> Eventos </span>
+                    </div>
+                </div>
+
+                <!-- Post Momentos -->
+                <div class="flex flex-col p-6 space-y-4 overflow-hidden text-gray-800 bg-white shadow-md rounded-xl">
+                    <div class="flex justify-between">
+                        <div class="flex space-x-4">
+                            <img alt="" src="https://i.pravatar.cc/400?img=24"
+                                class="object-cover w-12 h-12 bg-gray-500 rounded-full shadow">
+                            <div class="flex flex-col">
+
+                                <!-- Nombre y link al perfil -->
+                                <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer Medina</a>
+
+                                <!-- Tiempo -->
+                                <div class="flex items-center justify-center text-gray-600">
+                                    <span class="text-xs">Hace 1 semana</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opciones -->
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                            </svg>
                         </button>
-                        <button
-                            class="h-10 px-2 py-2  text-center text-gray-500 bg-transparent sm:px-4 -px-1 whitespace-nowrap focus:outline-none">
-                            <span class="mx-1 text-sm font-semibold "> Viajes </span>
+                    </div>
+                    <div>
+
+                        <!-- Texto post -->
+                        <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                            necessitatibus?</p>
+
+                        <!-- Imagen post -->
+                        <img src="https://picsum.photos/536/354" alt=""
+                            class="object-cover w-full my-4 bg-gray-500 rounded-xl h-72">
+                    </div>
+
+                    <div class="flex flex-wrap justify-between">
+
+                        <!-- Botón Comentar -->
+                        <button class="flex items-center justify-center p-2 text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Comentar</span>
+                        </button>
+
+                        <!-- Botón Compartir -->
+                        <button class="flex items-center justify-center p-2 text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                            </svg>
+                            <span>Compartir</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Contenido -->
-            <div class="mt-10 space-y-10">
+            <!-- Amigos -->
+            <div class="mt-10 space-y-10" x-show="active===1">
+                <div
+                    class="grid gap-5 mx-6 mb-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 xs:grid-cols-2">
+                    <template x-for="(user, index) in users" :key="index">
+                        <div class="transition duration-200 ease-in-out transform bg-white shadow-md rounded-xl hover:shadow-xl hover:scale-95"
+                            :class="user.mensaje ? 'border-4 border-primary-400' : ''">
 
-                <!-- Post Momentos -->
-                <div class="flex flex-col p-6 space-y-4 overflow-hidden bg-white rounded-xl  shadow-md text-gray-800">
-                    <div class="flex justify-between">
-                        <div class="flex space-x-4">
-                            <img alt="" src="https://i.pravatar.cc/400?img=24"
-                                class="object-cover w-12 h-12 rounded-full shadow bg-gray-500">
-                            <div class="flex flex-col">
+                            <div class="relative">
+                                <!--Bloqueado -->
+                                <div class="absolute z-10 w-full h-full" x-show="user.bloqueado">
+                                    <div class="flex flex-col items-center justify-center w-auto h-5/6 group">
+                                        <div
+                                            class="group-hover:bg-white group-hover:text-primary-500 duration-300 ease-in-out group-hover:rotate-scale-up p-3.5 text-white rounded-full shadow-md bg-primary-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 group-hover:hidden"
+                                                viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
 
-                                <!-- Nombre y link al perfil -->
-                                <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer Medina</a>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="hidden w-7 h-7 group-hover:inline-block" width="12.371"
+                                                height="24.743" fill="currentColor" viewBox="0 0 12.371 24.743">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                                    transform="translate(-80.9 -592.6)" />
+                                            </svg>
+                                        </div>
 
-                                <!-- Tiempo -->
-                                <div class="flex text-gray-600 items-center justify-center">
-                                    <span class="text-xs">Hace 1 semana</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        <div>
+                                            <p
+                                                class="p-5 font-semibold text-center text-white duration-300 opacity-0 group-hover:opacity-100">
+                                                Hazte <span class="font-bold uppercase text-primary-500">Nes +
+                                                    Pro</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Badge Nuevo -->
+                                <div class="absolute z-10 m-4" :class="user.bloqueado ? 'hidden' : ''"
+                                    x-show="user.nuevo">
+                                    <div class="px-2 py-1 font-semibold text-white rounded-md bg-primary-500">
+                                        <div class="flex items-center justify-center">
+                                            <span class="uppercase text-xxs">Nuevo</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Favorito -->
+                                <div class="absolute right-0 z-10 m-4" :class="user.bloqueado ? 'hidden' : ''"
+                                    x-show="user.favorito">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-amber-400"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
+                                </div>
+
+
+
+                                <div>
+                                    <div class="relative ">
+
+                                        <!-- Boton Me gusta -->
+                                        <div class="absolute bottom-0 right-0 z-10 m-5" x-data="{like: false}" x-cloak
+                                            :class="user.bloqueado ? 'hidden' : ''">
+                                            <svg @click="like = !like" xmlns="http://www.w3.org/2000/svg"
+                                                class="cursor-pointer h-10 rounded-full shadow-md w-10 p-1.5 duration-200 ease-in-out"
+                                                :class="like ? 'bg-primary-500 text-white hover:text-white' : 'text-secondary-500 hover:text-primary-500  bg-white heartbeat'"
+                                                viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <a href="./perfil.html">
+
+                                            <!-- Sin Imagen -->
+                                            <div x-show="user.noImagen"
+                                                :class="user.bloqueado ? 'backdrop-filter blur brightness-50 bg-slate-700' : ''"
+                                                class="flex items-center justify-center w-full rounded-lg md:h-40 h-96 xs:h-52">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-32 text-slate-400"
+                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+
+                                            <!-- Imagen -->
+                                            <div
+                                                :class="{'hidden' : user.noImagen, 'backdrop-filter blur-sm brightness-50' : user.bloqueado}">
+                                                <img x-bind:src="user.img" alt="User image avatar"
+                                                    class="object-cover object-center w-full rounded-lg md:h-40 h-96 xs:h-52">
+                                            </div>
+                                    </div>
+                                    <div class="p-2" :class="user.bloqueado ? 'backdrop-filter blur' : ''">
+
+                                        <div class="flex items-center">
+
+                                            <!-- Online / Offline -->
+                                            <div class="w-4 h-4 mr-3 border-2 border-gray-100 rounded-full"
+                                                :class="user.offline ? 'bg-gray-400' : 'bg-green-500'"></div>
+
+                                            <!-- Nombre y Edad -->
+                                            <div>
+                                                <p
+                                                    class="block text-2xl font-semibold xs:text-xl sm:text-2xl text-secondary-500">
+                                                    <span x-text="user.nombre"></span>, <span x-text="user.edad"></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="my-3 space-y-1">
+
+                                            <!-- Ciudad y pais -->
+                                            <div class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                <p
+                                                    class="px-3 text-sm font-medium xs:text-xs sm:text-sm text-secondary-400">
+                                                    <span x-text="user.ciudad"></span>, <span x-text="user.pais"></span>
+                                                </p>
+                                            </div>
+
+                                            <!-- Distancia -->
+                                            <div class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="inline-block w-4 h-4 rotate-45 text-primary-500" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                                </svg>
+                                                <p
+                                                    class="px-3 text-sm font-medium xs:text-xs sm:text-sm text-secondary-400">
+                                                    A <span x-text="user.km"></span>km de
+                                                    distancia
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </a>
+                                    </di>
+                                </div>
+                            </div>
+                    </template>
+                </div>
+
+            </div>
+
+            <!-- Fotos -->
+            <div class="mt-10 space-y-10" x-show="active===2">
+                <div class="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+                    <img src="https://source.unsplash.com/301x301/?random" alt=""
+                        class="w-full h-full col-span-2 row-span-2 bg-gray-500 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/200x200/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/201x201/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/202x202/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/203x203/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/204x204/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/205x205/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/206x206/?random">
+                    <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
+                        src="https://source.unsplash.com/207x207/?random">
+                    <!---->
+                    <img src="https://source.unsplash.com/302x302/?random" alt=""
+                        class="w-full h-full col-span-2 row-span-2 bg-gray-500 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3">
+                </div>
+            </div>
+
+            <!-- Eventos -->
+            <div class="mt-10 space-y-10" x-show="active===3">
+                <div>
+                    <div class="md:grid-cols-2 md:grid 2xl:grid-cols-3 gap-9">
+                        <div id=""
+                            class="p-6 mt-6 transition duration-200 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-4 card">
+                            <a href="">
+                                <div>
+                                    <img src="https://source.unsplash.com/300x300/?random" alt=""
+                                        class="object-cover object-center w-full rounded-lg h-72">
+                                    <div class="mt-6 mb-2">
+                                        <span class="block text-2xl font-bold text-secondary-500">Encuentro
+                                            relajante</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-y-3">
+                                        <div class="col-span-2">
+                                            <p class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                <span class="px-3 text-secondary-400">Parque Central, España</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-span-2">
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                    <span class="px-3 text-secondary-400">15/10/2021</span>
+                                                </p>
+                                            </div>
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">14:00 p.m</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-2">
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">30</span>
+                                                </p>
+                                            </div>
+                                            <div class="inline-block">
+                                                <p class="flex items-center ml-14">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">Presencial</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <div class="mt-4 border-t border-gray-300">
+                                    <div class="items-center pt-4 md:flex md:justify-between">
+                                        <div
+                                            class="flex items-center w-full px-2 py-1 my-4 mr-3 text-xs font-medium text-green-500 rounded-md md:w-auto">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Asisto a este evento</span>
+                                        </div>
+
+                                        <button
+                                            class="flex items-center justify-center w-full px-3 py-2 mr-3 text-xs font-medium text-white transition duration-200 ease-in-out rounded-md md:w-auto bg-secondary-500 hover:bg-gray-900">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>No asistiré</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Opciones -->
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div>
+                        <div id=""
+                            class="p-6 mt-6 transition duration-200 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-4 card">
+                            <a href="">
+                                <div>
+                                    <img src="https://source.unsplash.com/300x300/?random" alt=""
+                                        class="object-cover object-center w-full rounded-lg h-72">
+                                    <div class="mt-6 mb-2">
+                                        <span class="block text-2xl font-bold text-secondary-500">Encuentro
+                                            relajante</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-y-3">
+                                        <div class="col-span-2">
+                                            <p class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                <span class="px-3 text-secondary-400">Parque Central, España</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-span-2">
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                    <span class="px-3 text-secondary-400">15/10/2021</span>
+                                                </p>
+                                            </div>
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">14:00 p.m</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-2">
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">30</span>
+                                                </p>
+                                            </div>
+                                            <div class="inline-block">
+                                                <p class="flex items-center ml-14">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">Presencial</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <div class="mt-4 border-t border-gray-300">
+                                    <div class="items-center pt-4 md:flex md:justify-between">
+                                        <div
+                                            class="flex items-center w-full px-2 py-1 my-4 mr-3 text-xs font-medium text-red-500 rounded-md md:w-auto">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                            </svg>
+                                            <span>Propietario del evento</span>
+                                        </div>
 
-                        <!-- Texto post -->
-                        <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-                            necessitatibus?</p>
+                                        <div class="relative" x-data="{ openOpc: false }" x-cloak>
+                                            <div>
+                                                <button @click="openOpc = !openOpc"
+                                                    class="flex items-center justify-center w-full px-3 py-3 mr-3 text-xs font-medium text-white transition duration-200 ease-in-out rounded-md md:w-auto bg-secondary-500 hover:bg-gray-900">
 
-                        <!-- Imagen post -->
-                        <img src="https://picsum.photos/536/354" alt=""
-                            class="object-cover rounded-xl w-full my-4 h-72 bg-gray-500">
-                    </div>
+                                                    <span> Opciones</span>
+                                                </button>
+                                            </div>
 
-                    <div class="flex flex-wrap justify-between">
+                                            <div x-show.transition="openOpc" @click.away="openOpc = false"
+                                                class="absolute w-64 py-1 mt-2 bg-white rounded-md shadow-lg bottom-12 right-3 ring-1 ring-primary-500 ring-opacity-5 focus:outline-none"
+                                                x-transition:enter="duration-200 ease-out"
+                                                x-transition:enter-start="opacity-0 scale-95"
+                                                x-transition:enter-end="opacity-100 scale-100"
+                                                x-transition:leave="duration-100 ease-in"
+                                                x-transition:leave-start="opacity-100 scale-100"
+                                                x-transition:leave-end="opacity-0 scale-95">
 
-                        <!-- Botón Comentar -->
-                        <button class="p-2 flex justify-center items-center text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span>Comentar</span>
-                        </button>
+                                                <a href="./editar-evento.html"
+                                                    class="flex items-center px-4 py-2 text-sm cursor-pointer">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="w-8 h-8 p-2 text-white rounded-full bg-secondary-500"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 ">
+                                                        Editar Evento
+                                                    </span>
+                                                </a>
 
-                        <!-- Botón Compartir -->
-                        <button class="p-2 flex justify-center items-center text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path
-                                    d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
-                            </svg>
-                            <span>Compartir</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Post Momentos -->
-                <div class="flex flex-col p-6 space-y-4 overflow-hidden bg-white rounded-xl  shadow-md text-gray-800">
-                    <div class="flex justify-between">
-                        <div class="flex space-x-4">
-                            <img alt="" src="https://i.pravatar.cc/400?img=24"
-                                class="object-cover w-12 h-12 rounded-full shadow bg-gray-500">
-                            <div class="flex flex-col">
-
-                                <!-- Nombre y link al perfil -->
-                                <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer Medina</a>
-
-                                <!-- Tiempo -->
-                                <div class="flex text-gray-600 items-center justify-center">
-                                    <span class="text-xs">Hace 1 semana</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                                                <a href="#" class="flex items-center px-4 py-2 text-sm">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="w-8 h-8 p-2 text-white bg-red-500 rounded-full"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 ">
+                                                        Cancelar Evento
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Opciones -->
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div>
+                        <div id=""
+                            class="p-6 mt-6 transition duration-200 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-4 card">
+                            <a href="">
+                                <div>
+                                    <img src="https://source.unsplash.com/300x300/?random" alt=""
+                                        class="object-cover object-center w-full rounded-lg h-72">
+                                    <div class="mt-6 mb-2">
+                                        <span class="block text-2xl font-bold text-secondary-500">Encuentro
+                                            relajante</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-y-3">
+                                        <div class="col-span-2">
+                                            <p class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                <span class="px-3 text-secondary-400">Parque Central, España</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-span-2">
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                    <span class="px-3 text-secondary-400">15/10/2021</span>
+                                                </p>
+                                            </div>
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">14:00 p.m</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-2">
+                                            <div class="inline-block">
+                                                <p class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">30</span>
+                                                </p>
+                                            </div>
+                                            <div class="inline-block">
+                                                <p class="flex items-center ml-14">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 text-secondary-400">Presencial</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <div class="mt-4 border-t border-gray-300">
+                                    <div class="items-center pt-4 md:flex md:justify-between">
+                                        <div
+                                            class="flex items-center w-full px-2 py-1 my-4 mr-3 text-xs font-medium text-red-500 rounded-md md:w-auto">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                            </svg>
+                                            <span>Propietario del evento</span>
+                                        </div>
 
-                        <!-- Texto post -->
-                        <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-                            necessitatibus?</p>
+                                        <div class="relative" x-data="{ openOpc: false }" x-cloak>
+                                            <div>
+                                                <button @click="openOpc = !openOpc"
+                                                    class="flex items-center justify-center w-full px-3 py-3 mr-3 text-xs font-medium text-white transition duration-200 ease-in-out rounded-md md:w-auto bg-secondary-500 hover:bg-gray-900">
 
-                        <!-- Imagen post -->
-                        <img src="https://picsum.photos/536/354" alt=""
-                            class="object-cover rounded-xl w-full my-4 h-72 bg-gray-500">
-                    </div>
+                                                    <span> Opciones</span>
+                                                </button>
+                                            </div>
 
-                    <div class="flex flex-wrap justify-between">
+                                            <div x-show.transition="openOpc" @click.away="openOpc = false"
+                                                class="absolute w-64 py-1 mt-2 bg-white rounded-md shadow-lg bottom-12 right-3 ring-1 ring-primary-500 ring-opacity-5 focus:outline-none"
+                                                x-transition:enter="duration-200 ease-out"
+                                                x-transition:enter-start="opacity-0 scale-95"
+                                                x-transition:enter-end="opacity-100 scale-100"
+                                                x-transition:leave="duration-100 ease-in"
+                                                x-transition:leave-start="opacity-100 scale-100"
+                                                x-transition:leave-end="opacity-0 scale-95">
 
-                        <!-- Botón Comentar -->
-                        <button class="p-2 flex justify-center items-center text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span>Comentar</span>
-                        </button>
+                                                <a href="./editar-evento.html"
+                                                    class="flex items-center px-4 py-2 text-sm cursor-pointer">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="w-8 h-8 p-2 text-white rounded-full bg-secondary-500"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 ">
+                                                        Editar Evento
+                                                    </span>
+                                                </a>
 
-                        <!-- Botón Compartir -->
-                        <button class="p-2 flex justify-center items-center text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path
-                                    d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
-                            </svg>
-                            <span>Compartir</span>
-                        </button>
+                                                <a href="#" class="flex items-center px-4 py-2 text-sm">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="w-8 h-8 p-2 text-white bg-red-500 rounded-full"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                    <span class="inline-block px-3 ">
+                                                        Cancelar Evento
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Viajes -->
+            <div class="mt-10 space-y-10" x-show="active===4">
+                <div class="p-6 bg-white rounded-md">
+                    <h2 class="text-2xl font-semibold text-secondary-500">No existen viajes</h2>
+                </div>
+            
             </div>
         </div>
 
-        <div class="lg:col-span-4 order-2 lg:order-3">
-            <div class="bg-white rounded-xl pt-1 pb-4">
+        <div class="order-2 lg:col-span-4 lg:order-3" x-data="{openInfo: false}">
+            <div class="pt-1 pb-4 bg-white rounded-xl">
 
-                <!-- Acerca de Información -->
-                <div class="h-10 py-2 text-gray-600 px-6">
-                    <h2 class="mx-1 md:text-sm text-lg font-semibold "> Acerca de </h2>
+                <!-- Acerca de Información-->
+                <div class="overflow-y-hidden h-96" :class="openInfo ? 'overflow-y-scroll' : ''">
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Acerca de </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Género</h3>
+                            <p class="text-sm font-medium text-gray-500">Transexual</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Orientación Sexual</h3>
+                            <p class="text-sm font-medium text-gray-500">Lesbiana</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Estado Sentimental</h3>
+                            <p class="text-sm font-medium text-gray-500">Viudo</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Cumpleaños</h3>
+                            <p class="text-sm font-medium text-gray-500">24, Jun, 1961, <span>30</span></p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Ciudad</h3>
+                            <p class="text-sm font-medium text-gray-500">Paris</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Estado/Provincia</h3>
+                            <p class="text-sm font-medium text-gray-500">Paris</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">País</h3>
+                            <p class="text-sm font-medium text-gray-500">Francia</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Continente</h3>
+                            <p class="text-sm font-medium text-gray-500">Europa</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Sobre Mí </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Me interesa </h3>
+                            <p class="text-sm font-medium text-gray-500">Disfrutar de las salidas</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Estatura</h3>
+                            <p class="text-sm font-medium text-gray-500"> 1.70m</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Peso </h3>
+                            <p class="text-sm font-medium text-gray-500">80kg</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Tipo de cuerpo </h3>
+                            <p class="text-sm font-medium text-gray-500">Delgado</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Muéstrate tal como eres </h3>
+                            <p class="text-sm font-medium text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, libero!</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Que busco </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Género</h3>
+                            <p class="text-sm font-medium text-gray-500">Hombre</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Orientación sexual </h3>
+                            <p class="text-sm font-medium text-gray-500"> No Binario </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Estado Civil </h3>
+                            <p class="text-sm font-medium text-gray-500">Soltero</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Edad</h3>
+                            <p class="text-sm font-medium text-gray-500">18 - 25</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Altura </h3>
+                            <p class="text-sm font-medium text-gray-500">1.60m - 1.95m</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Un poco más de mí </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Tabaco</h3>
+                            <p class="text-sm font-medium text-gray-500"> No Tabaco </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Alcohol  </h3>
+                            <p class="text-sm font-medium text-gray-500">  No alcohol </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Hijos</h3>
+                            <p class="text-sm font-medium text-gray-500"> No tiene hijos </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Color de ojos </h3>
+                            <p class="text-sm font-medium text-gray-500"> Negros </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Color de pelo  </h3>
+                            <p class="text-sm font-medium text-gray-500">Negro</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Que busco </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Género</h3>
+                            <p class="text-sm font-medium text-gray-500">Hombre</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Orientación sexual </h3>
+                            <p class="text-sm font-medium text-gray-500"> No Binario </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Estado Civil </h3>
+                            <p class="text-sm font-medium text-gray-500">Soltero</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Edad</h3>
+                            <p class="text-sm font-medium text-gray-500">18 - 25</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Altura </h3>
+                            <p class="text-sm font-medium text-gray-500">1.60m - 1.95m</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Un poco más de mí </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Tabaco</h3>
+                            <p class="text-sm font-medium text-gray-500"> No Tabaco </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Alcohol  </h3>
+                            <p class="text-sm font-medium text-gray-500">  No alcohol </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400">Hijos</h3>
+                            <p class="text-sm font-medium text-gray-500"> No tiene hijos </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Color de ojos </h3>
+                            <p class="text-sm font-medium text-gray-500"> Negros </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Color de pelo  </h3>
+                            <p class="text-sm font-medium text-gray-500">Negro</p>
+                        </div>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Aficiones </h2>
+                    </div>
+
+                    <div class="flex flex-wrap px-6 py-2">
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md" >Leer</span>
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md">Bailar</span>
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md">Música</span>
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md">Viajar</span>
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md">Teatro</span>
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md">Cine</span>
+                        <span class="px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md">Deportes</span>
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Estado serologico </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Estado del VIH </h3>
+                            <p class="text-sm font-medium text-gray-500"> Negativo</p>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Medicación   </h3>
+                            <p class="text-sm font-medium text-gray-500">   Medicacion del Paciente  </p>
+                        </div> 
+                    </div>
+
+                    <div class="h-px m-6 border-t border-gray-200 border-1"></div>
+
+                    <div class="h-10 px-6 py-2 text-gray-600">
+                        <h2 class="mx-1 text-lg font-semibold md:text-sm "> Perfil verificado </h2>
+                    </div>
+                    <div class="px-6 mt-6 space-y-5 ">
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Email </h3>
+                            <a href="#" class="text-sm font-medium text-gray-500 underline hover:text-blue-500"> correo@gmail.com</a>
+                        </div>
+    
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Google   </h3>
+                            <a href="#" class="text-sm font-medium text-gray-500 underline hover:text-blue-500"> Google Link </a>
+                        </div> 
+
+                        <div>
+                            <h3 class="font-semibold text-secondary-400"> Facebook   </h3>
+                            <a href="#" class="text-sm font-medium text-gray-500 underline hover:text-blue-500">  facebook.com/user </a>
+                        </div> 
+                    </div>
+                    
                 </div>
-                <div class="space-y-5 mt-6 px-6">
-                    <div>
-                        <h3 class="font-semibold text-secondary-400">Género</h3>
-                        <p class="text-sm font-medium text-gray-500">Transexual</p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-semibold text-secondary-400">Orientación Sexual</h3>
-                        <p class="text-sm font-medium text-gray-500">Lesbiana</p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-semibold text-secondary-400">Estado Sentimental</h3>
-                        <p class="text-sm font-medium text-gray-500">Viduo</p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-semibold text-secondary-400">Cumpleaños</h3>
-                        <p class="text-sm font-medium text-gray-500">24, Jun, 1961</p>
-                    </div>
-                </div>
+                
 
                 <!-- Ver más -->
-                <div class="px-6 pt-14">
-                    <p class="text-gray-500 text-xs text-center font-medium">Para ver toda la información de esta
-                        persona, primero tienen que ser amigos.</p>
+                <div class="p-6">
+                <template x-if="isAmigo == true">
+                    <p class="text-xs font-medium text-center underline cursor-pointer text-primary-500" @click="openInfo = !openInfo">
+                        Ver toda la información
+                    </p>
+                </template>
+                <template x-if="isAmigo == false">
+                    <p class="text-xs font-medium text-center text-gray-500">
+                        Para ver toda la información de esta persona, primero tienen que ser amigos.
+                    </p>
+                </template>
+                    
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Footer -->
@@ -923,6 +1771,32 @@
 
     <!-- Mis Scripts -->
     <script src="js/notification.js"></script>
+    <script src="js/conocerCards.js"></script>
+    <script>
+        function tab() {
+            return {
+                active: 0,
+                tabs: [
+                    {
+                        text: "Momentos"
+                    },
+                    {
+                        text: "Amigos"
+                    },
+                    {
+                        text: "Fotos"
+                    },
+                    {
+                        text: "Eventos"
+                    },
+                    {
+                        text: "Viajes",
+                        disabled: true
+                    },
+                ]
+            }
+        }
+    </script>
 </body>
 
 </html>
