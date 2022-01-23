@@ -678,6 +678,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(224 41 68 / var(--tw-bg-opacity));
 }
 
+.badge-af{
+  margin: 0.25rem;
+  cursor: pointer;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 2;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
 .pointer-events-none{
   pointer-events: none;
 }
@@ -853,10 +868,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .m-5{
   margin: 1.25rem;
-}
-
-.m-1{
-  margin: 0.25rem;
 }
 
 .mx-auto{
@@ -2635,11 +2646,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(217 119 6 / var(--tw-text-opacity));
 }
 
-.hover\:text-blue-500:hover{
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
 .hover\:text-secondary-400:hover{
   --tw-text-opacity: 1;
   color: rgb(80 100 134 / var(--tw-text-opacity));
@@ -3523,8 +3529,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 66.666667%;
   }
 
-  .lg\:w-52{
-    width: 13rem;
+  .lg\:w-60{
+    width: 15rem;
   }
 
   .lg\:w-12{
