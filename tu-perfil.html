@@ -505,151 +505,421 @@
 
     <div x-data="{edit: false}" x-cloak>
         <!-- Modal para Editar Perfil-->
-        <div class="fixed flex justify-center w-full h-full z-30" style="background-color: rgba(0,0,0,.5);"
+        <div class="fixed z-30 flex justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);"
             x-show="edit">
 
 
-            <div class="overflow-y-auto w-full sm:w-auto h-auto p-4 mt-24 sm:mb-8 mb-24 mx-6 sm:mx-2 text-left bg-white rounded-lg shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0 z-30"
+            <div class="z-30 w-full h-auto p-4 mx-6 mt-24 mb-24 overflow-y-auto text-left bg-white rounded-lg shadow-xl sm:w-auto sm:mb-8 sm:mx-2 md:max-w-xl md:p-6 lg:p-8 md:mx-0"
                 @click.away="edit = !edit">
                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <h3 class="text-lg font-semibold leading-6 text-secondary-500">
+                    <h3 class="pb-8 text-lg font-semibold leading-6 text-secondary-500">
                         Editar información
                     </h3>
 
-                    <div>
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600 font-medium">Nombre de usuario</label>
-                            <input type="text" name="" id="" placeholder="Tu nombre" class="input">
-                        </div>
-
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Género</label>
-                            <select id="" class="input">
-                                <option disabled selected value> -- Elige un género -- </option>
-                                <option value="1">Hombre</option>
-                                <option value="2">Mujer</option>
-                                <option value="3">Transexual</option>
-                                <option value="4">No binario</option>
-                                <option value="5">Otro</option>
-                            </select>
-                        </div>
-
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Orientación Sexual</label>
-                            <select id="" class="input">
-                                <option disabled selected value> -- Elige tu orientación -- </option>
-                                <option value="1">Heterosexual</option>
-                                <option value="2">Lesbiana</option>
-                                <option value="3">Gay</option>
-                                <option value="4">Bisexual</option>
-                                <option value="5">Otro</option>
-                            </select>
-                        </div>
-
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Estado Civil</label>
-                            <select id="" class="input">
-                                <option disabled selected value> -- Elige tu estado civil -- </option>
-                                <option value="1">Soltero</option>
-                                <option value="2">En relación</option>
-                                <option value="3">Casado</option>
-                                <option value="4">Viudo</option>
-                                <option value="5">Es complicado</option>
-                            </select>
-                        </div>
-
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Fecha de nacimiento</label>
-                            <input type="text" name="datetimes" placeholder="03/03/21" class="input" />
-                        </div>
-
-                        <div class="md:flex md:space-x-5">
-                            <div class="mt-4">
-                                <label class="block text-sm text-gray-600">Pais</label>
-                                <input type="text" name="" id="" placeholder="Pais" class="input" autofocus autocomplete
-                                    required>
+                    <div class="space-y-10">
+                        <div class="">
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500"> Acerca de </h2>
                             </div>
-                            <div class="mt-4">
-                                <label class="block text-sm text-gray-600">Estado/provincia</label>
-                                <input type="text" name="" id="" placeholder="Estado" class="input" autofocus
-                                    autocomplete required>
-                            </div>
-                        </div>
+                            <div class="mt-3 space-y-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Nombre de
+                                        usuario</label>
+                                    <input type="text" name="" id="" placeholder="Tu nombre" class="input">
+                                </div>
 
-                        <div class="md:flex md:space-x-5">
-                            <div class="mt-4">
-                                <label class="block text-sm text-gray-600">Ciudad</label>
-                                <input type="text" name="" id="" placeholder="Ciudad" class="input" autofocus
-                                    autocomplete required>
-                            </div>
-                            <div class="mt-4">
-                                <label class="block text-sm text-gray-600">Continente</label>
-                                <input type="text" name="" id="" placeholder="Continente" class="input" autofocus
-                                    autocomplete required>
-                            </div>
-                        </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Género</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige un género -- </option>
+                                        <option value="1">Hombre</option>
+                                        <option value="2">Mujer</option>
+                                        <option value="3">Transexual</option>
+                                        <option value="4">No binario</option>
+                                        <option value="5">Otro</option>
+                                    </select>
+                                </div>
 
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Correo Electrónico</label>
-                            <input type="email" name="email" id="" placeholder="Correo Electrónico" class="input">
-                        </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Orientación
+                                        Sexual</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige tu orientación -- </option>
+                                        <option value="1">Heterosexual</option>
+                                        <option value="2">Lesbiana</option>
+                                        <option value="3">Gay</option>
+                                        <option value="4">Bisexual</option>
+                                        <option value="5">Otro</option>
+                                    </select>
+                                </div>
 
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Nueva contraseña</label>
-                            <div class="relative" x-data="{ show: true }" x-cloak>
-                                <input :type="show ? 'password' : 'text'" name="" id="" placeholder="Contraseña"
-                                    minlength="6" class="block input" required>
-                                <div
-                                    class="absolute inset-y-0 right-0 flex items-center justify-center pr-4 text-sm leading-5 cursor-pointer">
-                                    <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
-                                        xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                    <svg @click="show = !show" :class="{'block': !show, 'hidden':show }"
-                                        xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                                    </svg>
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Estado Civil</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige tu estado civil -- </option>
+                                        <option value="1">Soltero</option>
+                                        <option value="2">En relación</option>
+                                        <option value="3">Casado</option>
+                                        <option value="4">Viudo</option>
+                                        <option value="5">Es complicado</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Fecha de
+                                        nacimiento</label>
+                                    <input type="text" name="datetimes" placeholder="03/03/21" class="input" />
+                                </div>
+
+                                <div class="md:flex md:space-x-5">
+                                    <div>
+                                        <label class="block text-sm font-medium text-secondary-400">País</label>
+                                        <input type="text" name="" id="" placeholder="Pais" class="input">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-sm font-medium text-secondary-400">Estado/provincia</label>
+                                        <input type="text" name="" id="" placeholder="Estado" class="input">
+                                    </div>
+                                </div>
+
+                                <div class="md:flex md:space-x-5">
+                                    <div>
+                                        <label class="block text-sm font-medium text-secondary-400">Ciudad</label>
+                                        <input type="text" name="" id="" placeholder="Ciudad" class="input">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-secondary-400">Continente</label>
+                                        <input type="text" name="" id="" placeholder="Continente" class="input">
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-4">
-                            <label class="block text-sm text-gray-600">Repetir nueva contraseña</label>
-                            <div class="relative" x-data="{ show: true }" x-cloak>
-                                <input :type="show ? 'password' : 'text'" name="" id="" placeholder="Contraseña"
-                                    minlength="6" class="block input" required>
-                                <div
-                                    class="absolute inset-y-0 right-0 flex items-center justify-center pr-4 text-sm leading-5 cursor-pointer">
-                                    <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
-                                        xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                    <svg @click="show = !show" :class="{'block': !show, 'hidden':show }"
-                                        xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                                    </svg>
+                        <div class="">
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500"> Sobre Mí </h2>
+                            </div>
+                            <div class="mt-3 space-y-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Me interesa</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige un interes -- </option>
+                                        <option value="1">Disfrutar de las salidas</option>
+                                    </select>
                                 </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Altura</label>
+                                    <input type="text" name="" id="" placeholder="172" class="input">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Peso</label>
+                                    <input type="text" name="" id="" placeholder="60" class="input">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Tipo de cuerpo</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige tu tipo de Cuerpo -- </option>
+                                        <option value="1">Delgado</option>
+                                        <option value="2">En peso</option>
+                                        <option value="3">Sobrepeso</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Muestrate tal como
+                                        eres</label>
+                                    <textarea name="" type="text" id="" class="input" cols="30" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500"> Que busco </h2>
+                            </div>
+                            <div class="mt-3 space-y-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Género</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige género -- </option>
+                                        <option value="1">Hombre</option>
+                                        <option value="2">Mujer</option>
+                                        <option value="3">Transexual</option>
+                                        <option value="4">No binario</option>
+                                        <option value="5">Otro</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Orientación
+                                        Sexual</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige orientación -- </option>
+                                        <option value="1">Heterosexual</option>
+                                        <option value="2">Lesbiana</option>
+                                        <option value="3">Gay</option>
+                                        <option value="4">Bisexual</option>
+                                        <option value="5">Otro</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Estado Civil</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige Estado civil -- </option>
+                                        <option value="1">Soltero</option>
+                                        <option value="2">En relación</option>
+                                        <option value="3">Casado</option>
+                                        <option value="4">Viudo</option>
+                                        <option value="5">Es complicado</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <div class="flex items-center justify-between py-3 mb-3">
+                                            <label class="block text-sm font-medium text-secondary-400">Edad</label>
+                                            <div class="text-sm font-medium text-gray-500">
+                                                <span class="textMinEdad"></span>
+                                                <span class="textMaxEdad"></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Range Slider -->
+                                        <div class="relative w-full my-6">
+                                            <div class="input-range">
+                                                <input type="range" id="minEdad" min="18" step="0" max="98"
+                                                    value="18">
+                                                <input type="range" id="maxEdad" min="19" step="0" max="99"
+                                                    value="35">
+                                            </div>
+
+                                            <div class="w-full h-1 bg-gray-100 rounded-full appearance-none slider">
+                                                <div class="track"></div>
+                                                <div class="range"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <div class="flex items-center justify-between py-3 mb-3">
+                                            <label class="block text-sm font-medium text-secondary-400">Altura</label>
+                                            <div class="text-sm font-medium text-gray-500">
+                                                <span class="textMinAltura"></span>
+                                                <span class="textMaxAltura"></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Range Slider -->
+                                        <div class="relative w-full my-6">
+                                            <div class="input-range">
+                                                <input type="range" id="minAltura" min="130" step="0" max="240"
+                                                    value="130">
+                                                <input type="range" id="maxAltura" min="131" step="0" max="241"
+                                                    value="180">
+                                            </div>
+
+                                            <div class="w-full h-1 bg-gray-100 rounded-full appearance-none slider1">
+                                                <div class="track"></div>
+                                                <div class="range1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500"> Un poco más de mi </h2>
+                            </div>
+                            <div class="mt-3 space-y-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Tabaco</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                        <option value="1">Tabaco</option>
+                                        <option value="2">No tabaco</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Alcohol</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                        <option value="1">Alcohol</option>
+                                        <option value="2">No alcohol</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Hijos</label>
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                        <option value="1">Ninguno</option>
+                                        <option value="2">1</option>
+                                        <option value="3">2</option>
+                                        <option value="4">3</option>
+                                        <option value="5">4</option>
+                                        <option value="6">5</option>
+                                        <option value="7">6</option>
+                                        <option value="8">7</option>
+                                        <option value="9">8</option>
+                                        <option value="10">9</option>
+                                        <option value="11">10+</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Color de Ojos</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                        <option value="1">Negros</option>
+                                        <option value="2">Cafés</option>
+                                        <option value="3">Grises</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Color de Pelo</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                        <option value="1">Negro</option>
+                                        <option value="2">Café</option>
+                                        <option value="3">Gris</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500"> Aficiones </h2>
+                            </div>
+
+                            <div class="flex flex-wrap py-2">
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Leer</span>
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Bailar</span>
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Música</span>
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Viajar</span>
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Teatro</span>
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Cine</span>
+                                <span class="badge-af" x-data="{active: false}" @click="active = !active"
+                                    :class="active ? 'bg-primary-100 text-primary-500' : '' ">Deportes</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500">Datos de Acceso </h2>
+                            </div>
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-secondary-400">Correo Electrónico</label>
+                                <input type="email" name="email" id="" placeholder="Correo Electrónico" class="input">
+                            </div>
+    
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-secondary-400">Nueva contraseña</label>
+                                <div class="relative" x-data="{ show: true }" x-cloak>
+                                    <input :type="show ? 'password' : 'text'" name="" id="" placeholder="Contraseña"
+                                        minlength="6" class="block input" required>
+                                    <div
+                                        class="absolute inset-y-0 right-0 flex items-center justify-center pr-4 text-sm leading-5 cursor-pointer">
+                                        <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
+                                            xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                        <svg @click="show = !show" :class="{'block': !show, 'hidden':show }"
+                                            xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mt-4">
+                                <label class="block text-sm font-medium text-secondary-400">Repetir nueva contraseña</label>
+                                <div class="relative" x-data="{ show: true }" x-cloak>
+                                    <input :type="show ? 'password' : 'text'" name="" id="" placeholder="Contraseña"
+                                        minlength="6" class="block input" required>
+                                    <div
+                                        class="absolute inset-y-0 right-0 flex items-center justify-center pr-4 text-sm leading-5 cursor-pointer">
+                                        <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
+                                            xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                        <svg @click="show = !show" :class="{'block': !show, 'hidden':show }"
+                                            xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 p-px text-slate-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="h-10 py-2 text-gray-600">
+                                <h2 class="text-xl font-semibold text-primary-500"> Estado Serologico </h2>
+                            </div>
+                            <div class="mt-3 space-y-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Estado del VIH</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-secondary-400">Medicación</label>
+                                    <!-- Por rellenar -->
+                                    <select id="" class="input">
+                                        <option disabled selected value> -- Elige una opción -- </option>
+                                    </select>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
+
+
+
+                    
                 </div>
 
                 <div class="mt-5 sm:mt-6">
                     <span class="flex w-full rounded-md shadow-sm">
                         <button @click="edit = !edit"
-                            class=" font-medium inline-flex justify-center w-full px-4 py-2 text-white bg-primary-500 rounded hover:bg-primary-700">
+                            class="inline-flex justify-center w-full px-4 py-2 font-medium text-white rounded bg-primary-500 hover:bg-primary-700">
                             Guardar cambios
                         </button>
                     </span>
@@ -683,11 +953,15 @@
                             </div>
                         </div>
                         <div class="absolute top-0 right-0 p-2">
-                            <button class="flex items-center px-3 py-2 bg-gray-500/[.9] text-gray-100 rounded-md text-xtin sm:text-xs font-medium hover:bg-gray-900">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-6 w-4 sm:w-6 h-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                                  </svg>
+                            <button
+                                class="flex items-center px-3 py-2 bg-gray-500/[.9] text-gray-100 rounded-md text-xtin sm:text-xs font-medium hover:bg-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:h-6 sm:w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
                                 <span>Editar foto de portada</span>
                             </button>
                         </div>
@@ -698,12 +972,16 @@
                     <div class="absolute lg:-top-16 -top-11">
                         <!-- Imagen de Perfil -->
                         <div class="relative">
-                            <img class="mx-auto w-20 h-20 border-4 border-white rounded-full sm:w-32 sm:h-32 object-cover"
-                            src="https://images.unsplash.com/photo-1642757151456-1b7c3977641a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
-                            alt="Foto de Perfil">
-                            <div class="absolute bottom-0 right-12 sm:right-18 sm:bottom-1 flex items-center justify-center border-2 border-white rounded-full sm:p-3 p-2.5 hover:bg-gray-900 bg-gray-500 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-4 w-3.5 sm:w-4 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                            <img class="object-cover w-20 h-20 mx-auto border-4 border-white rounded-full sm:w-32 sm:h-32"
+                                src="https://images.unsplash.com/photo-1642757151456-1b7c3977641a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                                alt="Foto de Perfil">
+                            <div
+                                class="absolute bottom-0 right-12 sm:right-18 sm:bottom-1 flex items-center justify-center border-2 border-white rounded-full sm:p-3 p-2.5 hover:bg-gray-900 bg-gray-500 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-4 w-3.5 sm:w-4 h-3.5"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                                        clip-rule="evenodd" />
                                 </svg>
                             </div>
                         </div>
@@ -724,8 +1002,8 @@
                         <div class="flex pt-20 my-5 space-x-2 lg:justify-end sm:pt-32 md:pt-36 lg:pt-0 lg:mb-14">
                             <!-- Botón Editar Perfil -->
                             <button @click="edit = !edit"
-                                class="flex items-center justify-center text-gray-500 rounded-lg btn  py-3 bg-gray-200 hover:text-gray-600 hover:bg-gray-300 lg:w-52">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none"
+                                class="flex items-center justify-center py-3 text-gray-500 bg-gray-200 rounded-lg btn hover:text-gray-600 hover:bg-gray-300 lg:w-52">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -912,42 +1190,9 @@
                                 :class="user.mensaje ? 'border-4 border-primary-400' : ''">
 
                                 <div class="relative">
-                                    <!--Bloqueado -->
-                                    <div class="absolute z-10 w-full h-full" x-show="user.bloqueado">
-                                        <div class="flex flex-col items-center justify-center w-auto h-5/6 group">
-                                            <div
-                                                class="group-hover:bg-white group-hover:text-primary-500 duration-300 ease-in-out group-hover:rotate-scale-up p-3.5 text-white rounded-full shadow-md bg-primary-500">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="w-7 h-7 group-hover:hidden" viewBox="0 0 20 20"
-                                                    fill="currentColor">
-                                                    <path fill-rule="evenodd"
-                                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="hidden w-7 h-7 group-hover:inline-block" width="12.371"
-                                                    height="24.743" fill="currentColor" viewBox="0 0 12.371 24.743">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
-                                                        transform="translate(-80.9 -592.6)" />
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <p
-                                                    class="p-5 font-semibold text-center text-white duration-300 opacity-0 group-hover:opacity-100">
-                                                    Hazte <span class="font-bold uppercase text-primary-500">Nes +
-                                                        Pro</span>
-                                                </p>
-                                            </div>
-
-                                        </div>
-                                    </div>
 
                                     <!-- Badge Nuevo -->
-                                    <div class="absolute z-10 m-4" :class="user.bloqueado ? 'hidden' : ''"
-                                        x-show="user.nuevo">
+                                    <div class="absolute z-10 m-4" x-show="user.nuevo">
                                         <div class="px-2 py-1 font-semibold text-white rounded-md bg-primary-500">
                                             <div class="flex items-center justify-center">
                                                 <span class="uppercase text-xxs">Nuevo</span>
@@ -956,8 +1201,7 @@
                                     </div>
 
                                     <!-- Favorito -->
-                                    <div class="absolute right-0 z-10 m-4" :class="user.bloqueado ? 'hidden' : ''"
-                                        x-show="user.favorito">
+                                    <div class="absolute right-0 z-10 m-4" x-show="user.favorito">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-amber-400"
                                             viewBox="0 0 20 20" fill="currentColor">
                                             <path
@@ -986,7 +1230,6 @@
 
                                                 <!-- Sin Imagen -->
                                                 <div x-show="user.noImagen"
-                                                    :class="user.bloqueado ? 'backdrop-filter blur brightness-50 bg-slate-700' : ''"
                                                     class="flex items-center justify-center w-full rounded-lg md:h-40 h-96 xs:h-52">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                         class="w-32 h-32 text-slate-400" viewBox="0 0 20 20"
@@ -998,13 +1241,12 @@
                                                 </div>
 
                                                 <!-- Imagen -->
-                                                <div
-                                                    :class="{'hidden' : user.noImagen, 'backdrop-filter blur-sm brightness-50' : user.bloqueado}">
+                                                <div :class="user.noImagen ? 'hidden' : ''">
                                                     <img x-bind:src="user.img" alt="User image avatar"
                                                         class="object-cover object-center w-full rounded-lg md:h-40 h-96 xs:h-52">
                                                 </div>
                                         </div>
-                                        <div class="p-2" :class="user.bloqueado ? 'backdrop-filter blur' : ''">
+                                        <div class="p-2">
 
                                             <div class="flex items-center">
 
@@ -1520,12 +1762,12 @@
                 <div class="pt-1 pb-4 bg-white rounded-xl">
 
                     <!-- Acerca de Información-->
-                    <div class="overflow-y-hidden h-96 space-y-10" :class="openInfo ? 'overflow-y-scroll' : ''">
+                    <div class="space-y-10 overflow-y-hidden h-96" :class="openInfo ? 'overflow-y-scroll' : ''">
                         <div>
                             <div class="h-10 px-6 py-2 text-gray-600">
                                 <h2 class="text-xl font-semibold text-primary-500"> Acerca de </h2>
                             </div>
-                            <div class="px-6  mt-3 space-y-5 ">
+                            <div class="px-6 mt-3 space-y-5 ">
                                 <div>
                                     <h3 class="font-semibold text-secondary-400">Género</h3>
                                     <p class="text-sm font-medium text-gray-500">Transexual</p>
@@ -1574,7 +1816,7 @@
                             <div class="h-10 px-6 py-2 text-gray-600">
                                 <h2 class="text-xl font-semibold text-primary-500"> Sobre Mí </h2>
                             </div>
-                            <div class="px-6  mt-3 space-y-5 ">
+                            <div class="px-6 mt-3 space-y-5 ">
                                 <div>
                                     <h3 class="font-semibold text-secondary-400"> Me interesa </h3>
                                     <p class="text-sm font-medium text-gray-500">Disfrutar de las salidas</p>
@@ -1609,7 +1851,7 @@
                             <div class="h-10 px-6 py-2 text-gray-600">
                                 <h2 class="text-xl font-semibold text-primary-500"> Que busco </h2>
                             </div>
-                            <div class="px-6  mt-3 space-y-5 ">
+                            <div class="px-6 mt-3 space-y-5 ">
                                 <div>
                                     <h3 class="font-semibold text-secondary-400">Género</h3>
                                     <p class="text-sm font-medium text-gray-500">Hombre</p>
@@ -1643,7 +1885,7 @@
                             <div class="h-10 px-6 py-2 text-gray-600">
                                 <h2 class="text-xl font-semibold text-primary-500"> Un poco más de mí </h2>
                             </div>
-                            <div class="px-6  mt-3 space-y-5 ">
+                            <div class="px-6 mt-3 space-y-5 ">
                                 <div>
                                     <h3 class="font-semibold text-secondary-400">Tabaco</h3>
                                     <p class="text-sm font-medium text-gray-500"> No Tabaco </p>
@@ -1702,7 +1944,7 @@
                             <div class="h-10 px-6 py-2 text-gray-600">
                                 <h2 class="text-xl font-semibold text-primary-500"> Estado serologico </h2>
                             </div>
-                            <div class="px-6  mt-3 space-y-5 ">
+                            <div class="px-6 mt-3 space-y-5 ">
                                 <div>
                                     <h3 class="font-semibold text-secondary-400"> Estado del VIH </h3>
                                     <p class="text-sm font-medium text-gray-500"> Negativo</p>
@@ -1719,10 +1961,10 @@
                             <div class="px-6 py-2 text-gray-600">
                                 <h2 class="text-xl font-semibold text-primary-500"> Perfil verificado </h2>
                             </div>
-                            <div class="px-6  mt-3 space-y-5 ">
+                            <div class="px-6 mt-3 space-y-5 ">
                                 <div class="flex items-center">
                                     <h3 class="font-semibold text-secondary-400"> Email </h3>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-blue-700"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 text-blue-700"
                                         viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd"
                                             d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -1732,7 +1974,7 @@
 
                                 <div class="flex items-center">
                                     <h3 class="font-semibold text-secondary-400"> Google </h3>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-blue-700"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 text-blue-700"
                                         viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd"
                                             d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -1742,7 +1984,7 @@
 
                                 <div class="flex items-center">
                                     <h3 class="font-semibold text-secondary-400"> Facebook </h3>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-blue-700"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 text-blue-700"
                                         viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd"
                                             d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -1896,6 +2138,91 @@
             }
         }
     </script>
+    <script>
+        //Inicio de Slider Range Edad
+        let minEdad = document.getElementById("minEdad");
+        let maxEdad = document.getElementById("maxEdad");
+        let range = document.querySelector(".slider > .range");
+        let textMinEdad = document.querySelector(".textMinEdad");
+        let textMaxEdad = document.querySelector(".textMaxEdad");
+
+        function setMinValue() {
+            let edad = minEdad,
+                min = parseInt(edad.min),
+                max = parseInt(edad.max);
+
+            edad.value = Math.min(parseInt(edad.value), parseInt(maxEdad.value) - 5);
+            textMinEdad.textContent = `${edad.value * 1}`;
+
+            let percent = ((edad.value - min) / (max - min)) * 100;
+
+            range.style.left = percent + "%";
+        }
+
+        setMinValue();
+
+        function setMaxValue() {
+            let edad = maxEdad,
+                min = parseInt(edad.min),
+                max = parseInt(edad.max);
+
+            edad.value = Math.max(parseInt(edad.value), parseInt(minEdad.value) + 5);
+            textMaxEdad.textContent = ` -  ${edad.value * 1}`;
+
+            let percent = ((edad.value - min) / (max - min)) * 100;
+
+            range.style.right = 100 - percent + "%";
+        }
+
+        setMaxValue();
+
+        minEdad.addEventListener("input", setMinValue);
+        maxEdad.addEventListener("input", setMaxValue);
+        //Final de Slider Range Edad
+
+        //Inicio de Slider Range Altura
+        let minAltura = document.getElementById("minAltura");
+        let maxAltura = document.getElementById("maxAltura");
+        let range2 = document.querySelector(".slider1 > .range1");
+        let textMinAltura = document.querySelector(".textMinAltura");
+        let textMaxAltura = document.querySelector(".textMaxAltura");
+
+        function setMinAltura() {
+            let altura = minAltura,
+                min = parseInt(altura.min),
+                max = parseInt(altura.max);
+
+            altura.value = Math.min(parseInt(altura.value), parseInt(maxAltura.value) - 5);
+            textMinAltura.textContent = `${altura.value * 1}`;
+
+            let percent = ((altura.value - min) / (max - min)) * 100;
+
+            range2.style.left = percent + "%";
+        }
+
+        setMinAltura();
+
+        function setMaxAltura() {
+            let altura = maxAltura,
+                min = parseInt(altura.min),
+                max = parseInt(altura.max);
+
+            altura.value = Math.max(parseInt(altura.value), parseInt(minAltura.value) + 5);
+            textMaxAltura.textContent = ` -  ${altura.value * 1}`;
+
+            let percent = ((altura.value - min) / (max - min)) * 100;
+
+            range2.style.right = 100 - percent + "%";
+        }
+
+        setMaxAltura();
+
+        minAltura.addEventListener("input", setMinAltura);
+        maxAltura.addEventListener("input", setMaxAltura);
+            //Final de Slider Range Altura
+
+    </script>
+
 </body>
 
 </html>
