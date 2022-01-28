@@ -1,0 +1,9 @@
+/* Momentos */
+
+/* Estilo para reducir a 3 y a 4 historias en Responsive */
+@media (max-width: 768px) {
+    .stories a:nth-child(3),
+    .stories a:nth-child(4) {
+      display: none;
+    }
+  }
