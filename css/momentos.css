@@ -7,3 +7,17 @@
       display: none;
     }
   }
+
+  @media (max-width: 408px) {
+    .stories a:nth-child(2) {
+      display: none;
+    }
+  }
+
+  body.isHidden {
+    overflow: hidden;
+  }
+
+  .list a.uk-active {
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  }
