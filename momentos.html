@@ -530,65 +530,66 @@
                 <div class="lg:flex lg:space-x-6">
 
                     <!-- Contenido Principal -->
-                    <div class="px-6 pt-24 lg:w-3/4 2xl:w-1/2 2xl:mx-auto space-y-7">
+                    <div class="px-3 pt-24 sm:px-6 lg:w-3/4 2xl:w-1/2 2xl:mx-auto space-y-7">
 
                         <!-- Stories -->
                         <div class="lg:px-20">
                             <div
-                                class="relative flex grid  grid-cols-2 xs:grid-cols-3 gap-2 p-4 bg-white rounded-lg shadow-md md:grid-cols-5 lg:-mx-20 flex-nowrap stories">
+                                class="relative flex grid grid-cols-2 gap-2 p-4 bg-white rounded-lg shadow-md xs:grid-cols-3 md:grid-cols-5 lg:-mx-20 flex-nowrap stories">
 
-                                <a @click="hidden = !hidden" class="relative" href="#" uk-toggle="target: #story ; cls: uk-hidden">
-
-                                    <img class="object-cover w-full xs:w-40 h-48 rounded-lg sm:h-60 backdrop-filter brightness-75"
-                                        src="https://images.unsplash.com/photo-1643029950323-92dc1129339c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                                <a class="relative group" href="./crear.html">
+                                    <img class="object-cover w-full h-48 transition duration-150 ease-in-out rounded-lg sm:h-60 backdrop-filter group-hover:brightness-75"
+                                        src="https://i.pravatar.cc/150?img=12"
                                         alt="">
-                                    <img class="absolute top-0  border-2 border-primary-500 w-10 h-10 m-1.5 rounded-full"
-                                        src="https://i.pravatar.cc/150?img=12" alt="">
-                                    <h4 class="absolute bottom-0 text-sm font-medium text-white m-1.5"> Crear una
+                                    <h4 class="absolute bottom-0 w-full p-3 text-xs font-medium text-white transition duration-150 ease-in-out rounded-b-lg sm:text-sm group-hover:text-gray-100 group-hover:bg-gray-900 bg-secondary-500"> Crear una
                                         historia
                                     </h4>
                                 </a>
-                                <a @click="hidden = !hidden" class="relative" href="#" uk-toggle="target: #story ; cls: uk-hidden">
+                                <a @click="hidden = !hidden" class="relative transition group" href="#"
+                                    uk-toggle="target: #story ; cls: uk-hidden">
 
-                                    <img class="object-cover w-full xs:w-40 h-48 rounded-lg sm:h-60 backdrop-filter brightness-75"
+                                    <img class="object-cover w-full h-48 rounded-lg xs:w-40 sm:h-60 backdrop-filter brightness-75"
                                         src="https://images.unsplash.com/photo-1642979876496-7fd6bce1c80b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
                                         alt="">
                                     <img class="absolute top-0 w-10 border-2 border-primary-500 h-10 m-1.5 rounded-full"
                                         src="https://i.pravatar.cc/150?img=64" alt="">
-                                    <h4 class="absolute bottom-0 text-sm font-medium text-white m-1.5"> Dennis Han</h4>
+                                    <h4 class="transition duration-150 ease-in-out group-hover:-translate-y-1 absolute bottom-0 text-sm font-medium text-white m-1.5"> Dennis Han</h4>
                                 </a>
-                                <a @click="hidden = !hidden" class="relative" href="#" uk-toggle="target: #story ; cls: uk-hidden">
+                                <a @click="hidden = !hidden" class="relative group" href="#"
+                                    uk-toggle="target: #story ; cls: uk-hidden">
 
-                                    <img class="object-cover w-full xs:w-40 h-48 rounded-lg sm:h-60 backdrop-filter brightness-75"
+                                    <img class="object-cover w-full h-48 rounded-lg xs:w-40 sm:h-60 backdrop-filter brightness-75"
                                         src="https://images.unsplash.com/photo-1642965961298-02f31304044d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
                                         alt="">
                                     <img class="absolute top-0 w-10 border-2 border-primary-500 h-10 m-1.5 rounded-full"
                                         src="https://i.pravatar.cc/150?img=47" alt="">
-                                    <h4 class="absolute bottom-0 text-sm font-medium text-white m-1.5"> Jessica Erica
+                                    <h4 class="transition duration-150 ease-in-out group-hover:-translate-y-1 absolute bottom-0 text-sm font-medium text-white m-1.5"> Jessica Erica
                                     </h4>
                                 </a>
-                                <a @click="hidden = !hidden" class="relative" href="#" uk-toggle="target: #story ; cls: uk-hidden">
+                                <a @click="hidden = !hidden" class="relative group" href="#"
+                                    uk-toggle="target: #story ; cls: uk-hidden">
 
-                                    <img class="object-cover w-full xs:w-40 h-48 rounded-lg sm:h-60 backdrop-filter brightness-75"
+                                    <img class="object-cover w-full h-48 rounded-lg xs:w-40 sm:h-60 backdrop-filter brightness-75"
                                         src="https://images.unsplash.com/photo-1643016567283-df803e7d9fba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
                                         alt="">
                                     <img class="absolute top-0 w-10 border-2 border-primary-500 h-10 m-1.5 rounded-full"
                                         src="https://i.pravatar.cc/150?img=25" alt="">
-                                    <h4 class="absolute bottom-0 text-sm font-medium text-white m-1.5"> Jhon Doe</h4>
+                                    <h4 class="transition duration-150 ease-in-out group-hover:-translate-y-1 absolute bottom-0 text-sm font-medium text-white m-1.5"> Jhon Doe</h4>
                                 </a>
-                                <a @click="hidden = !hidden" class="relative" href="#" uk-toggle="target: #story ; cls: uk-hidden">
+                                <a @click="hidden = !hidden" class="relative group" href="#"
+                                    uk-toggle="target: #story ; cls: uk-hidden">
 
-                                    <img class="object-cover w-full xs:w-40 h-48 rounded-lg sm:h-60 backdrop-filter brightness-75"
+                                    <img class="object-cover w-full h-48 rounded-lg xs:w-40 sm:h-60 backdrop-filter brightness-75"
                                         src="https://images.unsplash.com/photo-1642940883392-1692b323c2aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
                                         alt="">
                                     <img class="absolute top-0 w-10 border-2 border-primary-500 h-10 m-1.5 rounded-full"
                                         src="https://i.pravatar.cc/150?img=36" alt="">
-                                    <h4 class="absolute bottom-0 text-sm font-medium text-white m-1.5"> Liz Elian</h4>
+                                    <h4 class=" transition duration-150 ease-in-out group-hover:-translate-y-1 absolute bottom-0 text-sm font-medium text-white m-1.5"> Liz Elian</h4>
                                 </a>
 
                                 <!-- Flecha Más Stories -->
                                 <a @click="hidden = !hidden" href="#" uk-toggle="target: #story ; cls: uk-hidden"
-                                    class="absolute z-10 items-center justify-center p-2 -mr-4 text-xl bg-white rounded-full shadow-md cursor-pointer lg:flex w-9 uk-position-center-right"
+                                    class="absolute z-10 items-center justify-center p-2 -mr-2.5 text-xl bg-white rounded-full shadow-md cursor-pointer lg:flex w-9 uk-position-center-right"
                                     uk-toggle="target: body ; cls: isHidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-secondary-400"
                                         viewBox="0 0 20 20" fill="currentColor">
@@ -610,7 +611,7 @@
                                     class="w-full h-10 px-6 text-sm transition duration-150 ease-in-out rounded-lg cursor-pointer focus:outline focus:outline-offset-1 focus:outline-primary-500 sm:flex-1 xs:h-12 bg-slate-100 hover:bg-gray-100 text-medium hover:placeholder:text-gray-500 placeholder:text-gray-400">
                             </div>
                             <div
-                                class="flex flex-wrap items-center justify-between pt-3 text-sm font-medium xs:flex-nowrap sm:pl-14 sm:px-8">
+                                class="flex-wrap items-center justify-between hidden pt-3 text-sm font-medium sm:flex xs:flex-nowrap md:pl-14 md:px-8">
                                 <div
                                     class="flex items-center px-4 py-3 text-xs transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 sm:text-sm text-slate-400 hover:text-gray-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-red-500"
@@ -774,40 +775,35 @@
                             <div class="flex flex-wrap justify-between space-y-3 xs:space-y-0">
                                 <div class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
                                     <!-- Botón Reaccion -->
-                                    <button
+                                    <button id="btnReaction"
                                         class="flex items-center justify-center p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 sm:text-base">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path
-                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
-                                        </svg>
-                                        <span>Me gusta</span>
+                                        <img id="imgReaction" src="./img/thumb-up.svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5" alt="">
+                                        <span id="txtReaction">Me gusta</span>
                                     </button>
-                                    <div class=""
-                                        uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; delay-show: 700"
-                                        style="width:425px">
+                                    <div class="!w-64 sm:!w-425"
+                                        uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; mode: click">
                                         <div class="p-3 bg-white rounded-md shadow">
                                             <div class="flex items-center justify-between">
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/like.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="like()">
+                                                    <img src="./img/like.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/love.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="love()">
+                                                    <img src="./img/love.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/care.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="care()">
+                                                    <img src="./img/care.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/haha.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="haha()">
+                                                    <img src="./img/haha.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/wow.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="wow()">
+                                                    <img src="./img/wow.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/sad.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="sad()">
+                                                    <img src="./img/sad.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
-                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4">
-                                                    <img src="./img/angry.svg" alt="" class="h-12 mr-2">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="angry()">
+                                                    <img src="./img/angry.svg" alt="" class="h-7 sm:h-12 mr-2">
                                                 </div>
                                             </div>
                                         </div>
@@ -1046,26 +1042,36 @@
                             <div class="flex flex-wrap justify-between space-y-3 xs:space-y-0">
                                 <div class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
                                     <!-- Botón Reaccion -->
-                                    <button
+                                    <button id="btnReaction"
                                         class="flex items-center justify-center p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 sm:text-base">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path
-                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
-                                        </svg>
-                                        <span>Me gusta</span>
+                                        <img id="imgReaction" src="./img/thumb-up.svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5" alt="">
+                                        <span id="txtReaction">Me gusta</span>
                                     </button>
-                                    <div class="" uk-drop="pos: top-left ;animation: uk-animation-slide-left-small"
-                                        style="width:425px">
+                                    <div class="!w-64 sm:!w-425"
+                                        uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; mode: click">
                                         <div class="p-3 bg-white rounded-md shadow">
                                             <div class="flex items-center justify-between">
-                                                <img src="./img/like.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/love.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/care.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/haha.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/wow.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/sad.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/angry.svg" alt="" class="h-12 mr-2 ">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="like()">
+                                                    <img src="./img/like.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="love()">
+                                                    <img src="./img/love.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="care()">
+                                                    <img src="./img/care.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="haha()">
+                                                    <img src="./img/haha.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="wow()">
+                                                    <img src="./img/wow.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="sad()">
+                                                    <img src="./img/sad.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="angry()">
+                                                    <img src="./img/angry.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1381,26 +1387,36 @@
                             <div class="flex flex-wrap justify-between space-y-3 xs:space-y-0">
                                 <div class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
                                     <!-- Botón Reaccion -->
-                                    <button
+                                    <button id="btnReaction"
                                         class="flex items-center justify-center p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 sm:text-base">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path
-                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
-                                        </svg>
-                                        <span>Me gusta</span>
+                                        <img id="imgReaction" src="./img/thumb-up.svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5" alt="">
+                                        <span id="txtReaction">Me gusta</span>
                                     </button>
-                                    <div class="" uk-drop="pos: top-left ;animation: uk-animation-slide-left-small"
-                                        style="width:425px">
+                                    <div class="!w-64 sm:!w-425"
+                                        uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; mode: click">
                                         <div class="p-3 bg-white rounded-md shadow">
                                             <div class="flex items-center justify-between">
-                                                <img src="./img/like.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/love.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/care.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/haha.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/wow.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/sad.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/angry.svg" alt="" class="h-12 mr-2 ">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="like()">
+                                                    <img src="./img/like.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="love()">
+                                                    <img src="./img/love.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="care()">
+                                                    <img src="./img/care.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="haha()">
+                                                    <img src="./img/haha.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="wow()">
+                                                    <img src="./img/wow.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="sad()">
+                                                    <img src="./img/sad.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="angry()">
+                                                    <img src="./img/angry.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1671,26 +1687,36 @@
                             <div class="flex flex-wrap justify-between space-y-3 xs:space-y-0">
                                 <div class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
                                     <!-- Botón Reaccion -->
-                                    <button
+                                    <button id="btnReaction"
                                         class="flex items-center justify-center p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 sm:text-base">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path
-                                                d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
-                                        </svg>
-                                        <span>Me gusta</span>
+                                        <img id="imgReaction" src="./img/thumb-up.svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5" alt="">
+                                        <span id="txtReaction">Me gusta</span>
                                     </button>
-                                    <div class="" uk-drop="pos: top-left ;animation: uk-animation-slide-left-small"
-                                        style="width:425px">
+                                    <div class="!w-64 sm:!w-425"
+                                        uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; mode: click">
                                         <div class="p-3 bg-white rounded-md shadow">
                                             <div class="flex items-center justify-between">
-                                                <img src="./img/like.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/love.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/care.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/haha.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/wow.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/sad.svg" alt="" class="h-12 mr-2">
-                                                <img src="./img/angry.svg" alt="" class="h-12 mr-2 ">
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="like()">
+                                                    <img src="./img/like.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="love()">
+                                                    <img src="./img/love.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="care()">
+                                                    <img src="./img/care.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="haha()">
+                                                    <img src="./img/haha.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="wow()">
+                                                    <img src="./img/wow.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="sad()">
+                                                    <img src="./img/sad.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out hover:-translate-y-4 cursor-pointer" onclick="angry()">
+                                                    <img src="./img/angry.svg" alt="" class="h-7 sm:h-12 mr-2">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1782,7 +1808,7 @@
                             </div>
                         </div>
 
-                        <!-- Botón Ver más -->
+                        <!-- Botón Ver más (Agrega más publicaciones llamando desde la BD)-->
                         <div class="flex justify-center mt-6">
                             <a href="#"
                                 class="px-6 py-2 my-3 font-medium bg-white rounded-lg shadow-md text-primary-500">
@@ -2185,62 +2211,69 @@
     </div>
 
     <!-- Modal Crear Publicación -->
-    <div id="create-post-modal" class="" uk-modal>
+    <div id="create-post-modal" class="!p-0 sm:!p-10" uk-modal>
         <div
-            class="relative p-0 rounded-lg shadow-2xl uk-modal-dialog uk-modal-body lg:w-5/12 uk-animation-slide-bottom-small">
+            class="relative h-screen !p-0 shadow-2xl sm:h-auto sm:rounded-lg uk-modal-dialog uk-modal-body lg:w-5/12 uk-animation-slide-bottom-small">
 
-            <div class="flex items-center justify-between p-4">
+            <div class="flex items-center justify-between p-4 pt-6">
                 <h3 class="text-lg font-semibold text-secondary-400"> Nueva publicación </h3>
-                <button class="uk-modal-close-default bg-red-500 text-white font-bold rounded-full p-1.5 right-2"
+                <button
+                    class="uk-modal-close-default !bg-red-500 !text-white !rounded-full !p-1.5 right-2 !mt-2"
                     type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
             </div>
-            <div class="flex items-start flex-1 p-5 space-x-4 bg-gray-50">
+            <div class="flex items-start flex-1 p-5 space-x-4 bg-gray-50 h-2/5 sm:h-auto">
                 <img src="https://i.pravatar.cc/150?img=12"
                     class="object-cover w-12 h-12 bg-gray-200 border border-white rounded-full">
                 <div class="flex-1 pt-2">
                     <textarea
-                        class="w-full font-medium text-gray-800 shadow-none outline-none bg-gray-50 placeholder:text-gray-400 focus:ring-offset-none uk-textarea focus:shadow-none"
+                        class="w-full font-medium text-gray-800 shadow-none outline-none resize-none sm:resize-y sm:h-auto bg-gray-50 placeholder:text-gray-400 focus:ring-offset-none uk-textarea focus:shadow-none"
                         rows="5" placeholder="¿En qué piensas hoy?"></textarea>
                 </div>
 
             </div>
-            <div class="bottom-0 w-full p-4 space-x-4 bg-gray-50">
-                <div class="flex items-center justify-between p-2 bg-white rounded-lg shadow">
+            <div id="images" class="relative flex flex-wrap gap-5 px-4 bg-gray-50"></div>
+            <div class="w-full space-x-4 sm:p-4 bg-gray-50">
+                <div class="flex items-center justify-between p-2 bg-white shadow sm:rounded-lg">
                     <div class="hidden ml-1 text-sm font-medium sm:block text-secondary-400"> Agregar a tu
                         publicación
                     </div>
-                    <div class="flex items-center justify-center flex-1 space-x-2 lg:justify-end">
+                    <div
+                        class="relative flex-1 space-y-5 sm:space-x-2 sm:space-y-0 sm:flex sm:items-center sm:justify-center lg:justify-end">
                         <div
-                            class="flex items-center px-4 py-3 text-xs transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 sm:text-sm text-slate-400 hover:text-gray-400">
+                            class="flex items-center px-4 py-3 text-sm transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 text-slate-400 hover:text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
                                     clip-rule="evenodd" />
                             </svg>
+                            <span class="ml-3 sm:hidden"> Foto/Video</span>
+                            <input id="file" onchange="preview()" type="file" accept="image/png, image/jpeg" multiple class="absolute w-5 h-5 opacity-0 cursor-pointer">
                         </div>
                         <div
-                            class="flex items-center px-4 py-3 text-xs transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 sm:text-sm text-slate-400 hover:text-gray-400">
+                            class="flex items-center px-4 py-3 text-sm transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 text-slate-400 hover:text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z"
                                     clip-rule="evenodd" />
                             </svg>
+                            <span class="ml-3 sm:hidden"> Etiquetar amigo</span>
                         </div>
                         <div
-                            class="flex items-center px-4 py-3 text-xs transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 sm:text-sm text-slate-400 hover:text-gray-400">
+                            class="flex items-center px-4 py-3 text-sm transition duration-150 ease-in-out rounded-lg cursor-pointer hover:bg-gray-100 text-slate-400 hover:text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-500" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
                                     clip-rule="evenodd" />
                             </svg>
+                            <span class="ml-3 sm:hidden"> Sentimiento/Actividad</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center justify-between w-full p-3 border-t">
+            <div class="flex items-center justify-between w-full p-3 mt-6 border-t">
 
                 <select
                     class="flex items-center justify-center px-5 text-sm font-medium text-gray-700 bg-gray-100 rounded-md w-28 selectpicker story h-9">
@@ -2258,45 +2291,108 @@
     </div>
 
     <!-- Historias -->
-    <div id="story" class="fixed h-screen w-full bg-gray-900 z-50 top-0 left-0 flex uk-hidden">
-        <div class="w-2/6 bg-white sm:order-1 p-6 space-y-6  overflow-y-scroll hidden lg:inline">
-            <h3 class="font-bold text-3xl text-secondary-500">Todas las historias</h3>
+    <div id="story" class="fixed top-0 left-0 z-50 flex w-full h-screen bg-stone-900 uk-hidden">
+        <div class="hidden w-2/6 p-6 space-y-6 overflow-y-scroll bg-white sm:order-1 lg:inline">
+            <h3 class="text-3xl font-bold text-secondary-500">Todas las historias</h3>
             <div>
                 <p class="text-xl font-semibold text-secondary-400">Tu Historia</p>
-                <div class="flex items-center rounded-md p-2 hover:bg-gray-100 cursor-pointer">
+                <a href="./crear.html" class="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-100">
                     <div class="m-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-500" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
                     </div>
                     <div>
                         <div class="ml-3">
-                            <p class="font-semibold text-lg text-gray-800">Crear una historia</p>
-                            <p class="text-gray-600 font-medium text-xs">Comparte una foto donde quiera que estes.</p>
+                            <p class="text-lg font-semibold text-gray-800">Crear una historia</p>
+                            <p class="text-xs font-medium text-gray-600">Comparte una foto donde quiera que estes.</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div>
                 <p class="text-xl font-semibold text-secondary-400">Todas las historias</p>
-                <div class="list mt-3" x-data="{data: infoStories}"
-                    uk-switcher="connect: #storySlider ; toggle: &gt; * ; animation: uk-animation-slide-right-medium, uk-animation-slide-left-medium ">
-                    <template x-for="(story, index) in infoStories" :key="index">
-                            <a href="#" class=" flex w-full items-center my-2 py-3 px-2 hover:bg-gray-100 rounded-md">
-                                <div class="w-16 inline-block" tabindex="0" aria-label="group icon" role="img">
-                                    <img class="object-cover w-14 h-14 rounded-full border-2 border-primary-500"
-                                        x-bind:src="story.img" alt="Profile image" />
+                <div class="mt-3 list"
+                    uk-switcher="connect: #storySlider ; toggle: > *; animation: uk-animation-slide-right-medium, uk-animation-slide-left-medium ">
+                    <a href="#" class="flex items-center w-full px-2 py-3 my-2 rounded-md hover:bg-gray-100 uk-active">
+                        <div class="inline-block w-16" tabindex="0" aria-label="group icon" role="img">
+                            <img class="object-cover border-2 rounded-full w-14 h-14 border-primary-500"
+                                src="https://i.pravatar.cc/150?img=64" alt="Profile image" />
 
-                                </div>
-                                <div class="w-full pl-3">
-                                    <div class="">
-                                        <p class="text-secondary-500 font-semibold text-xl" x-text="story.name"></p>
-                                        <span class="text-xs text-gray-600" x-text="story.time"></span>
-                                    </div>
-                                </div>
-                            </a>
-                    </template>
+                        </div>
+                        <div class="w-full pl-3">
+                            <div class="">
+                                <p class="text-xl font-semibold text-secondary-500">Dennis Han</p>
+                                <span class="text-xs text-gray-600">8 min</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center w-full px-2 py-3 my-2 rounded-md hover:bg-gray-100">
+                        <div class="inline-block w-16" tabindex="0" aria-label="group icon" role="img">
+                            <img class="object-cover border-2 rounded-full w-14 h-14 border-primary-500"
+                                src="https://i.pravatar.cc/150?img=47" alt="Profile image" />
+
+                        </div>
+                        <div class="w-full pl-3">
+                            <div class="">
+                                <p class="text-xl font-semibold text-secondary-500">Jessica Erica</p>
+                                <span class="text-xs text-gray-600">20 min</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center w-full px-2 py-3 my-2 rounded-md hover:bg-gray-100">
+                        <div class="inline-block w-16" tabindex="0" aria-label="group icon" role="img">
+                            <img class="object-cover border-2 rounded-full w-14 h-14 border-primary-500"
+                                src="https://i.pravatar.cc/150?img=25" alt="Profile image" />
+
+                        </div>
+                        <div class="w-full pl-3">
+                            <div class="">
+                                <p class="text-xl font-semibold text-secondary-500">Jhon Doe</p>
+                                <span class="text-xs text-gray-600">5 min</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center w-full px-2 py-3 my-2 rounded-md hover:bg-gray-100">
+                        <div class="inline-block w-16" tabindex="0" aria-label="group icon" role="img">
+                            <img class="object-cover border-2 rounded-full w-14 h-14 border-primary-500"
+                                src="https://i.pravatar.cc/150?img=36" alt="Profile image" />
+
+                        </div>
+                        <div class="w-full pl-3">
+                            <div class="">
+                                <p class="text-xl font-semibold text-secondary-500">Liz Elian</p>
+                                <span class="text-xs text-gray-600">3 hrs</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center w-full px-2 py-3 my-2 rounded-md hover:bg-gray-100">
+                        <div class="inline-block w-16" tabindex="0" aria-label="group icon" role="img">
+                            <img class="object-cover border-2 rounded-full w-14 h-14 border-primary-500"
+                                src="https://i.pravatar.cc/150?img=40" alt="Profile image" />
+
+                        </div>
+                        <div class="w-full pl-3">
+                            <div class="">
+                                <p class="text-xl font-semibold text-secondary-500">Paola Smith</p>
+                                <span class="text-xs text-gray-600">10 hrs</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center w-full px-2 py-3 my-2 rounded-md hover:bg-gray-100">
+                        <div class="inline-block w-16" tabindex="0" aria-label="group icon" role="img">
+                            <img class="object-cover border-2 rounded-full w-14 h-14 border-primary-500"
+                                src="https://i.pravatar.cc/150?img=22" alt="Profile image" />
+
+                        </div>
+                        <div class="w-full pl-3">
+                            <div class="">
+                                <p class="text-xl font-semibold text-secondary-500">Andrea Wun</p>
+                                <span class="text-xs text-gray-600">8 min</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -2304,163 +2400,231 @@
         <div class="flex-1">
             <ul id="storySlider" class="uk-switcher uk-animation-scale-up">
                 <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute left-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute right-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643477543167-0e71954235e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                    <div class="relative h-screen lg:py-6 lg:mx-auto lg:w-2/6">
+                        <div class="absolute w-full p-4 bg-gradient-to-b from-stone-800">
+                            <div class="flex items-center">
+                                <div class="inline-block" tabindex="0" aria-label="group icon" role="img">
+                                    <img class="object-cover w-10 h-10 rounded-full"
+                                        src="https://i.pravatar.cc/150?img=64" alt="Profile image" />
+        
+                                </div>
+                                <div class="flex items-center">
+                                    <p class="ml-3 text-lg font-semibold text-white sm:text-xl">Dennis Han</p>
+                                    <p class="mt-1 ml-3 text-xs text-gray-100">8 min</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="object-cover w-full h-full lg:rounded-md"
+                            src="https://images.unsplash.com/photo-1642979876496-7fd6bce1c80b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
                             alt="">
                     </div>
                 </li>
                 <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
-                    uk-switcher-item="previous">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </span>
-                <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
-                    uk-switcher-item="next">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643483200383-dfd0820af05c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
-                            alt="">
-                    </div>
-                </li>
-                <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute left-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute right-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643539480750-f77ac5bbfc83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
-                            alt="">
+                    <div class="relative h-screen lg:py-6 lg:mx-auto lg:w-2/6">
+                        <div class="absolute w-full p-4 bg-gradient-to-b from-stone-800">
+                            <div class="flex items-center">
+                                <div class="inline-block" tabindex="0" aria-label="group icon" role="img">
+                                    <img class="object-cover w-10 h-10 rounded-full"
+                                        src="https://i.pravatar.cc/150?img=47" alt="Profile image" />
+        
+                                </div>
+                                <div class="flex items-center">
+                                    <p class="ml-3 text-lg font-semibold text-white sm:text-xl">Jessica Erica</p>
+                                    <p class="mt-1 ml-3 text-xs text-gray-100">20 min</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="object-cover w-full h-full lg:rounded-md"
+                        src="https://images.unsplash.com/photo-1642965961298-02f31304044d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                        alt="">
                     </div>
                 </li>
                 <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute left-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute right-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643539480087-8c9248e9cc53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+
+                    <div class="relative h-screen lg:py-6 lg:mx-auto lg:w-2/6">
+                        <div class="absolute w-full p-4 bg-gradient-to-b from-stone-800">
+                            <div class="flex items-center">
+                                <div class="inline-block" tabindex="0" aria-label="group icon" role="img">
+                                    <img class="object-cover w-10 h-10 rounded-full"
+                                        src="https://i.pravatar.cc/150?img=25" alt="Profile image" />
+        
+                                </div>
+                                <div class="flex items-center">
+                                    <p class="ml-3 text-lg font-semibold text-white sm:text-xl">Jhon Doe</p>
+                                    <p class="mt-1 ml-3 text-xs text-gray-100">5 min</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="object-cover w-full h-full lg:rounded-md"
+                        src="https://images.unsplash.com/photo-1643539480750-f77ac5bbfc83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
                             alt="">
                     </div>
                 </li>
                 <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute z-10 left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute z-10 right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643542123174-a25bc1b4c23d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                    <div class="relative h-screen lg:py-6 lg:mx-auto lg:w-2/6">
+                        <div class="absolute w-full p-4 bg-gradient-to-b from-stone-800">
+                            <div class="flex items-center">
+                                <div class="inline-block" tabindex="0" aria-label="group icon" role="img">
+                                    <img class="object-cover w-10 h-10 rounded-full"
+                                        src="https://i.pravatar.cc/150?img=36" alt="Profile image" />
+        
+                                </div>
+                                <div class="flex items-center">
+                                    <p class="ml-3 text-lg font-semibold text-white sm:text-xl">Liz Elian</p>
+                                    <p class="mt-1 ml-3 text-xs text-gray-100">3 hrs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="object-cover w-full h-full lg:rounded-md"
+                        src="https://images.unsplash.com/photo-1642940883392-1692b323c2aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
                             alt="">
                     </div>
                 </li>
                 <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute left-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute right-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643542123174-a25bc1b4c23d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                    <div class="relative h-screen lg:py-6 lg:mx-auto lg:w-2/6">
+                        <div class="absolute w-full p-4 bg-gradient-to-b from-stone-800">
+                            <div class="flex items-center">
+                                <div class="inline-block" tabindex="0" aria-label="group icon" role="img">
+                                    <img class="object-cover w-10 h-10 rounded-full"
+                                        src="https://i.pravatar.cc/150?img=40" alt="Profile image" />
+        
+                                </div>
+                                <div class="flex items-center">
+                                    <p class="ml-3 text-lg font-semibold text-white sm:text-xl">Paola Smith</p>
+                                    <p class="mt-1 ml-3 text-xs text-gray-100">10 hrs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="object-cover w-full h-full lg:rounded-md"
+                        src="https://images.unsplash.com/photo-1640646971212-617e9162bf09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
                             alt="">
                     </div>
                 </li>
                 <li class="relative">
-                    <span class="absolute left-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute left-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <span class="absolute right-0 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
+                    <span
+                        class="absolute right-0 z-10 top-2/4 m-6 rounded-full p-3 lg:bg-white bg-white/[.5] cursor-pointer text-gray-700"
                         uk-switcher-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    <div class="h-screen lg:py-6">
-                        <img class="object-cover lg:w-2/6 h-full lg:mx-auto w-full lg:rounded-md"
-                            src="https://images.unsplash.com/photo-1643542123174-a25bc1b4c23d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                    <div class="relative h-screen lg:py-6 lg:mx-auto lg:w-2/6">
+                        <div class="absolute w-full p-4 bg-gradient-to-b from-stone-800">
+                            <div class="flex items-center">
+                                <div class="inline-block" tabindex="0" aria-label="group icon" role="img">
+                                    <img class="object-cover w-10 h-10 rounded-full"
+                                        src="https://i.pravatar.cc/150?img=22" alt="Profile image" />
+        
+                                </div>
+                                <div class="flex items-center">
+                                    <p class="ml-3 text-lg font-semibold text-white sm:text-xl">Andrea Wu</p>
+                                    <p class="mt-1 ml-3 text-xs text-gray-100">8 min</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="object-cover w-full h-full lg:rounded-md"
+                        src="https://images.unsplash.com/photo-1643542123174-a25bc1b4c23d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
                             alt="">
                     </div>
                 </li>
@@ -2468,10 +2632,10 @@
         </div>
         <!-- story colose button-->
         <span
-            class="lg:bg-primary-600 bg-gray-900/[.5] cursor-pointer lg:hover:bg-primary-700 flex items-center m-4 justify-center text-white absolute z-10 top-0 left-0 rounded-full p-2"
-            @click="hidden = !hidden" uk-toggle="target: #story ; cls: uk-hidden" uk-tooltip="title:Cerrar; pos: bottom" title=""
-            aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            class="lg:bg-primary-600 bg-gray-900/[.5] cursor-pointer lg:hover:bg-primary-700 flex items-center m-4 justify-center text-white absolute z-10 top-0 sm:mr-8 right-0 rounded-full p-2"
+            @click="hidden = !hidden" uk-toggle="target: #story ; cls: uk-hidden" uk-tooltip="title:Cerrar; pos: bottom"
+            title="" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                     clip-rule="evenodd" />
@@ -2592,39 +2756,140 @@
             }
         }
 
-        // Data de Stories
-        let infoStories = [
-            {
-                name: 'Wilson Doe',
-                img: 'https://i.pravatar.cc/150?img=3',
-                time: '3 hrs'
-            },
-            {
-                name: 'Denise Marie',
-                img: 'https://i.pravatar.cc/150?img=10',
-                time: '20 min'
-            },
-            {
-                name: 'James Clark',
-                img: 'https://i.pravatar.cc/150?img=15',
-                time: '5 min'
-            },
-            {
-                name: 'Maria Ramirez',
-                img: 'https://i.pravatar.cc/150?img=20',
-                time: '3 hrs'
-            },
-            {
-                name: 'Pao Smith',
-                img: 'https://i.pravatar.cc/150?img=40',
-                time: '10 hrs'
-            },
-            {
-                name: 'Andrea Wu',
-                img: 'https://i.pravatar.cc/150?img=22',
-                time: '8 min'
-            },
-        ]
+        let file = document.getElementById("file");
+        let images = document.getElementById("images");
+
+        function preview(){
+            images.innerHTML = "";
+
+            for(i of file.files) {
+                let reader = new FileReader();
+                let figure = document.createElement("figure");
+                let figCap = document.createElement("figCap");
+
+                figCap.innerText = "";
+                figure.appendChild(figCap);
+                reader.onload = () => {
+                    let img = document.createElement("img");
+                    img.setAttribute("src", reader.result);
+                    figure.insertBefore(img, figCap);
+                }
+
+                images.appendChild(figure);
+                reader.readAsDataURL(i);
+            }
+        }
+
+        let txtReaction = document.getElementById("txtReaction");
+        let imgReaction = document.getElementById("imgReaction");
+        function like(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me gusta";
+            imgReaction.src = "./img/like.svg"
+            txtReaction.classList.add('text-blue-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        function love(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me encanta";
+            imgReaction.src = "./img/love.svg"
+            txtReaction.classList.add('text-red-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        function care(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me importa";
+            imgReaction.src = "./img/care.svg"
+            txtReaction.classList.add('text-amber-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        function haha(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me divierte";
+            imgReaction.src = "./img/haha.svg"
+            txtReaction.classList.add('text-amber-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        function wow(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me asombra";
+            imgReaction.src = "./img/wow.svg"
+            txtReaction.classList.add('text-amber-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        function sad(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me entristece";
+            imgReaction.src = "./img/sad.svg"
+            txtReaction.classList.add('text-amber-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        function angry(){
+            txtReaction.className = "";
+            txtReaction.innerText = "Me enoja";
+            imgReaction.src = "./img/angry.svg"
+            txtReaction.classList.add('text-orange-500');
+            txtReaction.classList.add('font-medium');
+        }
+
+        const button = document.querySelector('#btnReaction');
+const delay = 2000;
+let timeout;
+
+// function removing or adding (after a delay) a class of active
+function toggleActive() {
+  if (button.classList.contains('active')) {
+    button.classList.remove('active');
+  } else {
+    timeout = setTimeout(() => {
+      button.classList.add('active');
+      timeout = null;
+    }, delay);
+  }
+}
+
+// function removing the existing, if any, timeout
+// this is made necessary in a situation where the press is removed before the timeout has run out
+function removeActive() {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+}
+
+// handle presses through the mouse cursor
+// ! to replicate the spacebar, a few more lines of JS are necessary
+button.addEventListener('mousedown', () => toggleActive());
+button.addEventListener('mouseup', () => removeActive());
+
+/* KEY events */
+// trigger the active functions only following a press on the spacebar
+const KEY_CODE = 32;
+// use a boolean to avoid running the function repeatedly (keydown runs multiple times while the spacebar is being pressed)
+let isKeydown = false;
+
+// hitting spacebar for the first time, use the function to add/remove the class
+button.addEventListener('keydown', ({keyCode}) => {
+  if(keyCode === KEY_CODE && !isKeydown) {
+    isKeydown = true;
+    toggleActive();
+  }
+});
+// when the spacebar is released, remove the existing, if any timeout
+button.addEventListener('keyup', ({keyCode}) => {
+  if(keyCode === KEY_CODE) {
+    isKeydown = false;
+    removeActive();
+  }
+});
+
+
+        
     </script>
 
 </body>
