@@ -21,3 +21,8 @@
   .list a.uk-active {
     background-color: rgb(254 234 237 / var(--tw-bg-opacity));
   }
+
+  .list a.uk-active img.border-primary {
+      --tw-border-opacity: 1;
+      border-color: rgb(249 46 75 / var(--tw-border-opacity));
+  }
