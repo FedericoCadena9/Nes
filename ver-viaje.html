@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Ver Viaje</title>
+</head>
+
+<body class="bg-background font-body">
+
+    <!-- Navbar -->
+    <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
+        <div class="relative bg-white">
+            <div class="px-6 mx-auto lg:px-8">
+                <div
+                    class="flex items-center justify-between py-5 border-gray-100 md:py-3 lg:justify-start lg:space-x-10">
+
+                    <div>
+                        <!-- Hamburger Menu Responsive -->
+                        <div class="inline-block xl:hidden">
+                            <button @click="openMenu = ! openMenu"
+                                class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+                                aria-expanded="false">
+
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Nes Logo -->
+                        <div class="hidden mx-4 md:inline-block lg:mx-0">
+                            <a href="index.html">
+                                <img class="w-auto h-7" src="./img/NesLogo.svg" alt="Nes Logo">
+                            </a>
+                        </div>
+
+                        <!-- Nes Logo Responsive -->
+                        <div class="inline-block sm:hidden">
+                            <a href="index.html">
+                                <img class="w-auto h-6 mx-3" src="./img/NesLogoResponsive.svg"
+                                    alt="Nes Logo Responsive">
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Navbar -->
+                    <div class="hidden xl:flex">
+                        <div class="relative">
+                            <nav class=" xl:flex">
+                                <div class="grid xl:flex gap-y-8">
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./conocer.html">Conocer</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./momentos.html">Momentos</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./eventos.html">Eventos</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./cadena-de-favores.html">Cadena de Favores</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./viajes.html">Viajes</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./blog.html">Blog</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end lg:flex-1 lg:w-0">
+
+                        <!-- Header Widgets -->
+                        <div class="flex">
+
+                            <div class="hidden md:flex">
+                                <div class="flex items-center justify-between">
+                                    <a href="./me-gusta.html">
+                                        <span class="circle-link">
+                                            <svg class="w-5 h-5 text-gray-600 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <p
+                                            class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                            Likes</p>
+                                    </a>
+
+                                    <a href="./favoritos.html">
+                                        <span class="circle-link">
+                                            <svg class="w-5 h-5 text-gray-600 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <p
+                                            class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                            Favoritos</p>
+                                    </a>
+
+                                    <!-- Notificaciones -->
+                                    <div class="flex order-last md:order-none md:relative md:inline-block"
+                                        x-data="{ openNot: false }" x-cloak>
+                                        <div>
+                                            <button @click="openNot = !openNot" class="mx-auto">
+                                                <span class="circle-link">
+                                                    <svg class="w-5 h-5 text-gray-600 fill-current"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                                <p
+                                                    class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                                    Notificaciones</p>
+                                            </button>
+                                        </div>
+
+                                        <div x-show.transition="openNot" @click.away="openNot = false"
+                                            class="absolute right-0 z-50 h-auto p-4 mt-2 overflow-hidden w-80 bottom-16 md:-bottom-31rem"
+                                            x-transition:enter="duration-200 ease-out"
+                                            x-transition:enter-start="opacity-0 scale-95"
+                                            x-transition:enter-end="opacity-100 scale-100"
+                                            x-transition:leave="duration-100 ease-in"
+                                            x-transition:leave-start="opacity-100 scale-100"
+                                            x-transition:leave-end="opacity-0 scale-95">
+
+
+                                            <div class="bg-white rounded-md shadow-lg">
+                                                <p class="px-3 py-2 text-lg font-semibold text-gray-600">Notificaciones
+                                                </p>
+
+                                                <div class="overflow-y-auto h-96" x-data="notification()">
+                                                    <template x-for="(notification, index) in notifications"
+                                                        :key="index">
+                                                        <a href="#"
+                                                            class="flex flex-shrink-0 w-full p-3 py-5 border-b hover:bg-gray-100 active:bg-blue-50">
+                                                            <div tabindex="0" aria-label="group icon" role="img"
+                                                                class="flex items-center justify-center flex-shrink-0 w-8 h-8 border border-gray-200 rounded-full focus:outline-none">
+                                                                <img class="object-cover w-8 h-8 rounded-full"
+                                                                    x-bind:src="notification.img"
+                                                                    alt="Profile image Notification" />
+
+                                                            </div>
+                                                            <div class="w-full pl-3">
+                                                                <div class="flex items-center justify-between w-full">
+                                                                    <p class="text-sm text-gray-600">
+                                                                        <span class="font-bold"
+                                                                            x-text="notification.name"></span>
+                                                                        <span x-text="notification.action"></span>
+                                                                        <span class="font-bold "
+                                                                            x-text="notification.who"></span>
+                                                                    </p>
+                                                                </div>
+                                                                <p tabindex="0"
+                                                                    class="pt-1 text-xs leading-3 text-gray-500 focus:outline-none"
+                                                                    x-text="notification.time"></p>
+                                                            </div>
+                                                        </a>
+                                                    </template>
+                                                </div>
+                                                <a href="#"
+                                                    class="block py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-secondary-500 hover:bg-gray-800">Ver
+                                                    todas las notificaciones
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Nes PRO -->
+                                    <a href="#" class="md:items-center md:flex">
+                                        <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current "
+                                                width="12.371" height="24.743" viewBox="0 0 12.371 24.743">
+                                                <path d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                                    transform="translate(-80.9 -592.6)" />
+                                            </svg>
+                                        </span>
+                                        <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte
+                                            <span class="block text-xs font-bold uppercase text-primary-500">Nes+
+                                                Pro</span>
+                                        </p>
+                                        <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">
+                                            PRO</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Mensajes -->
+                            <a href="./chat.html" class="relative mx-auto ml-8 circle-link">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 fill-current"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <div class="absolute border-gray-100 rounded-full -top-1 -right-1 bg-primary-500 ">
+                                    <div class="flex items-center justify-center">
+                                        <span class="p-px px-1 text-xs font-semibold text-white">14</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Avatar -->
+
+                        <div class="relative ml-3" x-data="{ openDrop: false }" x-cloak>
+                            <div>
+                                <button @click="openDrop = !openDrop"
+                                    class="flex items-center max-w-xs text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-500 focus:ring-white">
+                                    <img class="object-cover w-8 h-8 rounded-full md:w-10 md:h-10"
+                                        src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                        alt="">
+                                </button>
+                            </div>
+
+                            <div x-show.transition="openDrop" @click.away="openDrop = false"
+                                class="absolute right-0 w-64 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-primary-500 ring-opacity-5 focus:outline-none"
+                                x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+
+                                <!-- Foto y Nombre -->
+                                <div href="#" class="block px-4 py-2 text-sm text-gray-700">
+                                    <img class="inline-block object-cover w-10 h-10 rounded-full"
+                                        src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                        alt="">
+                                    <span id="username" class="inline-block px-3 font-semibold">
+                                        Mi Usuario
+                                    </span>
+                                </div>
+
+                                <!-- Tu perfil -->
+                                <a href="./tu-perfil.html" class="block px-4 py-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="inline-block px-3 ">
+                                        Perfil
+                                    </span>
+                                </a>
+
+                                <!-- Panel de administración -->
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    <span class="inline-block px-3 ">
+                                        Panel de Administración
+                                    </span>
+                                </a>
+
+                                <!--Cerrar sesión -->
+                                <a href="index.html" class="block px-4 py-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                    <span class="inline-block px-3 ">
+                                        Cerrar Sesión
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Responsive -->
+            <div @click.away=" openMenu = false" @keydown.escape.window="openMenu = false"
+                class="absolute top-0 z-50 w-screen px-2 mt-3 origin-top-left transform -translate-x-1/2 left-1/2"
+                x-show="openMenu" x-transition:enter="duration-200 ease-out"
+                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95">
+                <div class="bg-white divide-y-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-gray-50">
+                    <div class="px-5 pt-5 pb-6">
+                        <div class="flex items-center justify-between">
+
+                            <!-- Nes Logo -->
+                            <div>
+                                <img class="w-auto h-6" src="./img/NesLogo.svg" alt="Nes Logo">
+                            </div>
+
+                            <!-- Cerrar Menu -->
+                            <div class="-mr-2">
+                                <button type="button" @click="openMenu = ! openMenu"
+                                    class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Navbar -->
+                        <div class="mt-6">
+                            <nav class=" xl:flex">
+                                <div class="grid xl:flex gap-y-8">
+                                    <a aria-current="page" class="flex items-center nav-link" href="./conocer.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Conocer</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link" href="./momentos.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Momentos</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link" href="./eventos.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Eventos</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./cadena-de-favores.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Cadena de Favores</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link" href="./viajes.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Viajes</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link" href="./blog.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Blog</span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header Widgets Responsive-->
+    <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
+
+        <div class="my-2 ">
+            <div class="flex items-center justify-between">
+                <a href="./me-gusta.html">
+                    <span class="circle-link">
+                        <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z">
+                            </path>
+                        </svg>
+                    </span>
+                    <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                        Likes</p>
+                </a>
+
+                <a href="./favoritos.html">
+                    <span class="circle-link">
+                        <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z">
+                            </path>
+                        </svg>
+                    </span>
+                    <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                        Favoritos</p>
+                </a>
+
+                <!-- Notificaciones -->
+                <div class="flex order-last md:order-none md:relative md:inline-block" x-data="{ openNot: false }"
+                    x-cloak>
+                    <div>
+                        <button @click="openNot = !openNot" class="mx-auto">
+                            <span class="circle-link">
+                                <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                Notificaciones</p>
+                        </button>
+                    </div>
+
+                    <div x-show.transition="openNot" @click.away="openNot = false"
+                        class="absolute right-0 z-50 h-auto p-4 mt-2 overflow-hidden w-80 bottom-16 md:-bottom-31rem"
+                        x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
+
+
+                        <div class="bg-white rounded-md shadow-lg">
+                            <p class="px-3 py-2 text-lg font-semibold text-gray-600">Notificaciones</p>
+
+                            <div class="overflow-y-auto h-96" x-data="notification()">
+                                <template x-for="(notification, index) in notifications" :key="index">
+                                    <a href="#"
+                                        class="flex flex-shrink-0 w-full p-3 py-5 border-b hover:bg-gray-100 active:bg-blue-50">
+                                        <div tabindex="0" aria-label="group icon" role="img"
+                                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 border border-gray-200 rounded-full focus:outline-none">
+                                            <img class="object-cover w-8 h-8 rounded-full" x-bind:src="notification.img"
+                                                alt="Profile image Notification" />
+
+                                        </div>
+                                        <div class="w-full pl-3">
+                                            <div class="flex items-center justify-between w-full">
+                                                <p class="text-sm text-gray-600">
+                                                    <span class="font-bold" x-text="notification.name"></span>
+                                                    <span x-text="notification.action"></span>
+                                                    <span class="font-bold " x-text="notification.who"></span>
+                                                </p>
+                                            </div>
+                                            <p tabindex="0"
+                                                class="pt-1 text-xs leading-3 text-gray-500 focus:outline-none"
+                                                x-text="notification.time"></p>
+                                        </div>
+                                    </a>
+                                </template>
+                            </div>
+                            <a href="#"
+                                class="block py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-secondary-500 hover:bg-gray-800">Ver
+                                todas las notificaciones
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Nes PRO -->
+                <a href="#" class="md:items-center md:flex">
+                    <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current " width="12.371"
+                            height="24.743" viewBox="0 0 12.371 24.743">
+                            <path d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                transform="translate(-80.9 -592.6)" />
+                        </svg>
+                    </span>
+                    <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte <span
+                            class="block text-xs font-bold uppercase text-primary-500">Nes+ Pro</span>
+                    </p>
+                    <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">PRO</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-16 md:grid lg:grid-cols-12">
+        <div class="col-span-8 p-6 bg-gray-100">
+            <!-- Hero -->
+            <div class="inline w-full h-40">
+                <div class="relative">
+                    <img class="object-cover w-full rounded-lg md:h-96"
+                        src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWZyaWNhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                        alt="">
+                    <div class="absolute top-0 w-full p-4 md:p-6">
+                        <div class="flex justify-between">
+                            <button onclick="history.back()"
+                                class="flex items-center justify-center w-8 h-8 bg-white rounded-full md:w-10 md:h-10 hover:bg-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-secondary-500 md:h-4 md:w-4"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <button
+                                class="flex items-center justify-center w-8 h-8 bg-white rounded-full md:w-10 md:h-10 hover:bg-gray-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-secondary-500 md:h-4 md:w-4"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="justify-between sm:flex">
+                <div>
+                    <!-- Titulo -->
+                    <h1 class="pt-4 text-2xl font-bold text-gray-800 md:text-4xl">Locura Africana</h1>
+
+                    <!-- Lugar -->
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <p class="ml-2 text-xs text-gray-500">Semarang, Indonesia</p>
+                    </div>
+                </div>
+
+                <!-- Precio y duración -->
+                <div class="flex items-start justify-between px-6 py-4 my-6 bg-white rounded-md sm:w-72">
+                    <div class="flex">
+                        <span class="text-2xl font-bold text-primary-500">$</span>
+                        <div class="flex flex-col ml-3">
+                            <p class="font-semibold text-gray-500">500 <span class="text-gray-300">MXN</span></p>
+                            <span class="text-gray-400 text-xtin">p / persona</span>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="flex flex-col ml-3">
+                            <p class="font-semibold text-gray-500">5 días</p>
+                            <span class="text-gray-400 text-xtin">/ 4 noches</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón Reservar -->
+            <div class="flex w-full sm:hidden">
+                <a href="#reservar" class="py-3 text-gray-100 btn bg-primary-500 hover:bg-primary-600">Reservar
+                    Ahora</a>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Acerca de -->
+                <div class="pt-4">
+                    <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">Acerca de</h2>
+                    <p class="py-2 text-sm text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Aspernatur
+                        officia tempore tempora in. Nulla veritatis aspernatur delectus? Nam temporibus quibusdam illum
+                        error ipsum commodi earum sit similique odio, tenetur tempore. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Corporis provident minus aliquid ea, molestiae suscipit est?
+                        Accusantium, earum! Suscipit corporis sapiente minus. Laudantium, pariatur numquam. Vel
+                        molestias
+                        blanditiis esse at.</p>
+                </div>
+
+                <div class="sm:flex">
+                    <!-- El precio incluye -->
+                    <div>
+                        <div
+                            class="flex items-center justify-center w-12 h-12 mb-4 text-white rounded-xl bg-primary-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7">
+                                </path>
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">El precio incluye</h2>
+                        <ul role="list" class="mt-4 ml-4 space-y-5 list-disc marker:text-primary-500">
+                            <li>
+                                <div x-data=" {isOpen : true}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit amet adipis elit.</p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div x-data=" {isOpen : true}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima voluptates
+                                            odio
+                                            sed
+                                            repellat.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div x-data=" {isOpen : false}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, vero?
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div x-data=" {isOpen : false}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit.</p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- El precio no incluye -->
+                    <div class="mt-10 sm:mt-0">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 mb-4 text-white rounded-xl bg-primary-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">El precio no incluye</h2>
+                        <ul role="list" class="mt-4 ml-4 space-y-5 list-disc marker:text-primary-500">
+                            <li>
+                                <div x-data=" {isOpen : true}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit amet adipis elit.</p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div x-data=" {isOpen : true}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima voluptates
+                                            odio
+                                            sed repellat.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div x-data=" {isOpen : false}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, vero?
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div x-data=" {isOpen : false}">
+                                    <div @click="isOpen = !isOpen"
+                                        class="text-sm font-medium cursor-pointer text-secondary-500">
+                                        <p class="pr-4 text-sm">Lorem ipsum dolor sit.</p>
+                                    </div>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95" class="pt-3 text-sm text-neutral">
+                                        <span class="text-sm text-gray-600">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="container mx-auto">
+                        <!-- Visitas -->
+                        <h2 class="mb-6 text-xl font-semibold text-primary-500 md:text-3xl">Visitas</h2>
+                        <div class="grid lg:gap-8 lg:grid-cols-2 ">
+                            <div>
+                                <div class="mt-4 space-y-12">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <div
+                                                class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-500 text-gray-50">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-7 h-7">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="text-lg font-semibold leading-6 text-secondary-500">Per ei
+                                                quaeque sensibus</h4>
+                                            <p class="mt-2 text-sm text-gray-500">Ex usu illum iudico molestie. Pro ne
+                                                agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian
+                                                dignissim.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <div
+                                                class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-500 text-gray-50">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-7 h-7">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="text-lg font-semibold leading-6 text-secondary-500">Cu imperdiet
+                                                posidonium sed</h4>
+                                            <p class="mt-2 text-sm text-gray-500">Amet utinam aliquando ut mea, malis
+                                                admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset
+                                                inciderint, ex quis.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <div
+                                                class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-500 text-gray-50">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" class="w-7 h-7">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="text-lg font-semibold leading-6 text-secondary-500">Nulla omittam
+                                                sadipscing mel ne</h4>
+                                            <p class="mt-2 text-sm text-gray-500">At sed possim oporteat probatus, justo
+                                                graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando
+                                                soleat, nam modus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-10 lg:mt-0">
+                                <img src="https://images.unsplash.com/photo-1507461476191-0ed4f9f18533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YWZyaWNhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                    alt="" class="mx-auto rounded-lg shadow-lg">
+                            </div>
+                        </div>
+
+                        <!-- Observaciones -->
+                        <div>
+                            <div class="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
+                                <div class="lg:col-start-2">
+                                    <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">Observaciones</h2>
+                                    <div class="mt-4 space-y-12">
+                                        <div class="flex">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-500 text-gray-50">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <h4 class="text-lg font-semibold leading-6 text-secondary-500">Cibo
+                                                    augue offendit has ad</h4>
+                                                <p class="mt-2 text-sm text-gray-500">An per velit appellantur, ut
+                                                    utinam minimum nominavi sit, odio nostro habemus ne nec. Ne sonet
+                                                    regione contentiones est.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-500 text-gray-50">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <h4 class="text-lg font-semibold leading-6 text-secondary-500">At eum
+                                                    ferri luptatum lobortis</h4>
+                                                <p class="mt-2 text-sm text-gray-500">Te per quidam maiorum ocurreret,
+                                                    etiam delicatissimi usu ad. Ne has quod periculis. Te sit primis
+                                                    iisque efficiantur.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center w-12 h-12 rounded-md bg-primary-500 text-gray-50">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <h4 class="text-lg font-semibold leading-6 text-secondary-500">Dicunt
+                                                    verterem evertitur eu sea</h4>
+                                                <p class="mt-2 text-sm text-gray-500">Audire principes rationibus eam
+                                                    an, autem nominavi luptatum per te. Sumo fabulas vim eu, sonet
+                                                    saperet eleifend ut vix.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
+                                    <img src="https://images.unsplash.com/photo-1507461476191-0ed4f9f18533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YWZyaWNhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                        alt="" class="mx-auto rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="">
+                    <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">Itinerario Previsto</h2>
+                    <div class="py-12 sm:mx-auto">
+                        <div class="relative space-y-6 sm:px-4">
+                            <div
+                                class="relative space-y-12 sm:px-4 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-1 sm:before:-left-3 before:bg-primary-500 sm:before:rounded-full">
+                                <div x-data=" {isOpen : true}"
+                                    class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-primary-500">
+                                    <div class="flex items-center cursor-pointer" @click="isOpen = !isOpen">
+                                        <h3 class="text-xl font-semibold tracking-wide text-secondary-500">Donec porta
+                                            enim vel </h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="w-5 h-5 ml-3 duration-300 text-secondary-500" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs font-medium tracking-wide text-gray-500 uppercase">Dia 1</span>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95">
+                                        <p class="mt-3 text-sm text-gray-700">Pellentesque feugiat ante at nisl
+                                            efficitur,
+                                            in mollis orci scelerisque. Interdum et malesuada fames ac ante ipsum primis
+                                            in
+                                            faucibus.</p>
+                                        <div class="flex mt-6 space-x-4 sm:space-x-6">
+                                            <div class="w-1/2 h-40 sm:h-52">
+                                                <img class="object-cover w-full h-full rounded-md"
+                                                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                                    alt="">
+                                            </div>
+                                            <div class="w-1/2 h-40 sm:h-52">
+                                                <img class="object-cover w-full h-full rounded-md"
+                                                    src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div x-data=" {isOpen : true}"
+                                    class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-primary-500">
+                                    <div class="flex items-center cursor-pointer" @click="isOpen = !isOpen">
+                                        <h3 class="text-xl font-semibold tracking-wide text-secondary-500">Donec porta
+                                            enim vel </h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="w-5 h-5 ml-3 duration-300 text-secondary-500" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs font-medium tracking-wide text-gray-500 uppercase">Dia 2</span>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95">
+                                        <p class="mt-3 text-sm text-gray-700">Pellentesque feugiat ante at nisl
+                                            efficitur,
+                                            in mollis orci scelerisque. Interdum et malesuada fames ac ante ipsum primis
+                                            in
+                                            faucibus.</p>
+                                        <div class="flex mt-6 space-x-4 sm:space-x-6">
+                                            <div class="w-1/2 h-40 sm:h-52">
+                                                <img class="object-cover w-full h-full rounded-md"
+                                                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                                    alt="">
+                                            </div>
+                                            <div class="w-1/2 h-40 sm:h-52">
+                                                <img class="object-cover w-full h-full rounded-md"
+                                                    src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div x-data=" {isOpen : false}"
+                                    class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-primary-500">
+                                    <div class="flex items-center cursor-pointer" @click="isOpen = !isOpen">
+                                        <h3 class="text-xl font-semibold tracking-wide text-secondary-500">Donec porta
+                                            enim vel </h3>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="w-5 h-5 ml-3 duration-300 text-secondary-500" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs font-medium tracking-wide text-gray-500 uppercase">Dia 3</span>
+
+                                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                                        x-transition:enter-start="opacity-0 scale-95"
+                                        x-transition:enter-end="opacity-100 scale-100"
+                                        x-transition:leave="duration-100 ease-in"
+                                        x-transition:leave-start="opacity-100 scale-100"
+                                        x-transition:leave-end="opacity-0 scale-95">
+                                        <p class="mt-3 text-sm text-gray-700">Pellentesque feugiat ante at nisl
+                                            efficitur,
+                                            in mollis orci scelerisque. Interdum et malesuada fames ac ante ipsum primis
+                                            in
+                                            faucibus.</p>
+                                        <div class="flex mt-6 space-x-4 sm:space-x-6">
+                                            <div class="w-1/2 h-40 sm:h-52">
+                                                <img class="object-cover w-full h-full rounded-md"
+                                                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                                    alt="">
+                                            </div>
+                                            <div class="w-1/2 h-40 sm:h-52">
+                                                <img class="object-cover w-full h-full rounded-md"
+                                                    src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservar Viaje -->
+        <div class="col-span-4 p-4 bg-white md:px-4 md:py-6" id="reservar">
+
+            <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">Reservar Viaje</h2>
+
+            <div class="mt-8">
+                <h3 class="font-semibold text-secondary-500">Detalles del Viaje</h3>
+
+                <div class="mt-2 space-y-2 ">
+                    <input type="text" name="viaje" placeholder="Viaje a" class="input" />
+
+                    <div class="space-y-2 md:flex sm:space-x-4 sm:space-y-0">
+                        <input type="text" name="" id="" placeholder="Fecha de Salida" class="input">
+                        <input type="text" name="" id="" placeholder="Fecha de Regreso" class="input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="font-semibold text-secondary-500">Huespedes</h3>
+
+                <div class="mt-12 space-y-6">
+                    <!-- Adultos -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-secondary-500">Adultos</p>
+                            <p class="text-xs text-gray-500">Mayores de 12 años</p>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <div class="flex items-center space-x-6">
+                                <button type="button" onclick="adultosDecrement()"
+                                    class="flex items-center justify-center w-8 h-8 text-gray-500 bg-gray-100 rounded disabled:bg-gray-50 disabled:text-gray-300 hover:text-gray-600 active:text-gray-700 hover:bg-gray-200 active:bg-gray-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <p id="cantAdultos" class="text-xl font-medium text-secondary-500"></p>
+                                <button onclick="adultosIncrement()"
+                                    class="flex items-center justify-center w-8 h-8 rounded text-primary-500 hover:text-primary-600 active:text-primary-700 bg-primary-100 hover:bg-primary-200 active:bg-primary-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Niños -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-secondary-500">Niños</p>
+                            <p class="text-xs text-gray-500">De 2 <a href=""></a> 12 años</p>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <button type="button" onclick="ninosDecrement()"
+                                    class="flex items-center justify-center w-8 h-8 text-gray-500 bg-gray-100 rounded disabled:bg-gray-50 disabled:text-gray-300 hover:text-gray-600 active:text-gray-700 hover:bg-gray-200 active:bg-gray-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <p id="cantNinos" class="text-xl font-medium text-secondary-500"></p>
+                                <button onclick="ninosIncrement()"
+                                    class="flex items-center justify-center w-8 h-8 rounded text-primary-500 hover:text-primary-600 active:text-primary-700 bg-primary-100 hover:bg-primary-200 active:bg-primary-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                        </div>
+                    </div>
+                    <!-- Bebés -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-semibold text-secondary-500">Bebés</p>
+                            <p class="text-xs text-gray-500">Menores de 2 años</p>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <button type="button" onclick="bebesDecrement()"
+                                    class="flex items-center justify-center w-8 h-8 text-gray-500 bg-gray-100 rounded disabled:bg-gray-50 disabled:text-gray-300 hover:text-gray-600 active:text-gray-700 hover:bg-gray-200 active:bg-gray-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <p id="cantBebes" class="text-xl font-medium text-secondary-500"></p>
+                                <button onclick="bebesIncrement()"
+                                    class="flex items-center justify-center w-8 h-8 rounded text-primary-500 hover:text-primary-600 active:text-primary-700 bg-primary-100 hover:bg-primary-200 active:bg-primary-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Precio y Botón -->
+                <div class="flex items-center justify-between mt-10">
+                    <div class="text-center">
+                        <p class="text-xs font-medium text-gray-500">Total:</p>
+                        <p class="text-2xl font-bold text-secondary-500"><span class="text-primary-500">$</span>230,99
+                        </p>
+
+                    </div>
+                    <div class="">
+                        <a href="./viajes-pasajeros.html"
+                            class="py-3 text-gray-100 btn bg-primary-500 hover:bg-primary-600">Continuar</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative z-20 px-6 pt-10 sm:max-w-xl md:max-w-full md:px-20 bg-slate-100">
+        <div class="pb-6">
+            <div class="grid gap-5 row-gap-8 md:grid-cols-4">
+                <div>
+                    <p class="text-xl font-semibold tracking-wide text-primary-500">Secciones</p>
+                    <ul class="mt-2 space-y-2">
+                        <li>
+                            <a href="./sobre-nosotros.html"
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Sobre
+                                Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="./contacto.html"
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <p class="text-xl font-semibold tracking-wide text-primary-500">Enlaces de ayuda</p>
+                    <ul class="mt-2 xl:grid xl:grid-cols-2">
+                        <li class="">
+                            <a href="./condiciones-de-uso.html"
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Términos
+                                y condiciones de uso</a>
+                        </li>
+                        <li class="mt-2 xl:mt-0">
+                            <a href="./politica-de-cookies.html"
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Politica
+                                de
+                                Cookies</a>
+                        </li>
+                        <li class="mt-2">
+                            <a href="./politica-de-privacidad.html"
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Politica
+                                de
+                                Privacidad</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-xl font-semibold tracking-wide text-primary-500">Conecta con nosotros</p>
+                    <div class="flex mt-2 space-y-2">
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" title="Facebook"
+                                class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                                    class="w-4 h-4">
+                                    <path
+                                        d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" title="Twitter"
+                                class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                                    class="w-4 h-4">
+                                    <path
+                                        d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" title="Instagram"
+                                class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path
+                                        d="M16 0c-4.349 0-4.891 0.021-6.593 0.093-1.709 0.084-2.865 0.349-3.885 0.745-1.052 0.412-1.948 0.959-2.833 1.849-0.891 0.885-1.443 1.781-1.849 2.833-0.396 1.020-0.661 2.176-0.745 3.885-0.077 1.703-0.093 2.244-0.093 6.593s0.021 4.891 0.093 6.593c0.084 1.704 0.349 2.865 0.745 3.885 0.412 1.052 0.959 1.948 1.849 2.833 0.885 0.891 1.781 1.443 2.833 1.849 1.020 0.391 2.181 0.661 3.885 0.745 1.703 0.077 2.244 0.093 6.593 0.093s4.891-0.021 6.593-0.093c1.704-0.084 2.865-0.355 3.885-0.745 1.052-0.412 1.948-0.959 2.833-1.849 0.891-0.885 1.443-1.776 1.849-2.833 0.391-1.020 0.661-2.181 0.745-3.885 0.077-1.703 0.093-2.244 0.093-6.593s-0.021-4.891-0.093-6.593c-0.084-1.704-0.355-2.871-0.745-3.885-0.412-1.052-0.959-1.948-1.849-2.833-0.885-0.891-1.776-1.443-2.833-1.849-1.020-0.396-2.181-0.661-3.885-0.745-1.703-0.077-2.244-0.093-6.593-0.093zM16 2.88c4.271 0 4.781 0.021 6.469 0.093 1.557 0.073 2.405 0.333 2.968 0.553 0.751 0.291 1.276 0.635 1.844 1.197 0.557 0.557 0.901 1.088 1.192 1.839 0.22 0.563 0.48 1.411 0.553 2.968 0.072 1.688 0.093 2.199 0.093 6.469s-0.021 4.781-0.099 6.469c-0.084 1.557-0.344 2.405-0.563 2.968-0.303 0.751-0.641 1.276-1.199 1.844-0.563 0.557-1.099 0.901-1.844 1.192-0.556 0.22-1.416 0.48-2.979 0.553-1.697 0.072-2.197 0.093-6.479 0.093s-4.781-0.021-6.48-0.099c-1.557-0.084-2.416-0.344-2.979-0.563-0.76-0.303-1.281-0.641-1.839-1.199-0.563-0.563-0.921-1.099-1.197-1.844-0.224-0.556-0.48-1.416-0.563-2.979-0.057-1.677-0.084-2.197-0.084-6.459 0-4.26 0.027-4.781 0.084-6.479 0.083-1.563 0.339-2.421 0.563-2.979 0.276-0.761 0.635-1.281 1.197-1.844 0.557-0.557 1.079-0.917 1.839-1.199 0.563-0.219 1.401-0.479 2.964-0.557 1.697-0.061 2.197-0.083 6.473-0.083zM16 7.787c-4.541 0-8.213 3.677-8.213 8.213 0 4.541 3.677 8.213 8.213 8.213 4.541 0 8.213-3.677 8.213-8.213 0-4.541-3.677-8.213-8.213-8.213zM16 21.333c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333s-2.385 5.333-5.333 5.333zM26.464 7.459c0 1.063-0.865 1.921-1.923 1.921-1.063 0-1.921-0.859-1.921-1.921 0-1.057 0.864-1.917 1.921-1.917s1.923 0.86 1.923 1.917z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-between pt-5 pb-20 md:pb-4 sm:flex-row">
+            <!-- Nes Logo -->
+            <div class="flex justify-center mb-6 md:justify-start md:mb-0">
+                <a href="/index.html">
+                    <img class="w-auto h-6" src="./img/NesLogo.svg" alt="Nes Logo">
+                </a>
+            </div>
+
+            <div>
+                <p class="text-sm text-center text-gray-600 md:text-left">
+                    Nest+, inc © 2021 | Proudly made in España, CO
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts de terceros -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- Mis Scripts -->
+    <script src="js/notification.js"></script>
+    <script>
+        let adultos = 0, ninos = 0, bebes = 0;
+
+        // Counter Adultos
+
+        // Mostrar la cantidad de Adultos
+        document.getElementById("cantAdultos").innerText = adultos;
+
+        // Función Incrementar
+        function adultosIncrement() {
+            adultos = adultos + 1;
+            document.getElementById("cantAdultos").innerText = adultos;
+        }
+
+        // Funnción Decrementar
+        function adultosDecrement() {
+            if (adultos > 0) {
+                adultos = adultos - 1;
+                document.getElementById("cantAdultos").innerText = adultos;
+            }
+        }
+
+        // Counter Niños
+
+        // Mostrar la cantidad de Niños
+        document.getElementById("cantNinos").innerText = ninos;
+
+        // Función Incrementar
+        function ninosIncrement() {
+            ninos = ninos + 1;
+            document.getElementById("cantNinos").innerText = ninos;
+        }
+
+        // Funnción Decrementar
+        function ninosDecrement() {
+            if (ninos > 0) {
+                ninos = ninos - 1;
+                document.getElementById("cantNinos").innerText = ninos;
+            }
+        }
+
+        // Counter Bebés
+
+        // Mostrar la cantidad de Bebés
+        document.getElementById("cantBebes").innerText = bebes;
+
+        // Función Incrementar
+        function bebesIncrement() {
+            bebes = bebes + 1;
+            document.getElementById("cantBebes").innerText = bebes;
+        }
+
+        // Funnción Decrementar
+        function bebesDecrement() {
+            if (bebes > 0) {
+                bebes = bebes - 1;
+                document.getElementById("cantBebes").innerText = bebes;
+            }
+        }
+    </script>
+</body>
+
+</html>

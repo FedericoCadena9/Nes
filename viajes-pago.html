@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nes+ | Viajes</title>
+    <title>Viajes - Elegir Método de Pago</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/uikit.css">
+    <link href="./node_modules/card-js/card-js.min.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body class="bg-background-2 font-body">
+<body class="bg-white md:bg-background-2 font-body">
 
     <!-- Navbar -->
     <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
@@ -390,7 +390,6 @@
         </div>
     </div>
 
-
     <!-- Header Widgets Responsive-->
     <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
 
@@ -503,325 +502,81 @@
         </div>
     </div>
 
-    <div class="pt-18 relative">
+    <div class="px-6 py-24">
+        <div x-data="{tab: 'card-tarjeta'}" class="p-8 rounded-md shadow-lg sm:bg-white md:w-1/2 md:mx-auto">
+            <h1 class="text-2xl font-semibold text-primary-500">Elegir Método de Pago</h1>
 
-        <div class="uk-position-relative uk-visible-toggle" tabindex="-1"
-            uk-slider="autoplay: true; autoplay-interval: 6000">
 
-            <div class="absolute bottom-0 right-0 z-10 px-3 sm:px-6 sm:py-3 py-4 text-xs font-medium text-white">
-                Publicidad
-            </div>
-
-            <!-- Slider -->
-            <ul class="uk-slider-items uk-child-width-1-1">
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Conoce nuevos paisajes en todo el
-                                    mundo con
-                                    <span class="text-primary-500">NES+</span>
-                                </h1>
+            <!-- Metodos de Pago -->
+            <div class="mt-8 space-y-6">
+                <!-- Tarjeta -->
+                <div id="pago-tarjeta" :class="{'active': tab === 'card-tarjeta'}" x-on:click.prevent="tab = 'card-tarjeta'"
+                    class="flex items-start p-3 border border-gray-800 rounded-md cursor-pointer hover:bg-gray-100">
+                    <input id="metodo-tarjeta" type="radio" name="metodo-pago" value="Tarjeta"
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                        aria-labelledby="metodo-tarjeta" aria-describedby="metodo-tarjeta" checked="">
+                    <label for="metodo-tarjeta" class="block ml-2 text-sm font-medium text-gray-900 sr-only">
+                        Tarjeta
+                    </label>
+                    <div class="ml-5">
+                        <p class="text-xs font-medium text-gray-600 sm:text-base">Tarjeta de Crédito o débito</p>
+                        <div class="flex pt-2 space-x-3">
+                            <div class="flex items-center justify-center w-6 h-6 lg:w-8 lg:h-8">
+                                <img src="./img/VisaLogo.svg" alt="Visa Logo">
+                            </div>
+                            <div class="flex items-center justify-center w-6 h-6 lg:w-8 lg:h-8">
+                                <img src="./img/MastercardLogo.svg" alt="Mastercard Logo">
+                            </div>
+                            <div class="flex items-center justify-center h-7 w-7">
+                                <img src="./img/AmericanExpressLogo.svg" alt="American Express Logo">
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem ipsum dolor, sit amet
-                                    consectetur
-                                    adipisicing elit. Suscipit, culpa.</h1>
+                </div>
+
+                <!-- PayPal -->
+                <div id="pago-paypal" :class="{'active': tab === 'card-paypal'}" x-on:click.prevent="tab = 'card-paypal'"
+                    class="flex items-start p-3 border border-gray-800 rounded-md cursor-pointer hover:bg-gray-100">
+                    <input id="metodo-paypal" type="radio" name="metodo-pago" value="PayPal" 
+                        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="metodo-paypal"
+                        aria-describedby="metodo-paypal">
+                    <label for="metodo-paypal" class="block ml-2 text-sm font-medium text-gray-900 sr-only">
+                        PayPal
+                    </label>
+                    <div class="ml-5">
+                        <p class="text-xs font-medium text-gray-600 sm:text-base">PayPal</p>
+                        <div class="pt-2">
+                            <div class="flex items-center justify-center w-6 h-6">
+                                <img src="./img/PayPalLogo.svg" alt="PayPal Logo">
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem, ipsum dolor.</h1>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHRyYXZlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem ipsum dolor sit amet,
-                                    consectetur
-                                    adipisicing.</h1>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Buscador de Inspiración -->
-        <div class="sm:absolute z-10 flex mt-8 sm:mt-0 justify-center w-full sm:bottom-10">
-            <div
-                class="grid lg:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 p-4 gap-4 bg-white rounded-md shadow-md">
-                <div class=" sm:rows-span-1">
-                    <label for="continente" class="text-sm font-medium text-secondary-500">Continente</label>
-                    <div class="relative text-primary-500 focus-within:text-primary-400">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                            <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </button>
-                        </span>
-                        <input type="search" name="contiente"
-                            class="py-2 pl-10 text-sm text-gray-600 bg-white border rounded-md focus:outline-none focus:border-primary-500 focus:text-gray-900"
-                            placeholder="América" autocomplete="off">
-                    </div>
-                </div>
-                <div class=" sm:rows-span-1">
-                    <label for="pais" class="text-sm font-medium text-secondary-500">País</label>
-                    <div class="relative text-primary-500 focus-within:text-primary-400">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                            <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </button>
-                        </span>
-                        <input type="search" name="pais"
-                            class="py-2 pl-10 text-sm text-gray-600 bg-white border rounded-md focus:outline-none focus:border-primary-500 focus:text-gray-900"
-                            placeholder="Colombia" autocomplete="off">
-                    </div>
-                </div>
-
-                <a href="" class="lg:mt-6 lg:pl-6 sm:rows-span-1">
-                    <button class="text-white btn bg-primary-500 hover:bg-primary-600">Buscar
-                        inspiración</button>
-                </a>
-                <a href="" class="lg:mt-6 sm:rows-span-1">
-                    <button
-                        class="bg-white border text-secondary-500 btn border-secondary-500 hover:bg-secondary-500 hover:text-white">Mis
-                        Viajes</button>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Titulo -->
-    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12">Descubre nuestras temáticas</h3>
-    <!-- Temáticas -->
-    <div class="grid xl:grid-cols-10 xl:grid-rows-2 sm:grid-cols-3 grid-rows-4 px-2 sm:px-6 my-6 h-[680px] gap-6">
-        <div class="bg-white rounded-md p-4 sm:col-span-3 sm:row-span-2 row-span-1 xl:col-span-4 xl:row-span-2 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646950903374-baa5c42ea2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-12 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Hoteles originales</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente beatae,
-                            quia fuga temporibus error doloribus debitis.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">01</p>
-                    </div>
                 </div>
             </div>
-        </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-6 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646861374339-629269a4ceae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 lg:pt-12 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Espectáculos</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente beatae,
-                            quia fuga temporibus error doloribus debitis.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">02</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-3 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646961200311-05f8bd5657e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Relax</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">03</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-3 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646864052090-071a579e1346?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTM4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Urbana y culturales</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">04</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12 mb-6">Inspírate de nuestros
-        últimos viajes</h3>
-    <!-- Recomendaciones -->
-    <div class="w-full mb-12 bg-center bg-cover sm:h-screen " id="ofertas"
-        style="background-image: url('https://images.unsplash.com/photo-1646835481978-036f15b02cd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-        <div class="w-full h-full bg-black bg-opacity-50 sm:grid sm:grid-cols-3">
-            <div class="flex items-center justify-center sm:col-span-1">
-                <div class="px-6 text-center text-white sm:text-left">
-                    <h2 class="py-8 text-2xl font-bold sm:text-4xl">
-                        Otros viajeros recomiendan</h2>
-                    <p class="text-sm font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-                        voluptate consequuntur sed, iure beatae tempora!</p>
+            <div x-show="tab === 'card-tarjeta'" class="mt-8">
+                <h3 class="my-3 text-sm font-semibold text-secondary-500 sm:text-xl">Tarjeta de Crédito o débito</h3>
+
+                <div class="card-js"></div>
+
+                <p class="my-4 text-gray-500 text-xtin sm:text-sm sm:text-gray-400">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit</p>
+                <div class="flex items-center my-6">
+                    <!-- Botón creado para su posterior enlace con el método de pago real -->
+                    <!-- <button class="text-white btn bg-primary-500 hover:bg-primary-600">Proceder al Pago</button> -->
+                    <a href="./viajes-confirmacion.html" class="py-3 text-white btn bg-primary-500 hover:bg-primary-600">Proceder al Pago</a>
                 </div>
             </div>
-            <div class="flex items-center justify-center py-8 sm:col-span-2 sm:py-0">
 
-                <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider>
-                    <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@xl uk-grid">
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWZyaWNhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1646819065916-8d67d47bd9c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1646761457631-ae9f03d43321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1646764065682-af0952b842a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+            <div x-show="tab === 'card-paypal'" class="mt-8">
+                <h3 class="my-3 text-sm font-semibold text-secondary-500 sm:text-xl">PayPal</h3>
 
-                    <a class="text-white uk-position-center-left" href="#" uk-slider-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </a>
-                    <a class="text-white uk-position-center-right" href="#" uk-slider-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
+                <p>Antes de seguir con la compra, inicia sesión con tu cuenta de PayPal:</p>
+                <!-- Conectar con PayPal -->
+                <button class="my-6 text-white bg-blue-500 btn hover:bg-blue-600">Pagar con PayPal</button>
+                
+
             </div>
         </div>
     </div>
@@ -922,20 +677,24 @@
 
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="./node_modules/card-js/card-js.min.js"></script>
 
-    <!-- Mis Scripts -->
+    <!-- Mis scripts -->
     <script src="js/notification.js"></script>
-    <script src="js/uikit.js"></script>
+    <script src="js/navbarLink.js"></script>
+
     <script>
-        // Link Navbar activo
-        const navLink = document.querySelectorAll(".nav-link");
-        for (let i = 0; i < navLink.length; i++) {
-            if (navLink[i].href === location.href) {
-                navLink[i].classList.add("text-primary-500");
-                navLink[i].classList.add("bg-gray-50");
-                navLink[i].classList.add("md:bg-white");
-            }
-        }
+
+        // Acción para cambiar el estado del radio button clickando en un div
+        document.getElementById("pago-tarjeta").addEventListener('click', () => {
+            document.getElementById("metodo-tarjeta").checked = true;
+        })
+
+        // Acción para cambiar el estado del radio button clickando en un div
+        document.getElementById("pago-paypal").addEventListener('click', () => {
+            document.getElementById("metodo-paypal").checked = true;
+        })
     </script>
 
 </body>

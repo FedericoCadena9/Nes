@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nes+ | Viajes</title>
+    <title>Viajes - Datos de Pasajero</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/uikit.css">
 </head>
 
-<body class="bg-background-2 font-body">
+<body class="bg-background font-body">
 
     <!-- Navbar -->
     <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
@@ -390,7 +389,6 @@
         </div>
     </div>
 
-
     <!-- Header Widgets Responsive-->
     <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
 
@@ -503,324 +501,226 @@
         </div>
     </div>
 
-    <div class="pt-18 relative">
+    <div class="px-4 pt-20 mb-8 md:grid md:grid-cols-2 md:px-8 sm:gap-8">
 
-        <div class="uk-position-relative uk-visible-toggle" tabindex="-1"
-            uk-slider="autoplay: true; autoplay-interval: 6000">
+        <!-- Datos de Pasajeros -->
+        <div class="space-y-6">
+            <h1 class="text-2xl font-semibold text-primary-500">Datos de Pasajeros</h1>
 
-            <div class="absolute bottom-0 right-0 z-10 px-3 sm:px-6 sm:py-3 py-4 text-xs font-medium text-white">
-                Publicidad
+
+            <!-- Pasajero 1 -->
+            <div x-data=" {isOpen : true}" class="p-3 bg-white rounded-md shadow cursor-pointer">
+                <div @click="isOpen = !isOpen" class="flex items-center justify-between">
+                    <h4 class="text-lg font-semibold text-secondary-500">Pasajero #01</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
+                    :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
+                    <!-- Nombres -->
+                <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
+                <!-- Apellidos -->
+                <div class="flex space-x-2">
+                    <input type="text" name="apellido-1" id="" placeholder="Primer Apellido" class="text-xs input"
+                        required>
+                    <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido" class="text-xs input"
+                        required>
+                </div>
+                <div class="flex space-x-2">
+                    <!-- Tipo de Huesped -->
+                    <select id="" class="text-xs text-gray-400 input">
+                        <option value="1">Adulto</option>
+                        <option value="2">Niño</option>
+                        <option value="3">Bebé</option>
+                    </select>
+                    <!-- Género -->
+                    <select id="" class="text-xs text-gray-400 input">
+                        <option disabled selected value>Género</option>
+                        <option value="1">Hombre</option>
+                        <option value="2">Mujer</option>
+                    </select>
+                </div>
+                <!-- Tipo de Documento -->
+                <select id="" class="text-xs text-gray-400 input">
+                    <option disabled selected value>Tipo de Documento</option>
+                    <option value="1">Opcion 1</option>
+                    <option value="2">Opcion 2</option>
+                </select>
+                <!-- Numero de documento -->
+                <input type="text" name="numeroDoc" id="" placeholder="Número del Documento" class="text-xs input"
+                    required>
+                </div>
             </div>
 
-            <!-- Slider -->
-            <ul class="uk-slider-items uk-child-width-1-1">
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Conoce nuevos paisajes en todo el
-                                    mundo con
-                                    <span class="text-primary-500">NES+</span>
-                                </h1>
-                            </div>
+            <!-- Pasajero 2 -->
+            <div x-data=" {isOpen : false}" class="p-3 bg-white rounded-md shadow cursor-pointer">
+                <div @click="isOpen = !isOpen" class="flex items-center justify-between">
+                    <h4 class="text-lg font-semibold text-secondary-500">Pasajero #02</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
+                    :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
+                    <!-- Nombres -->
+                <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
+                <!-- Apellidos -->
+                <div class="flex space-x-2">
+                    <input type="text" name="apellido-1" id="" placeholder="Primer Apellido" class="text-xs input"
+                        required>
+                    <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido" class="text-xs input"
+                        required>
+                </div>
+                <div class="flex space-x-2">
+                    <!-- Tipo de Huesped -->
+                    <select id="" class="text-xs text-gray-400 input">
+                        <option value="1">Adulto</option>
+                        <option value="2">Niño</option>
+                        <option value="3">Bebé</option>
+                    </select>
+                    <!-- Género -->
+                    <select id="" class="text-xs text-gray-400 input">
+                        <option disabled selected value>Género</option>
+                        <option value="1">Hombre</option>
+                        <option value="2">Mujer</option>
+                    </select>
+                </div>
+                <!-- Tipo de Documento -->
+                <select id="" class="text-xs text-gray-400 input">
+                    <option disabled selected value>Tipo de Documento</option>
+                    <option value="1">Opcion 1</option>
+                    <option value="2">Opcion 2</option>
+                </select>
+                <!-- Numero de documento -->
+                <input type="text" name="numeroDoc" id="" placeholder="Número del Documento" class="text-xs input"
+                    required>
+                </div>
+            </div>
+
+            <!-- Pasajero 3 -->
+            <div x-data=" {isOpen : false}" class="p-3 bg-white rounded-md shadow cursor-pointer">
+                <div @click="isOpen = !isOpen" class="flex items-center justify-between">
+                    <h4 class="text-lg font-semibold text-secondary-500">Pasajero #03</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
+                    :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
+                    <!-- Nombres -->
+                <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
+                <!-- Apellidos -->
+                <div class="flex space-x-2">
+                    <input type="text" name="apellido-1" id="" placeholder="Primer Apellido" class="text-xs input"
+                        required>
+                    <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido" class="text-xs input"
+                        required>
+                </div>
+                <div class="flex space-x-2">
+                    <!-- Tipo de Huesped -->
+                    <select id="" class="text-xs text-gray-400 input">
+                        <option value="1">Adulto</option>
+                        <option value="2">Niño</option>
+                        <option value="3">Bebé</option>
+                    </select>
+                    <!-- Género -->
+                    <select id="" class="text-xs text-gray-400 input">
+                        <option disabled selected value>Género</option>
+                        <option value="1">Hombre</option>
+                        <option value="2">Mujer</option>
+                    </select>
+                </div>
+                <!-- Tipo de Documento -->
+                <select id="" class="text-xs text-gray-400 input">
+                    <option disabled selected value>Tipo de Documento</option>
+                    <option value="1">Opcion 1</option>
+                    <option value="2">Opcion 2</option>
+                </select>
+                <!-- Numero de documento -->
+                <input type="text" name="numeroDoc" id="" placeholder="Número del Documento" class="text-xs input"
+                    required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen del Viaje -->
+        <div class="mt-10 md:mt-0">
+            <h2 class="mb-6 text-2xl font-semibold text-primary-500">Resumen del Viaje</h2>
+            <div class="p-3 bg-white rounded-md shadow">
+                <div class="flex">
+                    <img class="object-cover rounded-lg w-28 h-28" src="./img/Playa Sirenas.png" alt="Imagen Viaje">
+                    <div class="flex flex-col justify-center ml-5">
+                        <h3 class="text-xl font-semibold text-secondary-500">Locura africana</h3>
+                        <p class="text-sm text-secondary-400">8 días / 7 noches</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 space-y-6">
+                    <div>
+                        <h4 class="text-sm font-medium text-secondary-500">Fechas</h4>
+                        <p class="text-xs text-gray-500">24 Feb - 24 Feb</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-secondary-500">Huéspedes</h4>
+                        <p class="text-xs text-gray-500">3 Huéspedes (2 Adultos, 1 Niño)</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-secondary-500">Habitaciones</h4>
+                        <p class="text-xs text-gray-500">1 Habitación</p>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-500">$123 x 4 noches</p>
+                            <p class="font-semibold text-secondary-500"><span class="text-gray-300">$</span>123</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-500">3 Huéspedes</p>
+                            <p class="font-semibold text-secondary-500"><span class="text-gray-300">$</span>123</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-500">Impuestos / Comisión</p>
+                            <p class="font-semibold text-secondary-500"><span class="text-gray-300">$</span>123</p>
                         </div>
                     </div>
-                </li>
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem ipsum dolor, sit amet
-                                    consectetur
-                                    adipisicing elit. Suscipit, culpa.</h1>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem, ipsum dolor.</h1>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="flex items-center justify-center w-full sm:w-auto">
-                    <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
-                        style="background-image: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHRyYXZlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60');">
-                        <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
-                                <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem ipsum dolor sit amet,
-                                    consectetur
-                                    adipisicing.</h1>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Buscador de Inspiración -->
-        <div class="sm:absolute z-10 flex mt-8 sm:mt-0 justify-center w-full sm:bottom-10">
-            <div
-                class="grid lg:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 p-4 gap-4 bg-white rounded-md shadow-md">
-                <div class=" sm:rows-span-1">
-                    <label for="continente" class="text-sm font-medium text-secondary-500">Continente</label>
-                    <div class="relative text-primary-500 focus-within:text-primary-400">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                            <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </button>
-                        </span>
-                        <input type="search" name="contiente"
-                            class="py-2 pl-10 text-sm text-gray-600 bg-white border rounded-md focus:outline-none focus:border-primary-500 focus:text-gray-900"
-                            placeholder="América" autocomplete="off">
-                    </div>
-                </div>
-                <div class=" sm:rows-span-1">
-                    <label for="pais" class="text-sm font-medium text-secondary-500">País</label>
-                    <div class="relative text-primary-500 focus-within:text-primary-400">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                            <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </button>
-                        </span>
-                        <input type="search" name="pais"
-                            class="py-2 pl-10 text-sm text-gray-600 bg-white border rounded-md focus:outline-none focus:border-primary-500 focus:text-gray-900"
-                            placeholder="Colombia" autocomplete="off">
+                    <hr class="my-4">
+                    <div class="flex items-center justify-between text-lg">
+                        <h4 class="font-medium text-secondary-500">Total</h4>
+                        <p class="font-semibold text-gray-700"><span class="text-gray-300">$</span>123 <span
+                                class="text-gray-300">USD</span></p>
                     </div>
                 </div>
 
-                <a href="" class="lg:mt-6 lg:pl-6 sm:rows-span-1">
-                    <button class="text-white btn bg-primary-500 hover:bg-primary-600">Buscar
-                        inspiración</button>
-                </a>
-                <a href="" class="lg:mt-6 sm:rows-span-1">
-                    <button
-                        class="bg-white border text-secondary-500 btn border-secondary-500 hover:bg-secondary-500 hover:text-white">Mis
-                        Viajes</button>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Titulo -->
-    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12">Descubre nuestras temáticas</h3>
-    <!-- Temáticas -->
-    <div class="grid xl:grid-cols-10 xl:grid-rows-2 sm:grid-cols-3 grid-rows-4 px-2 sm:px-6 my-6 h-[680px] gap-6">
-        <div class="bg-white rounded-md p-4 sm:col-span-3 sm:row-span-2 row-span-1 xl:col-span-4 xl:row-span-2 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646950903374-baa5c42ea2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-12 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Hoteles originales</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente beatae,
-                            quia fuga temporibus error doloribus debitis.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">01</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-6 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646861374339-629269a4ceae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 lg:pt-12 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Espectáculos</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente beatae,
-                            quia fuga temporibus error doloribus debitis.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">02</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-3 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646961200311-05f8bd5657e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Relax</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">03</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-3 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1646864052090-071a579e1346?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTM4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60');">
-                <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Urbana y culturales</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="flex items-center justify-between w-full">
-                        <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
-                                sitios</button>
-                        </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">04</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12 mb-6">Inspírate de nuestros
-        últimos viajes</h3>
-    <!-- Recomendaciones -->
-    <div class="w-full mb-12 bg-center bg-cover sm:h-screen " id="ofertas"
-        style="background-image: url('https://images.unsplash.com/photo-1646835481978-036f15b02cd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-        <div class="w-full h-full bg-black bg-opacity-50 sm:grid sm:grid-cols-3">
-            <div class="flex items-center justify-center sm:col-span-1">
-                <div class="px-6 text-center text-white sm:text-left">
-                    <h2 class="py-8 text-2xl font-bold sm:text-4xl">
-                        Otros viajeros recomiendan</h2>
-                    <p class="text-sm font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-                        voluptate consequuntur sed, iure beatae tempora!</p>
-                </div>
-            </div>
-            <div class="flex items-center justify-center py-8 sm:col-span-2 sm:py-0">
-
-                <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider>
-                    <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@xl uk-grid">
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWZyaWNhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1646819065916-8d67d47bd9c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1646761457631-ae9f03d43321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
-                                style="background-image: url('https://images.unsplash.com/photo-1646764065682-af0952b842a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
-                                <div
-                                    class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
-                                    <div class="text-white">
-                                        <h3 class="text-xl font-semibold">Locura Africana</h3>
-                                        <p class="text-sm font-medium">8 días / 7 noches</p>
-                                    </div>
-                                    <div class="flex items-center justify-between w-full">
-                                        <p class="text-sm font-medium text-white">Desde 500€</p>
-                                        <a href="./ver-viaje.html" class="inline-block">
-                                            <button class="px-3 py-2 text-xs bg-white rounded text-secondary-500">Saber
-                                                más</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <a class="text-white uk-position-center-left" href="#" uk-slider-item="previous">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </a>
-                    <a class="text-white uk-position-center-right" href="#" uk-slider-item="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
+                <div class="flex items-center w-full my-8">
+                    <a class="py-3 text-white btn bg-primary-500 hover:bg-primary-600"
+                        href="./viajes-pago.html">Proceder al Pago</a>
                 </div>
             </div>
         </div>
@@ -922,21 +822,6 @@
 
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
-
-    <!-- Mis Scripts -->
-    <script src="js/notification.js"></script>
-    <script src="js/uikit.js"></script>
-    <script>
-        // Link Navbar activo
-        const navLink = document.querySelectorAll(".nav-link");
-        for (let i = 0; i < navLink.length; i++) {
-            if (navLink[i].href === location.href) {
-                navLink[i].classList.add("text-primary-500");
-                navLink[i].classList.add("bg-gray-50");
-                navLink[i].classList.add("md:bg-white");
-            }
-        }
-    </script>
 
 </body>
 
