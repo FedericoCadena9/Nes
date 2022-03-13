@@ -503,12 +503,12 @@
         </div>
     </div>
 
-    <div class="pt-18 relative">
+    <div class="relative pt-18">
 
         <div class="uk-position-relative uk-visible-toggle" tabindex="-1"
-            uk-slider="autoplay: true; autoplay-interval: 6000">
+            uk-slider="autoplay: true; autoplay-interval: 6000; pause-on-hover: false">
 
-            <div class="absolute bottom-0 right-0 z-10 px-3 sm:px-6 sm:py-3 py-4 text-xs font-medium text-white">
+            <div class="absolute right-0 z-10 px-3 py-4 text-xs font-medium text-white bottom-4 sm:px-6 sm:py-3">
                 Publicidad
             </div>
 
@@ -518,8 +518,8 @@
                     <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
                         style="background-image: url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
                         <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
+                            class="flex justify-start w-full h-full p-4 pt-20 bg-black sm:items-start sm:pt-24 lg:pt-0 lg:items-center bg-opacity-40">
+                            <div class="lg:w-2/5 lg:pl-10">
                                 <h1 class="text-2xl font-bold text-white sm:text-4xl">Conoce nuevos paisajes en todo el
                                     mundo con
                                     <span class="text-primary-500">NES+</span>
@@ -532,8 +532,8 @@
                     <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
                         style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
                         <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
+                            class="flex justify-start w-full h-full p-4 pt-20 bg-black sm:items-start sm:pt-24 lg:pt-0 lg:items-center bg-opacity-40">
+                            <div class="lg:w-2/5 lg:pl-10">
                                 <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem ipsum dolor, sit amet
                                     consectetur
                                     adipisicing elit. Suscipit, culpa.</h1>
@@ -545,8 +545,8 @@
                     <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
                         style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
                         <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
+                            class="flex justify-start w-full h-full p-4 pt-20 bg-black sm:items-start sm:pt-24 lg:pt-0 lg:items-center bg-opacity-40">
+                            <div class="lg:w-2/5 lg:pl-10">
                                 <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem, ipsum dolor.</h1>
                             </div>
                         </div>
@@ -556,8 +556,8 @@
                     <div class="w-screen h-[500px] bg-cover bg-center uk-panel"
                         style="background-image: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHRyYXZlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60');">
                         <div
-                            class="flex sm:items-start sm:pt-24 pt-20 lg:pt-0 lg:items-center justify-start w-full h-full p-4 bg-black bg-opacity-40">
-                            <div class="lg:w-2/5">
+                            class="flex justify-start w-full h-full p-4 pt-20 bg-black sm:items-start sm:pt-24 lg:pt-0 lg:items-center bg-opacity-40">
+                            <div class="lg:w-2/5 lg:pl-10">
                                 <h1 class="text-2xl font-bold text-white sm:text-4xl">Lorem ipsum dolor sit amet,
                                     consectetur
                                     adipisicing.</h1>
@@ -566,12 +566,18 @@
                     </div>
                 </li>
             </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-light" href="#" uk-slidenav-previous
+                uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-light" href="#" uk-slidenav-next
+                uk-slider-item="next"></a>
+                
+            <ul class="flex justify-center !pt-3 uk-slider-nav uk-dotnav uk-dark"></ul>
         </div>
 
         <!-- Buscador de Inspiración -->
-        <div class="sm:absolute z-10 flex mt-8 sm:mt-0 justify-center w-full sm:bottom-10">
+        <div class="z-10 flex justify-center w-full mt-8 sm:absolute sm:mt-0 sm:bottom-18">
             <div
-                class="grid lg:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1 p-4 gap-4 bg-white rounded-md shadow-md">
+                class="grid gap-4 p-4 bg-white rounded-md shadow-md lg:grid-cols-4 sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-1">
                 <div class=" sm:rows-span-1">
                     <label for="continente" class="text-sm font-medium text-secondary-500">Continente</label>
                     <div class="relative text-primary-500 focus-within:text-primary-400">
@@ -625,87 +631,94 @@
     </div>
 
     <!-- Titulo -->
-    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12">Descubre nuestras temáticas</h3>
+    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12">Inspírate de nuestros últimos viajes</h3>
     <!-- Temáticas -->
     <div class="grid xl:grid-cols-10 xl:grid-rows-2 sm:grid-cols-3 grid-rows-4 px-2 sm:px-6 my-6 h-[680px] gap-6">
-        <div class="bg-white rounded-md p-4 sm:col-span-3 sm:row-span-2 row-span-1 xl:col-span-4 xl:row-span-2 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
+        <div class="h-full row-span-1 p-4 bg-white rounded-md sm:col-span-3 sm:row-span-2 xl:col-span-4 xl:row-span-2">
+            <div class="w-full h-full bg-center bg-cover rounded-md"
                 style="background-image: url('https://images.unsplash.com/photo-1646950903374-baa5c42ea2a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
                 <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-12 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
-                    <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Hoteles originales</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente beatae,
+                    class="flex flex-col items-start justify-between w-full h-full px-4 pt-4 pb-2 bg-black rounded-md lg:px-6 sm:pt-12 sm:pb-4 bg-opacity-40">
+                    <div class="!text-white">
+                        <p class="font-medium tracking-wide uppercase text-xtin sm:text-xs lg:text-sm">Temáticas</p>
+                        <h3 class="text-xl font-bold leading-tight md:text-2xl lg:text-4xl xl:text-5xl">Hoteles
+                            originales</h3>
+                        <p class="hidden text-xs break-words sm:inline-block lg:text-sm">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Sapiente beatae,
                             quia fuga temporibus error doloribus debitis.</p>
                     </div>
                     <div class="flex items-center justify-between w-full">
                         <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
+                            <button class="px-3 py-2 text-xs font-medium text-white rounded bg-primary-500">Explorar
                                 sitios</button>
                         </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">01</p>
+                        <p class="inline-block text-xl font-bold text-white sm:text-3xl lg:text-5xl">01</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-6 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
+        <div class="h-full row-span-1 p-4 bg-white rounded-md sm:col-span-1 sm:row-span-2 xl:col-span-6 xl:row-span-1">
+            <div class="w-full h-full bg-center bg-cover rounded-md"
                 style="background-image: url('https://images.unsplash.com/photo-1646861374339-629269a4ceae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
                 <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 lg:pt-12 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
+                    class="flex flex-col items-start justify-between w-full h-full px-4 pt-4 pb-2 bg-black rounded-md lg:px-6 sm:pt-6 lg:pt-12 sm:pb-4 bg-opacity-40">
                     <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Espectáculos</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente beatae,
+                        <p class="font-medium tracking-wide uppercase text-xtin sm:text-xs lg:text-sm">Temáticas</p>
+                        <h3 class="text-xl font-bold leading-tight md:text-2xl lg:text-4xl xl:text-5xl">Espectáculos
+                        </h3>
+                        <p class="hidden text-xs break-words sm:inline-block lg:text-sm">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Sapiente beatae,
                             quia fuga temporibus error doloribus debitis.</p>
                     </div>
                     <div class="flex items-center justify-between w-full">
                         <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
+                            <button class="px-3 py-2 text-xs font-medium text-white rounded bg-primary-500">Explorar
                                 sitios</button>
                         </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">02</p>
+                        <p class="inline-block text-xl font-bold text-white sm:text-3xl lg:text-5xl">02</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-3 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
+        <div class="h-full row-span-1 p-4 bg-white rounded-md sm:col-span-1 sm:row-span-2 xl:col-span-3 xl:row-span-1">
+            <div class="w-full h-full bg-center bg-cover rounded-md"
                 style="background-image: url('https://images.unsplash.com/photo-1646961200311-05f8bd5657e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
                 <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
+                    class="flex flex-col items-start justify-between w-full h-full px-4 pt-4 pb-2 bg-black rounded-md lg:px-6 sm:pt-6 sm:pb-4 bg-opacity-40">
                     <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="  text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Relax</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p class="font-medium tracking-wide uppercase text-xtin sm:text-xs lg:text-sm">Temáticas</p>
+                        <h3 class="text-xl font-bold leading-tight md:text-2xl lg:text-4xl xl:text-5xl">Relax</h3>
+                        <p class="hidden text-xs break-words sm:inline-block lg:text-sm">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit.</p>
                     </div>
                     <div class="flex items-center justify-between w-full">
                         <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
+                            <button class="px-3 py-2 text-xs font-medium text-white rounded bg-primary-500">Explorar
                                 sitios</button>
                         </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">03</p>
+                        <p class="inline-block text-xl font-bold text-white sm:text-3xl lg:text-5xl">03</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bg-white rounded-md p-4 sm:col-span-1 sm:row-span-2 row-span-1 xl:col-span-3 xl:row-span-1 h-full">
-            <div class="w-full h-full rounded-md bg-cover bg-center"
+        <div class="h-full row-span-1 p-4 bg-white rounded-md sm:col-span-1 sm:row-span-2 xl:col-span-3 xl:row-span-1">
+            <div class="w-full h-full bg-center bg-cover rounded-md"
                 style="background-image: url('https://images.unsplash.com/photo-1646864052090-071a579e1346?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTM4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60');">
                 <div
-                    class="flex flex-col items-start justify-between w-full h-full px-4 lg:px-6 pt-4 sm:pt-6 sm:pb-4 pb-2 bg-black bg-opacity-40 rounded-md">
+                    class="flex flex-col items-start justify-between w-full h-full px-4 pt-4 pb-2 bg-black rounded-md lg:px-6 sm:pt-6 sm:pb-4 bg-opacity-40">
                     <div class="text-white">
-                        <p class="text-xtin sm:text-xs lg:text-sm font-medium uppercase tracking-wide">Temáticas</p>
-                        <h3 class="text-xl md:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">Urbana y culturales</h3>
-                        <p class="hidden sm:inline-block text-xs break-words lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p class="font-medium tracking-wide uppercase text-xtin sm:text-xs lg:text-sm">Temáticas</p>
+                        <h3 class="text-xl font-bold leading-tight md:text-2xl lg:text-4xl xl:text-5xl">Urbana y
+                            culturales</h3>
+                        <p class="hidden text-xs break-words sm:inline-block lg:text-sm">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit.</p>
                     </div>
                     <div class="flex items-center justify-between w-full">
                         <a href="./viajes-paises.html" class="inline-block">
-                            <button class="px-3 py-2 text-xs bg-primary-500 rounded text-white font-medium">Explorar
+                            <button class="px-3 py-2 text-xs font-medium text-white rounded bg-primary-500">Explorar
                                 sitios</button>
                         </a>
-                        <p class="font-bold text-white text-xl sm:text-3xl lg:text-5xl inline-block">04</p>
+                        <p class="inline-block text-xl font-bold text-white sm:text-3xl lg:text-5xl">04</p>
                     </div>
                 </div>
             </div>
@@ -713,18 +726,16 @@
     </div>
 
 
-    <h3 class="px-6 mt-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12 mb-6">Inspírate de nuestros
-        últimos viajes</h3>
+    <h3 class="px-6 mt-6 mb-6 text-xl font-semibold text-secondary-500 sm:text-2xl sm:mt-12">Descubre nuestros últimos viajes</h3>
     <!-- Recomendaciones -->
     <div class="w-full mb-12 bg-center bg-cover sm:h-screen " id="ofertas"
         style="background-image: url('https://images.unsplash.com/photo-1646835481978-036f15b02cd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
         <div class="w-full h-full bg-black bg-opacity-50 sm:grid sm:grid-cols-3">
             <div class="flex items-center justify-center sm:col-span-1">
                 <div class="px-6 text-center text-white sm:text-left">
-                    <h2 class="py-8 text-2xl font-bold sm:text-4xl">
-                        Otros viajeros recomiendan</h2>
-                    <p class="text-sm font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-                        voluptate consequuntur sed, iure beatae tempora!</p>
+                    <p class="font-medium tracking-wide uppercase text-xtin sm:text-xs lg:text-sm">Ofertas</p>
+                    <h2 class="text-2xl font-bold sm:text-4xl">Viajes Recomendados</h2>
+                    <p class="text-sm font-medium">Otros viajeros ya han disfrutado de nuestra selección de ofertas a sitios espectaculares, que nadie te lo cuente y descúbrelas por tu cuenta.</p>
                 </div>
             </div>
             <div class="flex items-center justify-center py-8 sm:col-span-2 sm:py-0">
@@ -732,7 +743,7 @@
                 <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider>
                     <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@xl uk-grid">
                         <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
+                            <div class="w-64 bg-center bg-cover rounded-md h-96 uk-panel"
                                 style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YWZyaWNhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60');">
                                 <div
                                     class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
@@ -751,7 +762,7 @@
                             </div>
                         </li>
                         <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
+                            <div class="w-64 bg-center bg-cover rounded-md h-96 uk-panel"
                                 style="background-image: url('https://images.unsplash.com/photo-1646819065916-8d67d47bd9c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
                                 <div
                                     class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
@@ -770,7 +781,7 @@
                             </div>
                         </li>
                         <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
+                            <div class="w-64 bg-center bg-cover rounded-md h-96 uk-panel"
                                 style="background-image: url('https://images.unsplash.com/photo-1646761457631-ae9f03d43321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
                                 <div
                                     class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
@@ -789,7 +800,7 @@
                             </div>
                         </li>
                         <li class="flex items-center justify-center w-full sm:w-auto">
-                            <div class="w-64 rounded-md h-96 uk-panel bg-cover bg-center"
+                            <div class="w-64 bg-center bg-cover rounded-md h-96 uk-panel"
                                 style="background-image: url('https://images.unsplash.com/photo-1646764065682-af0952b842a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60');">
                                 <div
                                     class="flex flex-col items-start justify-between w-full h-full p-4 bg-black bg-opacity-25 rounded-md">
