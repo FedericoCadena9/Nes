@@ -501,178 +501,175 @@
         </div>
     </div>
 
-    <div class="px-4 pt-20 mb-8 lg:grid lg:grid-cols-2 md:px-8 sm:gap-8">
+    <div class="relative lg:grid lg:grid-cols-12">
 
         <!-- Datos de Pasajeros -->
-        <div class="space-y-6">
-            <h1 class="text-2xl font-semibold text-primary-500">Datos de Pasajeros</h1>
+        <div class="p-6 pt-24 lg:col-span-8">
+            <h1 class="text-xl font-semibold text-primary-500 md:text-3xl">Datos de Pasajeros</h1>
 
 
-            <!-- Pasajero 1 -->
-            <div x-data=" {isOpen : true}" class="p-3 bg-white rounded-md shadow cursor-pointer">
-                <div @click="isOpen = !isOpen" class="flex items-center justify-between">
-                    <h4 class="text-lg font-semibold text-secondary-500">Pasajero #01</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
-                    :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
-                    </svg>
+            <div class="space-y-6 sm:mx-20 mt-6">
+                <!-- Pasajero 1 -->
+                <div x-data=" {isOpen : true}" class="p-3 bg-white rounded-md shadow cursor-pointer">
+                    <div @click="isOpen = !isOpen" class="flex items-center justify-between">
+                        <h4 class="text-lg font-semibold text-secondary-500">Pasajero #01</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
+                            :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+
+                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                        x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
+                        <!-- Nombres -->
+                        <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
+                        <!-- Apellidos -->
+                        <div class="flex space-x-2">
+                            <input type="text" name="apellido-1" id="" placeholder="Primer Apellido"
+                                class="text-xs input" required>
+                            <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido"
+                                class="text-xs input" required>
+                        </div>
+                        <div class="flex space-x-2">
+                            <!-- Tipo de Huesped -->
+                            <select id="" class="text-xs text-gray-400 input">
+                                <option value="1">Adulto</option>
+                                <option value="2">Niño</option>
+                                <option value="3">Bebé</option>
+                            </select>
+                            <!-- Género -->
+                            <select id="" class="text-xs text-gray-400 input">
+                                <option disabled selected value>Género</option>
+                                <option value="1">Hombre</option>
+                                <option value="2">Mujer</option>
+                            </select>
+                        </div>
+                        <!-- Tipo de Documento -->
+                        <select id="" class="text-xs text-gray-400 input">
+                            <option disabled selected value>Tipo de Documento</option>
+                            <option value="1">Opcion 1</option>
+                            <option value="2">Opcion 2</option>
+                        </select>
+                        <!-- Numero de documento -->
+                        <input type="text" name="numeroDoc" id="" placeholder="Número del Documento"
+                            class="text-xs input" required>
+                    </div>
                 </div>
 
-                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
-                    <!-- Nombres -->
-                <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
-                <!-- Apellidos -->
-                <div class="flex space-x-2">
-                    <input type="text" name="apellido-1" id="" placeholder="Primer Apellido" class="text-xs input"
-                        required>
-                    <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido" class="text-xs input"
-                        required>
-                </div>
-                <div class="flex space-x-2">
-                    <!-- Tipo de Huesped -->
-                    <select id="" class="text-xs text-gray-400 input">
-                        <option value="1">Adulto</option>
-                        <option value="2">Niño</option>
-                        <option value="3">Bebé</option>
-                    </select>
-                    <!-- Género -->
-                    <select id="" class="text-xs text-gray-400 input">
-                        <option disabled selected value>Género</option>
-                        <option value="1">Hombre</option>
-                        <option value="2">Mujer</option>
-                    </select>
-                </div>
-                <!-- Tipo de Documento -->
-                <select id="" class="text-xs text-gray-400 input">
-                    <option disabled selected value>Tipo de Documento</option>
-                    <option value="1">Opcion 1</option>
-                    <option value="2">Opcion 2</option>
-                </select>
-                <!-- Numero de documento -->
-                <input type="text" name="numeroDoc" id="" placeholder="Número del Documento" class="text-xs input"
-                    required>
-                </div>
-            </div>
+                <!-- Pasajero 2 -->
+                <div x-data=" {isOpen : false}" class="p-3 bg-white rounded-md shadow cursor-pointer">
+                    <div @click="isOpen = !isOpen" class="flex items-center justify-between">
+                        <h4 class="text-lg font-semibold text-secondary-500">Pasajero #02</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
+                            :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
 
-            <!-- Pasajero 2 -->
-            <div x-data=" {isOpen : false}" class="p-3 bg-white rounded-md shadow cursor-pointer">
-                <div @click="isOpen = !isOpen" class="flex items-center justify-between">
-                    <h4 class="text-lg font-semibold text-secondary-500">Pasajero #02</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
-                    :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
-                    </svg>
+                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                        x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
+                        <!-- Nombres -->
+                        <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
+                        <!-- Apellidos -->
+                        <div class="flex space-x-2">
+                            <input type="text" name="apellido-1" id="" placeholder="Primer Apellido"
+                                class="text-xs input" required>
+                            <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido"
+                                class="text-xs input" required>
+                        </div>
+                        <div class="flex space-x-2">
+                            <!-- Tipo de Huesped -->
+                            <select id="" class="text-xs text-gray-400 input">
+                                <option value="1">Adulto</option>
+                                <option value="2">Niño</option>
+                                <option value="3">Bebé</option>
+                            </select>
+                            <!-- Género -->
+                            <select id="" class="text-xs text-gray-400 input">
+                                <option disabled selected value>Género</option>
+                                <option value="1">Hombre</option>
+                                <option value="2">Mujer</option>
+                            </select>
+                        </div>
+                        <!-- Tipo de Documento -->
+                        <select id="" class="text-xs text-gray-400 input">
+                            <option disabled selected value>Tipo de Documento</option>
+                            <option value="1">Opcion 1</option>
+                            <option value="2">Opcion 2</option>
+                        </select>
+                        <!-- Numero de documento -->
+                        <input type="text" name="numeroDoc" id="" placeholder="Número del Documento"
+                            class="text-xs input" required>
+                    </div>
                 </div>
 
-                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
-                    <!-- Nombres -->
-                <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
-                <!-- Apellidos -->
-                <div class="flex space-x-2">
-                    <input type="text" name="apellido-1" id="" placeholder="Primer Apellido" class="text-xs input"
-                        required>
-                    <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido" class="text-xs input"
-                        required>
-                </div>
-                <div class="flex space-x-2">
-                    <!-- Tipo de Huesped -->
-                    <select id="" class="text-xs text-gray-400 input">
-                        <option value="1">Adulto</option>
-                        <option value="2">Niño</option>
-                        <option value="3">Bebé</option>
-                    </select>
-                    <!-- Género -->
-                    <select id="" class="text-xs text-gray-400 input">
-                        <option disabled selected value>Género</option>
-                        <option value="1">Hombre</option>
-                        <option value="2">Mujer</option>
-                    </select>
-                </div>
-                <!-- Tipo de Documento -->
-                <select id="" class="text-xs text-gray-400 input">
-                    <option disabled selected value>Tipo de Documento</option>
-                    <option value="1">Opcion 1</option>
-                    <option value="2">Opcion 2</option>
-                </select>
-                <!-- Numero de documento -->
-                <input type="text" name="numeroDoc" id="" placeholder="Número del Documento" class="text-xs input"
-                    required>
-                </div>
-            </div>
+                <!-- Pasajero 3 -->
+                <div x-data=" {isOpen : false}" class="p-3 bg-white rounded-md shadow cursor-pointer">
+                    <div @click="isOpen = !isOpen" class="flex items-center justify-between">
+                        <h4 class="text-lg font-semibold text-secondary-500">Pasajero #03</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
+                            :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
 
-            <!-- Pasajero 3 -->
-            <div x-data=" {isOpen : false}" class="p-3 bg-white rounded-md shadow cursor-pointer">
-                <div @click="isOpen = !isOpen" class="flex items-center justify-between">
-                    <h4 class="text-lg font-semibold text-secondary-500">Pasajero #03</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 duration-300 text-secondary-500"
-                    :class="{'transform rotate-180' : isOpen}" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </div>
-
-                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
-                    <!-- Nombres -->
-                <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
-                <!-- Apellidos -->
-                <div class="flex space-x-2">
-                    <input type="text" name="apellido-1" id="" placeholder="Primer Apellido" class="text-xs input"
-                        required>
-                    <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido" class="text-xs input"
-                        required>
-                </div>
-                <div class="flex space-x-2">
-                    <!-- Tipo de Huesped -->
-                    <select id="" class="text-xs text-gray-400 input">
-                        <option value="1">Adulto</option>
-                        <option value="2">Niño</option>
-                        <option value="3">Bebé</option>
-                    </select>
-                    <!-- Género -->
-                    <select id="" class="text-xs text-gray-400 input">
-                        <option disabled selected value>Género</option>
-                        <option value="1">Hombre</option>
-                        <option value="2">Mujer</option>
-                    </select>
-                </div>
-                <!-- Tipo de Documento -->
-                <select id="" class="text-xs text-gray-400 input">
-                    <option disabled selected value>Tipo de Documento</option>
-                    <option value="1">Opcion 1</option>
-                    <option value="2">Opcion 2</option>
-                </select>
-                <!-- Numero de documento -->
-                <input type="text" name="numeroDoc" id="" placeholder="Número del Documento" class="text-xs input"
-                    required>
+                    <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                        x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95" :class="mt-4">
+                        <!-- Nombres -->
+                        <input type="text" name="nombres" id="" placeholder="Nombre(s)" class="text-xs input" required>
+                        <!-- Apellidos -->
+                        <div class="flex space-x-2">
+                            <input type="text" name="apellido-1" id="" placeholder="Primer Apellido"
+                                class="text-xs input" required>
+                            <input type="text" name="apellido-2" id="" placeholder="Segundo Apellido"
+                                class="text-xs input" required>
+                        </div>
+                        <div class="flex space-x-2">
+                            <!-- Tipo de Huesped -->
+                            <select id="" class="text-xs text-gray-400 input">
+                                <option value="1">Adulto</option>
+                                <option value="2">Niño</option>
+                                <option value="3">Bebé</option>
+                            </select>
+                            <!-- Género -->
+                            <select id="" class="text-xs text-gray-400 input">
+                                <option disabled selected value>Género</option>
+                                <option value="1">Hombre</option>
+                                <option value="2">Mujer</option>
+                            </select>
+                        </div>
+                        <!-- Tipo de Documento -->
+                        <select id="" class="text-xs text-gray-400 input">
+                            <option disabled selected value>Tipo de Documento</option>
+                            <option value="1">Opcion 1</option>
+                            <option value="2">Opcion 2</option>
+                        </select>
+                        <!-- Numero de documento -->
+                        <input type="text" name="numeroDoc" id="" placeholder="Número del Documento"
+                            class="text-xs input" required>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Resumen del Viaje -->
-        <div class="mt-10 md:mt-0">
-            <h2 class="mb-6 text-2xl font-semibold text-primary-500">Resumen del Viaje</h2>
-            <div class="p-3 bg-white rounded-md shadow">
-                <div class="flex">
+        <div class="p-4 bg-white lg:col-span-4 md:px-4 md:py-6 lg:mt-18">
+            <h2 class="text-xl font-semibold text-primary-500 md:text-3xl">Resumen</h2>
+            <div class="p-3">
+                <h3 class="font-semibold text-secondary-500">Resumen del Viaje</h3>
+                <div class="flex mt-4">
                     <img class="object-cover rounded-lg w-28 h-28" src="./img/Playa Sirenas.png" alt="Imagen Viaje">
                     <div class="flex flex-col justify-center ml-5">
                         <h3 class="text-xl font-semibold text-secondary-500">Locura africana</h3>
