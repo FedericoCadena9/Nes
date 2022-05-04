@@ -9,7 +9,7 @@ function chat() {
         online: true,
         message: "Buen día Pedro.",
         read: true,
-        circle: "1",
+        circle: "16",
         time: "Ahora",
       },
       {
