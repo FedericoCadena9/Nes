@@ -129,6 +129,9 @@
                                                     class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
                                                     Notificaciones</p>
                                             </button>
+                                            <div class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
+                                                    <span class=" text-xs font-semibold text-white">4</span>
+                                            </div>
                                         </div>
 
                                         <div x-show.transition="openNot" @click.away="openNot = false"
@@ -250,7 +253,7 @@
                                     </span>
                                 </div>
 
-                                <!-- Tu perfil -->
+                                 <!-- Tu perfil -->
                                 <a href="./tu-perfil.html" class="block px-4 py-2 text-sm text-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
@@ -390,6 +393,7 @@
         </div>
     </div>
 
+
     <!-- Header Widgets Responsive-->
     <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
 
@@ -422,7 +426,7 @@
                 </a>
 
                 <!-- Notificaciones -->
-                <div class="flex order-last md:order-none md:relative md:inline-block" x-data="{ openNot: false }"
+                <div class="flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }"
                     x-cloak>
                     <div>
                         <button @click="openNot = !openNot" class="mx-auto">
@@ -437,6 +441,9 @@
                             <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
                                 Notificaciones</p>
                         </button>
+                        <div class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
+                            <span class=" text-xs font-semibold text-white">4</span>
+                    </div>
                     </div>
 
                     <div x-show.transition="openNot" @click.away="openNot = false"
