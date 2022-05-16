@@ -874,29 +874,24 @@
       <!-- Input Buscar -->
       <div class="flex items-center w-full px-6 py-4 border-b border-gray-300">
         <form method="GET" class="w-full">
-          <div class="relative text-gray-400 focus-within:text-gray-500">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-              <button
-                type="submit"
-                class="p-1 focus:outline-none focus:shadow-outline"
+          <div class="relative text-gray-400">
+            <span class="absolute pl-2 h-[50px] top-2 flex items-center">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                class="w-6 h-6"
               >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  class="w-6 h-6"
-                >
-                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-              </button>
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
             </span>
             <input
               type="search"
               id=""
-              class="w-full py-3 pl-10 text-sm text-gray-700 bg-gray-100 rounded-md md:py-2 focus:outline-none focus:bg-gray-50 focus:text-gray-600"
+              class="pl-12 input"
               placeholder="Buscar "
               autocomplete="off"
             />
@@ -947,13 +942,13 @@
     <!-- Chat div -->
     <div
       class="flex flex-1 hidden max-h-screen pt-20 text-gray-800 bg-white xl:pt-18 md:pt-16 md:pb-0 md:flex-col md:flex"
-      x-data="{openFile: true}"
+      x-data="{openFile: false}"
       x-cloak
       id="chatMsg"
     >
       <!-- Pantalla de previsualización de Documentos e Imagenes -->
       <div
-        class="min-h-full md:inline-block bg-gray-800 w-full z-20"
+        class="min-h-full md:inline-block bg-gray-800/80 w-full z-20"
         x-show="openFile"
         :class="openFile ? 'block' : 'hidden'"
         x-data="{ tab: 'image' }"
@@ -1489,17 +1484,17 @@
                 type="text"
                 id=""
                 placeholder="Aa"
-                class="flex w-full h-10 pl-4 bg-gray-100 border border-transparent outline-none rounded-xl focus:outline-none focus:border-primary-400"
+                class="input mt-0"
               />
             </div>
           </div>
-          <div class="ml-4">
+          <div class="ml-4 flex">
             <button
               id=""
-              class="flex items-center justify-center p-2 text-white rounded bg-primary-500"
+              class="flex items-center justify-center p-4 text-white rounded bg-primary-500"
             >
               <svg
-                class="w-4 h-4 rotate-45"
+                class="w-5 h-5 rotate-45"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
