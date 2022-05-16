@@ -947,224 +947,256 @@
     <!-- Chat div -->
     <div
       class="flex flex-1 hidden max-h-screen pt-20 text-gray-800 bg-white xl:pt-18 md:pt-16 md:pb-0 md:flex-col md:flex"
-      x-data="{openFile: false}"
+      x-data="{openFile: true}"
       x-cloak
       id="chatMsg"
     >
       <!-- Pantalla de previsualización de Documentos e Imagenes -->
       <div
-        class="h-full md:inline-block bg-gray-800 w-full pt-6 z-20"
+        class="min-h-full md:inline-block bg-gray-800 w-full z-20"
         x-show="openFile"
         :class="openFile ? 'block' : 'hidden'"
+        x-data="{ tab: 'image' }"
+        x-cloak
       >
-        <div>
-          <!-- Botón de Cerrar modal -->
-          <button class="p-5" @click="openFile = !openFile">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-gray-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
+        <div class="h-[10%]">
+          <div class="flex justify-between">
+            <!-- Botón de Cerrar modal -->
+            <button class="p-5" @click="openFile = !openFile">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <!-- Botones para cambiar entre diseños (Eliminar en producción) -->
+            <nav class="text-white space-x-2 p-5">
+              <a
+                href="#"
+                class="text-sm bg-white/30 backdrop-blur rounded py-3 px-6 font-medium"
+                :class="{ 'active': tab === 'image' }"
+                x-on:click.prevent="tab = 'image'"
+              >
+                Imagenes
+              </a>
+              <a
+                href="#"
+                class="text-sm bg-white/30 backdrop-blur rounded py-3 px-6 font-medium"
+                :class="{ 'active': tab === 'file' }"
+                x-on:click.prevent="tab = 'file'"
+              >
+                Documentos
+              </a>
+            </nav>
+          </div>
         </div>
 
-        <div x-data="{ tab: 'image' }" x-cloak>
-          <!-- Botones para cambiar entre diseños (Eliminar en producción) -->
-          <nav class="text-white space-x-2">
-            <a href="#"
-              class="text-sm bg-blue-500 rounded px-3"
-              :class="{ 'active': tab === 'image' }"
-              x-on:click.prevent="tab = 'image'"
-            >
-              Imagenes
-            </a>
-            <a href="#"
-              class="text-sm bg-blue-500 rounded px-3"
-              :class="{ 'active': tab === 'file' }"
-              x-on:click.prevent="tab = 'file'"
-            >
-              Documentos
-            </a>
-          </nav>
-
+        <div class="h-[90%]">
           <!-- Imagenes -->
-          <div x-show="tab === 'image'" class="flex flex-col items-center justify-center sm:mt-4 mt-24">
+          <div x-show="tab === 'image'" class="h-full">
             <!-- Previsualización de imagen actual -->
-            <div class="sm:h-96 w-80 sm:w-[36rem] lg:w-auto px-4 sm:px-6">
-              <img
-                class="object-cover h-full rounded-md"
-                src="https://images.unsplash.com/photo-1563563626244-4aaf7cf50a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
-                alt=""
-              />
-            </div>
-            <div class="flex items-center mt-8 justify-center w-full">
-              <!-- Thumbnails de las imagenes más botón de agregar más imagenes -->
-              <div class="w-1/2 flex items-center justify-center space-x-4">
-                <div
-                  class="h-14 w-14 cursor-pointer border-[2.5px] border-primary-500 rounded"
-                >
-                  <img
-                    class="object-cover h-full w-full"
-                    src="https://images.unsplash.com/photo-1563563626244-4aaf7cf50a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
-                    alt=""
-                  />
-                </div>
-                <div class="h-14 w-14 cursor-pointer">
-                  <img
-                    class="object-cover h-full w-full rounded"
-                    src="https://images.unsplash.com/photo-1651437074340-dd8549a38ea1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="w-14 h-14 flex items-center justify-center hover:bg-gray-100/10 border-gray-500 cursor-pointer text-gray-500 rounded border-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
+            <div class="w-full h-full flex flex-col items-center justify-start">
+              <div
+                class="h-5/6 flex sm:items-center items-start justify-center w-full"
+              >
+                <img
+                  class="xs:w-auto rounded xl:h-80 md:h-60 sm:h-80 h-60 mt-4 sm:mt-0 w-72"
+                  src="https://images.unsplash.com/photo-1652553064282-9ea4a6b663be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+                  alt=""
+                />
               </div>
-              <!-- Botón Enviar Imagen -->
-              <div class="ml-4">
-                <button
-                  id=""
-                  class="flex items-center justify-center w-14 h-14 text-white rounded bg-primary-500"
+              <!-- Thumbnails de las imagenes más botón de agregar más imagenes -->
+              <div
+                class="w-full relative bottom-16 sm:bottom-0 flex items-center mb-4 px-3 sm:px-6"
+              >
+                <div
+                  class="flex-1 flex sm:space-x-3 space-x-1 sm:justify-center"
                 >
-                  <svg
-                    class="w-6 h-6 rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="h-14 w-14 cursor-pointer border-[2.5px] border-primary-500 rounded"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    ></path>
-                  </svg>
-                </button>
+                    <img
+                      class="object-cover h-full w-full"
+                      src="https://images.unsplash.com/photo-1563563626244-4aaf7cf50a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+                      alt=""
+                    />
+                  </div>
+                  <div class="h-14 w-14 cursor-pointer">
+                    <img
+                      class="object-cover h-full w-full rounded"
+                      src="https://images.unsplash.com/photo-1651437074340-dd8549a38ea1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="w-14 h-14 flex items-center justify-center cursor-pointer bg-white/30 rounded ease-in duration-150 hover:bg-white/50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-7 w-7 bg-primary-500 p-1 rounded-full text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-none">
+                  <!-- Botón Enviar Imagen -->
+                  <button
+                    id=""
+                    class="flex items-center justify-center w-14 h-14 text-white rounded bg-primary-500"
+                  >
+                    <svg
+                      class="w-6 h-6 rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Archivos -->
-          <div x-show="tab === 'file'" class="flex flex-col items-center justify-center sm:mt-16">
-            <!-- Previsualización del archivo actual -->
-            <div class="px-4 sm:px-6">
-              <div class="flex items-center justify-center flex-col">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-60 w-60 text-gray-500"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <p class="text-lg font-semibold text-gray-300">
-                  Nombre_del_documento.pdf
-                </p>
-                <p class="text-gray-500">172 KB • <span>PDF</span></p>
-              </div>
-            </div>
-            <div class="flex items-center mt-8 justify-center w-full">
-              <!-- Thumbnails de las imagenes más botón de agregar más imagenes -->
-              <div class="w-1/2 flex items-center justify-center space-x-4">
-                <div
-                  class="w-14 h-14 flex items-center justify-center hover:bg-gray-100/10 text-primary-500 border-primary-500 cursor-pointer text-gray-500 rounded border-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
+          <div x-show="tab === 'file'" class="h-full">
+            <!-- Previsualización de archivo actual -->
+            <div class="w-full h-full flex flex-col items-center justify-start">
+              <div
+                class="h-5/6 flex sm:items-center items-start justify-center w-full"
+              >
+                <div class="fex flex-col items-center justify-center space-y-6">
+                  <p class="text-lg font-semibold text-gray-300">
+                    Nombre_del_documento.pdf
+                  </p>
+                  <div
+                    class="rounded-full w-20 h-20 mx-auto border border-gray-400 flex items-center justify-center"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="w-14 h-14 flex items-center justify-center hover:bg-gray-100/10 border-gray-500 cursor-pointer text-gray-500 rounded border-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="w-14 h-14 flex items-center justify-center hover:bg-gray-100/10 border-gray-500 cursor-pointer text-gray-500 rounded border-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <!-- Botón Enviar Imagen -->
-              <div class="ml-4">
-                <button
-                  id=""
-                  class="flex items-center justify-center w-14 h-14 text-white rounded bg-primary-500"
-                >
-                  <svg
-                    class="w-6 h-6 rotate-45"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                       stroke-width="2"
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    ></path>
-                  </svg>
-                </button>
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-gray-400 text-center">
+                    172 KB • <span>PDF</span>
+                  </p>
+                </div>
+              </div>
+              <!-- Thumbnails de las imagenes más botón de agregar más imagenes -->
+              <div
+                class="w-full relative bottom-16 sm:bottom-0 flex items-center mb-4 px-3 sm:px-6"
+              >
+                <div
+                  class="flex-1 flex sm:space-x-3 space-x-1 sm:justify-center"
+                >
+                  <div
+                    class="w-14 h-14 flex items-center justify-center hover:bg-gray-100/10 text-primary-500 border-primary-500 cursor-pointer rounded border-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="w-14 h-14 flex items-center justify-center hover:bg-gray-100/10 border-gray-500 cursor-pointer text-gray-500 rounded border-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="w-14 h-14 flex items-center justify-center cursor-pointer bg-white/30 rounded ease-in duration-150 hover:bg-white/50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-7 w-7 bg-primary-500 p-1 rounded-full text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-none">
+                  <!-- Botón Enviar Imagen -->
+                  <button
+                    id=""
+                    class="flex items-center justify-center w-14 h-14 text-white rounded bg-primary-500"
+                  >
+                    <svg
+                      class="w-6 h-6 rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
