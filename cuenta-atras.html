@@ -7,7 +7,11 @@
     <title>Nes+ | Muy Pronto</title>
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Estilos Cuenta Atrás -->
     <link rel="stylesheet" href="./css/countdown.css" />
+    <!-- Estilos DatePicker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
   </head>
 
   <body class="h-screen bg-slate-100 font-body">
@@ -69,9 +73,7 @@
                 required
               />
             </div>
-            <div
-              class="flex space-x-4"
-            >
+            <div class="flex space-x-4">
               <div class="w-1/2">
                 <label class="block text-sm text-gray-600">Sexo</label>
                 <select id="" class="input">
@@ -85,14 +87,14 @@
               </div>
 
               <div class="w-1/2">
-                <label class="block text-sm text-gray-600">Edad </label>
+                <label class="block text-sm text-gray-600"
+                  >Fecha de nacimiento</label
+                >
                 <input
-                  type="number"
-                  name="edad"
-                  id=""
-                  placeholder="Edad"
+                  type="text"
+                  name="datetimes"
+                  placeholder="03/03/21"
                   class="input"
-                  required
                 />
               </div>
             </div>
@@ -242,15 +244,15 @@
                 <a
                   href="./condiciones-de-uso.html"
                   class="underline text-primary-500"
-                  >términos de uso</a
+                  > términos de uso</a
                 >
                 y la
                 <a
                   href="./politica-de-privacidad.html"
                   class="underline text-primary-500"
-                  >política de privacidad</a
+                  > política de privacidad</a
                 >
-                de Nes+. Además el usuario/a declara que es mayor de edad al
+                de Nes+. Además el usuario/a declara que es mayor de 18 años al
                 momento de registrarse en función a la ley aplicable.
               </p>
             </div>
@@ -259,14 +261,36 @@
                             class="btn-login">Registrarse</button> -->
 
             <!-- Tag a solo para fines demostrativos -->
-            <a href="/cuenta-atras-agradecimiento.html" class="btn-login">Registrarse</a>
+            <a href="/cuenta-atras-agradecimiento.html" class="btn-login"
+              >Registrarse</a
+            >
           </form>
         </div>
       </div>
     </section>
+
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="./js/simplyCountdown.min.js"></script>
     <script src="./js/countdown.js"></script>
+
+    <!-- Mis scripts -->
+
+    <!-- Función Fecha de Nacimiento -->
+    <script>
+      // Función para iniciar DatePicker
+      $(function () {
+        $('input[name="datetimes"]').daterangepicker({
+          singleDatePicker: true,
+          showDropdowns: true,
+          minYear: 1901,
+          maxYear: parseInt(moment().format("YYYY"), 10),
+        });
+      });
+    </script>
   </body>
 </html>
