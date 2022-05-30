@@ -14,6 +14,26 @@
 
 <body class="font-body">
 
+    <!-- Estilos Carrusel -->
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
     <!-- Navbar -->
     <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
         <div class="relative bg-white shadow-md shadow-slate-900/10">
@@ -159,34 +179,41 @@
 
 
     <!-- Hero -->
-    <section class="px-4 pt-40 mx-auto max-w-7xl">
-        <div class="w-full mx-auto md:w-11/12 xl:w-9/12 text-center">
-            <h1
-                class="mb-6 text-4xl font-extrabold leading-none tracking-normal text-secondary-500 md:text-6xl md:tracking-tight">
-                Una <span class="block w-full text-primary-500 lg:inline">comunidad</span> para personas que viven con
-                <span class="block w-full text-primary-500 lg:inline">VIH</span>
-            </h1>
-            <p class="px-0 mb-6 text-lg text-gray-600 lg:px-24">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed delectus porro optio iste reiciendis
-                commodi a dolore. Architecto, optio soluta.
-            </p>
-            <div class="flex items-center justify-center ">
-                <a class="btn-login w-56 shadow-lg shadow-primary-300" href="/registro.html">
-                    Crea tu cuenta gratis
-                </a>
+
+    <section class="h-screen">
+        <div class="swiper mySwiper">
+            <div class="absolute z-50 w-screen h-screen">
+                <div class="flex items-center justify-center w-full h-full p-8">
+                    <div class="w-full mx-auto md:w-11/12 xl:w-9/12 text-center mt-14">
+                        <h1
+                            class="mb-6 text-4xl font-extrabold leading-none tracking-normal text-white md:text-6xl md:tracking-tight">
+                            Una <span class="block w-full text-primary-500 lg:inline">comunidad</span> para personas que viven con
+                            <span class="block w-full text-primary-500 lg:inline">VIH</span>
+                        </h1>
+                        <p class="px-0 mb-6 text-lg text-gray-200 lg:px-24">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed delectus porro optio iste reiciendis
+                            commodi a dolore. Architecto, optio soluta.
+                        </p>
+                        <div class="flex items-center justify-center ">
+                            <a class="btn-login w-64" href="/registro.html">
+                                Únete a nuestra comunidad
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="w-full mx-auto mt-20 text-center md:w-10/12  h-[40rem] rounded-xl shadow-xl shadow-primary-300">
-            <div class="flex items-center space-x-2 px-6 py-4  border-b border-slate-200">
-                <div class="bg-red-500 rounded-full h-3 w-3 "></div>
-                <div class="bg-yellow-500 rounded-full h-3 w-3 "></div>
-                <div class="bg-green-500 rounded-full h-3 w-3 "></div>
-            </div>
-            <div class="flex justify-center h-full w-full">
-                <div class="w-3/4 mt-9">
-                    <img class="object-cover rounded-lg"
-                        src="https://images.unsplash.com/photo-1576014131795-d440191a8e8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-                        alt="">
+            <div class="absolute z-40 w-screen h-screen bg-black opacity-50"></div>
+
+            <!-- Carrusel de imagenes -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1510932742089-bef92acabb5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1548705085-101177834f47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" />
                 </div>
             </div>
         </div>
@@ -194,7 +221,7 @@
 
 
     <!-- Se parte de la comuniddad -->
-    <section class="mt-32 mx-6">
+    <section class="mt-32 mb-40 mx-6">
         <h2 class="mb-6 text-3xl font-bold leading-none tracking-normal text-secondary-500 text-center">
             Sé parte de la <span class="block w-full text-primary-500 lg:inline">comunidad</span>
         </h2>
@@ -220,137 +247,60 @@
         </div>
     </section>
 
-    <!-- Viajes Sección-->
-    <section class="mt-32 mx-6">
-        <h2 class="mb-6 text-3xl font-bold leading-none tracking-normal text-secondary-500 text-center">
-            Encuentra el lugar ideal para <span class="block w-full text-primary-500 lg:inline">Viajar</span>
-        </h2>
-        <div
-            class="relative flex w-full overflow-x-auto lg:overflow-x-hidden snap-x snap-mandatory lg:justify-center mt-14">
-            <div>
-                <a>
-                    <div class="bg-center bg-cover h-96 sm:h-[32rem] w-72 sm:w-80 lg:w-96"
-                        style="background-image: url('https://images.unsplash.com/photo-1568402102990-bc541580b59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWV4aWNvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');">
-                        <div class="flex items-end justify-center w-full h-full px-4 py-6 bg-black bg-opacity-60">
-                            <div class="text-white">
-                                <h4
-                                    class="text-4xl font-bold leading-tight text-center font-secondary xl:text-5xl uppercase">
-                                    México
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a>
-                    <div class="bg-center bg-cover h-96 sm:h-[32rem] w-72 sm:w-80 lg:w-96"
-                        style="background-image: url('https://images.unsplash.com/photo-1558642084-fd07fae5282e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZXNwYSVDMyVCMWF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');">
-                        <div class="flex items-end justify-center w-full h-full px-4 py-6 bg-black bg-opacity-60">
-                            <div class="text-white">
-                                <h4
-                                    class="text-4xl font-bold leading-tight text-center font-secondary xl:text-5xl uppercase">
-                                    España
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a>
-                    <div class="bg-center bg-cover h-96 sm:h-[32rem] w-72 sm:w-80 lg:w-96"
-                        style="background-image: url('https://images.unsplash.com/photo-1467681336765-a6d1c58c61e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dW5pdGVkJTIwa2luZG9tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');">
-                        <div class="flex items-end justify-center w-full h-full px-4 py-6 bg-black bg-opacity-60">
-                            <div class="text-white">
-                                <h4
-                                    class="text-4xl font-bold leading-tight text-center font-secondary xl:text-5xl uppercase">
-                                    Reino Unido
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Conoce, reune section -->
-    <section class="mx-6 mt-20">
-        <div class="container flex flex-col mx-auto lg:flex-row">
-            <div class="w-full lg:w-1/2 h-[40rem]"
-                style="background-image: url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZyaWVuZHNoaXB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'); background-position: center center; background-size: cover;">
-            </div>
-            <div class="flex flex-col w-full p-6 lg:w-2/3 md:p-8 lg:p-12 sm:justify-center">
-                <h2 class="text-5xl font-bold leading-none text-secondary-500">Conoce, reúnete y diviértete con nuevos
-                    amigos</h2>
-                <p class="mt-4 mb-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sed
-                    aut sunt
-                    quisquam perspiciatis aperiam similique recusandae sint, reiciendis possimus atque obcaecati!
-                    Dignissimos explicabo nisi facere atque placeat vitae beatae.</p>
-                <a href="">
-                    <button class="btn-login w-60">Descubre
-                        a la Comunidad</button>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Caracteristicas section -->
-    <section class="mx-6 mt-32">
+    <section class="mx-6">
         <div class="grid grid-cols-12 grid-row-3 gap-x-8 gap-y-14">
             <div class="col-span-4 flex flex-col justify-center mx-8">
                 <p class="text-secondary-500 font-bold text-4xl">Chatea</p>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sit!</p>
+                <p class="text-gray-600">con personas de todo el mundo.</p>
             </div>
             <div class="col-span-4">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y2hhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                     alt="">
             </div>
             <div class="col-span-4">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1488998287214-1e668a8e0dc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                     alt="">
             </div>
 
             <div class="col-span-3">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1488998287214-1e668a8e0dc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2hhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                     alt="">
             </div>
             <div class="col-span-3 flex flex-col justify-center mx-8">
                 <p class="text-secondary-500 font-bold text-4xl">Explora</p>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sit!</p>
+                <p class="text-gray-600">nuevos e increíbles lugares.</p>
             </div>
             <div class="col-span-3">
-                <img class="object-cover h-60 w-full"
-                    src="https://images.unsplash.com/photo-1501425359013-96058e410cfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZXhwbG9yZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                <img class="object-cover h-72 w-full"
+                    src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                     alt="">
             </div>
             <div class="col-span-3">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1542610520-fea1b402e0e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGV4cGxvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     alt="">
             </div>
 
             <div class="col-span-3">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZnJpZW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500"
                     alt="">
             </div>
             <div class="col-span-3">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1522098543979-ffc7f79a56c4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZyaWVuZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
                     alt="">
             </div>
             <div class="col-span-3 flex flex-col justify-center mx-8">
-                <p class="text-secondary-500 font-bold text-4xl">Mejora</p>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sit!</p>
+                <p class="text-secondary-500 font-bold text-4xl">Vive tus momentos</p>
+                <p class="text-gray-600">a lado de grandes amigos.</p>
             </div>
             <div class="col-span-3">
-                <img class="object-cover h-60 w-full"
+                <img class="object-cover h-72 w-full"
                     src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGZyaWVuZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                     alt="">
             </div>
@@ -539,7 +489,19 @@
 
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            }
+        });
+    </script>
 </body>
 
 </html>
