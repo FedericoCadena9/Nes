@@ -32,6 +32,14 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .swiper-pagination >.swiper-pagination-bullet {
+            background-color: white;
+        }
+
+        .swiper-pagination >.swiper-pagination-bullet-active {
+            background-color: #F92E4B !important;
+        }
     </style>
 
     <!-- Navbar -->
@@ -187,11 +195,13 @@
                     <div class="w-full mx-auto md:w-11/12 xl:w-9/12 text-center mt-14">
                         <h1
                             class="mb-6 text-4xl font-extrabold leading-none tracking-normal text-white md:text-6xl md:tracking-tight">
-                            Una <span class="block w-full text-primary-500 lg:inline">comunidad</span> para personas que viven con
+                            Una <span class="block w-full text-primary-500 lg:inline">comunidad</span> para personas que
+                            viven con
                             <span class="block w-full text-primary-500 lg:inline">VIH</span>
                         </h1>
                         <p class="px-0 mb-6 text-lg text-gray-200 lg:px-24">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed delectus porro optio iste reiciendis
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed delectus porro optio iste
+                            reiciendis
                             commodi a dolore. Architecto, optio soluta.
                         </p>
                         <div class="flex items-center justify-center ">
@@ -201,19 +211,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
             <div class="absolute z-40 w-screen h-screen bg-black opacity-50"></div>
 
             <!-- Carrusel de imagenes -->
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1510932742089-bef92acabb5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
+                    <img
+                        src="https://images.unsplash.com/photo-1510932742089-bef92acabb5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" />
+                    <img
+                        src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" />
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1548705085-101177834f47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" />
+                    <img
+                        src="https://images.unsplash.com/photo-1548705085-101177834f47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" />
                 </div>
             </div>
         </div>
@@ -243,6 +257,27 @@
                 <h4 class="font-bold text-xl text-secondary-500">Viaja a increibles lugares</h4>
                 <p class="text-gray-500 text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat,
                     quasi?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conoce, reune section -->
+    <section class="mx-6 mt-20">
+        <div class="container flex flex-col mx-auto lg:flex-row">
+            <div class="w-full lg:w-1/2 h-[40rem]"
+                style="background-image: url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZyaWVuZHNoaXB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'); background-position: center center; background-size: cover;">
+            </div>
+            <div class="flex flex-col w-full p-6 lg:w-2/3 md:p-8 lg:p-12 sm:justify-center">
+                <h2 class="text-5xl font-bold leading-none text-secondary-500">Conoce, reúnete y diviértete con nuevos
+                    amigos</h2>
+                <p class="mt-4 mb-8 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sed
+                    aut sunt
+                    quisquam perspiciatis aperiam similique recusandae sint, reiciendis possimus atque obcaecati!
+                    Dignissimos explicabo nisi facere atque placeat vitae beatae.</p>
+                <a href="">
+                    <button class="btn-login w-60">Descubre
+                        a la Comunidad</button>
+                </a>
             </div>
         </div>
     </section>
@@ -499,7 +534,11 @@
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
-            }
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
         });
     </script>
 </body>
