@@ -1357,10 +1357,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 32rem;
 }
 
-.h-28{
-  height: 7rem;
-}
-
 .h-64{
   height: 16rem;
 }
@@ -1375,6 +1371,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-24{
   height: 6rem;
+}
+
+.h-28{
+  height: 7rem;
 }
 
 .h-\[500px\]{
@@ -1505,20 +1505,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 15rem;
 }
 
-.w-28{
-  width: 7rem;
+.w-56{
+  width: 14rem;
 }
 
 .w-3\/4{
   width: 75%;
 }
 
-.w-56{
-  width: 14rem;
-}
-
 .\!w-64{
   width: 16rem !important;
+}
+
+.w-28{
+  width: 7rem;
 }
 
 .w-2\/6{
@@ -1547,10 +1547,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-7xl{
   max-width: 80rem;
-}
-
-.max-w-xl{
-  max-width: 36rem;
 }
 
 .max-w-2xl{
@@ -1685,10 +1681,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-col{
   flex-direction: column;
-}
-
-.flex-col-reverse{
-  flex-direction: column-reverse;
 }
 
 .flex-wrap{
@@ -1854,10 +1846,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
-.space-y-28 > :not([hidden]) ~ :not([hidden]){
+.space-y-40 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
-  margin-top: calc(7rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(7rem * var(--tw-space-y-reverse));
+  margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(10rem * var(--tw-space-y-reverse));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]){
@@ -3651,10 +3643,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     order: 0;
   }
 
-  .sm\:order-4{
-    order: 4;
-  }
-
   .sm\:col-span-1{
     grid-column: span 1 / span 1;
   }
@@ -3803,16 +3791,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 7rem;
   }
 
-  .sm\:h-48{
-    height: 12rem;
-  }
-
-  .sm\:h-32{
-    height: 8rem;
-  }
-
-  .sm\:h-64{
-    height: 16rem;
+  .sm\:h-72{
+    height: 18rem;
   }
 
   .sm\:h-5{
@@ -3831,6 +3811,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 2rem;
   }
 
+  .sm\:h-32{
+    height: 8rem;
+  }
+
   .sm\:h-52{
     height: 13rem;
   }
@@ -3845,14 +3829,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:h-screen{
     height: 100vh;
-  }
-
-  .sm\:h-56{
-    height: 14rem;
-  }
-
-  .sm\:h-72{
-    height: 18rem;
   }
 
   .sm\:min-h-screen{
@@ -3883,16 +3859,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 15rem;
   }
 
-  .sm\:w-48{
-    width: 12rem;
-  }
-
-  .sm\:w-32{
-    width: 8rem;
-  }
-
-  .sm\:w-64{
-    width: 16rem;
+  .sm\:w-80{
+    width: 20rem;
   }
 
   .sm\:w-5{
@@ -3911,6 +3879,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 2rem;
   }
 
+  .sm\:w-32{
+    width: 8rem;
+  }
+
   .sm\:w-72{
     width: 18rem;
   }
@@ -3921,14 +3893,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:w-3\/5{
     width: 60%;
-  }
-
-  .sm\:w-56{
-    width: 14rem;
-  }
-
-  .sm\:w-80{
-    width: 20rem;
   }
 
   .sm\:max-w-xl{
@@ -4011,12 +3975,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
-  }
-
-  .sm\:space-y-40 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-y-reverse: 0;
-    margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(10rem * var(--tw-space-y-reverse));
   }
 
   .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]){
@@ -4296,18 +4254,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:order-none{
     order: 0;
-  }
-
-  .md\:order-1{
-    order: 1;
-  }
-
-  .md\:order-3{
-    order: 3;
-  }
-
-  .md\:order-2{
-    order: 2;
   }
 
   .md\:col-span-3{
@@ -4921,24 +4867,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     top: -4rem;
   }
 
+  .lg\:order-none{
+    order: 0;
+  }
+
   .lg\:order-3{
     order: 3;
   }
 
   .lg\:order-4{
     order: 4;
-  }
-
-  .lg\:order-1{
-    order: 1;
-  }
-
-  .lg\:order-2{
-    order: 2;
-  }
-
-  .lg\:order-none{
-    order: 0;
   }
 
   .lg\:col-span-12{
@@ -5151,10 +5089,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-2\/5{
     width: 40%;
-  }
-
-  .lg\:max-w-lg{
-    max-width: 32rem;
   }
 
   .lg\:max-w-screen-xl{
@@ -5472,10 +5406,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xl\:w-2\/3{
     width: 66.666667%;
-  }
-
-  .xl\:w-96{
-    width: 24rem;
   }
 
   .xl\:grid-cols-2{
