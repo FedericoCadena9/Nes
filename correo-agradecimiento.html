@@ -60,6 +60,9 @@
 .mt-24 {
     margin-top: 96px !important;
 }
+.mt-4 {
+    margin-top: 16px !important;
+}
 .mt-2 {
     margin-top: 8px !important;
 }
@@ -135,6 +138,9 @@
 .max-w-full {
     max-width: 100% !important;
 }
+.cursor-pointer {
+    cursor: pointer !important;
+}
 .flex-col {
     flex-direction: column !important;
 }
@@ -160,8 +166,14 @@
 .rounded {
     border-radius: 4px !important;
 }
+.rounded-md {
+    border-radius: 6px !important;
+}
 .rounded-full {
     border-radius: 9999px !important;
+}
+.border-0 {
+    border-width: 0px !important;
 }
 .bg-slate-50 {
     background-color: #f8fafc !important;
@@ -214,6 +226,14 @@
     padding-left: 12px !important;
     padding-right: 12px !important;
 }
+.px-4 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.py-3 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
 .px-6 {
     padding-left: 24px !important;
     padding-right: 24px !important;
@@ -262,11 +282,11 @@
 .text-3xl {
     font-size: 30px !important;
 }
-.text-lg {
-    font-size: 18px !important;
-}
 .text-sm {
     font-size: 14px !important;
+}
+.text-lg {
+    font-size: 18px !important;
 }
 .text-2xl {
     font-size: 24px !important;
@@ -322,6 +342,9 @@
 .text-gray-600 {
     color: #4b5563 !important;
 }
+.text-gray-500 {
+    color: #6b7280 !important;
+}
 .text-white {
     color: #fff !important;
 }
@@ -333,6 +356,12 @@
 }
 .text-slate-600 {
     color: #475569 !important;
+}
+.duration-150 {
+    transition-duration: 150ms !important;
+}
+.ease-in-out {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 .mso-text-raise-4 {
     mso-text-raise: 16px;
@@ -383,6 +412,9 @@
  * More info:
  * https://tailwindcss.com/docs/functions-and-directives#layer
 */
+.hover-bg-primary-600:hover {
+    background-color: #E02944 !important;
+}
 .hover-bg-indigo-700:hover {
     background-color: #4338ca !important;
 }
@@ -391,6 +423,9 @@
 }
 .hover-text-decoration-underline:hover {
     text-decoration: underline;
+}
+.focus-bg-primary-600:focus {
+    background-color: #E02944 !important;
 }
 @media (max-width: 600px) {
     .sm-inline-block {
@@ -529,8 +564,16 @@
                         </p>
                       </div>
 
+                      <div class="flex items-center flex-col text-center">
+                        <p class="text-gray-500">¡Ya casi estás listo para empezar a disfrutar de Nes+! <br>
+                          Simplemente haz clic en el gran botón rojo de abajo para verificar tu dirección de correo
+                          electrónico.</p>
+                          <button class="border-0 cursor-pointer w-40 px-4 py-3 mt-4 text-sm font-semibold text-center text-white duration-150 ease-in-out rounded-md bg-primary-500 hover-bg-primary-600 focus-bg-primary-600">Verficar ahora</button>
+                      </div>
+
                       <div class="flex items-center justify-center flex-col mt-14">
-                        <p class="text-lg font-semibold tracking-wide text-primary-500 text-center">¡Siguenos y mantente informado en nuestras Redes Sociales!
+                        <p class="text-lg font-semibold tracking-wide text-primary-500 text-center">¡Siguenos y mantente
+                          informado en nuestras Redes Sociales!
                         </p>
                         <div class="flex mt-2 space-y-2">
                           <div class="flex justify-center space-x-4">
