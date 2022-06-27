@@ -2569,6 +2569,11 @@ video {
   padding-bottom: 1.75rem;
 }
 
+.py-28{
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
 .px-0{
   padding-left: 0px;
   padding-right: 0px;
@@ -5119,10 +5124,6 @@ video {
     margin-right: -1rem;
   }
 
-  .lg\:mt-0{
-    margin-top: 0px;
-  }
-
   .lg\:mt-4{
     margin-top: 1rem;
   }
@@ -5145,6 +5146,10 @@ video {
 
   .lg\:mt-18{
     margin-top: 4.5rem;
+  }
+
+  .lg\:mt-0{
+    margin-top: 0px;
   }
 
   .lg\:mt-24{
