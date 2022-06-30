@@ -532,13 +532,13 @@
     </div>
 
 
-    <div class="flex justify-center pt-32 pb-20 gap-8 mx-auto max-w-7xl ">
-        <div class="bg-white rounded-lg p-8 w-4/5">
+    <div class="sm:flex justify-center pt-32 pb-20 lg:gap-8 lg:mx-auto lg:max-w-7xl px-4">
+        <div class="bg-white rounded-lg sm:rounded-r-none lg:rounded-r-lg  p-4 lg:p-8 lg:w-4/5">
             <!-- Botón Atras -->
             <div>
                 <button onclick="history.back()"
                     class="flex items-center text-gray-500 transition duration-200 ease-in-out hover:text-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sm:w-8 w-6 h-6 sm:h-8" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
@@ -548,7 +548,7 @@
             </div>
 
             <div class="py-3 ">
-                <h1 class="text-4xl font-semibold text-secondary-500">Crear Artículo</h1>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary-500">Crear Artículo</h1>
             </div>
 
             <!-- Input para subir foto de portada -->
@@ -609,7 +609,7 @@
                         <input id="basic" type="text" placeholder="Ingresa un Título"
                             class="block w-full py-3 rounded-md border-white bg-gray-50 text-sm transition focus:border-primary-600 focus:ring-primary-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75">
                     </div>
-                    <div class="flex space-x-6 items-center">
+                    <div class="sm:flex sm:space-x-6 space-y-6 sm:space-y-0 items-center">
                         <!-- Categoria -->
                         <div class="w-full">
                             <label for="basic" class="font-semibold text-secondary-500">Categoría</label>
@@ -722,9 +722,9 @@
                 </div>
             </div>
         </div>
-        <div class="bg-white rounded-lg p-8 h-96 w-1/3">
+        <div class="bg-white rounded-lg sm:rounded-l-none lg:rounded-l-lg  p-4 sm:p-8 sm:max-h-full lg:h-full lg:w-1/3 mt-6 sm:mt-0">
             <!-- Botones -->
-            <div class="flex items-center space-x-4">
+            <div class="lg:flex items-center  space-y-4 lg:space-y-0 lg:space-x-4">
 
                 <!-- Botón Guardar -->
                 <button class="bg-primary-500 btn py-4 text-white hover:bg-primary-600">Guardar </button>
@@ -748,11 +748,11 @@
 
                 <div class="space-y-6 my-8">
                     <div class="flex items-center justify-between">
-                        <p class="text-gray-700 text-lg font-semibold">Creado hace</p>
+                        <p class="text-gray-700 lg:text-lg font-semibold">Creado hace</p>
                         <span class="text-gray-400 font-medium text-sm">4 días</span>
                     </div>
                     <div class="flex items-center justify-between">
-                        <p class="text-gray-700 text-lg font-semibold">Última modificación</p>
+                        <p class="text-gray-700 lg:text-lg font-semibold">Última modificación</p>
                         <span class="text-gray-400 font-medium text-sm">4 días</span>
                     </div>
                 </div>
