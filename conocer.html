@@ -11,7 +11,18 @@
     <link rel="stylesheet" href="./css/conocerStyle.css">
 </head>
 
-<body class="bg-background font-body" x-data="conocer()" x-cloak>
+<body class="bg-background font-body overflow-hidden" x-data="conocer()" x-cloak>
+
+    <!-- Pantalla Pre Load  -->
+    <div class="w-full h-screen bg-white flex items-center justify-center" id="preload">
+        <div>
+            <img class="w-60" src="./img/NesLogo.svg" alt="">
+            <div class="loader">
+                <div class="loading">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
@@ -654,16 +665,16 @@
                                 <div class="p-2" :class="user.bloqueado ? 'backdrop-filter blur' : ''">
 
                                     <!-- Cambio 12/07/22 Corrección Nombre y Estado expansión de Estado -->
-                                        <div>
-                                            <p class="font-semibold text-xl text-secondary-500">
-                                                <!-- Online / Offline  -->
-                                                <span class="inline-block w-4 h-4 border-2 border-gray-100 rounded-full"
-                                                    :class="user.offline ? 'bg-gray-400' : 'bg-green-500'"></span>
+                                    <div>
+                                        <p class="font-semibold text-xl text-secondary-500">
+                                            <!-- Online / Offline  -->
+                                            <span class="inline-block w-4 h-4 border-2 border-gray-100 rounded-full"
+                                                :class="user.offline ? 'bg-gray-400' : 'bg-green-500'"></span>
 
-                                                <!-- Nombre y Edad -->
-                                                <span x-text="user.nombre"></span>, <span x-text="user.edad"></span>
-                                            </p>
-                                        </div>
+                                            <!-- Nombre y Edad -->
+                                            <span x-text="user.nombre"></span>, <span x-text="user.edad"></span>
+                                        </p>
+                                    </div>
                                     <!--  -->
 
                                     <div class="my-3 space-y-1">
@@ -705,6 +716,16 @@
                             </div>
                         </div>
                 </template>
+
+                <!-- Skeleton Loader Component -->
+                <div class="flex flex-col shadow-md animate-pulse">
+                    <div class="md:h-72 h-96 xs:h-52 rounded-t-lg bg-gray-200"></div>
+                    <div class="flex-1 px-2 py-4 rounded-b-lg  bg-gray-100">
+                        <div class=" h-6 rounded bg-gray-200 w-3/4"></div>
+                        <div class="h-4 w-5/12 rounded  bg-gray-200 mt-6"></div>
+                        <div class="w-7/12 h-4 rounded  bg-gray-200 mt-3"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Todos los filtros -->
@@ -1043,12 +1064,14 @@
 
     <!-- Scripts de terceros -->
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 
     <!-- Mis Scripts -->
     <script src="js/notification.js"></script>
     <script src="js/range.js"></script>
     <script src="js/conocerCards.js"></script>
     <script src="js/navbarLink.js"></script>
+    <script src="js/preload.js"></script>
 </body>
 
 </html>

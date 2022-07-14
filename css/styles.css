@@ -163,3 +163,34 @@
 figure {
   width: 25%;
 }
+
+/* Estilos Animación Nes+ Preloader Conocer */
+.loader{
+  position: absolute;
+  left:50%;
+  margin-top:2rem;
+  transform: translate(-50%, -50%);
+  height:6px;
+  width:15rem;
+  background-color:lightgrey;
+  border-radius: 8px;
+}
+.loading{
+  background-color: #F92E4B;  
+  width:5rem;
+  height:6px;
+  animation: animation 1.8s infinite;
+  border-radius: 8px;
+}
+
+@keyframes animation {
+    0% {
+        transform: translateX(0rem);
+    }
+    50% {
+        transform: translateX(10rem);
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+  }
