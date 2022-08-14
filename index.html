@@ -51,7 +51,7 @@
 
                     <div>
                         <!-- Hamburger Menu Responsive -->
-                        <div class="inline-block xl:hidden">
+                        <div class="inline-block lg:hidden">
                             <button @click="openMenu = ! openMenu"
                                 class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
                                 aria-expanded="false">
@@ -82,10 +82,10 @@
                     </div>
 
                     <!-- Navbar -->
-                    <div class="hidden xl:flex">
+                    <div class="hidden lg:flex">
                         <div class="relative">
-                            <nav class=" xl:flex">
-                                <div class="grid xl:flex gap-y-8">
+                            <nav class="md:flex">
+                                <div class="grid md:flex gap-8">
                                     <a aria-current="page" class="flex items-center nav-link"
                                         href="#quienes-somos">¿Quiénes somos?</a>
                                     <a aria-current="page" class="flex items-center nav-link" href="#blog">Blog</a>
@@ -99,7 +99,7 @@
                     <div class="flex items-center justify-end lg:flex-1 lg:w-0 space-x-4">
 
                         <!-- Botón Iniciar Sesión -->
-                        <a href="/login.html">
+                        <a href="/primary.html">
                             <button
                                 class="btn bg-white border border-secondary-500 text-secondary-500 hover:text-white hover:bg-secondary-500">Iniciar
                                 Sesión</button>
@@ -107,7 +107,7 @@
 
                         <!-- Botón  Registro -->
                         <a href="/registro.html" class="hidden sm:inline-block">
-                            <button class="bg-primary-500 btn text-white hover:bg-primary-600">Crear Cuenta</button>
+                            <button class="btn-primary">Crear Cuenta</button>
                         </a>
                     </div>
                 </div>
@@ -208,12 +208,11 @@
                             <span class="block w-full text-primary-500 lg:inline">VIH</span>
                         </h1>
                         <p class="px-0 mb-6 sm:text-lg text-white md:text-gray-200 lg:px-24">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed delectus porro optio iste
-                            reiciendis
-                            commodi a dolore. Architecto, optio soluta.
+                            Regístrate hoy mismo y descubre la nueva comunidad pensada y creada para ti, un montón de
+                            gente interesante te está esperando.
                         </p>
                         <div class="flex items-center justify-center ">
-                            <a class="btn-login w-64" href="/registro.html">
+                            <a class="btn-primary w-64" href="/registro.html">
                                 Únete a nuestra comunidad
                             </a>
                         </div>
@@ -258,16 +257,23 @@
     <!-- Conoce, reune section -->
     <section class="px-4 sm:px-8 pb-18 sm:pb-14 mx-auto max-w-7xl space-y-40 text-left">
         <div class="grid items-center grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
-            <div class="flex lg:items-center flex-col  order-2 md:order-none">
+            <div class="flex items-center md:items-start flex-col order-2 md:order-none">
                 <h2
                     class="mb-4 text-2xl font-extrabold tracking-tight  text-secondary-500 md:leading-tight  md:text-4xl">
                     Diviértete en nuestros mejores eventos</h2>
-                <p class="mb-5 text-base text-gray-600 md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptates magnam qui. Velit libero
-                    numquam molestias? Natus itaque, assumenda quaerat esse unde sun!
-                </p>
+                <div class="mb-5 text-base text-gray-600 md:text-lg space-y-2">
+                    <p>
+                        ¡Disfruta de los mejores eventos o por qué no crear los tuyos! Ir al teatro, hacer deporte y
+                        muchas
+                        más actividades podrás encontrar en una área pensada y creada para ti.
+                    </p>
+                    <p>
+                        Diviértete con tus nuevos
+                        amigos o simplemente pasa un buen rato rodeado de buena compañía.
+                    </p>
+                </div>
                 <a href="">
-                    <button class="btn-login w-60">Apuntarse a un Evento</button>
+                    <button class="btn-primary w-60 mt-4">Apuntarse a un Evento</button>
                 </a>
             </div>
             <div class="w-full h-full py-48 bg-gray-200 rounded shadow-lg order-1 md:order-none"
@@ -280,31 +286,40 @@
                 style="background-image: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'); background-position: center center; background-size: cover;">
             </div>
 
-            <div class="flex lg:items-center flex-col  order-2 md:order-none">
+            <div class="flex items-center md:items-start flex-col  order-2 md:order-none">
                 <h2
                     class="mb-4 text-2xl font-extrabold tracking-tight  text-secondary-500 md:leading-tight  md:text-4xl">
                     Viaja a increíbles luagres</h2>
-                <p class="mb-5 text-base text-gray-600 md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptates magnam qui. Velit libero
-                    numquam molestias? Natus itaque, assumenda quaerat esse unde sun!
-                </p>
+                <div class="mb-5 text-base text-gray-600 md:text-lg space-y-2">
+                    <p>
+                        Nunca es tarde para conocer ese lugar que tanto habías soñado. ¡Prepara tus maletas y comienza a
+                        planificar tus vacaciones soñadas con Nes+!
+
+                    </p>
+                    <p>
+                        Un montón de sitios soñados para conocer con gente de tu comunidad, es fácil, rápido y seguro,
+                        solo tienes que dedicarte a disfrutar.
+
+                    </p>
+                </div>
                 <a href="">
-                    <button class="btn-login w-60">Reservar viaje</button>
+                    <button class="btn-primary w-60 mt-4">Reservar viaje</button>
                 </a>
             </div>
         </div>
 
         <div class="grid items-center grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
-            <div class="flex  lg:items-center flex-col order-2  lg:order-none">
+            <div class="flex items-center md:items-start flex-col order-2  lg:order-none">
                 <h2
                     class="mb-4 text-2xl font-extrabold tracking-tight  text-secondary-500 md:leading-tight  md:text-4xl">
                     Conoce a gente nueva</h2>
                 <p class="mb-5 text-base text-gray-600 md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptates magnam qui. Velit libero
-                    numquam molestias? Natus itaque, assumenda quaerat esse unde sun!
+                    ¿No sería genial compartir estas actividades con alguien más? Es hora de hacer crecer tu círculo
+                    social, chatea, ten citas y conoce a gente nueva de todo el mundo. Únete a nuestra comunidad y haz
+                    nuevos amigos, o ¿Por qué no encontrar a tu media naranja?
                 </p>
                 <a href="">
-                    <button class="btn-login w-60">Hacer nuevos amigos</button>
+                    <button class="btn-primary w-60 mt-4">Hacer nuevos amigos</button>
                 </a>
             </div>
             <div class="flex items-center justify-center order-1 md:order-none">
@@ -335,10 +350,10 @@
                     <h2 class=" mx-4 text-2xl font-bold text-white lg:text-3xl">Sé tu mismo en un espacio seguro.
                     </h2>
                     <div class="flex justify-center mt-2">
-                        <p class="text-white sm:text-gray-200 w-3/4 text-sm sm:text-base text-center">Lorem ipsum dolor,
-                            sit amet consectetur adipisicing
-                            elit. Molestias,
-                            quisquam? Blanditiis assumenda animi optio reiciendis.</p>
+                        <p class="text-white sm:text-gray-200 w-3/4 text-sm sm:text-base text-center">
+                            Siéntete cómodo en este entorno seguro pensado para ti, donde podrás hablar de cualquier
+                            tema y ser escuchado... ¿Qué estas esperando? "Bienvenido a un nuevo comienzo".
+                        </p>
                     </div>
                 </div>
             </div>
@@ -351,8 +366,8 @@
             <h2
                 class="text-2xl font-extrabold tracking-tight text-center text-secondary-500 md:leading-tight md:text-4xl mb-4">
                 Mantente al día con nosotros</h2>
-            <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sint, dicta doloribus
-                aspernatur molestiae assumenda.</p>
+            <p class="text-gray-500">En nuestro blog encontraras las noticias más importantes, datos de interés e
+                información relevante para nuestra comunidad.</p>
         </div>
         <div class="px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div class="grid  gap-14 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
@@ -405,15 +420,14 @@
     </div>
 
     <!-- News -->
-    <section class="py-6 bg-slate-100 mb-14">
+    <!-- <section class="py-6 bg-slate-100 mb-14">
         <div
             class="mx-auto flex flex-col justify-center p-4 space-y-8 md:p-6 lg:space-y-0 lg:space-x-40 lg:justify-between lg:flex-row">
             <div class="flex flex-col space-y-4 text-center lg:text-left ">
                 <h1 class="text-3xl sm:text-5xl font-bold text-secondary-500 leading-tight">Mantente actualizado con
                     nosotros</h1>
-                <p class="text-lg text-gray-600">Doloribus consectetur quasi ipsa quo neque culpa blanditiis ducimus
-                    recusandae a
-                    veritatis optio cumque, in harum ad nam!</p>
+                <p class="text-lg text-gray-600">Regístrate y sé el primero en recibir cada semana en tu correo
+                    electrónico una selección de los mejores contenidos de NES+. Así de fácil.</p>
             </div>
             <div class="flex flex-row items-center justify-center flex-shrink-0 lg:justify-end sm:pr-12">
                 <div class="relative z-0 flex w-full -space-x-px"><label for="basic" class="sr-only">Your Name</label>
@@ -425,7 +439,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <!-- <section class="w-full bg-gray-800 flex items-center justify-between px-8 h-64 my-20">
+        <div>
+            <h1 class="text-secondary-500 font-bold text-4xl">Mantente actualizado con nosotros</h1>
+            <p class="text-lg text-gray-800 font-medium">Regístrate y sé el primero en recibir cada semana en tu correo
+                electrónico una selección de los mejores contenidos de NES+. Así de fácil.</p>
+        </div>
+        <div>
+            <input id="news-email" type="email" placeholder="Ingresa un Correo Electrónico" class="input">
+        </div>
+    </section> -->
 
     <!-- Footer -->
     <footer class="relative z-20 px-6 pt-10 sm:max-w-xl md:max-w-full md:px-20 bg-slate-100">

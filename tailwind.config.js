@@ -7,6 +7,15 @@ module.exports = {
   './views/**/*.js'],
   theme: {
 
+    screens: {
+      'xs': '400px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1025px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
+
     fontSize: {
       'xxs': '.5rem',
       'xtin':'.6rem',
@@ -22,11 +31,6 @@ module.exports = {
       '5-6xl': '3.5rem',
       '6xl': '4rem',
       '7xl': '5rem',
-    },
-
-    screens: {
-      'xs': '400px',
-      ...defaultTheme.screens,
     },
 
     extend: {
