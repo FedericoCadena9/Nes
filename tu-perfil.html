@@ -132,8 +132,9 @@
                                                     class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
                                                     Notificaciones</p>
                                             </button>
-                                            <div class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
-                                                    <span class=" text-xs font-semibold text-white">4</span>
+                                            <div
+                                                class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
+                                                <span class=" text-xs font-semibold text-white">4</span>
                                             </div>
                                         </div>
 
@@ -256,7 +257,7 @@
                                     </span>
                                 </div>
 
-                                 <!-- Tu perfil -->
+                                <!-- Tu perfil -->
                                 <a href="./tu-perfil.html" class="block px-4 py-2 text-sm text-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
@@ -429,8 +430,7 @@
                 </a>
 
                 <!-- Notificaciones -->
-                <div class="flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }"
-                    x-cloak>
+                <div class="flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }" x-cloak>
                     <div>
                         <button @click="openNot = !openNot" class="mx-auto">
                             <span class="circle-link">
@@ -444,9 +444,10 @@
                             <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
                                 Notificaciones</p>
                         </button>
-                        <div class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
+                        <div
+                            class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
                             <span class=" text-xs font-semibold text-white">4</span>
-                    </div>
+                        </div>
                     </div>
 
                     <div x-show.transition="openNot" @click.away="openNot = false"
@@ -935,7 +936,8 @@
 
                             <div class="flex flex-wrap py-2" x-data="{data: aficiones}">
                                 <template x-for="(aficion, index) in aficiones" :key="index">
-                                    <span class="badge-af" x-text="aficion.name" @click="aficion.active = true" :class="aficion.active ? 'bg-primary-100 text-primary-500' : '' "></span>
+                                    <span class="badge-af" x-text="aficion.name" @click="aficion.active = true"
+                                        :class="aficion.active ? 'bg-primary-100 text-primary-500' : '' "></span>
                                 </template>
                                 <!-- <span class="badge-af" x-data="{active: false}" @click="active = !active"
                                     :class="active ? 'bg-primary-100 text-primary-500' : '' ">Leer</span>
@@ -1119,47 +1121,50 @@
                 </div>
             </div>
 
-            <div class="order-2 px-4 py-4 bg-white lg:col-span-12 md:px-6 rounded-xl">
+            <div class="hidden order-2 px-4 py-4 bg-white lg:col-span-12 md:px-6 rounded-xl">
                 <div class="px-6 text-gray-600">
                     <h2 class="text-xl font-semibold text-primary-500"> Mis imágenes </h2>
                 </div>
                 <!-- Unicamente se tendrá 10 fotos por cada perfil, al exceder el margen se creará un scroll horizontaql para ver las fotos ocultas -->
                 <div class="flex w-full overflow-x-auto snap-x scroll-pl-6 lg:items-center lg:justify-center">
-                    <div class="flex my-4 space-x-6"
-                    uk-lightbox="animation: fade">
-                    <div class="w-32 h-32"><a data-type="image"
-                            href="https://images.unsplash.com/photo-1644681356147-10a26ea97536?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"><img
-                                data-caption="Caption 1" class="object-cover w-full h-full rounded-3xl"
-                                src="https://images.unsplash.com/photo-1644681356147-10a26ea97536?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                alt=""></a></div>
-                    <div class="w-32 h-32"><a data-type="image"
-                            href="https://images.unsplash.com/photo-1644661847825-56b30afd7f92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
-                                data-caption="Caption 2" class="object-cover w-full h-full rounded-3xl"
-                                src="https://images.unsplash.com/photo-1644661847825-56b30afd7f92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
-                                alt=""></a></div>
-                    <div class="w-32 h-32"><a data-type="image"
-                            href="https://images.unsplash.com/photo-1644661411463-42bed698fa88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
-                                data-caption="Caption 3" class="object-cover w-full h-full rounded-3xl"
-                                src="https://images.unsplash.com/photo-1644661411463-42bed698fa88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
-                                alt=""></a></div>
-                    <div class="w-32 h-32"><a data-type="image"
-                            href="https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
-                                data-caption="Caption 4" class="object-cover w-full h-full rounded-3xl"
-                                src="https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
-                                alt=""></a></div>
-                    <div class="w-32 h-32"><a data-type="image"
-                            href="https://images.unsplash.com/photo-1644424235486-eaa092966985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
-                                data-caption="Caption 5" class="object-cover w-full h-full rounded-3xl"
-                                src="https://images.unsplash.com/photo-1644424235486-eaa092966985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
-                                alt=""></a></div>
-                    <div class="relative flex items-center justify-center w-32 h-32 border-2 border-dashed rounded-3xl bg-primary-100 text-primary-500 border-primary-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
+                    <div class="flex my-4 space-x-6" uk-lightbox="animation: fade">
+                        <div class="w-32 h-32"><a data-type="image"
+                                href="https://images.unsplash.com/photo-1644681356147-10a26ea97536?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"><img
+                                    data-caption="Caption 1" class="object-cover w-full h-full rounded-3xl"
+                                    src="https://images.unsplash.com/photo-1644681356147-10a26ea97536?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                    alt=""></a></div>
+                        <div class="w-32 h-32"><a data-type="image"
+                                href="https://images.unsplash.com/photo-1644661847825-56b30afd7f92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
+                                    data-caption="Caption 2" class="object-cover w-full h-full rounded-3xl"
+                                    src="https://images.unsplash.com/photo-1644661847825-56b30afd7f92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNXx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                                    alt=""></a></div>
+                        <div class="w-32 h-32"><a data-type="image"
+                                href="https://images.unsplash.com/photo-1644661411463-42bed698fa88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
+                                    data-caption="Caption 3" class="object-cover w-full h-full rounded-3xl"
+                                    src="https://images.unsplash.com/photo-1644661411463-42bed698fa88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                                    alt=""></a></div>
+                        <div class="w-32 h-32"><a data-type="image"
+                                href="https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
+                                    data-caption="Caption 4" class="object-cover w-full h-full rounded-3xl"
+                                    src="https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                                    alt=""></a></div>
+                        <div class="w-32 h-32"><a data-type="image"
+                                href="https://images.unsplash.com/photo-1644424235486-eaa092966985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"><img
+                                    data-caption="Caption 5" class="object-cover w-full h-full rounded-3xl"
+                                    src="https://images.unsplash.com/photo-1644424235486-eaa092966985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=60"
+                                    alt=""></a></div>
+                        <div
+                            class="relative flex items-center justify-center w-32 h-32 border-2 border-dashed rounded-3xl bg-primary-100 text-primary-500 border-primary-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
-                </div>
-                
+
             </div>
 
             <div class="order-4 lg:col-span-8 lg:order-3" x-data="tab()">
