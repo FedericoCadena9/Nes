@@ -1,43 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-    .font-body {
-        font-family: "Montserrat";
-    }
+  .font-body {
+    font-family: "Montserrat";
+  }
 
-    .btn-primary {
-        @apply block w-full px-4 py-3 text-sm rounded-md font-semibold text-center text-white transition bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-300;
-    }
-    
-    .nav-link {
-        @apply p-3 -m-3 text-base font-medium transition duration-200 ease-in-out rounded-md xl:font-normal hover:bg-gray-50 xl:hover:bg-white xl:-m-0 xl:px-2 text-secondary-400 xl:hover:text-primary-500;
-    }
+  .btn-primary {
+    @apply block w-full cursor-pointer px-4 py-3 text-sm rounded-md font-semibold text-center text-white transition bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-300;
+  }
 
-    .circle-link {
-        @apply flex items-center justify-center w-10 h-10 mx-4 transition duration-200 ease-in-out bg-gray-100 rounded-full md:mx-2 hover:bg-gray-200;
-    }
+  .nav-link {
+    @apply p-3 -m-3 text-base font-medium transition duration-200 ease-in-out rounded-md xl:font-normal hover:bg-gray-50 xl:hover:bg-white xl:-m-0 xl:px-2 text-secondary-400 xl:hover:text-primary-500;
+  }
 
-    .category-button {
-        @apply px-5 py-3 text-sm font-medium text-gray-500 transition duration-200 ease-in-out rounded-md hover:bg-gray-100 hover:text-gray-700;
-    }
+  .circle-link {
+    @apply flex items-center justify-center w-10 h-10 mx-4 transition duration-200 ease-in-out bg-gray-100 rounded-full md:mx-2 hover:bg-gray-200;
+  }
 
-    .btn {
-        @apply block w-full px-4 py-3 text-sm font-semibold text-center rounded-md transition;
-    }
+  .category-button {
+    @apply px-5 py-3 text-sm font-medium text-gray-500 transition duration-200 ease-in-out rounded-md hover:bg-gray-100 hover:text-gray-700;
+  }
 
-    .input {
-        @apply block w-full placeholder:text-gray-400 rounded-md border-gray-200 text-sm transition focus:border-blue-600 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75;
-    }
+  .btn {
+    @apply block w-full px-4 py-3 text-sm font-semibold text-center rounded-md transition;
+  }
 
-    .btn-login {
-        @apply block w-full px-4 py-3 mt-4 text-sm font-semibold text-center text-white duration-150 ease-in-out rounded-md bg-primary-500 hover:bg-primary-600 focus:bg-primary-600;
-    }
+  .input {
+    @apply block w-full placeholder:text-gray-400 rounded-md border-gray-200 text-sm transition focus:border-blue-600 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75;
+  }
 
-    .badge-af { 
-        @apply px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md cursor-pointer;
-    }
+  .btn-login {
+    @apply block w-full px-4 py-3 mt-4 text-sm font-semibold text-center text-white duration-150 ease-in-out rounded-md bg-primary-500 hover:bg-primary-600 focus:bg-primary-600;
+  }
+
+  .badge-af {
+    @apply px-2 m-1 text-xs font-medium leading-loose text-gray-600 bg-gray-200 rounded-md cursor-pointer;
+  }
+
+  .btn-profile {
+    @apply px-4 py-2 font-medium text-gray-500 rounded cursor-pointer;
+  }
 }
