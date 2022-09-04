@@ -545,13 +545,17 @@
                 <div class="" x-show="active===0">
                     <div class=" mt-8 lg:mt-0">
                         <div class="w-full h-32 sm:h-60 lg:h-64 bg-gray-100 rounded-lg">
+                            <img class="object-cover w-full h-full rounded-lg"
+                                src="https://images.unsplash.com/photo-1644109097896-15e89806c340?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                                alt="">
                         </div>
                         <div
                             class="flex flex-col lg:flex-row items-center lg:items-end lg:justify-between lg:mx-6 xl:mx-12 relative -top-14 sm:-top-20">
                             <div class="flex flex-col items-center lg:flex-row lg:items-end gap-8">
                                 <div
                                     class="bg-gray-100 border-4 border-white rounded-full h-32 w-32 sm:h-40 sm:w-40 lg:h-44 lg:w-44 xl:w-48 xl:h-48 ">
-
+                                    <img class="w-full h-full object-cover rounded-full" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                        alt="">
                                 </div>
                                 <div class="text-center lg:text-left">
                                     <h2
@@ -614,11 +618,12 @@
                                 <span class="font-semibold text-secondary-500 text-sm w-2/5 ">Foto de Perfil</span>
                                 <div class="lg:w-3/5 flex flex-col sm:flex-row items-center justify-between">
                                     <div x-data="{'showModal': false}" x-cloak class="lg:w-1/4">
-                                        <div
-                                            class="active:ring-primary-500 transition hover:ring-4 cursor-pointer relative flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-gray-100">
+                                        <div style="background-image: url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');"
+                                            class="active:ring-primary-500 transition hover:ring-4 cursor-pointer relative flex h-24 w-24 rounded-full bg-center bg-cover bg-gray-100">
                                             <!-- Contenedor donde se previsualizará la foto de perfil recortada -->
                                             <div id="preview-crop-image" class="absolute rounded-full"></div>
 
+                                            
                                             <!-- Input para subir foto de peril -->
                                             <input @change="showModal = true" type="file" id="image"
                                                 accept="image/png, image/jpeg"
@@ -1003,7 +1008,7 @@
 
         function tab() {
             return {
-                active: 2,
+                active: 0,
                 tabs: [
                     {
                         text: "General"
