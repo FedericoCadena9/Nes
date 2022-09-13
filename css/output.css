@@ -1279,6 +1279,10 @@ select{
   bottom: 4.5rem;
 }
 
+.top-20{
+  top: 5rem;
+}
+
 .-top-14{
   top: -3.5rem;
 }
@@ -1313,14 +1317,6 @@ select{
 
 .bottom-4{
   bottom: 1rem;
-}
-
-.top-24{
-  top: 6rem;
-}
-
-.top-20{
-  top: 5rem;
 }
 
 .z-40{
@@ -1527,19 +1523,14 @@ select{
   margin-right: 2rem;
 }
 
-.mx-1{
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-}
-
 .my-12{
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
-.mx-40{
-  margin-left: 10rem;
-  margin-right: 10rem;
+.mx-1{
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .mt-2{
@@ -1642,10 +1633,6 @@ select{
   margin-top: 0.25rem;
 }
 
-.mb-36{
-  margin-bottom: 9rem;
-}
-
 .ml-4{
   margin-left: 1rem;
 }
@@ -1656,6 +1643,10 @@ select{
 
 .mr-1{
   margin-right: 0.25rem;
+}
+
+.mb-36{
+  margin-bottom: 9rem;
 }
 
 .mb-1{
@@ -1858,6 +1849,10 @@ select{
   height: 2.75rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
 .h-3\/4{
   height: 75%;
 }
@@ -1888,10 +1883,6 @@ select{
 
 .h-2{
   height: 0.5rem;
-}
-
-.h-24{
-  height: 6rem;
 }
 
 .h-\[32rem\]{
@@ -2026,6 +2017,14 @@ select{
   width: 2.75rem;
 }
 
+.w-24{
+  width: 6rem;
+}
+
+.w-3\/4{
+  width: 75%;
+}
+
 .w-40{
   width: 10rem;
 }
@@ -2040,10 +2039,6 @@ select{
 
 .w-32{
   width: 8rem;
-}
-
-.w-3\/4{
-  width: 75%;
 }
 
 .w-5\/12{
@@ -2072,10 +2067,6 @@ select{
 
 .w-2\/5{
   width: 40%;
-}
-
-.w-24{
-  width: 6rem;
 }
 
 .\!w-64{
@@ -2192,11 +2183,6 @@ select{
 
 .rotate-180{
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-90{
-  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2688,16 +2674,16 @@ select{
   border-width: 2.5px;
 }
 
+.border-\[3px\]{
+  border-width: 3px;
+}
+
 .border-4{
   border-width: 4px;
 }
 
 .border-0{
   border-width: 0px;
-}
-
-.border-\[3px\]{
-  border-width: 3px;
 }
 
 .border-y{
@@ -3249,6 +3235,11 @@ select{
   padding-bottom: 7rem;
 }
 
+.py-2\.5{
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .px-0{
   padding-left: 0px;
   padding-right: 0px;
@@ -3264,11 +3255,6 @@ select{
   padding-bottom: 6rem;
 }
 
-.py-2\.5{
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
 .py-12{
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -3277,11 +3263,6 @@ select{
 .px-0\.5{
   padding-left: 0.125rem;
   padding-right: 0.125rem;
-}
-
-.px-40{
-  padding-left: 10rem;
-  padding-right: 10rem;
 }
 
 .pl-3{
@@ -3412,12 +3393,12 @@ select{
   padding-bottom: 3rem;
 }
 
-.pl-2\.5{
-  padding-left: 0.625rem;
-}
-
 .pb-18{
   padding-bottom: 4.5rem;
+}
+
+.pl-2\.5{
+  padding-left: 0.625rem;
 }
 
 .pt-16{
@@ -3432,8 +3413,12 @@ select{
   padding-top: 0.75rem !important;
 }
 
-.pt-12{
-  padding-top: 3rem;
+.pt-14{
+  padding-top: 3.5rem;
+}
+
+.pb-16{
+  padding-bottom: 4rem;
 }
 
 .text-left{
@@ -3675,14 +3660,14 @@ select{
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
-.text-gray-50{
-  --tw-text-opacity: 1;
-  color: rgb(249 250 251 / var(--tw-text-opacity));
-}
-
 .text-red-600{
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-gray-50{
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
 }
 
 .text-slate-700{
@@ -4125,6 +4110,11 @@ select{
   background-color: rgb(243 244 246 / 0.1);
 }
 
+.hover\:bg-gray-200:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-red-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -4143,11 +4133,6 @@ select{
 .hover\:bg-primary-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(187 35 56 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-200:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-gray-200\/80:hover{
@@ -4590,6 +4575,11 @@ select{
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.disabled\:text-gray-500:disabled{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .disabled\:text-slate-500:disabled{
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
@@ -4600,22 +4590,12 @@ select{
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
-.disabled\:text-gray-500:disabled{
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
 .disabled\:opacity-75:disabled{
   opacity: 0.75;
 }
 
 .disabled\:opacity-50:disabled{
   opacity: 0.5;
-}
-
-.group[open] .group-open\:rotate-180{
-  --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:inline-block{
@@ -4628,11 +4608,6 @@ select{
 
 .group:hover .group-hover\:-translate-y-1{
   --tw-translate-y: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:rotate-90{
-  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -4672,11 +4647,6 @@ select{
 .group:hover .group-hover\:brightness-75{
   --tw-brightness: brightness(.75);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.group:active .group-active\:rotate-90{
-  --tw-rotate: 90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:active .group-active\:rotate-180{
@@ -6624,6 +6594,11 @@ select{
     padding-right: 1.5rem;
   }
 
+  .lg\:px-40{
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
   .lg\:px-24{
     padding-left: 6rem;
     padding-right: 6rem;
@@ -6642,11 +6617,6 @@ select{
   .lg\:py-2{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-
-  .lg\:px-40{
-    padding-left: 10rem;
-    padding-right: 10rem;
   }
 
   .lg\:pt-0{
