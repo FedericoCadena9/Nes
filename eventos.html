@@ -14,501 +14,502 @@
 
 <body class="bg-background font-body">
 
-        <!-- Navbar -->
-        <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
-            <div class="relative bg-white">
-                <div class="px-6 mx-auto lg:px-8">
-                    <div
-                        class="flex items-center justify-between py-5 border-gray-100 md:py-3 lg:justify-start lg:space-x-10">
-    
-                        <div>
-                            <!-- Hamburger Menu Responsive -->
-                            <div class="inline-block xl:hidden">
-                                <button @click="openMenu = ! openMenu"
-                                    class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
-                                    aria-expanded="false">
-    
-                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor" aria-hidden="true">
+    <!-- Navbar -->
+    <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
+        <div class="relative bg-white">
+            <div class="px-6 mx-auto lg:px-8">
+                <div
+                    class="flex items-center justify-between py-5 border-gray-100 md:py-3 lg:justify-start lg:space-x-10">
+
+                    <div>
+                        <!-- Hamburger Menu Responsive -->
+                        <div class="inline-block xl:hidden">
+                            <button @click="openMenu = ! openMenu"
+                                class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+                                aria-expanded="false">
+
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Nes Logo -->
+                        <div class="hidden mx-4 md:inline-block lg:mx-0">
+                            <a href="index.html">
+                                <img class="w-auto h-7" src="./img/NesLogo.svg" alt="Nes Logo">
+                            </a>
+                        </div>
+
+                        <!-- Nes Logo Responsive -->
+                        <div class="inline-block sm:hidden">
+                            <a href="index.html">
+                                <img class="w-auto h-6 mx-3" src="./img/NesLogoResponsive.svg"
+                                    alt="Nes Logo Responsive">
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Navbar -->
+                    <div class="hidden xl:flex">
+                        <div class="relative">
+                            <nav class=" xl:flex">
+                                <div class="grid xl:flex gap-y-8">
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./conocer.html">Conocer</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./momentos.html">Momentos</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./eventos.html">Eventos</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./cadena-de-favores.html">Cadena de Favores</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./viajes.html">Viajes</a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./blog.html">Blog</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end lg:flex-1 lg:w-0">
+
+                        <!-- Header Widgets -->
+                        <div class="flex">
+
+                            <div class="hidden md:flex">
+                                <div class="flex items-center justify-between">
+                                    <a href="./me-gusta.html">
+                                        <span class="circle-link">
+                                            <svg class="w-5 h-5 text-gray-600 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <p
+                                            class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                            Likes</p>
+                                    </a>
+
+                                    <a href="./favoritos.html">
+                                        <span class="circle-link">
+                                            <svg class="w-5 h-5 text-gray-600 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <p
+                                            class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                            Favoritos</p>
+                                    </a>
+
+                                    <!-- Notificaciones -->
+                                    <div class="flex order-last md:order-none md:relative md:inline-block"
+                                        x-data="{ openNot: false }" x-cloak>
+                                        <div>
+                                            <button @click="openNot = !openNot" class="mx-auto">
+                                                <span class="circle-link">
+                                                    <svg class="w-5 h-5 text-gray-600 fill-current"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                                <p
+                                                    class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                                    Notificaciones</p>
+                                            </button>
+                                            <div
+                                                class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
+                                                <span class=" text-xs font-semibold text-white">4</span>
+                                            </div>
+                                        </div>
+
+                                        <div x-show.transition="openNot" @click.away="openNot = false"
+                                            class="absolute right-0 z-50 h-auto p-4 mt-2 overflow-hidden w-80 bottom-16 md:-bottom-31rem"
+                                            x-transition:enter="duration-200 ease-out"
+                                            x-transition:enter-start="opacity-0 scale-95"
+                                            x-transition:enter-end="opacity-100 scale-100"
+                                            x-transition:leave="duration-100 ease-in"
+                                            x-transition:leave-start="opacity-100 scale-100"
+                                            x-transition:leave-end="opacity-0 scale-95">
+
+
+                                            <div class="bg-white rounded-md shadow-lg">
+                                                <p class="px-3 py-2 text-lg font-semibold text-gray-600">Notificaciones
+                                                </p>
+
+                                                <div class="overflow-y-auto h-96" x-data="notification()">
+                                                    <template x-for="(notification, index) in notifications"
+                                                        :key="index">
+                                                        <a href="#"
+                                                            class="flex flex-shrink-0 w-full p-3 py-5 border-b hover:bg-gray-100 active:bg-blue-50">
+                                                            <div tabindex="0" aria-label="group icon" role="img"
+                                                                class="flex items-center justify-center flex-shrink-0 w-8 h-8 border border-gray-200 rounded-full focus:outline-none">
+                                                                <img class="object-cover w-8 h-8 rounded-full"
+                                                                    x-bind:src="notification.img"
+                                                                    alt="Profile image Notification" />
+
+                                                            </div>
+                                                            <div class="w-full pl-3">
+                                                                <div class="flex items-center justify-between w-full">
+                                                                    <p class="text-sm text-gray-600">
+                                                                        <span class="font-bold"
+                                                                            x-text="notification.name"></span>
+                                                                        <span x-text="notification.action"></span>
+                                                                        <span class="font-bold "
+                                                                            x-text="notification.who"></span>
+                                                                    </p>
+                                                                </div>
+                                                                <p tabindex="0"
+                                                                    class="pt-1 text-xs leading-3 text-gray-500 focus:outline-none"
+                                                                    x-text="notification.time"></p>
+                                                            </div>
+                                                        </a>
+                                                    </template>
+                                                </div>
+                                                <a href="#"
+                                                    class="block py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-secondary-500 hover:bg-gray-800">Ver
+                                                    todas las notificaciones
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Nes PRO -->
+                                    <a href="./nes-pro.html" class="md:items-center md:flex">
+                                        <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current "
+                                                width="12.371" height="24.743" viewBox="0 0 12.371 24.743">
+                                                <path d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                                    transform="translate(-80.9 -592.6)" />
+                                            </svg>
+                                        </span>
+                                        <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte
+                                            <span class="block text-xs font-bold uppercase text-primary-500">Nes+
+                                                Pro</span>
+                                        </p>
+                                        <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">
+                                            PRO</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Mensajes -->
+                            <a href="./chat.html" class="relative mx-auto ml-8 circle-link">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 fill-current"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <div class="absolute border-gray-100 rounded-full -top-1 -right-1 bg-primary-500 ">
+                                    <div class="flex items-center justify-center">
+                                        <span class="p-px px-1 text-xs font-semibold text-white">14</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Avatar -->
+
+                        <div class="relative ml-3" x-data="{ openDrop: false }" x-cloak>
+                            <div>
+                                <button @click="openDrop = !openDrop"
+                                    class="flex items-center max-w-xs text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-500 focus:ring-white">
+                                    <img class="object-cover w-8 h-8 rounded-full md:w-10 md:h-10"
+                                        src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                        alt="">
+                                </button>
+                            </div>
+
+                            <div x-show.transition="openDrop" @click.away="openDrop = false"
+                                class="absolute right-0 w-64 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-primary-500 ring-opacity-5 focus:outline-none"
+                                x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+
+                                <!-- Foto y Nombre -->
+                                <div href="#" class="block px-4 py-2 text-sm text-gray-700">
+                                    <img class="inline-block object-cover w-10 h-10 rounded-full"
+                                        src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                                        alt="">
+                                    <span id="username" class="inline-block px-3 font-semibold">
+                                        Mi Usuario
+                                    </span>
+                                </div>
+
+                                <!-- Tu perfil -->
+                                <a href="./tu-perfil.html" class="block px-4 py-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4 6h16M4 12h16M4 18h16" />
+                                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="inline-block px-3 ">
+                                        Perfil
+                                    </span>
+                                </a>
+
+                                <!-- Panel de administración -->
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    <span class="inline-block px-3 ">
+                                        Panel de Administración
+                                    </span>
+                                </a>
+
+                                <!--Cerrar sesión -->
+                                <a href="index.html" class="block px-4 py-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                    <span class="inline-block px-3 ">
+                                        Cerrar Sesión
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Responsive -->
+            <div @click.away=" openMenu = false" @keydown.escape.window="openMenu = false"
+                class="absolute top-0 z-50 w-screen px-2 mt-3 origin-top-left transform -translate-x-1/2 left-1/2"
+                x-show="openMenu" x-transition:enter="duration-200 ease-out"
+                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95">
+                <div class="bg-white divide-y-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-gray-50">
+                    <div class="px-5 pt-5 pb-6">
+                        <div class="flex items-center justify-between">
+
+                            <!-- Nes Logo -->
+                            <div>
+                                <img class="w-auto h-6" src="./img/NesLogo.svg" alt="Nes Logo">
+                            </div>
+
+                            <!-- Cerrar Menu -->
+                            <div class="-mr-2">
+                                <button type="button" @click="openMenu = ! openMenu"
+                                    class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </button>
                             </div>
-    
-                            <!-- Nes Logo -->
-                            <div class="hidden mx-4 md:inline-block lg:mx-0">
-                                <a href="index.html">
-                                    <img class="w-auto h-7" src="./img/NesLogo.svg" alt="Nes Logo">
-                                </a>
-                            </div>
-    
-                            <!-- Nes Logo Responsive -->
-                            <div class="inline-block sm:hidden">
-                                <a href="index.html">
-                                    <img class="w-auto h-6 mx-3" src="./img/NesLogoResponsive.svg"
-                                        alt="Nes Logo Responsive">
-                                </a>
-                            </div>
-    
                         </div>
-    
+
                         <!-- Navbar -->
-                        <div class="hidden xl:flex">
-                            <div class="relative">
-                                <nav class=" xl:flex">
-                                    <div class="grid xl:flex gap-y-8">
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./conocer.html">Conocer</a>
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./momentos.html">Momentos</a>
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./eventos.html">Eventos</a>
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./cadena-de-favores.html">Cadena de Favores</a>
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./viajes.html">Viajes</a>
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./blog.html">Blog</a>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
-    
-                        <div class="flex items-center justify-end lg:flex-1 lg:w-0">
-    
-                            <!-- Header Widgets -->
-                            <div class="flex">
-    
-                                <div class="hidden md:flex">
-                                    <div class="flex items-center justify-between">
-                                        <a href="./me-gusta.html">
-                                            <span class="circle-link">
-                                                <svg class="w-5 h-5 text-gray-600 fill-current"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                            <p
-                                                class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
-                                                Likes</p>
-                                        </a>
-    
-                                        <a href="./favoritos.html">
-                                            <span class="circle-link">
-                                                <svg class="w-5 h-5 text-gray-600 fill-current"
-                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                            <p
-                                                class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
-                                                Favoritos</p>
-                                        </a>
-    
-                                        <!-- Notificaciones -->
-                                        <div class="flex order-last md:order-none md:relative md:inline-block"
-                                            x-data="{ openNot: false }" x-cloak>
-                                            <div>
-                                                <button @click="openNot = !openNot" class="mx-auto">
-                                                    <span class="circle-link">
-                                                        <svg class="w-5 h-5 text-gray-600 fill-current"
-                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                            viewBox="0 0 24 24">
-                                                            <path
-                                                                d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
-                                                            </path>
-                                                        </svg>
-                                                    </span>
-                                                    <p
-                                                        class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
-                                                        Notificaciones</p>
-                                                </button>
-                                                <div class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
-                                                        <span class=" text-xs font-semibold text-white">4</span>
-                                                </div>
-                                            </div>
-    
-                                            <div x-show.transition="openNot" @click.away="openNot = false"
-                                                class="absolute right-0 z-50 h-auto p-4 mt-2 overflow-hidden w-80 bottom-16 md:-bottom-31rem"
-                                                x-transition:enter="duration-200 ease-out"
-                                                x-transition:enter-start="opacity-0 scale-95"
-                                                x-transition:enter-end="opacity-100 scale-100"
-                                                x-transition:leave="duration-100 ease-in"
-                                                x-transition:leave-start="opacity-100 scale-100"
-                                                x-transition:leave-end="opacity-0 scale-95">
-    
-    
-                                                <div class="bg-white rounded-md shadow-lg">
-                                                    <p class="px-3 py-2 text-lg font-semibold text-gray-600">Notificaciones
-                                                    </p>
-    
-                                                    <div class="overflow-y-auto h-96" x-data="notification()">
-                                                        <template x-for="(notification, index) in notifications"
-                                                            :key="index">
-                                                            <a href="#"
-                                                                class="flex flex-shrink-0 w-full p-3 py-5 border-b hover:bg-gray-100 active:bg-blue-50">
-                                                                <div tabindex="0" aria-label="group icon" role="img"
-                                                                    class="flex items-center justify-center flex-shrink-0 w-8 h-8 border border-gray-200 rounded-full focus:outline-none">
-                                                                    <img class="object-cover w-8 h-8 rounded-full"
-                                                                        x-bind:src="notification.img"
-                                                                        alt="Profile image Notification" />
-    
-                                                                </div>
-                                                                <div class="w-full pl-3">
-                                                                    <div class="flex items-center justify-between w-full">
-                                                                        <p class="text-sm text-gray-600">
-                                                                            <span class="font-bold"
-                                                                                x-text="notification.name"></span>
-                                                                            <span x-text="notification.action"></span>
-                                                                            <span class="font-bold "
-                                                                                x-text="notification.who"></span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <p tabindex="0"
-                                                                        class="pt-1 text-xs leading-3 text-gray-500 focus:outline-none"
-                                                                        x-text="notification.time"></p>
-                                                                </div>
-                                                            </a>
-                                                        </template>
-                                                    </div>
-                                                    <a href="#"
-                                                        class="block py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-secondary-500 hover:bg-gray-800">Ver
-                                                        todas las notificaciones
-                                                    </a>
-                                                </div>
-    
-    
-                                            </div>
-                                        </div>
-    
-                                        <!-- Nes PRO -->
-                                        <a href="./nes-pro.html" class="md:items-center md:flex">
-                                            <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current "
-                                                    width="12.371" height="24.743" viewBox="0 0 12.371 24.743">
-                                                    <path d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
-                                                        transform="translate(-80.9 -592.6)" />
-                                                </svg>
-                                            </span>
-                                            <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte
-                                                <span class="block text-xs font-bold uppercase text-primary-500">Nes+
-                                                    Pro</span>
-                                            </p>
-                                            <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">
-                                                PRO</p>
-                                        </a>
-                                    </div>
-                                </div>
-    
-                                <!-- Mensajes -->
-                                <a href="./chat.html" class="relative mx-auto ml-8 circle-link">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 fill-current"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    <div class="absolute border-gray-100 rounded-full -top-1 -right-1 bg-primary-500 ">
-                                        <div class="flex items-center justify-center">
-                                            <span class="p-px px-1 text-xs font-semibold text-white">14</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-    
-                            <!-- Avatar -->
-    
-                            <div class="relative ml-3" x-data="{ openDrop: false }" x-cloak>
-                                <div>
-                                    <button @click="openDrop = !openDrop"
-                                        class="flex items-center max-w-xs text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-500 focus:ring-white">
-                                        <img class="object-cover w-8 h-8 rounded-full md:w-10 md:h-10"
-                                            src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                            alt="">
-                                    </button>
-                                </div>
-    
-                                <div x-show.transition="openDrop" @click.away="openDrop = false"
-                                    class="absolute right-0 w-64 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-primary-500 ring-opacity-5 focus:outline-none"
-                                    x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
-                                    x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
-                                    x-transition:leave-start="opacity-100 scale-100"
-                                    x-transition:leave-end="opacity-0 scale-95">
-    
-                                    <!-- Foto y Nombre -->
-                                    <div href="#" class="block px-4 py-2 text-sm text-gray-700">
-                                        <img class="inline-block object-cover w-10 h-10 rounded-full"
-                                            src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                                            alt="">
-                                        <span id="username" class="inline-block px-3 font-semibold">
-                                            Mi Usuario
-                                        </span>
-                                    </div>
-    
-                                     <!-- Tu perfil -->
-                                    <a href="./tu-perfil.html" class="block px-4 py-2 text-sm text-gray-700">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                        <div class="mt-6">
+                            <nav class=" xl:flex">
+                                <div class="grid xl:flex gap-y-8">
+                                    <a aria-current="page" class="flex items-center nav-link" href="./conocer.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
-                                        <span class="inline-block px-3 ">
-                                            Perfil
-                                        </span>
+                                        <span class="ml-3 xl:ml-0">Conocer</span>
                                     </a>
-    
-                                    <!-- Panel de administración -->
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                    <a aria-current="page" class="flex items-center nav-link" href="./momentos.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                        <span class="inline-block px-3 ">
-                                            Panel de Administración
-                                        </span>
+                                        <span class="ml-3 xl:ml-0">Momentos</span>
                                     </a>
-    
-                                    <!--Cerrar sesión -->
-                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none"
+                                    <a aria-current="page" class="flex items-center nav-link" href="./eventos.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                         </svg>
-                                        <span class="inline-block px-3 ">
-                                            Cerrar Sesión
-                                        </span>
+                                        <span class="ml-3 xl:ml-0">Eventos</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link"
+                                        href="./cadena-de-favores.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Cadena de Favores</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link" href="./viajes.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Viajes</span>
+                                    </a>
+                                    <a aria-current="page" class="flex items-center nav-link" href="./blog.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                        </svg>
+                                        <span class="ml-3 xl:ml-0">Blog</span>
                                     </a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Menu Responsive -->
-                <div @click.away=" openMenu = false" @keydown.escape.window="openMenu = false"
-                    class="absolute top-0 z-50 w-screen px-2 mt-3 origin-top-left transform -translate-x-1/2 left-1/2"
-                    x-show="openMenu" x-transition:enter="duration-200 ease-out"
-                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-                    x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-95">
-                    <div class="bg-white divide-y-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-gray-50">
-                        <div class="px-5 pt-5 pb-6">
-                            <div class="flex items-center justify-between">
-    
-                                <!-- Nes Logo -->
-                                <div>
-                                    <img class="w-auto h-6" src="./img/NesLogo.svg" alt="Nes Logo">
-                                </div>
-    
-                                <!-- Cerrar Menu -->
-                                <div class="-mr-2">
-                                    <button type="button" @click="openMenu = ! openMenu"
-                                        class="inline-flex items-center justify-center p-2 bg-white rounded-md text-secondary-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
-                                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-    
-                            <!-- Navbar -->
-                            <div class="mt-6">
-                                <nav class=" xl:flex">
-                                    <div class="grid xl:flex gap-y-8">
-                                        <a aria-current="page" class="flex items-center nav-link" href="./conocer.html">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                            </svg>
-                                            <span class="ml-3 xl:ml-0">Conocer</span>
-                                        </a>
-                                        <a aria-current="page" class="flex items-center nav-link" href="./momentos.html">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            <span class="ml-3 xl:ml-0">Momentos</span>
-                                        </a>
-                                        <a aria-current="page" class="flex items-center nav-link" href="./eventos.html">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            </svg>
-                                            <span class="ml-3 xl:ml-0">Eventos</span>
-                                        </a>
-                                        <a aria-current="page" class="flex items-center nav-link"
-                                            href="./cadena-de-favores.html">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                                            </svg>
-                                            <span class="ml-3 xl:ml-0">Cadena de Favores</span>
-                                        </a>
-                                        <a aria-current="page" class="flex items-center nav-link" href="./viajes.html">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                                            </svg>
-                                            <span class="ml-3 xl:ml-0">Viajes</span>
-                                        </a>
-                                        <a aria-current="page" class="flex items-center nav-link" href="./blog.html">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="flex-shrink-0 w-6 h-6 text-primary-600 xl:hidden" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                                            </svg>
-                                            <span class="ml-3 xl:ml-0">Blog</span>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </div>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    
-    
-        <!-- Header Widgets Responsive-->
-        <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
-    
-            <div class="my-2 ">
-                <div class="flex items-center justify-between">
-                    <a href="./me-gusta.html">
-                        <span class="circle-link">
-                            <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z">
-                                </path>
-                            </svg>
-                        </span>
-                        <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
-                            Likes</p>
-                    </a>
-    
-                    <a href="./favoritos.html">
-                        <span class="circle-link">
-                            <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z">
-                                </path>
-                            </svg>
-                        </span>
-                        <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
-                            Favoritos</p>
-                    </a>
-    
-                    <!-- Notificaciones -->
-                    <div class="flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }"
-                        x-cloak>
-                        <div>
-                            <button @click="openNot = !openNot" class="mx-auto">
-                                <span class="circle-link">
-                                    <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
-                                        </path>
-                                    </svg>
-                                </span>
-                                <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
-                                    Notificaciones</p>
-                            </button>
-                            <div class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
-                                <span class=" text-xs font-semibold text-white">4</span>
-                        </div>
-                        </div>
-    
-                        <div x-show.transition="openNot" @click.away="openNot = false"
-                            class="absolute right-0 z-50 h-auto p-4 mt-2 overflow-hidden w-80 bottom-16 md:-bottom-31rem"
-                            x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
-                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
-    
-    
-                            <div class="bg-white rounded-md shadow-lg">
-                                <p class="px-3 py-2 text-lg font-semibold text-gray-600">Notificaciones</p>
-    
-                                <div class="overflow-y-auto h-96" x-data="notification()">
-                                    <template x-for="(notification, index) in notifications" :key="index">
-                                        <a href="#"
-                                            class="flex flex-shrink-0 w-full p-3 py-5 border-b hover:bg-gray-100 active:bg-blue-50">
-                                            <div tabindex="0" aria-label="group icon" role="img"
-                                                class="flex items-center justify-center flex-shrink-0 w-8 h-8 border border-gray-200 rounded-full focus:outline-none">
-                                                <img class="object-cover w-8 h-8 rounded-full" x-bind:src="notification.img"
-                                                    alt="Profile image Notification" />
-    
-                                            </div>
-                                            <div class="w-full pl-3">
-                                                <div class="flex items-center justify-between w-full">
-                                                    <p class="text-sm text-gray-600">
-                                                        <span class="font-bold" x-text="notification.name"></span>
-                                                        <span x-text="notification.action"></span>
-                                                        <span class="font-bold " x-text="notification.who"></span>
-                                                    </p>
-                                                </div>
-                                                <p tabindex="0"
-                                                    class="pt-1 text-xs leading-3 text-gray-500 focus:outline-none"
-                                                    x-text="notification.time"></p>
-                                            </div>
-                                        </a>
-                                    </template>
-                                </div>
-                                <a href="#"
-                                    class="block py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-secondary-500 hover:bg-gray-800">Ver
-                                    todas las notificaciones
-                                </a>
-                            </div>
-    
-    
+    </div>
+
+
+    <!-- Header Widgets Responsive-->
+    <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
+
+        <div class="my-2 ">
+            <div class="flex items-center justify-between">
+                <a href="./me-gusta.html">
+                    <span class="circle-link">
+                        <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z">
+                            </path>
+                        </svg>
+                    </span>
+                    <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                        Likes</p>
+                </a>
+
+                <a href="./favoritos.html">
+                    <span class="circle-link">
+                        <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z">
+                            </path>
+                        </svg>
+                    </span>
+                    <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                        Favoritos</p>
+                </a>
+
+                <!-- Notificaciones -->
+                <div class="flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }" x-cloak>
+                    <div>
+                        <button @click="openNot = !openNot" class="mx-auto">
+                            <span class="circle-link">
+                                <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <p class="flex items-center justify-center font-medium text-gray-600 text-xtin sm:hidden">
+                                Notificaciones</p>
+                        </button>
+                        <div
+                            class="absolute -top-1 right-0 border-gray-100 rounded-full bg-primary-500 w-6 h-6 flex items-center justify-center">
+                            <span class=" text-xs font-semibold text-white">4</span>
                         </div>
                     </div>
-    
-                    <!-- Nes PRO -->
-                    <a href="./nes-pro.html" class="md:items-center md:flex">
-                        <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current " width="12.371"
-                                height="24.743" viewBox="0 0 12.371 24.743">
-                                <path d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
-                                    transform="translate(-80.9 -592.6)" />
-                            </svg>
-                        </span>
-                        <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte <span
-                                class="block text-xs font-bold uppercase text-primary-500">Nes+ Pro</span>
-                        </p>
-                        <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">PRO</p>
-                    </a>
+
+                    <div x-show.transition="openNot" @click.away="openNot = false"
+                        class="absolute right-0 z-50 h-auto p-4 mt-2 overflow-hidden w-80 bottom-16 md:-bottom-31rem"
+                        x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
+
+
+                        <div class="bg-white rounded-md shadow-lg">
+                            <p class="px-3 py-2 text-lg font-semibold text-gray-600">Notificaciones</p>
+
+                            <div class="overflow-y-auto h-96" x-data="notification()">
+                                <template x-for="(notification, index) in notifications" :key="index">
+                                    <a href="#"
+                                        class="flex flex-shrink-0 w-full p-3 py-5 border-b hover:bg-gray-100 active:bg-blue-50">
+                                        <div tabindex="0" aria-label="group icon" role="img"
+                                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 border border-gray-200 rounded-full focus:outline-none">
+                                            <img class="object-cover w-8 h-8 rounded-full" x-bind:src="notification.img"
+                                                alt="Profile image Notification" />
+
+                                        </div>
+                                        <div class="w-full pl-3">
+                                            <div class="flex items-center justify-between w-full">
+                                                <p class="text-sm text-gray-600">
+                                                    <span class="font-bold" x-text="notification.name"></span>
+                                                    <span x-text="notification.action"></span>
+                                                    <span class="font-bold " x-text="notification.who"></span>
+                                                </p>
+                                            </div>
+                                            <p tabindex="0"
+                                                class="pt-1 text-xs leading-3 text-gray-500 focus:outline-none"
+                                                x-text="notification.time"></p>
+                                        </div>
+                                    </a>
+                                </template>
+                            </div>
+                            <a href="#"
+                                class="block py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-secondary-500 hover:bg-gray-800">Ver
+                                todas las notificaciones
+                            </a>
+                        </div>
+
+
+                    </div>
                 </div>
+
+                <!-- Nes PRO -->
+                <a href="./nes-pro.html" class="md:items-center md:flex">
+                    <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current " width="12.371"
+                            height="24.743" viewBox="0 0 12.371 24.743">
+                            <path d="M80.9,592.6H93.271l-4.949,9.9h4.949l-8.66,14.846V606.208H80.9Z"
+                                transform="translate(-80.9 -592.6)" />
+                        </svg>
+                    </span>
+                    <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte <span
+                            class="block text-xs font-bold uppercase text-primary-500">Nes+ Pro</span>
+                    </p>
+                    <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">PRO</p>
+                </a>
             </div>
         </div>
+    </div>
 
     <!-- Hero -->
     <div class="hidden px-6 pt-20 pb-10 bg-white md:px-8 lg:block">
@@ -522,7 +523,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Categorias y Filtros -->
     <div class="px-6 pt-20 bg-white border-b border-gray-200 lg:pt-0 lg:px-8 md:w-full">
         <p class="text-base font-medium text-secondary-500 md:text-4xl md:font-semibold md:inline-block">Descubre
@@ -735,18 +736,21 @@
 
         <!-- Todos los eventos -->
         <div class="md:grid-cols-2 md:grid lg:grid-cols-3 2xl:grid-cols-4 gap-9 body">
-            <div id="" class="p-6 mt-6 transition duration-200 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-4 card">
+            <div id=""
+                class="p-6 mt-6 transition duration-200 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-4 card">
                 <a href="./ver-evento.html">
                     <div>
-                        <img src="https://source.unsplash.com/300x300/?random" alt="" class="object-cover object-center w-full rounded-lg h-72">
+                        <img src="https://source.unsplash.com/300x300/?random" alt=""
+                            class="object-cover object-center w-full rounded-lg h-72">
                         <div class="mt-6 mb-2">
                             <span class="block text-2xl font-bold text-secondary-500">Encuentro relajante</span>
                         </div>
                         <div class="grid grid-cols-2 space-y-3">
                             <div class="col-span-2">
                                 <p class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="inline-block w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -758,8 +762,9 @@
                             <div class="col-span-2">
                                 <div class="inline-block">
                                     <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                         </svg>
@@ -768,8 +773,9 @@
                                 </div>
                                 <div class="inline-block">
                                     <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
@@ -780,8 +786,9 @@
                             <div class="col-span-2">
                                 <div class="inline-block">
                                     <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
@@ -790,13 +797,52 @@
                                 </div>
                                 <div class="inline-block">
                                     <p class="flex items-center ml-14">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 text-primary-500"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="inline-block w-4 h-4 text-primary-500" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                                         </svg>
                                         <span class="inline-block px-3 text-secondary-400">Presencial</span>
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div id="options"></div>
+            </div>
+
+            <!-- Skeleton Card Component -->
+            <div id="" class="p-6 mt-6  bg-white rounded-lg animate-pulse shadow-lg">
+                <a href="./ver-evento.html">
+                    <div>
+                        <div class="bg-gray-200 w-full rounded-lg h-72">
+                        </div>
+                        <div class="mt-6 mb-2 bg-gray-200 h-6 w-full rounded">
+                        </div>
+                        <div class="grid grid-cols-2 space-y-3">
+                            <div class="col-span-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-6 h-6 rounded bg-gray-200"></div>
+                                    <div class=" bg-gray-200 h-6 w-1/2 rounded"></div>
+                                </div>
+                            </div>
+                            <div class="col-span-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-6 h-6 rounded bg-gray-200"></div>
+                                    <div class=" bg-gray-200 h-6 w-1/4 rounded"></div>
+                                    <div class="w-6 h-6 rounded bg-gray-200 ml-2"></div>
+                                    <div class=" bg-gray-200 h-6 w-1/4 rounded"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-span-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-6 h-6 rounded bg-gray-200"></div>
+                                    <div class=" bg-gray-200 h-6 w-1/4 rounded"></div>
+                                    <div class="w-6 h-6 rounded bg-gray-200 ml-2"></div>
+                                    <div class=" bg-gray-200 h-6 w-1/4 rounded"></div>
                                 </div>
                             </div>
                         </div>
@@ -831,38 +877,53 @@
                     <ul class="mt-2 xl:grid xl:grid-cols-2">
                         <li class="">
                             <a href="./condiciones-de-uso.html"
-                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Términos y condiciones de uso</a>
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Términos
+                                y condiciones de uso</a>
                         </li>
                         <li class="mt-2 xl:mt-0">
                             <a href="./politica-de-cookies.html"
-                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Politica de
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Politica
+                                de
                                 Cookies</a>
                         </li>
                         <li class="mt-2">
                             <a href="./politica-de-privacidad.html"
-                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Politica de
+                                class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Politica
+                                de
                                 Privacidad</a>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <div>
                     <p class="text-xl font-semibold tracking-wide text-primary-500">Conecta con nosotros</p>
                     <div class="flex mt-2 space-y-2">
                         <div class="flex justify-center space-x-4">
-                            <a href="#" title="Facebook" class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" class="w-4 h-4">
-                                    <path d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"></path>
+                            <a href="#" title="Facebook"
+                                class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                                    class="w-4 h-4">
+                                    <path
+                                        d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
+                                    </path>
                                 </svg>
                             </a>
-                            <a href="#" title="Twitter" class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" class="w-4 h-4">
-                                    <path d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"></path>
+                            <a href="#" title="Twitter"
+                                class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32"
+                                    class="w-4 h-4">
+                                    <path
+                                        d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z">
+                                    </path>
                                 </svg>
                             </a>
-                            <a href="#" title="Instagram" class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="w-4 h-4">
-                                    <path d="M16 0c-4.349 0-4.891 0.021-6.593 0.093-1.709 0.084-2.865 0.349-3.885 0.745-1.052 0.412-1.948 0.959-2.833 1.849-0.891 0.885-1.443 1.781-1.849 2.833-0.396 1.020-0.661 2.176-0.745 3.885-0.077 1.703-0.093 2.244-0.093 6.593s0.021 4.891 0.093 6.593c0.084 1.704 0.349 2.865 0.745 3.885 0.412 1.052 0.959 1.948 1.849 2.833 0.885 0.891 1.781 1.443 2.833 1.849 1.020 0.391 2.181 0.661 3.885 0.745 1.703 0.077 2.244 0.093 6.593 0.093s4.891-0.021 6.593-0.093c1.704-0.084 2.865-0.355 3.885-0.745 1.052-0.412 1.948-0.959 2.833-1.849 0.891-0.885 1.443-1.776 1.849-2.833 0.391-1.020 0.661-2.181 0.745-3.885 0.077-1.703 0.093-2.244 0.093-6.593s-0.021-4.891-0.093-6.593c-0.084-1.704-0.355-2.871-0.745-3.885-0.412-1.052-0.959-1.948-1.849-2.833-0.885-0.891-1.776-1.443-2.833-1.849-1.020-0.396-2.181-0.661-3.885-0.745-1.703-0.077-2.244-0.093-6.593-0.093zM16 2.88c4.271 0 4.781 0.021 6.469 0.093 1.557 0.073 2.405 0.333 2.968 0.553 0.751 0.291 1.276 0.635 1.844 1.197 0.557 0.557 0.901 1.088 1.192 1.839 0.22 0.563 0.48 1.411 0.553 2.968 0.072 1.688 0.093 2.199 0.093 6.469s-0.021 4.781-0.099 6.469c-0.084 1.557-0.344 2.405-0.563 2.968-0.303 0.751-0.641 1.276-1.199 1.844-0.563 0.557-1.099 0.901-1.844 1.192-0.556 0.22-1.416 0.48-2.979 0.553-1.697 0.072-2.197 0.093-6.479 0.093s-4.781-0.021-6.48-0.099c-1.557-0.084-2.416-0.344-2.979-0.563-0.76-0.303-1.281-0.641-1.839-1.199-0.563-0.563-0.921-1.099-1.197-1.844-0.224-0.556-0.48-1.416-0.563-2.979-0.057-1.677-0.084-2.197-0.084-6.459 0-4.26 0.027-4.781 0.084-6.479 0.083-1.563 0.339-2.421 0.563-2.979 0.276-0.761 0.635-1.281 1.197-1.844 0.557-0.557 1.079-0.917 1.839-1.199 0.563-0.219 1.401-0.479 2.964-0.557 1.697-0.061 2.197-0.083 6.473-0.083zM16 7.787c-4.541 0-8.213 3.677-8.213 8.213 0 4.541 3.677 8.213 8.213 8.213 4.541 0 8.213-3.677 8.213-8.213 0-4.541-3.677-8.213-8.213-8.213zM16 21.333c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333s-2.385 5.333-5.333 5.333zM26.464 7.459c0 1.063-0.865 1.921-1.923 1.921-1.063 0-1.921-0.859-1.921-1.921 0-1.057 0.864-1.917 1.921-1.917s1.923 0.86 1.923 1.917z"></path>
+                            <a href="#" title="Instagram"
+                                class="flex items-center justify-center w-8 h-8 text-white rounded-full sm:w-9 sm:h-9 bg-primary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path
+                                        d="M16 0c-4.349 0-4.891 0.021-6.593 0.093-1.709 0.084-2.865 0.349-3.885 0.745-1.052 0.412-1.948 0.959-2.833 1.849-0.891 0.885-1.443 1.781-1.849 2.833-0.396 1.020-0.661 2.176-0.745 3.885-0.077 1.703-0.093 2.244-0.093 6.593s0.021 4.891 0.093 6.593c0.084 1.704 0.349 2.865 0.745 3.885 0.412 1.052 0.959 1.948 1.849 2.833 0.885 0.891 1.781 1.443 2.833 1.849 1.020 0.391 2.181 0.661 3.885 0.745 1.703 0.077 2.244 0.093 6.593 0.093s4.891-0.021 6.593-0.093c1.704-0.084 2.865-0.355 3.885-0.745 1.052-0.412 1.948-0.959 2.833-1.849 0.891-0.885 1.443-1.776 1.849-2.833 0.391-1.020 0.661-2.181 0.745-3.885 0.077-1.703 0.093-2.244 0.093-6.593s-0.021-4.891-0.093-6.593c-0.084-1.704-0.355-2.871-0.745-3.885-0.412-1.052-0.959-1.948-1.849-2.833-0.885-0.891-1.776-1.443-2.833-1.849-1.020-0.396-2.181-0.661-3.885-0.745-1.703-0.077-2.244-0.093-6.593-0.093zM16 2.88c4.271 0 4.781 0.021 6.469 0.093 1.557 0.073 2.405 0.333 2.968 0.553 0.751 0.291 1.276 0.635 1.844 1.197 0.557 0.557 0.901 1.088 1.192 1.839 0.22 0.563 0.48 1.411 0.553 2.968 0.072 1.688 0.093 2.199 0.093 6.469s-0.021 4.781-0.099 6.469c-0.084 1.557-0.344 2.405-0.563 2.968-0.303 0.751-0.641 1.276-1.199 1.844-0.563 0.557-1.099 0.901-1.844 1.192-0.556 0.22-1.416 0.48-2.979 0.553-1.697 0.072-2.197 0.093-6.479 0.093s-4.781-0.021-6.48-0.099c-1.557-0.084-2.416-0.344-2.979-0.563-0.76-0.303-1.281-0.641-1.839-1.199-0.563-0.563-0.921-1.099-1.197-1.844-0.224-0.556-0.48-1.416-0.563-2.979-0.057-1.677-0.084-2.197-0.084-6.459 0-4.26 0.027-4.781 0.084-6.479 0.083-1.563 0.339-2.421 0.563-2.979 0.276-0.761 0.635-1.281 1.197-1.844 0.557-0.557 1.079-0.917 1.839-1.199 0.563-0.219 1.401-0.479 2.964-0.557 1.697-0.061 2.197-0.083 6.473-0.083zM16 7.787c-4.541 0-8.213 3.677-8.213 8.213 0 4.541 3.677 8.213 8.213 8.213 4.541 0 8.213-3.677 8.213-8.213 0-4.541-3.677-8.213-8.213-8.213zM16 21.333c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333s-2.385 5.333-5.333 5.333zM26.464 7.459c0 1.063-0.865 1.921-1.923 1.921-1.063 0-1.921-0.859-1.921-1.921 0-1.057 0.864-1.917 1.921-1.917s1.923 0.86 1.923 1.917z">
+                                    </path>
                                 </svg>
                             </a>
                         </div>
@@ -877,13 +938,13 @@
                     <img class="w-auto h-6" src="./img/NesLogo.svg" alt="Nes Logo">
                 </a>
             </div>
-            
+
             <div>
                 <p class="text-sm text-center text-gray-600 md:text-left">
                     Nest+, inc © 2021 | Proudly made in España, CO
                 </p>
             </div>
-             
+
         </div>
     </footer>
 
