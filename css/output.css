@@ -5026,6 +5026,10 @@ select{
     width: 5rem;
   }
 
+  .sm\:w-28{
+    width: 7rem;
+  }
+
   .sm\:w-full{
     width: 100%;
   }
