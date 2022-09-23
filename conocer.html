@@ -635,7 +635,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row">
+        <div class="flex flex-col sm:flex-row relative">
             <!-- Conocer Cards -->
             <div class="grid gap-5 mx-6 mb-6 "
                 :class="openFilter ? 'lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1' : 'sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 xs:grid-cols-2'">
@@ -799,9 +799,9 @@
             </div>
 
             <!-- Todos los filtros -->
-            <div class="order-first px-4 pb-6 sm:order-none sm:pb-0 sm:pr-6 sm:px-0"
+            <div class="order-first px-4 pb-6 sm:order-none sm:pb-0 sm:pr-6 sm:px-0 sm:sticky sm:top-24 sm:h-[32rem] "
                 :class="openFilter ? 'lg:w-2/6 md:w-96 w-full' : 'hidden' ">
-                <div class="px-5 pt-5 bg-white rounded-md">
+                <div class="px-5 pt-5 bg-white rounded-md sm:min-h-full sm:h-full sm:overflow-auto">
                     <div class="flex items-center justify-between">
                         <!-- Boton Cerrar -->
                         <div @click="openFilter = !openFilter" class="cursor-pointer">
