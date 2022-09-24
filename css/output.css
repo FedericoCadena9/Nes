@@ -3893,6 +3893,11 @@ select{
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
+.text-secondary-600{
+  --tw-text-opacity: 1;
+  color: rgb(14 31 57 / var(--tw-text-opacity));
+}
+
 .underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
