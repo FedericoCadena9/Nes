@@ -510,7 +510,7 @@
         </div>
     </div>
 
-    <section class="sm:min-h-screen grid grid-cols-2 mx-4 sm:mx-8 lg:mx-14 sm:gap-8 lg:gap-16">
+    <section x-data="{payDisable: true}" class="sm:min-h-screen grid grid-cols-2 mx-4 sm:mx-8 lg:mx-14 sm:gap-8 lg:gap-16">
         <div x-data="{tab: 'card-tarjeta'}" class="col-span-2 sm:col-span-1 pt-32">
             <h1 class="text-2xl font-bold text-secondary-500">Metodo de Pago</h1>
 
@@ -552,7 +552,7 @@
 
                 <!-- Tarjeta Metodo de Pago -->
                 <div x-show="tab === 'card-tarjeta'" class="mt-8">
-                    <div class="card-js"></div>
+                    <div @keyup="payDisable = false" class="card-js"></div>
 
                     <div class="flex items-center space-x-2 sm:text-gray-400 text-gray-500 my-4 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -569,7 +569,7 @@
                     <p class="text-sm text-gray-600">Antes de seguir con la compra, inicia sesión con tu cuenta de
                         PayPal:</p>
                     <!-- Conectar con PayPal -->
-                    <button class="my-6 text-white bg-blue-500 btn hover:bg-blue-600">Pagar con PayPal</button>
+                    <button @click="payDisable = false" class="my-6 text-white bg-blue-500 btn hover:bg-blue-600">Pagar con PayPal</button>
                 </div>
             </div>
         </div>
@@ -612,7 +612,9 @@
                     </div>
 
                     <div class="mt-10">
-                        <a href="./nes-pro-confirmacion.html" class="w-full text-white bg-primary-500 btn hover:bg-primary-600">Pagar $3,99</a>
+                        <a href="./nes-pro-confirmacion.html" :class="{payDisable ? '' : 'pointer-events-none'}">
+                            <button x-bind:disabled="payDisable" class="w-full text-white bg-primary-500 btn hover:bg-primary-600 disabled:bg-gray-200 disabled:text-gray-400">Pagar $3,99</button>
+                        </a>
                     </div>
                 </div>
             </div>
