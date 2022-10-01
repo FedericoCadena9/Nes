@@ -170,6 +170,7 @@ let resize = $("#uploadImg").croppie({
     document.getElementById("btnBorrar").classList.add("hidden");
     document.getElementById("divHid").classList.add("hidden");
     document.getElementById("image").classList.remove("hidden");
+    $('image').val("");
   });
   
   // Final de Subir imagen en Crear Eventos
