@@ -510,51 +510,79 @@
         </div>
     </div>
 
-    <section x-data="{payDisable: true}"
-        class="sm:min-h-screen grid grid-cols-2 mx-4 sm:mx-8 lg:mx-14 sm:gap-8 lg:gap-16">
-        <div x-data="{tab: 'card-tarjeta'}" class="col-span-2 sm:col-span-1 pt-32">
-            <h1 class="text-2xl font-bold text-secondary-500">Metodo de Pago</h1>
+    <section class="sm:min-h-screen grid grid-cols-1 lg:grid-cols-12 sm:gap-14" x-data="{payDisable: true}">
+        <div class="grid-cols-1 lg:col-span-7 pt-32 mx-4 sm:mx-8 lg:mx-12">
 
-            <div class="mt-8">
-                <fieldset>
-                    <!-- PayPal checkbox -->
-                    <div id="pago-paypal" class="inline-flex w-full items-center space-x-4  border-b"
-                        :class="{'active': tab === 'card-paypal'}" x-on:click.prevent="tab = 'card-paypal'">
-                        <input id="metodo-paypal" type="radio" name="desc"
-                            class="cursor-pointer rounded-full border-gray-300 text-primary-600 transition focus:ring-primary-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75">
-                        <label for="metodo-paypal"
-                            class="py-6 px-3 w-full flex cursor-pointer flex-col space-y-1 truncate whitespace-normal text-xs">
-                            <img src="./img/PayPal.svg" class="w-20" alt="PayPal Payment Method">
-                        </label>
+            <!-- Metodo De Pago Tarjeta -->
+            <div x-data=" {isOpen : open}">
+                <div @click="isOpen = !isOpen"
+                    class="border sm:flex items-center justify-between py-4 px-4 sm:px-8 rounded border-gray-200 cursor-pointer">
+                    <div class="">
+                        <h2 class="text-secondary-500 font-semibold text-lg">Tarjeta Bancaria</h2>
+                        <p class="text-sm text-gray-600 font-medium">Pago único $123,45</p>
                     </div>
+                    <div class="flex items-center space-x-8 mt-2 sm:mt-0">
+                        <div class="flex items-center space-x-3 mt-1 sm:mt-0">
+                            <div class="flex items-center justify-center w-8 h-8">
+                                <img src="./img/VisaLogo.svg" alt="Visa Logo">
+                            </div>
+                            <div class="flex items-center justify-center w-8 h-8 ">
+                                <img src="./img/MastercardLogo.svg" alt="Mastercard Logo">
+                            </div>
+                            <div class="flex items-center justify-center h-6 w-6">
+                                <img src="./img/AmericanExpressLogo.svg" alt="American Express Logo">
+                            </div>
+                        </div>
+                        <svg :class="{'transform rotate-180 ' : isOpen}" xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 hidden sm:inline text-gray-800 duration-300 transition ease-in-out" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
 
-                    <!-- Tarjeta de Credito checkbox -->
-                    <div id="pago-tarjeta" class="inline-flex w-full items-center space-x-4"
-                        :class="{'active': tab === 'card-tarjeta'}" x-on:click.prevent="tab = 'card-tarjeta'">
-                        <input id="metodo-tarjeta" type="radio" name="desc" checked=""
-                            class="cursor-pointer rounded-full border-gray-300 text-primary-600 transition focus:ring-primary-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75">
-                        <label for="metodo-tarjeta"
-                            class="px-3 py-6 cursor-pointer sm:flex sm:justify-between w-full text-sm">
-                            <span class="font-medium text-gray-700">Tarjeta de Credito o Débito</span>
-                            <div class="flex items-center space-x-3 mt-1 sm:mt-0">
-                                <div class="flex items-center justify-center w-6 h-6">
-                                    <img src="./img/VisaLogo.svg" alt="Visa Logo">
-                                </div>
-                                <div class="flex items-center justify-center w-6 h-6 ">
-                                    <img src="./img/MastercardLogo.svg" alt="Mastercard Logo">
-                                </div>
-                                <div class="flex items-center justify-center h-5 w-5">
-                                    <img src="./img/AmericanExpressLogo.svg" alt="American Express Logo">
+                <!-- Contenido Metodo de Pago Tarjeta -->
+                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95" @click.away="isOpen = false" class="py-3 mt-6">
+                    <div class="space-y-6">
+                        <div>
+                            <label for="card-number" class="block text-sm font-medium text-gray-700">Número de
+                                Tarjeta</label>
+                            <div class="mt-1">
+                                <input @keyup="payDisable = false" type="text" id="card-number" name="card-number" autocomplete="cc-number"
+                                    class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="name-on-card" class="block text-sm font-medium text-gray-700">Nombre del
+                                Titular</label>
+                            <div class="mt-1">
+                                <input type="text" id="name-on-card" name="name-on-card" autocomplete="cc-name"
+                                    class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            </div>
+                        </div>
+                        <div class="sm:flex sm:items-center sm:space-x-5 space-y-5 sm:space-y-0">
+                            <div class="sm:w-3/4">
+                                <label for="expiration-date" class="block text-sm font-medium text-gray-700">Expiration
+                                    date
+                                    (MM/YY)</label>
+                                <div class="mt-1">
+                                    <input type="text" name="expiration-date" id="expiration-date" autocomplete="cc-exp"
+                                        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
                             </div>
-                        </label>
+
+                            <div class="sm:w-auto">
+                                <label for="cvc" class="block text-sm font-medium text-gray-700">CVC</label>
+                                <div class="mt-1">
+                                    <input type="text" name="cvc" id="cvc" autocomplete="csc"
+                                        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </fieldset>
-
-                <!-- Tarjeta Metodo de Pago -->
-                <div x-show="tab === 'card-tarjeta'" class="mt-8">
-                    <div @keyup="payDisable = false" class="card-js"></div>
-
                     <div class="flex items-center space-x-2 sm:text-gray-400 text-gray-500 my-4 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
@@ -564,84 +592,113 @@
                         <p class=" text-xtin sm:text-sm ">La transacción está protegida por encriptación SSL.</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- PayPal Metodo de Pago -->
-                <div x-show="tab === 'card-paypal'" class="mt-8">
-                    <p class="text-sm text-gray-600">Antes de seguir con la compra, inicia sesión con tu cuenta de
-                        PayPal:</p>
-                    <!-- Conectar con PayPal -->
-                    <button @click="payDisable = false"
-                        class="my-6 text-white bg-blue-500 btn hover:bg-blue-600">Iniciar Sesión con PayPal</button>
+
+            <!-- Metodo De Pago Paypal -->
+            <div class="" x-data=" {isOpen : false}">
+                <div @click="isOpen = !isOpen"
+                    class="border flex items-center justify-between py-4 px-8 rounded border-gray-200 mt-4 cursor-pointer">
+                    <div class="">
+                        <h2 class="text-secondary-500 font-semibold text-lg">Paypal</h2>
+                        <p class="text-sm text-gray-600 font-medium">Pago único $123,45</p>
+                    </div>
+                    <div class="flex items-center space-x-8">
+                        <div class="flex items-center space-x-3 mt-1 sm:mt-0">
+                            <div class="flex items-center justify-center w-8 h-8">
+                                <img src="./img/PaypalLogo.svg" alt="Paypal Logo">
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" :class="{'transform rotate-180 ' : isOpen}"
+                            class="h-5 w-5 text-gray-800 duration-300 transition ease-in-out" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Contenido Metodo de Pago Paypal -->
+                <div x-show.transition="isOpen" x-cloak x-transition:enter="duration-200 ease-out"
+                    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95" @click.away="isOpen = false" class="pt-3 mt-6">
+                    <div class="bg-gray-100 p-6">
+                        <p class="text-gray-700 text-sm">
+                            Serás redirigiado a la página de Paypal para completar el pago. Tu pedido no se confirmará
+                            hasta que el pago se haya aprobado por Paypal.
+                        </p>
+                        <!-- Conectar con PayPal -->
+                        <button @click="payDisable = false"
+                            class="my-6 text-white bg-blue-500 btn hover:bg-blue-600">Iniciar Sesión con PayPal</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-span-2 sm:col-span-1 sm:pt-32 pt-6">
-            <div class="border rounded-md p-6">
-                <!-- Tipo de Plan -->
-                <div class="bg-gray-50/80 rounded-md p-4">
-                    <div class="sm:flex items-center justify-between mt-4">
-                        <div>
-                            <p class="font-semibold text-lg">
-                                <span class="uppercase font-bold text-primary-500">Nes+ Pro </span>
-                                <span class="text-secondary-500">Plan Básico</span>
-                            </p>
-                            <p class="text-gray-600 font-semibold text-sm sm:text-base">
-                                $9.99 USD
-                                <span class="text-gray-400">/ 1 mes</span>
-                            </p>
 
-                        </div>
-                        <p class="font-semibold text-secondary-500 text-2xl mt-4 sm:mt-0 sm:text-lg">
-                            $243,99
-                            <span class="text-gray-400">USD</span>
-                        </p>
+        <div class="col-span-1 lg:col-span-5 lg:bg-slate-50 p-8 pt-10 lg:pt-24">
 
-                        <!-- Pricing per month -->
+            <h2 class="text-secondary-500 font-semibold text-xl my-6">Resumen de la Orden </h2>
 
+            <div class="sm:flex items-center justify-between mt-4">
+                <div>
+                    <p class="font-semibold text-lg">
+                        <span class="uppercase font-bold text-primary-500">Nes+ Pro </span>
+                        <span class="text-secondary-500">Plan Básico</span>
+                    </p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base">
+                        $9.99 USD
+                        <span class="text-gray-400">/ 1 mes</span>
+                    </p>
+                    <a href="./nes-pro.html" class="underline text-primary-500 text-sm mt-2">Cambiar</a>
 
+                </div>
+                <p class="font-semibold text-secondary-500 text-2xl mt-4 sm:mt-0 sm:text-lg">
+                    $243,99
+                    <span class="text-gray-400">USD</span>
+                </p>
+            </div>
+
+            <div class="mx-2 mt-10">
+                <!-- Subtotal e IVA -->
+                <div class="space-y-3 border-b pb-4 text-sm">
+                    <div class="flex justify-between">
+                        <p class="text-gray-500 font-medium">Subtotal</p>
+                        <p class="text-gray-800 font-semibold">$3,99</p>
+                    </div>
+                    <div class="flex justify-between relative">
+                        <p class="text-gray-500 font-medium">Impuesto sobre Ventas</p>
+                        <p class="text-gray-800 font-semibold">$3,99</p>
                     </div>
                 </div>
 
-                <div class="mx-2 mt-10">
-                    <!-- Subtotal e IVA -->
-                    <div class="space-y-3 border-b pb-4 text-sm">
-                        <div class="flex justify-between">
-                            <p class="text-gray-400 font-medium">Subtotal</p>
-                            <p class="text-gray-800 font-semibold">$3,99</p>
-                        </div>
-                        <div class="flex justify-between relative">
-                            <p class="text-gray-400 font-medium">Impuesto sobre Ventas</p>
-                            <p class="text-gray-800 font-semibold">$3,99</p>
-                        </div>
-                    </div>
+                <!-- Total -->
+                <div class="flex justify-between mt-4">
+                    <p class="text-secondary-500 text-xl font-bold">Total</p>
+                    <p class="text-secondary-500 text-xl font-bold">$3,99</p>
+                </div>
 
-                    <!-- Total -->
-                    <div class="flex justify-between mt-4">
-                        <p class="text-secondary-500 text-lg font-bold">Total</p>
-                        <p class="text-secondary-500 text-lg font-bold">$3,99</p>
-                    </div>
+                <div class="mt-10">
+                    <a href="./nes-pro-confirmacion.html" :class="{payDisable ? '' : 'pointer-events-none'}">
+                        <button x-bind:disabled="payDisable"
+                            class="w-full text-white bg-primary-500 btn hover:bg-primary-600 disabled:bg-gray-200 disabled:text-gray-400">Pagar
+                            $3,99</button>
+                    </a>
+                    <p class="text-gray-400 text-xs font-medium text-center w-full mt-2">Facturación periódica,
+                        cancelar en cualquier momento.</p>
+                </div>
 
-                    <div class="mt-10">
-                        <a href="./nes-pro-confirmacion.html" :class="{payDisable ? '' : 'pointer-events-none'}">
-                            <button x-bind:disabled="payDisable"
-                                class="w-full text-white bg-primary-500 btn hover:bg-primary-600 disabled:bg-gray-200 disabled:text-gray-400">Pagar
-                                $3,99</button>
-                        </a>
-                        <p class="text-gray-400 text-xs font-medium text-center w-full mt-2">Facturación periódica,
-                            cancelar en cualquier momento.</p>
-                    </div>
-
-                    <!-- Terminos y Condiciones -->
-                    <div class="mt-6">
-                        <p class="text-gray-500 text-sm font-medium text-center w-full"> Si tocas “Elegir plan”, tu pago
-                            se cargara en el método seleccionado y tu suscripción se renovará de forma automática, por
-                            el mismo precio y por el mismo periodo, hasta que lo canceles o lo ajustes. Al hacer clic en
-                            "Pagar", aceptas los <a href="./condiciones-de-uso.html"
-                                class="text-primary-500 hover:underline">Términos y
-                                Condiciones</a> de Nes+.</p>
-                    </div>
+                <!-- Terminos y Condiciones -->
+                <div class="mt-6">
+                    <p class="text-gray-500 text-xs font-medium text-center w-full"> Si tocas “Elegir plan”, tu pago
+                        se cargara en el método seleccionado y tu suscripción se renovará de forma automática, por
+                        el mismo precio y por el mismo periodo, hasta que lo canceles o lo ajustes. Al hacer clic en
+                        "Pagar", aceptas los <a href="./condiciones-de-uso.html"
+                            class="text-primary-500 hover:underline">Términos y
+                            Condiciones</a> de Nes+.</p>
                 </div>
             </div>
+
+        </div>
     </section>
 
     <!-- Footer -->
@@ -746,19 +803,6 @@
     <!-- Mis scripts -->
     <script src="js/notification.js"></script>
     <script src="js/navbarLink.js"></script>
-
-    <script>
-
-        // Acción para cambiar el estado del radio button clickando en un div
-        document.getElementById("pago-tarjeta").addEventListener('click', () => {
-            document.getElementById("metodo-tarjeta").checked = true;
-        })
-
-        // Acción para cambiar el estado del radio button clickando en un div
-        document.getElementById("pago-paypal").addEventListener('click', () => {
-            document.getElementById("metodo-paypal").checked = true;
-        })
-    </script>
 
 </body>
 
