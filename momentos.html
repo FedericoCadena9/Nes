@@ -1066,6 +1066,469 @@
                             </div>
                         </div>
 
+                        <!-- Post Momentos Compartir -->
+                        <div x-data="{openComment: false}" x-cloak
+                            class="flex flex-col p-4 space-y-4 overflow-hidden text-gray-800 bg-white shadow-md sm:p-6 rounded-xl">
+                            <div class="flex justify-between">
+                                <div class="flex space-x-4">
+                                    <img alt="" src="https://i.pravatar.cc/400?img=24"
+                                        class="object-cover w-12 h-12 bg-gray-500 rounded-full shadow">
+                                    <div class="flex flex-col">
+
+                                        <!-- Nombre y link al perfil -->
+                                        <a href="#" class="font-semibold text-secondary-500 hover:underline">Jennifer
+                                            Medina</a>
+
+                                        <!-- Tiempo -->
+                                        <div class="flex items-center text-gray-500">
+                                            <span class="text-xs">Hace 11 horas</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- Opciones -->
+                                <div>
+                                    <button
+                                        class="p-2 text-gray-500 transition duration-150 ease-in rounded-full hover:bg-gray-100 hover:text-gray-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                        </svg>
+                                    </button>
+                                    <div class="hidden w-56 p-2 mx-auto mt-12 text-base text-gray-500 bg-white border border-gray-100 rounded-md shadow-md"
+                                        uk-drop="mode: click;pos: bottom-right;animation: uk-animation-slide-bottom-small">
+
+                                        <ul class="space-y-1">
+                                            <li>
+                                                <button
+                                                    class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out rounded-md focus:bg-gray-200 hover:bg-gray-100 hover:text-gray-600">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                                                    </svg>
+                                                    <span>Ocultar publicación</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button x-data="{favorite: false}" x-cloak @click="favorite = !favorite"
+                                                    :class="favorite ? 'text-amber-500 hover:text-amber-600 hover:bg-amber-100' : ''"
+                                                    class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 hover:text-gray-600">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2"
+                                                        :class="favorite ? 'fill-current' : '' " fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                                    </svg>
+                                                    <span>Agregar a Favoritos</span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <hr class="m-2 border-gray-400">
+                                            </li>
+                                            <li>
+                                                <a href="./reportar.html"
+                                                    class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out rounded-md focus:bg-gray-200 hover:bg-gray-100 hover:text-gray-600">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" />
+                                                    </svg>
+                                                    <span>Reportar publicación</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" p-4 border rounded-md space-y-4">
+                                <div class="flex space-x-4">
+                                    <img alt="" src="https://i.pravatar.cc/400?img=2"
+                                        class="object-cover w-12 h-12 bg-gray-500 rounded-full shadow">
+                                    <div class="flex flex-col">
+
+                                        <!-- Nombre y link al perfil -->
+                                        <a href="#" class="font-semibold text-secondary-500 hover:underline">Rafael
+                                            Sensores</a>
+
+                                        <!-- Tiempo -->
+                                        <div class="flex items-center text-gray-500">
+                                            <span class="text-xs">Hace 1 semana</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div>
+                                    <!-- Texto post -->
+                                    <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                                        necessitatibus?</p>
+
+                                    <!-- Imagen post -->
+                                    <img src="https://picsum.photos/536/354" alt=""
+                                        class="object-cover w-full my-4 bg-gray-500 rounded-xl h-80">
+                                </div>
+                            </div>
+
+                            <!-- Comentarios y reacciones -->
+                            <div class="relative flex items-center justify-between pb-4 border-b border-gray-200">
+                                <div class="relative flex items-center cursor-pointer">
+                                    <div class="group">
+                                        <div
+                                            class="invisible transition duration-150 ease-in-out delay-700 inline-block w-72 lg:group-hover:visible absolute left-0 p-2 bg-gray-900/[.9] text-white text-xs rounded-md shadow -top-14">
+                                            <p class="font-semibold">Likes</p>
+                                            <p><span class="font-semibold">Jhon Smith</span> y <span
+                                                    class="font-semibold">50 personas</span> reaccionaron. </p>
+                                        </div>
+                                        <img class="inline-block object-cover object-center w-6 h-6 border-2 border-white rounded-full"
+                                            src="./img/like.svg" alt="">
+                                    </div>
+                                    <div class="-ml-2 group">
+                                        <div
+                                            class="invisible transition duration-150 ease-in-out delay-700 inline-block w-72 lg:group-hover:visible absolute p-2 bg-gray-900/[.9] text-white text-xs rounded-md shadow -top-14">
+                                            <p class="font-semibold">Me encanta</p>
+                                            <p><span class="font-semibold">Jhon Smith</span> y <span
+                                                    class="font-semibold">50 personas</span> reaccionaron. </p>
+                                        </div>
+                                        <img class="inline-block object-cover object-center w-6 h-6 border-2 border-white rounded-full"
+                                            src="./img/love.svg" alt="">
+                                    </div>
+                                    <div class="flex items-center justify-center w-6 h-6 text-gray-500">
+                                        <span class="text-sm font-medium hover:underline">47</span>
+                                    </div>
+                                </div>
+
+                                <div class="text-sm font-medium text-gray-500">
+                                    <span>10 Comentarios</span>
+                                </div>
+                            </div>
+
+                            <!-- Botones de Acción -->
+                            <div class="flex flex-wrap justify-between space-y-3 xs:space-y-0">
+                                <div class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
+                                    <!-- Botón Reaccion -->
+                                    <button
+                                        class="flex items-center justify-center p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 sm:text-base">
+                                        <img id="imgReaction" src="./img/thumb-up.svg"
+                                            class="w-4 h-4 mr-3 sm:w-5 sm:h-5" alt="">
+                                        <span id="txtReaction">Me gusta</span>
+                                    </button>
+                                    <div class="!w-64 sm:!w-425"
+                                        uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; mode: click">
+                                        <div class="p-3 bg-white rounded-md shadow">
+                                            <div class="flex items-center justify-between">
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="like()">
+                                                    <img src="./img/like.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="love()">
+                                                    <img src="./img/love.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="care()">
+                                                    <img src="./img/care.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="haha()">
+                                                    <img src="./img/haha.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="wow()">
+                                                    <img src="./img/wow.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="sad()">
+                                                    <img src="./img/sad.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                                <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                    onclick="angry()">
+                                                    <img src="./img/angry.svg" alt="" class="mr-2 h-7 sm:h-12">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Botón Comentar -->
+                                    <button @click="openComment = !openComment"
+                                        class="flex items-center justify-center p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 sm:text-base">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span>Comentar</span>
+                                    </button>
+                                </div>
+
+                                <!-- Botón Compartir -->
+                                <button uk-toggle="target: #share-modal"
+                                    class="flex items-center justify-center w-full p-2 text-xs text-gray-600 transition duration-150 ease-in-out rounded-md sm:px-3 hover:bg-gray-100 xs:w-auto sm:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3 sm:w-5 sm:h-5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                                    </svg>
+                                    <span>Compartir</span>
+                                </button>
+                            </div>
+
+                            <div class="relative" x-show="openComment" x-data="{showComments: false}" x-cloak>
+                                <!-- Input Comentario -->
+                                <input placeholder="Escribe un comentario..."
+                                    class="w-full p-3 font-medium text-gray-700 bg-gray-100 rounded-md outline-none placeholder:text-gray-400">
+
+                                <!-- Comentarios -->
+                                <div class="py-4 space-y-4" x-data="{respond: false}">
+                                    <div class="px-3">
+                                        <div class="flex  pt-3">
+                                            <div class="flex-shrink-0 mr-2">
+                                                <div class="overflow-hidden bg-gray-800 rounded-full">
+                                                    <img class="object-cover w-10 h-10"
+                                                        src="https://i.pravatar.cc/300?img=40" />
+                                                </div>
+                                            </div>
+                                            <div class="p-4 rounded-md bg-slate-100">
+                                                <div class="-mt-1 text-sm">
+                                                    <span class="font-semibold text-secondary-500">Jhonatan Paul</span>
+                                                    <span class="font-medium text-gray-400">&bull; 5 min</span>
+                                                </div>
+                                                <p class="pt-2 text-gray-800">Lorem ipsum dolor, sit amet
+                                                    consectetur adipisicing elit. Nesciunt exercitationem dolore</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center ml-12 justify-between text-xs">
+                                            <div
+                                                class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
+                                                <!-- Botón Reaccion -->
+                                                <button
+                                                    class="flex items-center justify-center p-2 text-xs text-gray-500 sm:px-3 hover:underline">
+                                                    <span id="txtReaction">Me gusta</span>
+                                                </button>
+                                                <div class="!w-64 sm:!w-425"
+                                                    uk-drop="pos: top-left ;animation: uk-animation-slide-left-small; mode: click">
+                                                    <div class="p-3 bg-white rounded-md shadow">
+                                                        <div class="flex items-center justify-between">
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="like()">
+                                                                <img src="./img/like.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="love()">
+                                                                <img src="./img/love.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="care()">
+                                                                <img src="./img/care.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="haha()">
+                                                                <img src="./img/haha.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="wow()">
+                                                                <img src="./img/wow.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="sad()">
+                                                                <img src="./img/sad.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                            <div class="transition duration-100 ease-in-out cursor-pointer hover:-translate-y-4"
+                                                                onclick="angry()">
+                                                                <img src="./img/angry.svg" alt=""
+                                                                    class="mr-2 h-7 sm:h-12">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Botón Responder -->
+                                                <button @click="respond = !respond"
+                                                    class="flex items-center justify-center p-2 text-xs text-gray-500 sm:px-3 hover:underline">
+                                                    <span>Responder</span>
+                                                </button>
+                                            </div>
+
+                                            <!-- Reacciones a Comentarios -->
+                                            <div class="relative flex items-center cursor-pointer">
+                                                <div class="group">
+                                                    <img class="inline-block object-cover object-center w-6 h-6 border-2 border-white rounded-full"
+                                                        src="./img/like.svg" alt="">
+                                                </div>
+                                                <div class="-ml-2 group">
+                                                    <img class="inline-block object-cover object-center w-6 h-6 border-2 border-white rounded-full"
+                                                        src="./img/love.svg" alt="">
+                                                </div>
+                                                <div class="flex items-center justify-center w-6 h-6 text-gray-500">
+                                                    <span class="text-sm font-medium hover:underline">47</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex pl-16 pt-2">
+                                            <div class="flex-shrink-0 mr-2">
+                                                <div class="overflow-hidden bg-gray-800 rounded-full">
+                                                    <img class="object-cover w-10 h-10"
+                                                        src="https://i.pravatar.cc/300?img=40" />
+                                                </div>
+                                            </div>
+                                            <div class="p-4 rounded-md bg-slate-100">
+                                                <div class="-mt-1 text-sm">
+                                                    <span class="font-semibold text-secondary-500">Jhonatan Paul</span>
+                                                    <span class="font-medium text-gray-400">&bull; 5 min</span>
+                                                </div>
+                                                <p class="pt-2 text-gray-800">Lorem ipsum dolor, sit amet
+                                                    consectetur adipisicing elit. Nesciunt exercitationem dolore</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex px-12 pt-2" x-show="respond">
+                                            <div class="mr-3 overflow-hidden bg-gray-800 rounded-full">
+                                                <img class="object-cover w-10 h-10 "
+                                                    src="https://i.pravatar.cc/300?img=12" />
+                                            </div>
+                                            <input placeholder="Escribe un comentario..."
+                                                class="w-full px-2 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md outline-none placeholder:text-gray-400">
+                                        </div>
+                                    </div>
+
+
+                                    <div x-show="showComments">
+                                        <div class="flex px-3 pt-3">
+                                            <div class="flex-shrink-0 mr-2">
+                                                <div class="overflow-hidden bg-gray-800 rounded-full">
+                                                    <img class="object-cover w-10 h-10"
+                                                        src="https://i.pravatar.cc/300?img=60" />
+                                                </div>
+                                            </div>
+                                            <div class="p-4 rounded-md bg-slate-100">
+                                                <div class="-mt-1 text-sm">
+                                                    <span class="font-semibold text-secondary-500">Dennia Han</span>
+                                                    <span class="font-medium text-gray-400">&bull; 20 min</span>
+                                                </div>
+                                                <p class="pt-2 text-gray-800">Lorem ipsum dolor sit amet consectetur
+                                                    adipisicing elit. Recusandae quasi asperiores molestiae expedita
+                                                    voluptatum iusto quam dolore, itaque quibusdam vero quia atque
+                                                    aliquam? In ad iure unde, pariatur officiis reprehenderit.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center ml-12 text-xs">
+                                            <div
+                                                class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
+                                                <!-- Botón Reaccion -->
+                                                <button
+                                                    class="flex items-center justify-center p-2 text-xs text-gray-500 sm:px-3 hover:underline">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                                                    </svg>
+                                                    <span>Me gusta</span>
+                                                </button>
+
+                                                <!-- Botón Responder -->
+                                                <button @click="respond = !respond"
+                                                    class="flex items-center justify-center p-2 text-xs text-gray-500 sm:px-3 hover:underline">
+                                                    <span>Responder</span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                        <div class="flex px-12 pt-2" x-show="respond">
+                                            <div class="mr-3 overflow-hidden bg-gray-800 rounded-full">
+                                                <img class="object-cover w-10 h-10 "
+                                                    src="https://i.pravatar.cc/300?img=12" />
+                                            </div>
+                                            <input placeholder="Escribe un comentario..."
+                                                class="w-full px-2 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md outline-none placeholder:text-gray-400">
+                                        </div>
+                                    </div>
+                                    <div x-show="showComments">
+                                        <div class="flex px-3 pt-3">
+                                            <div class="flex-shrink-0 mr-2">
+                                                <div class="overflow-hidden bg-gray-800 rounded-full">
+                                                    <img class="object-cover w-10 h-10"
+                                                        src="https://i.pravatar.cc/300?img=10" />
+                                                </div>
+                                            </div>
+                                            <div class="p-4 rounded-md bg-slate-100">
+                                                <div class="-mt-1 text-sm">
+                                                    <span class="font-semibold text-secondary-500">Karla Wu</span>
+                                                    <span class="font-medium text-gray-400">&bull; 34 min</span>
+                                                </div>
+                                                <p class="pt-2 text-gray-800">Lorem ipsum dolor sit amet consectetur,
+                                                    adipisicing elit. Consequuntur dignissimos obcaecati magni
+                                                    doloremque quasi! Amet temporibus commodi, debitis praesentium nihil
+                                                    saepe itaque cupiditate accusamus ratione maiores veritatis unde
+                                                    modi placeat veniam dicta deleniti excepturi error provident nam et
+                                                    magni ipsa, sed dolor? Rem ab error voluptas iusto debitis! Dolore,
+                                                    recusandae.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center ml-12 text-xs">
+                                            <div
+                                                class="flex justify-between w-full md:space-x-2 xs:justify-start xs:w-auto">
+                                                <!-- Botón Reaccion -->
+                                                <button
+                                                    class="flex items-center justify-center p-2 text-xs text-gray-500 sm:px-3 hover:underline">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-3"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                                                    </svg>
+                                                    <span>Me gusta</span>
+                                                </button>
+
+                                                <!-- Botón Responder -->
+                                                <button @click="respond = !respond"
+                                                    class="flex items-center justify-center p-2 text-xs text-gray-500 sm:px-3 hover:underline">
+                                                    <span>Responder</span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                        <div class="flex px-12 pt-2" x-show="respond">
+                                            <div class="mr-3 overflow-hidden bg-gray-800 rounded-full">
+                                                <img class="object-cover w-10 h-10 "
+                                                    src="https://i.pravatar.cc/300?img=12" />
+                                            </div>
+                                            <input placeholder="Escribe un comentario..."
+                                                class="w-full px-2 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md outline-none placeholder:text-gray-400">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button @click="showComments = !showComments" :class="showComments ? 'hidden' : ''"
+                                    class="text-sm text-gray-500 hover:text-gray-600 hover:underline"> Ver los 2
+                                    comentarios </button>
+                            </div>
+                        </div>
+
                         <!-- Post Momentos -->
                         <div x-data="{openComment: true}" x-cloak
                             class="flex flex-col p-4 space-y-4 overflow-hidden text-gray-800 bg-white shadow-md sm:p-6 rounded-xl">
