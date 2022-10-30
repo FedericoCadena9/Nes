@@ -1,31 +1,29 @@
-
 // Boton Filtros Activo
 const eventLink = document.querySelectorAll(".category-button");
 for (let i = 0; i < eventLink.length; i++) {
-    if (eventLink[i].href === location.href) {
-        eventLink[i].classList.add("text-primary-500");
-        eventLink[i].classList.add("bg-primary-100");
-    }
+  if (eventLink[i].href === location.href) {
+    eventLink[i].classList.add("text-primary-500");
+    eventLink[i].classList.add("bg-primary-100");
+  }
 }
 
 //Función para agregar Boton de Crear Evento
-window.addEventListener('scroll', () => {
-  let anima = document.getElementById('cardBody');
-  let btnCrear = document.getElementById('btnCrear');
+window.addEventListener("scroll", () => {
+  let anima = document.getElementById("cardBody");
+  let btnCrear = document.getElementById("btnCrear");
   let position = anima.getBoundingClientRect().top;
-  let sizeScreen = window.innerHeight / 3.5;
+  let sizeScreen = window.innerHeight / 1.2;
 
-  if(position < sizeScreen)
-  {
-      btnCrear.classList.remove('hidden');
-      btnCrear.classList.remove('scale-in-center-reverse');
-      btnCrear.classList.add('scale-in-center');
+  if (position < sizeScreen) {
+    // btnCrear.classList.add("bottom-36");
+    btnCrear.classList.add("lg:bottom-32");
+    btnCrear.classList.remove("hidden");
+    btnCrear.classList.remove("scale-in-center-reverse");
+    btnCrear.classList.add("scale-in-center");
+  } else {
+    btnCrear.classList.add("scale-in-center-reverse");
   }
-  else
-  {
-      btnCrear.classList.add('scale-in-center-reverse');
-  }
-})
+});
 
 // Switch para determinar que opciones del Card se van a imprimir
 let card = document.querySelector(".card").id;
@@ -60,8 +58,8 @@ switch (card) {
     `;
     break;
 
-    case "c-2":
-      options.innerHTML = `
+  case "c-2":
+    options.innerHTML = `
       <div class="mt-4 border-t border-gray-300">
         <div class="items-center md:flex md:justify-between pt-4">
             <div
@@ -119,8 +117,8 @@ switch (card) {
       </div>`;
     break;
 
-    case "c-3":
-      options.innerHTML = `
+  case "c-3":
+    options.innerHTML = `
       <div class="mt-4 border-t border-gray-300">
         <div class="items-center md:flex md:justify-between pt-4">
             <div
@@ -178,8 +176,8 @@ switch (card) {
       </div>`;
     break;
 
-    case "c-4":
-      options.innerHTML = `
+  case "c-4":
+    options.innerHTML = `
       <div class="mt-4 border-t border-gray-300">
         <div class="items-center md:flex md:justify-between pt-4">
             <div
@@ -216,4 +214,3 @@ $(function () {
     maxYear: parseInt(moment().format("YYYY"), 10),
   });
 });
-
