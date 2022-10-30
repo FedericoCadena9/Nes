@@ -1255,12 +1255,16 @@ select{
   top: -3.5rem;
 }
 
-.top-full{
-  top: 100%;
+.top-\[90\%\]{
+  top: 90%;
 }
 
-.bottom-10{
-  bottom: 2.5rem;
+.bottom-18{
+  bottom: 4.5rem;
+}
+
+.bottom-36{
+  bottom: 9rem;
 }
 
 .-right-1\.5{
@@ -1293,46 +1297,6 @@ select{
 
 .bottom-4{
   bottom: 1rem;
-}
-
-.bottom-32{
-  bottom: 8rem;
-}
-
-.bottom-20{
-  bottom: 5rem;
-}
-
-.bottom-24{
-  bottom: 6rem;
-}
-
-.bottom-36{
-  bottom: 9rem;
-}
-
-.top-\[\]{
-  top: ;
-}
-
-.top-\[80\%\]{
-  top: 80%;
-}
-
-.top-\[70\%\]{
-  top: 70%;
-}
-
-.top-20{
-  top: 5rem;
-}
-
-.top-\[90\%\]{
-  top: 90%;
-}
-
-.bottom-18{
-  bottom: 4.5rem;
 }
 
 .z-40{
@@ -4804,24 +4768,16 @@ select{
     top: -5rem;
   }
 
-  .sm\:bottom-14{
-    bottom: 3.5rem;
-  }
-
-  .sm\:bottom-32{
-    bottom: 8rem;
-  }
-
   .sm\:top-full{
     top: 100%;
   }
 
-  .sm\:bottom-40{
-    bottom: 10rem;
-  }
-
   .sm\:bottom-20{
     bottom: 5rem;
+  }
+
+  .sm\:bottom-14{
+    bottom: 3.5rem;
   }
 
   .sm\:order-1{
@@ -5584,22 +5540,6 @@ select{
     bottom: 0px;
   }
 
-  .md\:top-full{
-    top: 100%;
-  }
-
-  .md\:bottom-18{
-    bottom: 4.5rem;
-  }
-
-  .md\:bottom-24{
-    bottom: 6rem;
-  }
-
-  .md\:bottom-32{
-    bottom: 8rem;
-  }
-
   .md\:bottom-28{
     bottom: 7rem;
   }
@@ -6212,16 +6152,16 @@ select{
     bottom: 0px;
   }
 
-  .lg\:-top-16{
-    top: -4rem;
+  .lg\:bottom-12{
+    bottom: 3rem;
   }
 
   .lg\:bottom-32{
     bottom: 8rem;
   }
 
-  .lg\:top-full{
-    top: 100%;
+  .lg\:-top-16{
+    top: -4rem;
   }
 
   .lg\:order-1{

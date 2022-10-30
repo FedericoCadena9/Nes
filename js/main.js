@@ -15,13 +15,14 @@ window.addEventListener("scroll", () => {
   let sizeScreen = window.innerHeight / 1.2;
 
   if (position < sizeScreen) {
-    // btnCrear.classList.add("bottom-36");
     btnCrear.classList.add("lg:bottom-32");
     btnCrear.classList.remove("hidden");
     btnCrear.classList.remove("scale-in-center-reverse");
     btnCrear.classList.add("scale-in-center");
   } else {
     btnCrear.classList.add("scale-in-center-reverse");
+    btnCrear.classList.remove("lg:bottom-32");
+    btnCrear.classList.add("lg:bottom-12");
   }
 });
 
