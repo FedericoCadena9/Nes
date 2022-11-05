@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
-<body class="bg-background font-body">
+<body class=" font-body">
 
     <!-- Navbar -->
     <div class="fixed z-40 min-w-full" x-cloak x-data="{ openMenu: false }">
@@ -737,14 +737,40 @@
         <p class="bottom-36 lg:bottom-32"></p>
 
         <!-- Todos los eventos -->
-        <div class="h-screen flex items-center justify-center">
-            <div class="flex flex-col items-center justify-center gap-8 sm:gap-4">
-                <img class="sm:h-80" src="./img/CeroEventos.svg" alt="">
-                <p class="lg:text-lg text-center text-gray-500 lg:w-3/4">Sé el primero en crear un evento en tu ciudad.</p>
-                <a href="./crear-evento.html" class="w-full sm:w-auto">
-                    <button class="btn-primary ">Crear Evento</button>
-                </a>
+        <div class="lg:h-screen">
+            <div class="space-y-4 text-center mt-8 mx-auto lg:w-3/4">
+                <h2 class="font-bold text-2xl text-secondary-500">Diviértete con nuestros mejores eventos</h2>
+                <p class="lg:text-lg text-gray-500 font-medium">Conoce a nuevas personas que tengan los mismso gustos en
+                    nuestros eventos presenciales y virtuales. Ven y únete a la diversión.</p>
             </div>
+            <div class="lg:mx-auto lg:max-w-7xl grid grid-cols-1 lg:grid-cols-3 mt-20 gap-14Z lg:gap-8">
+                <div class="text-center col-span-1 flex items-center flex-col">
+                    <img  class="h-40" src="./img/CrearEvento.svg" alt="">
+                    <div class="mt-8 space-y-2">
+                        <h3 class="text-xl text-secondary-500 font-semibold">Crea un Evento</h3>
+                    <p class="text-gray-500">Crea tus propios eventos dentro de nuestra comunidad: Ir al teatro, hacer
+                        deporte y muchas más actividades que se te ocurran.</p>
+                    </div>
+                </div>
+                <div class="text-center col-span-1 flex items-center flex-col">
+                    <img  class="h-40" src="./img/CompartirGustos.svg" alt="">
+                    <div class="mt-8 space-y-2">
+                        <h3 class="text-xl text-secondary-500 font-semibold">Comparte tus gustos</h3>
+                    <p class="text-gray-500">Haz lo que te gusta y conce a gente con los mismos gustos, encuentra a tu grupo ideal.</p>
+                    </div>
+                </div>
+                <div class="text-center col-span-1 flex items-center flex-col">
+                    <img  class="h-40" src="./img/NuevosAmigos.svg" alt="">
+                    <div class="mt-8 space-y-2">
+                        <h3 class="text-xl text-secondary-500 font-semibold">Haz nuevos amigos</h3>
+                    <p class="text-gray-500">NES+ es el lugar perfecto para ampliar tu círculo de amigos o simplemente pasar un buen rato rodeado de buena compañía.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="./crear-evento.html">
+                <button class="btn-primary mt-8 w-40 mx-auto">Crear Evento</button>
+            </a>
         </div>
     </div>
 
