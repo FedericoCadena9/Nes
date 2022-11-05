@@ -1255,10 +1255,6 @@ select{
   bottom: -0.25rem;
 }
 
-.bottom-10{
-  bottom: 2.5rem;
-}
-
 .bottom-14{
   bottom: 3.5rem;
 }
@@ -1699,6 +1695,10 @@ select{
 
 .mb-12{
   margin-bottom: 3rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
 }
 
 .block{
@@ -2286,6 +2286,10 @@ select{
 
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4{
@@ -3445,8 +3449,8 @@ select{
   padding-top: 5.5rem;
 }
 
-.pb-12{
-  padding-bottom: 3rem;
+.pt-12{
+  padding-top: 3rem;
 }
 
 .pt-6{
@@ -3479,10 +3483,6 @@ select{
 
 .\!pt-3{
   padding-top: 0.75rem !important;
-}
-
-.pt-12{
-  padding-top: 3rem;
 }
 
 .text-left{
@@ -5407,6 +5407,10 @@ select{
     padding-bottom: 1rem;
   }
 
+  .sm\:pt-16{
+    padding-top: 4rem;
+  }
+
   .sm\:pl-5{
     padding-left: 1.25rem;
   }
@@ -5429,10 +5433,6 @@ select{
 
   .sm\:pt-6{
     padding-top: 1.5rem;
-  }
-
-  .sm\:pt-16{
-    padding-top: 4rem;
   }
 
   .sm\:text-left{
@@ -6441,6 +6441,10 @@ select{
     height: 1rem;
   }
 
+  .lg\:h-20{
+    height: 5rem;
+  }
+
   .lg\:h-80{
     height: 20rem;
   }
@@ -6459,10 +6463,6 @@ select{
 
   .lg\:h-8{
     height: 2rem;
-  }
-
-  .lg\:h-20{
-    height: 5rem;
   }
 
   .lg\:min-h-screen{
@@ -6820,10 +6820,6 @@ select{
 
   .lg\:pt-24{
     padding-top: 6rem;
-  }
-
-  .lg\:pb-0{
-    padding-bottom: 0px;
   }
 
   .lg\:pr-4{
