@@ -618,9 +618,10 @@
                             class="flex flex-col sm:flex-row items-center sm:justify-between mt-4 mx-8 lg:ml-60 gap-8 pt-12 sm:pt-16 lg:pt-0">
                             <div class="text-center lg:text-left">
                                 <!-- Nombre del Usuario -->
-                                <h2 class="text-secondary-500 text-3xl font-semibold flex items-center gap-2">
+                                <h2
+                                    class="text-secondary-500 text-3xl font-semibold flex items-center gap-2 hover:underline cursor-pointer">
                                     <span class="">@jhon.doe</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 lg:w-4 lg:h-4" fill="none"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 lg:w-5 lg:h-5" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -630,13 +631,13 @@
                                 <p class="text-gray-600 font-medium text-sm lg:text-sm xl:text-base">jhon-doe@gmail.com
                                 </p>
                             </div>
-                            <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
-                                <!-- Botón de Ver perfil -->
-                                <button
-                                    class="btn border border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white">Ver
-                                    perfil
-                                </button>
 
+                            <!-- Botones Guardar y Cancelar -->
+
+                            <div class="flex flex-col sm:flex-row gap-4 h-full w-full lg:w-auto mt-8 lg:mt-0">
+                                <button
+                                    class="lg:order-1 order-2 btn text-gray-500 hover:bg-gray-50 hover:text-gray-600 border">Cancelar</button>
+                                <button class="btn-primary lg:order-2 order-1">Guardar</button>
                             </div>
                         </div>
                     </div>
@@ -963,6 +964,22 @@
                                 </div>
                             </div>
 
+                            <!-- Fotos -->
+                            <div class="bg-white border rounded-lg">
+                                <h3 class="text-red-600 font-semibold border-b py-4 px-6">Eliminar cuenta</h3>
+                                <div class="p-6 space-y-6">
+                                    <p class="text-gray-600 text-sm">
+                                        Esta acción no se puede deshacer. Esto eliminará permanentemente su cuenta
+                                        completa. Si deseas darte un respiro y conservar tu cuenta sin que nadie pueda
+                                        verte, simplemente puedes pausar tu perfil.</p>
+
+                                    <div class="flex items-center gap-4 flex-col sm:flex-row">
+                                        <button class="btn-secondary">Pausar mi cuenta</button>
+                                        <button class="btn-primary bg-red-600">Eliminar cuenta</button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="col-span-6 lg:col-span-2 space-y-8">
@@ -1021,8 +1038,7 @@
                                             <div class="">
                                                 <span class="font-medium text-secondary-500 text-xs">Editar Foto de
                                                     Perfil</span>
-                                                <div
-                                                    class="flex items-center gap-4 xl:w-3/4">
+                                                <div class="flex items-center gap-4 xl:w-3/4">
                                                     <!-- Botón para Eliminar imagen -->
                                                     <div class="text-center order-2 lg:order-1" id="btnBorrar">
                                                         <button id="btnDelete"
@@ -1089,8 +1105,7 @@
                                             <div class="">
                                                 <span class="font-medium text-secondary-500 text-xs">Editar Foto de
                                                     Portada</span>
-                                                <div
-                                                    class="flex items-center gap-4">
+                                                <div class="flex items-center gap-4">
                                                     <!-- Botón para Eliminar imagen -->
                                                     <div class="text-center order-2 lg:order-1" id="btnBorrar">
                                                         <button id="btnDelete"
@@ -1189,6 +1204,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -1542,6 +1559,24 @@
                                         </div>
                                     </div>
 
+                                    <!-- Plan Basico Gratuito -->
+                                    <div class="rounded-lg border">
+                                        <div class="flex flex-col justify-between p-6 ">
+                                            <div>
+                                                <div class="mb-1">
+                                                    <h2 class="-mb-1 text-xl font-bold text-secondary-600">Básico Gratuito
+                                                    </h2>
+                                                    <span class="text-sm text-slate-400 font-medium">Para siempre</span>
+                                                </div>
+                                                <p class="pb-0 my-2 text-4xl font-bold text-secondary-500">Gratis
+                                                </p>
+                                                <p class="text-sm text-gray-400 invisible">Equivalente a $10,00</p>
+                                            </div>
+                                            <a href="./nes-pro-pago.html"
+                                                class="w-full mt-6 btn bg-gradient-to-r text-secondary-500 border border-gray-300 hover:bg-secondary-500 hover:text-white">Cancelar Básico</a>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </section>
@@ -1659,7 +1694,7 @@
 
                         <div class="col-span-1">
                             <!-- Usuarios bloqueados -->
-                            <div class="mt-10 space-y-4 hidden">
+                            <div class="mt-10 space-y-4">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2">
                                         <img class="object-cover w-8 h-8 rounded-full"
@@ -1695,7 +1730,7 @@
                             </div>
 
                             <!-- Imagen cuando no tenga usuarios bloqueados -->
-                            <div class="my-12 lg:my-0">
+                            <div class="my-12 lg:my-0 hidden">
                                 <img src="./img/SinUsuariosBloqueados.svg" class="mx-auto h-48 md:h-auto" alt="">
                                 <div class="text-center text-gray-500 text-lg mt-2 lg:w-3/4 mx-auto">¡Grandioso! Aún
                                     no

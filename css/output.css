@@ -1155,6 +1155,36 @@ select{
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+.btn-secondary{
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  font-size: .875rem;
+  font-weight: 600;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(17 37 70 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(17 37 70 / var(--tw-text-opacity));
+}
+
+.btn-secondary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 37 70 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1665,6 +1695,10 @@ select{
   margin-bottom: -0.25rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
 .mr-3{
   margin-right: 0.75rem;
 }
@@ -1695,10 +1729,6 @@ select{
 
 .mb-12{
   margin-bottom: 3rem;
-}
-
-.mt-20{
-  margin-top: 5rem;
 }
 
 .block{
@@ -2286,10 +2316,6 @@ select{
 
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4{
@@ -6437,8 +6463,8 @@ select{
     height: 11rem;
   }
 
-  .lg\:h-4{
-    height: 1rem;
+  .lg\:h-5{
+    height: 1.25rem;
   }
 
   .lg\:h-20{
@@ -6529,8 +6555,8 @@ select{
     width: 11rem;
   }
 
-  .lg\:w-4{
-    width: 1rem;
+  .lg\:w-5{
+    width: 1.25rem;
   }
 
   .lg\:w-auto{

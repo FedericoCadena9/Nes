@@ -44,4 +44,8 @@
   .btn-profile {
     @apply px-4 py-2 font-medium text-gray-500 rounded cursor-pointer;
   }
+
+  .btn-secondary {
+    @apply btn text-secondary-500 border border-secondary-500 hover:bg-secondary-500 hover:text-white;
+  }
 }
