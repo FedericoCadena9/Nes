@@ -1564,7 +1564,8 @@
                                         <div class="flex flex-col justify-between p-6 ">
                                             <div>
                                                 <div class="mb-1">
-                                                    <h2 class="-mb-1 text-xl font-bold text-secondary-600">Básico Gratuito
+                                                    <h2 class="-mb-1 text-xl font-bold text-secondary-600">Básico
+                                                        Gratuito
                                                     </h2>
                                                     <span class="text-sm text-slate-400 font-medium">Para siempre</span>
                                                 </div>
@@ -1573,7 +1574,8 @@
                                                 <p class="text-sm text-gray-400 invisible">Equivalente a $10,00</p>
                                             </div>
                                             <a href="./nes-pro-pago.html"
-                                                class="w-full mt-6 btn bg-gradient-to-r text-secondary-500 border border-gray-300 hover:bg-secondary-500 hover:text-white">Cancelar Básico</a>
+                                                class="w-full mt-6 btn bg-gradient-to-r text-secondary-500 border border-gray-300 hover:bg-secondary-500 hover:text-white">Cancelar
+                                                Básico</a>
                                         </div>
                                     </div>
 
@@ -1738,6 +1740,46 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Buzón de ayuda -->
+                <div class="p-4 sm:px-14 sm:py-10" x-show="active===5">
+                    <div class="flex lg:items-center justify-between flex-col lg:flex-row">
+                        <!-- Text block -->
+                        <div class="">
+                            <h2 class="text-secondary-500 text-2xl font-semibold">Buzón de ayuda</h2>
+                            <p class="text-gray-400 ">Desde aquí puedes enviar un mensaje a nuestro equipo de
+                                soporte para que nos ayudes a mejorar cualquier aspecto de la aplicación.
+                            </p>
+                        </div>
+                    </div>
+                    <form novalidate="" class="flex flex-col space-y-6 ng-untouched ng-pristine ng-valid my-8">
+                        <div>
+                            <label class="block text-sm text-gray-700">¿Cómo podemos ayudarte? <span
+                                    class="font-bold text-red-500">*</span></label>
+                            <select id="" required class="py-2 text-gray-500 appearance-none input" required>
+                                <option disabled selected value> -- Selecciona una opción -- </option>
+                                <option value="1">Quiero información</option>
+                                <option value="2">He tenido un problema</option>
+                                <option value="3">Quiero solicitar un reembolso</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-700">Descripción <span
+                                    class="font-bold text-red-500">*</span></label>
+                            <textarea name="Descripcion" type="text" id="" class="input" cols="30" rows="5"
+                                required></textarea>
+                            <span class="text-xs text-center text-gray-500 md:text-left">
+                                Envianos tus comentarios si tienes ideas para ayudarnos a mejorar nuestros servicios.
+                            </span>
+                        </div>
+
+                        <div class="flex justify-center md:justify-start">
+                            <button @click="modelOpen =!modelOpen" type="button"
+                                class="inline-block w-40 text-gray-100 btn bg-primary-500 hover:bg-primary-600">Enviar</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
