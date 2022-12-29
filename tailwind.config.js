@@ -1,6 +1,8 @@
 
 //tailwind.config.js
 const defaultTheme = require('tailwindcss/defaultTheme');
+let plugin = require('tailwindcss/plugin')
+
 
 module.exports = {
   content: ['./**/*.html',
@@ -74,6 +76,9 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    plugin(function ({ addVariant }) {
+      addVariant('nine', '&:nth-child(9)')
+    })
 
   ],
 }

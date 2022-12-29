@@ -921,28 +921,25 @@
 
                 <!-- Fotos -->
                 <div class="mt-10 space-y-10" x-show="active===2">
-                    <div class="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-                        <img src="https://source.unsplash.com/301x301/?random" alt=""
-                            class="w-full h-full col-span-2 row-span-2 bg-gray-500 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/200x200/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/201x201/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/202x202/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/203x203/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/204x204/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/205x205/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/206x206/?random">
-                        <img alt="" class="w-full h-full bg-gray-500 rounded shadow-sm min-h-48"
-                            src="https://source.unsplash.com/207x207/?random">
-                        <!---->
-                        <img src="https://source.unsplash.com/302x302/?random" alt=""
-                            class="w-full h-full col-span-2 row-span-2 bg-gray-500 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3">
+                    <div class="container grid grid-cols-2 md:grid-cols-4 grid-rows-4 gap-4" x-data="{images: [
+                            'https://images.unsplash.com/photo-1672335517508-4275d5d2dc7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672106157109-056c567e3833?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672312015469-459015b5b97d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672108097936-27d9f3bf347c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672311028818-dce793605eeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672318995271-264173219d70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672329753774-2c81f254471f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672318042589-20f40aa2f135?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672323064802-5d675a178369?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
+                            'https://images.unsplash.com/photo-1672327114747-261be18f4907?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60',
+                            
+                            ]}">
+                        <template x-for="image in images" :key="image">
+                            <div
+                                class="w-full h-56 bg-slate-200 shadow-sm first-of-type:col-span-2 first-of-type:row-span-2 first-of-type:min-h-full nine:col-span-2 nine:row-span-2 nine:min-h-full">
+                                <img :src="image" alt="" class="w-full h-full object-cover rounded">
+                            </div>
+                        </template>
                     </div>
                 </div>
 
@@ -1731,7 +1728,7 @@
 
         function tab() {
             return {
-                active: 0,
+                active: 2,
                 tabs: [
                     {
                         text: "Momentos"
