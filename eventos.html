@@ -189,6 +189,27 @@
                                         </div>
                                     </div>
 
+                                    <!-- Botón Donaciones -->
+                                    <div class="md:flex md:items-center mr-2">
+                                        <div class="circle-link">
+                                            <form class="w-6 h-6" action="https://www.paypal.com/donate" method="post"
+                                                target="_blank">
+                                                <input type="hidden" name="hosted_button_id" value="KVHRCKVWK6PRA" />
+                                                <input type="image" src="./img/DonationIcon.svg"
+                                                    class="!border-none w-6 h-6 " name="submit"
+                                                    title="PayPal - The safer, easier way to pay online!"
+                                                    alt="Botón Donar con PayPal" />
+                                            </form>
+                                        </div>
+                                        <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">
+                                            Ayúdanos a crecer
+                                            <span class="block text-xs font-bold text-primary-500">Nes+
+                                                ¡Dona aquí!</span>
+                                        </p>
+                                        <p class="flex justify-center font-medium text-xtin text-gray-600 sm:hidden">
+                                            Donar</p>
+                                    </div>
+
                                     <!-- Nes PRO -->
                                     <a href="./nes-pro.html" class="md:items-center md:flex">
                                         <span class="text-gray-600 circle-link jello-horizontal hover:text-primary-500">
@@ -198,12 +219,16 @@
                                                     transform="translate(-80.9 -592.6)" />
                                             </svg>
                                         </span>
-                                        <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">Hazte
-                                            <span class="block text-xs font-bold uppercase text-primary-500">Nes+
-                                                Pro</span>
-                                        </p>
-                                        <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">
-                                            PRO</p>
+                                        <div class="hidden">
+                                            <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">
+                                                Hazte
+                                                <span class="block text-xs font-bold uppercase text-primary-500">Nes+
+                                                    Pro</span>
+                                            </p>
+                                            <p
+                                                class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">
+                                                PRO</p>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -397,10 +422,10 @@
 
 
     <!-- Header Widgets Responsive-->
-    <div class="fixed bottom-0 z-40 w-screen px-4 bg-white sm:hidden md:px-8">
+    <div class="fixed bottom-0 z-40 w-screen bg-white sm:hidden md:px-8">
 
-        <div class="my-2 ">
-            <div class="flex items-center justify-between">
+        <div class="my-2">
+            <div class="flex items-center justify-center">
                 <a href="./me-gusta.html">
                     <span class="circle-link">
                         <svg class="w-5 h-5 text-gray-600 fill-current" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -428,7 +453,8 @@
                 </a>
 
                 <!-- Notificaciones -->
-                <div class="flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }" x-cloak>
+                <div class="hidden flex order-last md:order-none relative md:inline-block" x-data="{ openNot: false }"
+                    x-cloak>
                     <div>
                         <button @click="openNot = !openNot" class="mx-auto">
                             <span class="circle-link">
@@ -507,6 +533,27 @@
                     </p>
                     <p class="flex justify-center font-medium text-xtin text-primary-500 sm:hidden">PRO</p>
                 </a>
+
+                <!-- Botón Donaciones -->
+                <div class="md:flex md:items-center mr-2">
+                    <div class="circle-link">
+                        <form class="w-6 h-6" action="https://www.paypal.com/donate" method="post" target="_blank">
+                            <input type="hidden" name="hosted_button_id" value="KVHRCKVWK6PRA" />
+                            <input type="image" src="./img/DonationIcon.svg" class="!border-none w-6 h-6 " name="submit"
+                                title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
+                        </form>
+                    </div>
+                    <p class="hidden text-xs font-medium leading-3 text-gray-600 md:inline">
+                        Ayúdanos a crecer
+                        <span class="block text-xs font-bold text-primary-500">Nes+
+                            ¡Dona aquí!</span>
+                    </p>
+                    <p class="flex justify-center font-medium text-xtin text-gray-600 sm:hidden">
+                        Donar</p>
+                </div>
+
+
+
             </div>
         </div>
     </div>
@@ -852,6 +899,31 @@
                 </a>
                 <div id="options"></div>
             </div>
+
+            <div
+                class="sm:h-full h-96 transition duration-200 ease-in-out transform bg-white shadow-md rounded-xl hover:shadow-xl mt-6">
+                <div class="flex flex-col items-center justify-center gap-6 h-full p-6">
+                    <div class="">
+                        <img src="./img/DonationIcon.svg" class="w-32 h-32" alt="">
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xl font-bold text-secondary-500">Ayúdanos a seguir creciendo</p>
+                        <p class="text-sm text-gray-600">Si te gusta lo que hacemos, puedes ayudarnos a seguir creciendo
+                            y
+                            mejorando</p>
+                    </div>
+                    <div class="">
+                        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                            <input type="hidden" name="hosted_button_id" value="KVHRCKVWK6PRA" />
+                            <input type="hidden" src="./img/DonationIcon.svg" class="hidden" name="submit"
+                                title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
+                            <button class="bg-primary-500 text-xs text-white w-full sm:w-auto px-6 py-2 rounded hover:bg-primary-600
+                                transition block">¡Donar
+                                aquí!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -860,6 +932,35 @@
     <footer class="relative z-20 px-6 pt-10 sm:max-w-xl md:max-w-full md:px-20 bg-slate-100">
         <div class="pb-6">
             <div class="grid gap-5 row-gap-8 md:grid-cols-4">
+
+                <div class="flex flex-col lg:flex-row items-center gap-2">
+                    <div class="text-sm text-gray-700 space-y-2 lg:w-3/4 text-center lg:order-1 order-2">
+                        <p>Con tus donaciones seguiremos
+                            <span class="text-primary-500 font-semibold">creciendo</span> y <span
+                                class="text-primary-500 font-medium">ayudando</span> a otros
+                        </p>
+                        <p>¡Ayúdanos a seguir creciendo!</p>
+
+                        <div>
+                            <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                                <input type="hidden" name="hosted_button_id" value="KVHRCKVWK6PRA" />
+                                <input type="hidden" src="./img/DonationIcon.svg" class="hidden" name="submit"
+                                    title="PayPal - The safer, easier way to pay online!"
+                                    alt="Botón Donar con PayPal" />
+                                <button class="bg-primary-500 text-xs text-white w-full sm:w-auto px-6 py-2 rounded hover:bg-primary-600
+                                    transition block">Donar
+                                    aquí</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/4 lg:order-2 order-1">
+                        <div class="circle-link w-18 h-18 lg:w-14 lg:h-14 bg-gray-200 hover:bg-gray-300">
+                            <img class="w-10 h-10" src="./img/DonationIcon.svg" alt="Donación de Nes">
+                        </div>
+                    </div>
+
+                </div>
+
                 <div>
                     <p class="text-xl font-semibold tracking-wide text-primary-500">Secciones</p>
                     <ul class="mt-2 space-y-2">
@@ -874,9 +975,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-span-2">
+
+                <div>
                     <p class="text-xl font-semibold tracking-wide text-primary-500">Enlaces de ayuda</p>
-                    <ul class="mt-2 xl:grid xl:grid-cols-2">
+                    <ul class="mt-2 xl:grid">
                         <li class="">
                             <a href="./condiciones-de-uso.html"
                                 class="text-sm transition-colors duration-300 text-secondary-400 hover:text-primary-500">Términos
@@ -897,6 +999,7 @@
 
                     </ul>
                 </div>
+
                 <div>
                     <p class="text-xl font-semibold tracking-wide text-primary-500">Conecta con nosotros</p>
                     <div class="flex mt-2 space-y-2">
