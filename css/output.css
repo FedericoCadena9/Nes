@@ -6437,12 +6437,12 @@ select{
     height: 24rem;
   }
 
-  .lg\:h-14{
-    height: 3.5rem;
-  }
-
   .lg\:h-full{
     height: 100%;
+  }
+
+  .lg\:h-14{
+    height: 3.5rem;
   }
 
   .lg\:h-7{
