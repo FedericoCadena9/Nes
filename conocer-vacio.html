@@ -685,29 +685,30 @@
 
         <div class="flex flex-col sm:flex-row relative">
             <!-- Conocer vacio -->
-           
-                <div class="w-full">
-                    <center><img src="./img/ConocerFiltrosVacio.svg">
-                    <p style="color: gray">Parece ser que no hay nadie aquí,
-                    <span class="text-primary-500">amplia tu busqueda</span>
-                    y conecta con personas cerca de ti</p>
-                    </center>
-                    
-                </div>
 
-                <!-- Skeleton Loader Component -->
-                <div class="flex flex-col shadow-md animate-pulse">
-                    <div class="md:h-72 h-96 xs:h-52 rounded-t-lg bg-gray-200"></div>
-                    <div class="flex-1 px-2 py-4 rounded-b-lg  bg-gray-100">
-                        <div class=" h-6 rounded bg-gray-200 w-3/4"></div>
-                        <div class="h-4 w-5/12 rounded  bg-gray-200 mt-6"></div>
-                        <div class="w-7/12 h-4 rounded  bg-gray-200 mt-3"></div>
-                    </div>
-                </div>
+            <div class="w-full h-full flex flex-col items-center justify-center">
 
-            
-                
-         
+                <img src="./img/ConocerFiltrosVacio.svg">
+                <p class="text-gray-500 text-center w-3/4">No hay resultados que coincidan con tus filtros actuales. Prueba cambiando tus
+                    preferencias para expandir tus opciones de búsqueda y encontrar a alguien que encaje contigo.
+                </p>
+
+
+            </div>
+
+            <!-- Skeleton Loader Component -->
+            <div class="flex flex-col shadow-md animate-pulse">
+                <div class="md:h-72 h-96 xs:h-52 rounded-t-lg bg-gray-200"></div>
+                <div class="flex-1 px-2 py-4 rounded-b-lg  bg-gray-100">
+                    <div class=" h-6 rounded bg-gray-200 w-3/4"></div>
+                    <div class="h-4 w-5/12 rounded  bg-gray-200 mt-6"></div>
+                    <div class="w-7/12 h-4 rounded  bg-gray-200 mt-3"></div>
+                </div>
+            </div>
+
+
+
+
 
             <!-- Todos los filtros -->
             <div class="order-first px-4 pb-6 sm:order-none sm:pb-0 sm:pr-6 sm:px-0 sm:sticky sm:top-24 sm:h-[32rem] "
